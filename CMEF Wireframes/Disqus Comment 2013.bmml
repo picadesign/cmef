@@ -1,0 +1,265 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1061" measuredH="943" mockupW="904" mockupH="863">
+  <controls>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::HRule" x="157" y="89" w="473" h="-1" measuredW="100" measuredH="10" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::HRule" x="235" y="252" w="395" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextArea" x="221" y="153" w="409" h="48" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>13421772</borderColor>
+        <size>16</size>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::SubTitle" x="157" y="114" w="229" h="-1" measuredW="122" measuredH="20" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <size>18</size>
+        <text>0%20kommentarer</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Image" x="158" y="153" w="48" h="48" measuredW="77" measuredH="79" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="158" y="153" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Icon" x="575" y="115" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16767334</color>
+        <icon>StarIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="__group__" x="601" y="115" w="28" h="23" measuredW="28" measuredH="23" zOrder="8" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="4" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="0" locked="false" isInGroup="8">
+          <controlProperties>
+            <color>13421772</color>
+            <icon>StarIcon%7Cxsmall</icon>
+            <rotation>90</rotation>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="5" y="0" w="23" h="23" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="8">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+            <borderStyle>none</borderStyle>
+            <color>13421772</color>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Paragraph" x="609" y="118" w="17" h="16" measuredW="275" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>0</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Icon" x="564" y="231" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <icon>JumpOutIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Paragraph" x="535" y="231" w="27" h="16" measuredW="275" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Del</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Icon" x="320" y="231" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+        <icon>StarIcon%7Cxsmall</icon>
+        <rotation>90</rotation>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Canvas" x="325" y="227" w="23" h="23" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>10066329</borderColor>
+        <borderStyle>none</borderStyle>
+        <color>13576743</color>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Paragraph" x="328" y="230" w="17" h="16" measuredW="275" measuredH="80" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <color>16777215</color>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Paragraph" x="245" y="231" w="68" h="16" measuredW="275" measuredH="80" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Min%20Disqus</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="__group__" x="611" y="225" w="30" h="28" measuredW="30" measuredH="28" zOrder="16" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="7" y="6" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="0" locked="false" isInGroup="16">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <color>10066329</color>
+            <icon>DownFillTriangleIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="8" y="18" w="14" h="10" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="16">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="8" y="0" w="14" h="10" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="16">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Canvas" x="20" y="9" w="10" h="10" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="16">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="9" w="10" h="10" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="16">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Icon" x="603" y="229" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>10066329</color>
+        <icon>GearIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Icon" x="215" y="231" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <color>10066329</color>
+        <icon>DownFillTriangleIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Canvas" x="216" y="243" w="14" h="10" measuredW="100" measuredH="70" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Canvas" x="216" y="225" w="14" h="10" measuredW="100" measuredH="70" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::Canvas" x="228" y="234" w="10" h="10" measuredW="100" measuredH="70" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Canvas" x="208" y="234" w="10" h="10" measuredW="100" measuredH="70" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Paragraph" x="168" y="231" w="46" h="16" measuredW="275" measuredH="80" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <text>Nyeste</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::HRule" x="157" y="367" w="473" h="-1" measuredW="100" measuredH="10" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::HRule" x="157" y="252" w="81" h="-1" measuredW="100" measuredH="10" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::SubTitle" x="526" y="383" w="104" h="-1" measuredW="93" measuredH="26" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>right</align>
+        <bold>true</bold>
+        <color>13421772</color>
+        <size>24</size>
+        <text>DISQUS</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Icon" x="317" y="389" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>13421772</color>
+        <icon>EmailIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::SubTitle" x="344" y="390" w="115" h="-1" measuredW="101" measuredH="15" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <bold>false</bold>
+        <color>13421772</color>
+        <size>12</size>
+        <text>Abonner%20via%20e-post</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::SubTitle" x="198" y="390" w="103" h="-1" measuredW="89" measuredH="15" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <bold>false</bold>
+        <color>13421772</color>
+        <size>12</size>
+        <text>Kommentar%20feed</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="__group__" x="169" y="387" w="20" h="19" measuredW="20" measuredH="19" zOrder="30" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="5" controlTypeID="__group__" x="0" y="0" w="20" h="19" measuredW="20" measuredH="19" zOrder="0" locked="false" isInGroup="30">
+          <controlProperties>
+            <crop>163%2C225%2C638%2C588</crop>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="0" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="5">
+              <controlProperties>
+                <borderStyle>none</borderStyle>
+                <color>13421772</color>
+                <icon>RSSIcon%7Cmedium</icon>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::SubTitle" x="279" y="309" w="229" h="-1" measuredW="164" measuredH="15" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <color>13421772</color>
+        <size>13</size>
+        <text>Ingen%20har%20kommentert%20enn%E5.</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::SubTitle" x="229" y="166" w="229" h="-1" measuredW="174" measuredH="18" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <color>13421772</color>
+        <size>16</size>
+        <text>Legg%20igjen%20en%20beskjed.%20..</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::StickyNote" x="758" y="80" w="303" h="336" measuredW="109" measuredH="123" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>14</size>
+        <text>%7Bcolor%3A%23ff0000%7DAbout%7Bcolor%7D%0ADisqus%20is%20a%20Comments%20system%20which%20can%20be%20used%20in%20blogs%2C%20news%20websites%2C%20etc.%20to%20provide%20user%20comments.%0A%20%0A%7Bcolor%3A%23ff0000%7DInstallation%7Bcolor%7D%0ATo%20use%20as%20a%20symbol%20library%2C%20add%20to%20your%20account%20assets%20or%20to%20a%20project%20assets%20folder.%0A%20%0A%7Bcolor%3A%23ff0000%7DVersion%20History%7Bcolor%7D%0ACreated%20by%20%20%28@beining%29%20Beining%20on%2016%20July%202013.</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Component" x="158" y="92" w="-1" h="-1" measuredW="470" measuredH="326" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Comment</src>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Component" x="158" y="545" w="484" h="398" measuredW="484" measuredH="398" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Comments</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

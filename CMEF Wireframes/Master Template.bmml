@@ -1,0 +1,31 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1087" measuredH="1019" mockupW="1024" mockupH="990">
+  <controls>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="63" y="29" w="1024" h="990" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::Title" x="105" y="356" w="-1" h="-1" measuredW="120" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Register</text>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::HRule" x="105" y="394" w="940" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::BreadCrumbs" x="105" y="308" w="-1" h="-1" measuredW="194" measuredH="23" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Home%2C%20Breadcrumb%2C%20to%2C%20page</text>
+      </controlProperties>
+    </control>
+    <control controlID="122" controlTypeID="com.balsamiq.mockups::Component" x="105" y="908" w="940" h="83" measuredW="940" measuredH="83" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#CMEF%20Footer</src>
+      </controlProperties>
+    </control>
+    <control controlID="123" controlTypeID="com.balsamiq.mockups::Component" x="63" y="103" w="1024" h="172" measuredW="1024" measuredH="172" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Header</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

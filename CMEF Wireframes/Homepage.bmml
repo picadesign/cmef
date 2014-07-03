@@ -1,0 +1,547 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1087" measuredH="1551" mockupW="1024" mockupH="1522">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="63" y="29" w="1024" h="1522" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Canvas" x="105" y="370" w="296" h="466" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Canvas" x="427" y="370" w="296" h="466" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Canvas" x="749" y="370" w="296" h="466" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Title" x="105" y="292" w="-1" h="-1" measuredW="377" measuredH="43" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Help%20Fund%20a%20Program</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Image" x="121" y="391" w="265" h="159" measuredW="77" measuredH="79" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Image" x="443" y="391" w="265" h="159" measuredW="77" measuredH="79" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Image" x="763" y="391" w="265" h="159" measuredW="77" measuredH="79" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Button" x="445" y="1376" w="-1" h="-1" measuredW="110" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16750848</color>
+        <icon>ScreenIcon%7Csmall</icon>
+        <text>View%20More</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::SubTitle" x="121" y="562" w="-1" h="-1" measuredW="248" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buys%20Cats%20%28Not%20Really%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::SubTitle" x="443" y="562" w="-1" h="-1" measuredW="168" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buy%20Computers</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::SubTitle" x="763" y="562" w="-1" h="-1" measuredW="128" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Trip%20to%20NYC</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::ProgressBar" x="121" y="734" w="265" h="20" measuredW="100" measuredH="20" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <indeterminate>false</indeterminate>
+        <scrollBarValue>21</scrollBarValue>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::ProgressBar" x="443" y="734" w="265" h="20" measuredW="100" measuredH="20" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <indeterminate>false</indeterminate>
+        <scrollBarValue>50</scrollBarValue>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::ProgressBar" x="763" y="734" w="265" h="20" measuredW="100" measuredH="20" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <indeterminate>false</indeterminate>
+        <scrollBarValue>79</scrollBarValue>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Paragraph" x="763" y="644" w="260" h="80" measuredW="275" measuredH="80" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Paragraph" x="443" y="644" w="264" h="80" measuredW="275" measuredH="80" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Paragraph" x="121" y="644" w="264" h="80" measuredW="275" measuredH="80" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Label" x="121" y="758" w="-1" h="-1" measuredW="200" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Raised%3A%20%24300%20%28Goal%20%245%2C000%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Label" x="443" y="758" w="-1" h="-1" measuredW="218" measuredH="21" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Raised%3A%20%243%2C000%20%28Goal%20%2410%2C000%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::Label" x="763" y="758" w="-1" h="-1" measuredW="211" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Raised%3A%20%245%2C000%20%28Goal%20%247%2C000%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::Image" x="121" y="386" w="265" h="168" measuredW="300" measuredH="168" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/imgres.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Image" x="443" y="389" w="264" h="162" measuredW="312" measuredH="162" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/images-1.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::Image" x="763" y="387" w="267" h="166" measuredW="303" measuredH="166" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/imgres-1.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Component" x="349" y="790" w="39" h="38" measuredW="39" measuredH="38" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="38"/>
+        <override controlID="1" x="3" y="5" w="34" h="27"/>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#GooglePlus</src>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::Component" x="306" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37"/>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#Facebook</src>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Component" x="218" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Twitter</src>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::Component" x="262" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37">
+          <text>in</text>
+        </override>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#Linkedin</src>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Label" x="119" y="799" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Share%20Program%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::Button" x="564" y="1376" w="-1" h="-1" measuredW="136" measuredH="27" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <href>Program%20-%20New%26bm%3BProgram%20-%20New.bmml%26bm%3BProgram%20-%20New.bmml%26bm%3BProgram%20-%20New.bmml</href>
+        <icon>PlusBigIcon%7Csmall</icon>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22501%2C1347%2C637%2C1374%22%20href%3D%22Program%2520-%2520New.bmml%22%20alt%3D%22Program%20-%20New%22%20id%3D%2277%22/%3E</map>
+        <text>Add%20a%20Program</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::Component" x="669" y="790" w="39" h="38" measuredW="39" measuredH="38" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="38"/>
+        <override controlID="1" x="3" y="5" w="34" h="27"/>
+        <src>./assets/symbols.bmml#GooglePlus</src>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::Component" x="626" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37"/>
+        <src>./assets/symbols.bmml#Facebook</src>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::Component" x="538" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Twitter</src>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::Component" x="582" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37">
+          <text>in</text>
+        </override>
+        <src>./assets/symbols.bmml#Linkedin</src>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Label" x="439" y="799" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Share%20Program%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::Component" x="989" y="790" w="39" h="38" measuredW="39" measuredH="38" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="38"/>
+        <override controlID="1" x="3" y="5" w="34" h="27"/>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#GooglePlus</src>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Component" x="946" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37"/>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#Facebook</src>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Component" x="858" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Twitter</src>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Component" x="902" y="791" w="39" h="37" measuredW="39" measuredH="37" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37">
+          <text>in</text>
+        </override>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#Linkedin</src>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::Label" x="759" y="799" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Share%20Program%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Button" x="287" y="608" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <href>Donation%20-%20To%20Program%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22224%2C579%2C320%2C606%22%20href%3D%22Donation%2520-%2520To%2520Program.bmml%22%20alt%3D%22Donation%20-%20To%20Program%22%20id%3D%2288%22/%3E</map>
+        <text>Donate%20Now%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Button" x="610" y="608" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <href>Donation%20-%20To%20Program%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22547%2C579%2C643%2C606%22%20href%3D%22Donation%2520-%2520To%2520Program.bmml%22%20alt%3D%22Donation%20-%20To%20Program%22%20id%3D%2289%22/%3E</map>
+        <text>Donate%20Now%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Button" x="932" y="608" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <href>Donation%20-%20To%20Program%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22869%2C579%2C965%2C606%22%20href%3D%22Donation%2520-%2520To%2520Program.bmml%22%20alt%3D%22Donation%20-%20To%20Program%22%20id%3D%2290%22/%3E</map>
+        <text>Donate%20Now%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Label" x="763" y="583" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Started%20By%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Label" x="443" y="583" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Started%20By%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::Label" x="121" y="583" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Started%20By%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::Link" x="190" y="585" w="-1" h="-1" measuredW="87" measuredH="19" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Profile%26bm%3BProfile.bmml%26bm%3BProfile.bmml%26bm%3BProfile.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22127%2C556%2C214%2C575%22%20href%3D%22Profile.bmml%22%20alt%3D%22Profile%22%20id%3D%2299%22/%3E</map>
+        <text>Teacher%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::Link" x="510" y="585" w="-1" h="-1" measuredW="87" measuredH="19" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Profile%26bm%3BProfile.bmml%26bm%3BProfile.bmml%26bm%3BProfile.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22447%2C556%2C534%2C575%22%20href%3D%22Profile.bmml%22%20alt%3D%22Profile%22%20id%3D%22100%22/%3E</map>
+        <text>Teacher%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Link" x="830" y="585" w="-1" h="-1" measuredW="87" measuredH="19" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Profile%26bm%3BProfile.bmml%26bm%3BProfile.bmml%26bm%3BProfile.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22767%2C556%2C854%2C575%22%20href%3D%22Profile.bmml%22%20alt%3D%22Profile%22%20id%3D%22101%22/%3E</map>
+        <text>Teacher%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Component" x="105" y="1439" w="940" h="83" measuredW="940" measuredH="83" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#CMEF%20Footer</src>
+      </controlProperties>
+    </control>
+    <control controlID="153" controlTypeID="com.balsamiq.mockups::Canvas" x="105" y="870" w="296" h="466" measuredW="100" measuredH="70" zOrder="50" locked="false" isInGroup="-1"/>
+    <control controlID="154" controlTypeID="com.balsamiq.mockups::Canvas" x="427" y="870" w="296" h="466" measuredW="100" measuredH="70" zOrder="51" locked="false" isInGroup="-1"/>
+    <control controlID="155" controlTypeID="com.balsamiq.mockups::Canvas" x="749" y="870" w="296" h="466" measuredW="100" measuredH="70" zOrder="52" locked="false" isInGroup="-1"/>
+    <control controlID="156" controlTypeID="com.balsamiq.mockups::Image" x="121" y="891" w="265" h="159" measuredW="77" measuredH="79" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="157" controlTypeID="com.balsamiq.mockups::Image" x="443" y="891" w="265" h="159" measuredW="77" measuredH="79" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="158" controlTypeID="com.balsamiq.mockups::Image" x="763" y="891" w="265" h="159" measuredW="77" measuredH="79" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="159" controlTypeID="com.balsamiq.mockups::SubTitle" x="121" y="1062" w="-1" h="-1" measuredW="248" measuredH="27" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buys%20Cats%20%28Not%20Really%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="160" controlTypeID="com.balsamiq.mockups::SubTitle" x="443" y="1062" w="-1" h="-1" measuredW="168" measuredH="27" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buy%20Computers</text>
+      </controlProperties>
+    </control>
+    <control controlID="161" controlTypeID="com.balsamiq.mockups::SubTitle" x="763" y="1062" w="-1" h="-1" measuredW="128" measuredH="27" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Trip%20to%20NYC</text>
+      </controlProperties>
+    </control>
+    <control controlID="162" controlTypeID="com.balsamiq.mockups::ProgressBar" x="121" y="1234" w="265" h="20" measuredW="100" measuredH="20" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <indeterminate>false</indeterminate>
+        <scrollBarValue>21</scrollBarValue>
+      </controlProperties>
+    </control>
+    <control controlID="163" controlTypeID="com.balsamiq.mockups::ProgressBar" x="443" y="1234" w="265" h="20" measuredW="100" measuredH="20" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <indeterminate>false</indeterminate>
+        <scrollBarValue>50</scrollBarValue>
+      </controlProperties>
+    </control>
+    <control controlID="164" controlTypeID="com.balsamiq.mockups::ProgressBar" x="763" y="1234" w="265" h="20" measuredW="100" measuredH="20" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <indeterminate>false</indeterminate>
+        <scrollBarValue>79</scrollBarValue>
+      </controlProperties>
+    </control>
+    <control controlID="165" controlTypeID="com.balsamiq.mockups::Paragraph" x="763" y="1144" w="260" h="80" measuredW="275" measuredH="80" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.</text>
+      </controlProperties>
+    </control>
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::Paragraph" x="443" y="1144" w="264" h="80" measuredW="275" measuredH="80" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.</text>
+      </controlProperties>
+    </control>
+    <control controlID="167" controlTypeID="com.balsamiq.mockups::Paragraph" x="121" y="1144" w="264" h="80" measuredW="275" measuredH="80" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.</text>
+      </controlProperties>
+    </control>
+    <control controlID="168" controlTypeID="com.balsamiq.mockups::Label" x="121" y="1258" w="-1" h="-1" measuredW="200" measuredH="21" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Raised%3A%20%24300%20%28Goal%20%245%2C000%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="169" controlTypeID="com.balsamiq.mockups::Label" x="443" y="1258" w="-1" h="-1" measuredW="218" measuredH="21" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Raised%3A%20%243%2C000%20%28Goal%20%2410%2C000%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="170" controlTypeID="com.balsamiq.mockups::Label" x="763" y="1258" w="-1" h="-1" measuredW="211" measuredH="21" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Raised%3A%20%245%2C000%20%28Goal%20%247%2C000%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="171" controlTypeID="com.balsamiq.mockups::Image" x="121" y="886" w="265" h="168" measuredW="300" measuredH="168" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/imgres.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="172" controlTypeID="com.balsamiq.mockups::Image" x="443" y="889" w="264" h="162" measuredW="312" measuredH="162" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/images-1.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="173" controlTypeID="com.balsamiq.mockups::Image" x="763" y="887" w="267" h="166" measuredW="303" measuredH="166" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/imgres-1.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="174" controlTypeID="com.balsamiq.mockups::Component" x="349" y="1290" w="39" h="38" measuredW="39" measuredH="38" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="38"/>
+        <override controlID="1" x="3" y="5" w="34" h="27"/>
+        <src>./assets/symbols.bmml#GooglePlus</src>
+      </controlProperties>
+    </control>
+    <control controlID="175" controlTypeID="com.balsamiq.mockups::Component" x="306" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="72" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37"/>
+        <src>./assets/symbols.bmml#Facebook</src>
+      </controlProperties>
+    </control>
+    <control controlID="176" controlTypeID="com.balsamiq.mockups::Component" x="218" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="73" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Twitter</src>
+      </controlProperties>
+    </control>
+    <control controlID="177" controlTypeID="com.balsamiq.mockups::Component" x="262" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="74" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37">
+          <text>in</text>
+        </override>
+        <src>./assets/symbols.bmml#Linkedin</src>
+      </controlProperties>
+    </control>
+    <control controlID="178" controlTypeID="com.balsamiq.mockups::Label" x="119" y="1299" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="75" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Share%20Program%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="179" controlTypeID="com.balsamiq.mockups::Component" x="669" y="1290" w="39" h="38" measuredW="39" measuredH="38" zOrder="76" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="38"/>
+        <override controlID="1" x="3" y="5" w="34" h="27"/>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#GooglePlus</src>
+      </controlProperties>
+    </control>
+    <control controlID="180" controlTypeID="com.balsamiq.mockups::Component" x="626" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="77" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37"/>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#Facebook</src>
+      </controlProperties>
+    </control>
+    <control controlID="181" controlTypeID="com.balsamiq.mockups::Component" x="538" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="78" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Twitter</src>
+      </controlProperties>
+    </control>
+    <control controlID="182" controlTypeID="com.balsamiq.mockups::Component" x="582" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="79" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37">
+          <text>in</text>
+        </override>
+        <override controlID="-1"/>
+        <src>./assets/symbols.bmml#Linkedin</src>
+      </controlProperties>
+    </control>
+    <control controlID="183" controlTypeID="com.balsamiq.mockups::Label" x="439" y="1299" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="80" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Share%20Program%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="184" controlTypeID="com.balsamiq.mockups::Component" x="989" y="1290" w="39" h="38" measuredW="39" measuredH="38" zOrder="81" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="38"/>
+        <override controlID="1" x="3" y="5" w="34" h="27"/>
+        <src>./assets/symbols.bmml#GooglePlus</src>
+      </controlProperties>
+    </control>
+    <control controlID="185" controlTypeID="com.balsamiq.mockups::Component" x="946" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="82" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37"/>
+        <src>./assets/symbols.bmml#Facebook</src>
+      </controlProperties>
+    </control>
+    <control controlID="186" controlTypeID="com.balsamiq.mockups::Component" x="858" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="83" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Twitter</src>
+      </controlProperties>
+    </control>
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Component" x="902" y="1291" w="39" h="37" measuredW="39" measuredH="37" zOrder="84" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="39" h="37">
+          <text>in</text>
+        </override>
+        <src>./assets/symbols.bmml#Linkedin</src>
+      </controlProperties>
+    </control>
+    <control controlID="188" controlTypeID="com.balsamiq.mockups::Label" x="759" y="1299" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="85" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Share%20Program%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="189" controlTypeID="com.balsamiq.mockups::Button" x="287" y="1108" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="86" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <href>Donation%20-%20To%20Program%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22224%2C1079%2C320%2C1106%22%20href%3D%22Donation%2520-%2520To%2520Program.bmml%22%20alt%3D%22Donation%20-%20To%20Program%22%20id%3D%22189%22/%3E</map>
+        <text>Donate%20Now%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="190" controlTypeID="com.balsamiq.mockups::Button" x="610" y="1108" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="87" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <href>Donation%20-%20To%20Program%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22547%2C1079%2C643%2C1106%22%20href%3D%22Donation%2520-%2520To%2520Program.bmml%22%20alt%3D%22Donation%20-%20To%20Program%22%20id%3D%22190%22/%3E</map>
+        <text>Donate%20Now%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="191" controlTypeID="com.balsamiq.mockups::Button" x="932" y="1108" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="88" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <href>Donation%20-%20To%20Program%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml%26bm%3BDonation%20-%20To%20Program.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22869%2C1079%2C965%2C1106%22%20href%3D%22Donation%2520-%2520To%2520Program.bmml%22%20alt%3D%22Donation%20-%20To%20Program%22%20id%3D%22191%22/%3E</map>
+        <text>Donate%20Now%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="192" controlTypeID="com.balsamiq.mockups::Label" x="763" y="1083" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="89" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Started%20By%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="193" controlTypeID="com.balsamiq.mockups::Label" x="443" y="1083" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="90" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Started%20By%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="194" controlTypeID="com.balsamiq.mockups::Label" x="121" y="1083" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="91" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Started%20By%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="195" controlTypeID="com.balsamiq.mockups::Link" x="190" y="1085" w="-1" h="-1" measuredW="87" measuredH="19" zOrder="92" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Profile%26bm%3BProfile.bmml%26bm%3BProfile.bmml%26bm%3BProfile.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22127%2C1056%2C214%2C1075%22%20href%3D%22Profile.bmml%22%20alt%3D%22Profile%22%20id%3D%22195%22/%3E</map>
+        <text>Teacher%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="196" controlTypeID="com.balsamiq.mockups::Link" x="510" y="1085" w="-1" h="-1" measuredW="87" measuredH="19" zOrder="93" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Profile%26bm%3BProfile.bmml%26bm%3BProfile.bmml%26bm%3BProfile.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22447%2C1056%2C534%2C1075%22%20href%3D%22Profile.bmml%22%20alt%3D%22Profile%22%20id%3D%22196%22/%3E</map>
+        <text>Teacher%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="197" controlTypeID="com.balsamiq.mockups::Link" x="830" y="1085" w="-1" h="-1" measuredW="87" measuredH="19" zOrder="94" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Profile%26bm%3BProfile.bmml%26bm%3BProfile.bmml%26bm%3BProfile.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22767%2C1056%2C854%2C1075%22%20href%3D%22Profile.bmml%22%20alt%3D%22Profile%22%20id%3D%22197%22/%3E</map>
+        <text>Teacher%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="198" controlTypeID="com.balsamiq.mockups::Component" x="63" y="101" w="1024" h="173" measuredW="1024" measuredH="173" zOrder="95" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Header</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

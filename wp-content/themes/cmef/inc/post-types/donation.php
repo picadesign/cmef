@@ -226,15 +226,37 @@
 		// We are creating a page to export our donations to a pdf or csv...Need to find the support for that.
 		add_submenu_page('edit.php?post_type=donation', 'Export Donations to PDF or CSV', 'Export to PDF or CSV', 'edit_posts', basename(__FILE__), 'create_donation_spreadsheets');
 		function create_donation_spreadsheets(){ ?>
-			<h1>Export to PDF or CSV</h1>
-			<br />
-			Starting Date: <input type="date">
-			Ending Date: <input type="date">
-			<br />
-			<h2>PDF or CSV?</h2>
-			<input type="checkbox" value="CSV" name="csv"> CSV <br />
-			<input type="checkbox" value="PDF" name="pdf"> PDF
-
+			<form action="" method="post">
+				<h1>Export to PDF or CSV</h1>
+				<br />
+				Starting Date: <input type="date" name="start-date">
+				Ending Date: <input type="date" name="end-date">
+				<br />
+				<h2>PDF or CSV?</h2>
+				<input type="checkbox" value="CSV" name="csv"> CSV <br />
+				<input type="checkbox" value="PDF" name="pdf"> PDF <br />
+				<br />
+				<input class="submit button" type="submit">
+			</form>
 			<br><br>
-		<?php }
+			<?php
+				if($_POST):  
+				$args = array(
+					'post_type' => 'donation',
+					'posts_per_page' => -1,
+				);
+				$query = new WP_Query( $args );
+			?>
+
+			<table>
+				<pre>
+				<?php
+					foreach ($query as $donation) {
+						print_r($donation);
+					}
+				?>
+				</pre>
+			</table>
+
+		<?php endif; }
 	}

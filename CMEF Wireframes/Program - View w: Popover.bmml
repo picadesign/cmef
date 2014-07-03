@@ -1,0 +1,503 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1087" measuredH="1868" mockupW="1024" mockupH="1834">
+  <controls>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="63" y="34" w="1024" h="1834" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::Component" x="63" y="108" w="1024" h="172" measuredW="1024" measuredH="172" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Header</src>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::Title" x="105" y="356" w="-1" h="-1" measuredW="217" measuredH="33" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Program%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::HRule" x="105" y="394" w="940" h="-1" measuredW="100" measuredH="10" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::BreadCrumbs" x="105" y="313" w="-1" h="-1" measuredW="194" measuredH="23" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Home%2C%20Breadcrumb%2C%20to%2C%20page</text>
+      </controlProperties>
+    </control>
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::Image" x="105" y="419" w="355" h="190" measuredW="950" measuredH="534" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/miley-dog.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::Component" x="105" y="753" w="945" h="113" measuredW="945" measuredH="113" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="945" h="113"/>
+        <src>./assets/symbols.bmml#Paragraph%20Far%20Far%20Away</src>
+      </controlProperties>
+    </control>
+    <control controlID="115" controlTypeID="com.balsamiq.mockups::VSplitter" x="105" y="680" w="945" h="-1" measuredW="100" measuredH="11" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="116" controlTypeID="com.balsamiq.mockups::SubTitle" x="105" y="714" w="-1" h="-1" measuredW="101" measuredH="22" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Description</text>
+      </controlProperties>
+    </control>
+    <control controlID="117" controlTypeID="com.balsamiq.mockups::ProgressBar" x="673" y="419" w="372" h="20" measuredW="100" measuredH="20" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <indeterminate>false</indeterminate>
+        <scrollBarValue>50</scrollBarValue>
+      </controlProperties>
+    </control>
+    <control controlID="118" controlTypeID="com.balsamiq.mockups::Label" x="834" y="443" w="56" h="-1" measuredW="40" measuredH="20" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%243%2C000</text>
+      </controlProperties>
+    </control>
+    <control controlID="119" controlTypeID="com.balsamiq.mockups::Label" x="478" y="417" w="-1" h="-1" measuredW="177" measuredH="25" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Fundraising%20Progress%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="120" controlTypeID="com.balsamiq.mockups::Label" x="979" y="443" w="-1" h="-1" measuredW="66" measuredH="20" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%2450%2C000.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="121" controlTypeID="com.balsamiq.mockups::Label" x="478" y="472" w="-1" h="-1" measuredW="139" measuredH="25" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Type%20of%20Program%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="122" controlTypeID="com.balsamiq.mockups::Label" x="478" y="522" w="-1" h="-1" measuredW="143" measuredH="25" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Fundraising%20Goal%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="123" controlTypeID="com.balsamiq.mockups::Label" x="478" y="547" w="-1" h="-1" measuredW="61" measuredH="25" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>School%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="124" controlTypeID="com.balsamiq.mockups::Label" x="478" y="497" w="-1" h="-1" measuredW="100" measuredH="25" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>TFA%20Region%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="125" controlTypeID="com.balsamiq.mockups::Label" x="478" y="572" w="-1" h="-1" measuredW="99" measuredH="25" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Grade%20Level</text>
+      </controlProperties>
+    </control>
+    <control controlID="126" controlTypeID="com.balsamiq.mockups::Label" x="478" y="597" w="-1" h="-1" measuredW="166" measuredH="25" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Number%20of%20Students%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::Label" x="693" y="472" w="-1" h="-1" measuredW="75" measuredH="25" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Field%20Trip</text>
+      </controlProperties>
+    </control>
+    <control controlID="128" controlTypeID="com.balsamiq.mockups::Label" x="693" y="522" w="-1" h="-1" measuredW="91" measuredH="25" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>%2450%2C000.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="129" controlTypeID="com.balsamiq.mockups::Label" x="693" y="547" w="-1" h="-1" measuredW="177" measuredH="25" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Fundraising%20Progress%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="130" controlTypeID="com.balsamiq.mockups::Label" x="693" y="497" w="-1" h="-1" measuredW="145" measuredH="25" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Rio%20Grande%20Valley</text>
+      </controlProperties>
+    </control>
+    <control controlID="131" controlTypeID="com.balsamiq.mockups::Label" x="693" y="572" w="-1" h="-1" measuredW="177" measuredH="25" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Fundraising%20Progress%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="132" controlTypeID="com.balsamiq.mockups::Label" x="693" y="597" w="-1" h="-1" measuredW="177" measuredH="25" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Fundraising%20Progress%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="133" controlTypeID="com.balsamiq.mockups::VSplitter" x="105" y="880" w="945" h="-1" measuredW="100" measuredH="11" zOrder="25" locked="false" isInGroup="-1"/>
+    <control controlID="135" controlTypeID="com.balsamiq.mockups::Component" x="1011" y="354" w="39" h="37" measuredW="39" measuredH="37" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Facebook</src>
+      </controlProperties>
+    </control>
+    <control controlID="136" controlTypeID="com.balsamiq.mockups::Component" x="966" y="354" w="39" h="37" measuredW="39" measuredH="37" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#Twitter</src>
+      </controlProperties>
+    </control>
+    <control controlID="137" controlTypeID="com.balsamiq.mockups::Component" x="921" y="354" w="39" h="37" measuredW="39" measuredH="37" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#GooglePlus</src>
+      </controlProperties>
+    </control>
+    <control controlID="138" controlTypeID="com.balsamiq.mockups::Component" x="875" y="354" w="39" h="37" measuredW="39" measuredH="37" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="139" controlTypeID="com.balsamiq.mockups::Label" x="717" y="360" w="-1" h="-1" measuredW="148" measuredH="25" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Share%20this%20Project%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="140" controlTypeID="com.balsamiq.mockups::Button" x="856" y="311" w="-1" h="-1" measuredW="194" measuredH="27" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>Donate%20to%20This%20Program%20Now%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="142" controlTypeID="com.balsamiq.mockups::Button" x="805" y="311" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>3700253</color>
+        <text>Edit</text>
+      </controlProperties>
+    </control>
+    <control controlID="143" controlTypeID="com.balsamiq.mockups::Label" x="105" y="984" w="-1" h="-1" measuredW="376" measuredH="20" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>02/15/2014%09%09Jason%20Walker%09%09%09%2440.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="144" controlTypeID="com.balsamiq.mockups::SubTitle" x="105" y="959" w="-1" h="-1" measuredW="34" measuredH="18" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Date</text>
+      </controlProperties>
+    </control>
+    <control controlID="145" controlTypeID="com.balsamiq.mockups::SubTitle" x="247" y="959" w="-1" h="-1" measuredW="44" measuredH="18" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Donor</text>
+      </controlProperties>
+    </control>
+    <control controlID="146" controlTypeID="com.balsamiq.mockups::SubTitle" x="441" y="959" w="-1" h="-1" measuredW="123" measuredH="18" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Donation%20Amount</text>
+      </controlProperties>
+    </control>
+    <control controlID="162" controlTypeID="com.balsamiq.mockups::VCurly" x="624" y="298" w="180" h="52" measuredW="180" measuredH="140" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+        <direction>right</direction>
+        <text>Only%20Show%20if%20this%20program%20belongs%20to%20logged%20in%20user</text>
+      </controlProperties>
+    </control>
+    <control controlID="163" controlTypeID="com.balsamiq.mockups::VSplitter" x="105" y="1260" w="945" h="-1" measuredW="100" measuredH="11" zOrder="38" locked="false" isInGroup="-1"/>
+    <control controlID="165" controlTypeID="com.balsamiq.mockups::Component" x="105" y="1286" w="945" h="398" measuredW="945" measuredH="398" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="2" y="3" w="917" h="395"/>
+        <override controlID="1" x="871" y="136" w="74" h="28"/>
+        <override controlID="2" x="0" y="0" w="923" h="10"/>
+        <override controlID="3" x="159" y="163" w="766" h="10"/>
+        <override controlID="4" x="125" y="64" w="799" h="48"/>
+        <override controlID="5" x="0" y="25" w="447" h="20">
+          <text>2%20Comments</text>
+        </override>
+        <override controlID="6" x="2" y="64" w="94" h="48"/>
+        <override controlID="7" x="816" y="26" w="104" h="24"/>
+        <override controlID="8" x="738" y="142" w="73" h="16"/>
+        <override controlID="9" x="172" y="138" w="200" h="23"/>
+        <override controlID="10" x="22" y="136" w="137" h="28"/>
+        <override controlID="11" x="0" y="349" w="923" h="10"/>
+        <override controlID="12" x="0" y="163" w="159" h="10"/>
+        <override controlID="13" x="721" y="365" w="203" h="26"/>
+        <override controlID="14" x="312" y="371" w="276" h="16"/>
+        <override controlID="15" x="0" y="359" w="281" h="39"/>
+        <override controlID="16" x="141" y="77" w="447" h="18"/>
+        <override controlID="17" x="2" y="185" w="921" h="148"/>
+        <override controlID="17:0:6:0" x="0" y="0" w="94" h="48"/>
+        <override controlID="15:1" x="0" y="0" w="83" h="39"/>
+        <override controlID="17:1" x="0" y="85" w="921" h="63"/>
+        <override controlID="15:1:4" x="6" y="0" w="22" h="29"/>
+        <override controlID="17:1:1" x="139" y="47" w="16" h="16"/>
+        <override controlID="17:1:0" x="199" y="47" w="16" h="16"/>
+        <override controlID="7:1:0" x="0" y="0" w="54" h="23"/>
+        <override controlID="17:0:3" x="353" y="47" w="85" h="16"/>
+        <override controlID="6:1" x="0" y="0" w="48" h="48"/>
+        <override controlID="15:1:3" x="61" y="8" w="22" h="29"/>
+        <override controlID="15:0" x="80" y="13" w="201" h="15"/>
+        <override controlID="9:0:2" x="0" y="4" w="16" h="16"/>
+        <override controlID="17:0:10" x="113" y="24" w="808" h="16"/>
+        <override controlID="9:1" x="0" y="4" w="133" h="16"/>
+        <override controlID="17:0" x="0" y="0" w="921" h="63"/>
+        <override controlID="9:0:1" x="15" y="3" w="33" h="16"/>
+        <override controlID="10:0:4" x="0" y="9" w="20" h="10"/>
+        <override controlID="10:0" x="78" y="0" w="59" h="28"/>
+        <override controlID="6:0" x="0" y="0" w="94" h="48"/>
+        <override controlID="17:1:6:0" x="0" y="0" w="94" h="48"/>
+        <override controlID="15:1:1" x="13" y="29" w="61" h="10"/>
+        <override controlID="17:0:8" x="307" y="0" w="20" h="10"/>
+        <override controlID="17:1:4" x="113" y="47" w="20" h="16"/>
+        <override controlID="9:0:3" x="9" y="0" w="45" h="23"/>
+        <override controlID="1:0:1" x="15" y="18" w="28" h="10"/>
+        <override controlID="17:0:0" x="199" y="47" w="16" h="16"/>
+        <override controlID="17:1:3" x="353" y="47" w="94" h="16"/>
+        <override controlID="15:1:0" x="13" y="3" w="32" h="32"/>
+        <override controlID="17:1:8" x="264" y="0" w="20" h="10"/>
+        <override controlID="1:0:4" x="0" y="9" w="20" h="10"/>
+        <override controlID="10:0:1" x="15" y="18" w="28" h="10"/>
+        <override controlID="10:0:0" x="13" y="6" w="16" h="16"/>
+        <override controlID="17:0:6:1" x="0" y="0" w="48" h="48"/>
+        <override controlID="1:0" x="15" y="0" w="59" h="28"/>
+        <override controlID="14:0" x="0" y="0" w="16" h="16"/>
+        <override controlID="1:0:0" x="13" y="6" w="16" h="16"/>
+        <override controlID="17:1:7" x="113" y="2" w="189" h="16"/>
+        <override controlID="15:1:2" x="0" y="0" w="80" h="10"/>
+        <override controlID="7:1:0:0" x="0" y="4" w="16" h="16"/>
+        <override controlID="17:1:5" x="176" y="47" w="10" h="16"/>
+        <override controlID="1:1" x="0" y="4" w="16" h="16"/>
+        <override controlID="17:0:4" x="113" y="47" w="20" h="16"/>
+        <override controlID="17:1:2" x="268" y="47" w="65" h="16"/>
+        <override controlID="17:1:10" x="113" y="24" w="808" h="16"/>
+        <override controlID="7:1:0:1" x="9" y="0" w="45" h="23"/>
+        <override controlID="17:1:6" x="0" y="2" w="94" h="48"/>
+        <override controlID="-1"/>
+        <override controlID="17:1:6:1" x="0" y="0" w="48" h="48"/>
+        <override controlID="8:0" x="57" y="0" w="16" h="16"/>
+        <override controlID="17:0:5" x="176" y="47" w="10" h="16"/>
+        <override controlID="17:0:2" x="268" y="47" w="65" h="16"/>
+        <override controlID="10:1" x="0" y="6" w="90" h="16"/>
+        <override controlID="17:0:7" x="113" y="2" w="189" h="16"/>
+        <override controlID="14:1" x="52" y="1" w="224" h="15"/>
+        <override controlID="10:0:3" x="39" y="9" w="20" h="10"/>
+        <override controlID="17:0:1" x="139" y="47" w="16" h="16"/>
+        <override controlID="1:0:3" x="39" y="9" w="20" h="10"/>
+        <override controlID="9:0" x="146" y="0" w="54" h="23"/>
+        <override controlID="10:0:2" x="15" y="0" w="28" h="10"/>
+        <override controlID="17:0:6" x="0" y="2" w="94" h="48"/>
+        <override controlID="8:1" x="0" y="0" w="52" h="16"/>
+        <override controlID="7:1:1" x="15" y="3" w="33" h="16"/>
+        <override controlID="17:1:9" x="285" y="2" w="331" h="16"/>
+        <override controlID="7:1" x="50" y="0" w="54" h="23"/>
+        <override controlID="7:0" x="0" y="0" w="24" h="24"/>
+        <override controlID="1:0:2" x="15" y="0" w="28" h="10"/>
+        <override controlID="17:0:9" x="328" y="2" w="229" h="16"/>
+        <src>./assets/symbols.bmml#Comments</src>
+      </controlProperties>
+    </control>
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::HCurly" x="663" y="1533" w="297" h="80" measuredW="200" measuredH="80" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+        <text>This%20may%20not%20be%20the%20actual%20commenting%20system.%20I%27m%20thinking%20something%20along%20the%20lines%20of%20facebook%20or%20the%20normal%20standard%20buddypress%20maybe%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="167" controlTypeID="com.balsamiq.mockups::Image" x="105" y="612" w="55" h="56" measuredW="77" measuredH="79" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="168" controlTypeID="com.balsamiq.mockups::Image" x="165" y="612" w="55" h="56" measuredW="77" measuredH="79" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="169" controlTypeID="com.balsamiq.mockups::Image" x="225" y="612" w="55" h="56" measuredW="77" measuredH="79" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="170" controlTypeID="com.balsamiq.mockups::Image" x="285" y="612" w="55" h="56" measuredW="77" measuredH="79" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="171" controlTypeID="com.balsamiq.mockups::Image" x="345" y="612" w="55" h="56" measuredW="77" measuredH="79" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="172" controlTypeID="com.balsamiq.mockups::Image" x="405" y="612" w="55" h="56" measuredW="77" measuredH="79" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="183" controlTypeID="com.balsamiq.mockups::Component" x="107" y="1757" w="940" h="83" measuredW="940" measuredH="83" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#CMEF%20Footer</src>
+      </controlProperties>
+    </control>
+    <control controlID="186" controlTypeID="com.balsamiq.mockups::Link" x="105" y="912" w="-1" h="-1" measuredW="263" measuredH="25" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Fundraising%20Activity%20Snapshot</text>
+      </controlProperties>
+    </control>
+    <control controlID="204" controlTypeID="com.balsamiq.mockups::Label" x="105" y="1004" w="-1" h="-1" measuredW="376" measuredH="20" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>02/15/2014%09%09Jason%20Walker%09%09%09%2440.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="205" controlTypeID="com.balsamiq.mockups::Label" x="105" y="1024" w="-1" h="-1" measuredW="376" measuredH="20" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>02/15/2014%09%09Jason%20Walker%09%09%09%2440.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="206" controlTypeID="com.balsamiq.mockups::Label" x="105" y="1044" w="-1" h="-1" measuredW="376" measuredH="20" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>02/15/2014%09%09Jason%20Walker%09%09%09%2440.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="207" controlTypeID="com.balsamiq.mockups::Label" x="105" y="1064" w="-1" h="-1" measuredW="376" measuredH="20" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>02/15/2014%09%09Jason%20Walker%09%09%09%2440.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="208" controlTypeID="com.balsamiq.mockups::Label" x="105" y="1084" w="-1" h="-1" measuredW="376" measuredH="20" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>02/15/2014%09%09Jason%20Walker%09%09%09%2440.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="209" controlTypeID="com.balsamiq.mockups::Label" x="105" y="1104" w="-1" h="-1" measuredW="376" measuredH="20" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>02/15/2014%09%09Jason%20Walker%09%09%09%2440.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="210" controlTypeID="com.balsamiq.mockups::Label" x="105" y="1124" w="-1" h="-1" measuredW="376" measuredH="20" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>02/15/2014%09%09Jason%20Walker%09%09%09%2440.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="211" controlTypeID="com.balsamiq.mockups::Component" x="340" y="987" w="14" h="14" measuredW="14" measuredH="14" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="14" h="14"/>
+        <override controlID="1" x="2" y="3" w="9" h="8"/>
+        <override controlID="2" x="2" y="3" w="9" h="3"/>
+        <override controlID="-1"/>
+        <override controlID="0:0" x="0" y="0" w="14" h="14"/>
+        <src>$ACCOUNT/assets/Icons%20by%20Designyantra.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="212" controlTypeID="com.balsamiq.mockups::Component" x="340" y="1007" w="14" h="14" measuredW="14" measuredH="14" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="14" h="14"/>
+        <override controlID="1" x="2" y="3" w="9" h="8"/>
+        <override controlID="2" x="2" y="3" w="9" h="3"/>
+        <override controlID="-1"/>
+        <override controlID="0:0" x="0" y="0" w="14" h="14"/>
+        <src>$ACCOUNT/assets/Icons%20by%20Designyantra.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="213" controlTypeID="com.balsamiq.mockups::Component" x="340" y="1027" w="14" h="14" measuredW="14" measuredH="14" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="14" h="14"/>
+        <override controlID="1" x="2" y="3" w="9" h="8"/>
+        <override controlID="2" x="2" y="3" w="9" h="3"/>
+        <override controlID="-1"/>
+        <override controlID="0:0" x="0" y="0" w="14" h="14"/>
+        <src>$ACCOUNT/assets/Icons%20by%20Designyantra.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="214" controlTypeID="com.balsamiq.mockups::Component" x="340" y="1047" w="14" h="14" measuredW="14" measuredH="14" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="14" h="14"/>
+        <override controlID="1" x="2" y="3" w="9" h="8"/>
+        <override controlID="2" x="2" y="3" w="9" h="3"/>
+        <override controlID="-1"/>
+        <override controlID="0:0" x="0" y="0" w="14" h="14"/>
+        <src>$ACCOUNT/assets/Icons%20by%20Designyantra.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="215" controlTypeID="com.balsamiq.mockups::Component" x="340" y="1067" w="14" h="14" measuredW="14" measuredH="14" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="14" h="14"/>
+        <override controlID="1" x="2" y="3" w="9" h="8"/>
+        <override controlID="2" x="2" y="3" w="9" h="3"/>
+        <override controlID="-1"/>
+        <override controlID="0:0" x="0" y="0" w="14" h="14"/>
+        <src>$ACCOUNT/assets/Icons%20by%20Designyantra.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="216" controlTypeID="com.balsamiq.mockups::Component" x="340" y="1087" w="14" h="14" measuredW="14" measuredH="14" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="14" h="14"/>
+        <override controlID="1" x="2" y="3" w="9" h="8"/>
+        <override controlID="2" x="2" y="3" w="9" h="3"/>
+        <override controlID="-1"/>
+        <override controlID="0:0" x="0" y="0" w="14" h="14"/>
+        <src>$ACCOUNT/assets/Icons%20by%20Designyantra.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="217" controlTypeID="com.balsamiq.mockups::Component" x="340" y="1107" w="14" h="14" measuredW="14" measuredH="14" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="14" h="14"/>
+        <override controlID="1" x="2" y="3" w="9" h="8"/>
+        <override controlID="2" x="2" y="3" w="9" h="3"/>
+        <override controlID="-1"/>
+        <override controlID="0:0" x="0" y="0" w="14" h="14"/>
+        <src>$ACCOUNT/assets/Icons%20by%20Designyantra.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="218" controlTypeID="com.balsamiq.mockups::Component" x="340" y="1127" w="14" h="14" measuredW="14" measuredH="14" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="0" w="14" h="14"/>
+        <override controlID="1" x="2" y="3" w="9" h="8"/>
+        <override controlID="2" x="2" y="3" w="9" h="3"/>
+        <override controlID="-1"/>
+        <override controlID="0:0" x="0" y="0" w="14" h="14"/>
+        <src>$ACCOUNT/assets/Icons%20by%20Designyantra.bmml#AppleMail</src>
+      </controlProperties>
+    </control>
+    <control controlID="219" controlTypeID="com.balsamiq.mockups::Arrow" x="368" y="997" w="32" h="140" measuredW="150" measuredH="100" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="220" controlTypeID="com.balsamiq.mockups::HCurly" x="247" y="1148" w="193" h="152" measuredW="200" measuredH="80" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+        <text>These%20are%20actionable%20%0AThey%20will%20be%20able%20to%20send%20a%20thank%20you%20from%20here.%0AAny%20other%20actioable%20items%20will%20have%20an%20icon%20that%20has%20a%20pop%20over%20describing%20what%20it%20does.</text>
+      </controlProperties>
+    </control>
+    <control controlID="221" controlTypeID="com.balsamiq.mockups::Canvas" x="63" y="106" w="1024" h="1734" measuredW="100" measuredH="70" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.5</backgroundAlpha>
+        <color>0</color>
+      </controlProperties>
+    </control>
+    <control controlID="222" controlTypeID="com.balsamiq.mockups::Component" x="351" y="836" w="452" h="450" measuredW="452" measuredH="450" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="9">
+          <text>Thank%20you%20so%20much%20for%20donating%20to%20our%20program%21</text>
+        </override>
+        <override controlID="5">
+          <text>donor@emailaddress.com</text>
+        </override>
+        <override controlID="13">
+          <text>Send%20Thank%20You%20Email</text>
+        </override>
+        <override controlID="7">
+          <text>teacher@emailaddress.com</text>
+        </override>
+        <src>$ACCOUNT/assets/Email%20a%20Friend%20Dialog.bmml#Email%20a%20Friend%20Dialog</src>
+      </controlProperties>
+    </control>
+    <control controlID="223" controlTypeID="com.balsamiq.mockups::VCurly" x="829" y="990" w="-1" h="-1" measuredW="180" measuredH="140" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>15374745</color>
+        <text>Not%20sure%20if%20this%20should%20be%20automaticall%20sent%20or%20not.</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
