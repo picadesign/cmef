@@ -1,0 +1,28 @@
+$assets-layout: vertical ;
+$assets-sprite: sprite-map("assets/*.png") ;
+@import "assets/dashicons-color";
+
+.container{
+	overflow:auto;
+	.half{
+		width:50%;
+	}
+	.left{
+		float:left;
+	}
+	.right{
+		float:right
+	}
+
+	.clear{
+		clear:both;
+	}
+
+	.two-thirds{
+		width:66%;
+	}
+
+	.one-third{
+		width:33%;
+	}
+}

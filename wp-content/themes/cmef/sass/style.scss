@@ -1,0 +1,39 @@
+/*
+ 
+	This is the core includes for compass these should not have to changed or affected.
+
+ */
+
+/*
+	IMAGE SPRITES
+ */
+
+//The layout sprite is created with a reference to $layout-sprite, 
+//so we can have more control with it, like calling the image with coordinates in a single declaration
+//This is mostly so we can use sprite images in background() for laying backgrounds, like gradients + images
+$assets-layout: vertical ;
+$assets-sprite: sprite-map("assets/*.png") ;
+//Core Compass
+@import "compass";
+@import "compass/css3";
+
+//Import the core files for layouts.
+@import "compass/layout";
+
+//Sticky Footer
+@include sticky-footer(100px);
+
+//Include the Skeleton© Framework
+@import "assets/skeleton/base";
+@import "assets/skeleton/skeleton";
+@import "assets/skeleton/layout";
+
+/*
+	Fonts
+
+	// Please check the file 'assets/skeleton/_layout.scss' for proper font declaration
+ */
+@import "assets/fonts";
+
+//Set up the theme html base and fixes
+@import "basics/theme-html-base"
