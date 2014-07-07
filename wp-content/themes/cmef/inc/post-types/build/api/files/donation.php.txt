@@ -239,6 +239,7 @@
 	* Fourth is the payment method for wuick reference.
 	*/
 
+	add_action( 'manage_donation_posts_custom_column' , 'custom_donations_columns', 10, 2 );
 	function custom_donations_columns( $column, $post_id ) {
 		
 	    switch ( $column ) {
@@ -256,10 +257,9 @@
 		    break;
 	    }
 	}
-	add_action( 'manage_donation_posts_custom_column' , 'custom_donations_columns', 10, 2 );
 
 	/* Add a menu item under donations to create a pdf and csv of the donations */
-	
+	add_action('admin_menu' , 'create_custom_donation_menu');
 	function create_custom_donation_menu() {
 		/**
 		* We are creating a page to export our donations to a pdf or csv...Need to find the support for that. 
@@ -364,4 +364,4 @@
 			<?php
 			}
 	}
-	add_action('admin_menu' , 'create_custom_donation_menu');
+

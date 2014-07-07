@@ -34,7 +34,10 @@
 	);
 
 	register_post_type( 'program', $args );
-
+	/**
+	* META BOXES
+	* If you need to add more please add them below in the function.
+	*/ 
 	add_action( 'add_meta_boxes', 'add_program_meta_boxes' );  
 	function add_program_meta_boxes(){
 		function fundraising_goal_admin($post){ ?>
@@ -143,7 +146,7 @@
 		/**
 		* We only need the below meta box if the program has already been created.. 
 		* So let's check the url to see if we are using wordpress's 'post-new.php' file.
-		* We will pull in the donations and expenses to create a balance looking thing.
+		* We will pull in the donations and expenses to create a balance table.
 		* 
 		* We will add some more doc's a bit later.
 		*/
@@ -201,7 +204,10 @@
 			add_meta_box( 'program-balance', __('Account Activity'), 'balance_admin', 'program', 'normal', 'core' );
 		}
 	}
-
+	/**
+	* SAVE META BOXES
+	* if you need to save a metabox of field please add them in the function below.
+	*/
 	function save_program_meta_boxes_data($post_id){
 		//echo '<pre>'; print_r($_POST); print_r($post_id); echo '</pre>';
 		
