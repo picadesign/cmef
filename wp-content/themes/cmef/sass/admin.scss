@@ -13,7 +13,9 @@ $assets-sprite: sprite-map("assets/*.png") ;
 	.right{
 		float:right
 	}
-
+	.full-width{
+		width:100%;
+	}
 	.clear{
 		clear:both;
 	}
@@ -27,6 +29,16 @@ $assets-sprite: sprite-map("assets/*.png") ;
 	}
 }
 
-.margin-right{
-		margin-right:20px;
+.remove{
+	.paddings{
+		padding:0;
 	}
+
+	.margins{
+		margin:0 !important; 
+	}
+}
+
+.margin-right{
+	margin-right:20px;
+}

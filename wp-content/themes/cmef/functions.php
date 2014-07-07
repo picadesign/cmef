@@ -31,6 +31,9 @@
 		// Load Our Post Types
 		include('inc/post-types.php');
 		include('inc/helpers.php');
+		require dirname(__FILE__) . '/inc/AbstractBase.php'; 
+		require dirname(__FILE__) . '/inc/Reader.php'; 
+		require dirname(__FILE__) . '/inc/Writer.php';
 
 	}//mygreendowntown_theme_setup
 

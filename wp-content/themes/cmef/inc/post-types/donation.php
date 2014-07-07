@@ -11,7 +11,7 @@
 	* 
 	*/
 
-	// Pretty self explanitory but we are creating the donation post type.
+	/* Pretty self explanitory but we are creating the donation post type. */
 	$labels = array(
 		'name'               => _x( 'Donations', 'post type general name', 'your-plugin-textdomain' ),
 		'singular_name'      => _x( 'Donation', 'post type singular name', 'your-plugin-textdomain' ),
@@ -69,14 +69,14 @@
 	add_action( 'add_meta_boxes', 'add_donation_meta_boxes' );  
 	function add_donation_meta_boxes(){
 
-		// Create contribution amount meta box
+		/* Create contribution amount meta box */
 		function contribution_amount_admin($post){
-			// Store the existing meta data in a variable so we can access it later and prefill the fields.
+			/* Store the existing meta data in a variable so we can access it later and prefill the fields. */
 			$contribution_amount = get_post_meta( $post->ID, '_contribution-amount', true);
 			wp_nonce_field( 'meta_box', 'meta_box_nonce' );
 			
 
-			// CMEF has a few prefilled donation amounts. I'm giving them one more. This part needs a bit more work once we get to the front end. 
+			/* CMEF has a few prefilled donation amounts. I'm giving them one more. This part needs a bit more work once we get to the front end.  */
 			?>
 			<div class="container">
 					<input type="radio" value="25" name="payment-amount" <?php checked( '25', $contribution_amount); ?>> $25 <br />
@@ -85,16 +85,16 @@
 					<input type="radio" value="250" name="payment-amount" <?php checked( '250', $contribution_amount); ?>> $250 <br />
 					<input type="radio" value="500" name="payment-amount" <?php checked( '500', $contribution_amount); ?>> $500 <br />
 					<input type="radio" value="1000" name="payment-amount" <?php checked( '1000', $contribution_amount); ?>> $1,000 <br />
-					<input type="radio" value="other" name="payment-amount"> Other Amount <br />
-					<input type="number" name="other-payment-amount" placeholder="Other Amount" value="<?php echo $contribution_amount ?>">
+					<input type="number" name="payment-amount" placeholder="Other Amount" value="<?php echo $contribution_amount ?>">
 			</div>
 
 		<?php }
 		add_meta_box('contribution-amount', __('Contribution Amount'), 'contribution_amount_admin', 'donation', 'side', 'core');
 
-		// Create program ID meta box
-		function program_id_admin($post){
-			// Store the existing meta data in a variable so we can access it later and prefill the fields.
+		/* Create program ID meta box */
+		function program_id_admin(){
+			global $post;
+			/* Store the existing meta data in a variable so we can access it later and prefill the fields. */
 			$program_id = get_post_meta( $post->ID, '_program-id', true);
 
 			/** 
@@ -103,17 +103,30 @@
 			* can track how much the program has for donations.
 			*/
 
-			?>
-			<div class="container">
-					<input type="text" value="<?php echo $program_id;  ?>" name="program-id" placeholder="Program ID">
-			</div>
+			$args = array(
+				'post_type'   => 'program',
+			);
+			
+			$the_query = new WP_Query( $args );
 
-		<?php }
+			/* Create the dropdown usgint he data we gathered above. We will store the program id so we can use if for later. */
+			if ( $the_query->have_posts() ) {
+				echo '<select name="program-id" id="">';
+					echo '<option value="none">None</option>';
+				while ( $the_query->have_posts() ) {
+					$the_query->the_post();
+					echo '<option value="' . $post->ID . '"' . selected( $post->ID, $program_id, true) . '>' . $post->post_title .'</option>';
+				}
+				echo '</select>';
+			}
+			/* Restore original Post Data */
+			wp_reset_postdata();	
+		}
 		add_meta_box('program-id', __('Program Donated To'), 'program_id_admin', 'donation', 'side', 'core');
 
-		// Create payment method meta box
+		/* Create payment method meta box */
 		function payment_method_admin($post){
-			// Store the existing meta data in a variable so we can access it later and prefill the fields.
+			/* Store the existing meta data in a variable so we can access it later and prefill the fields. */
 			$payment_method = get_post_meta( $post->ID, '_payment-method', true); 
 
 			/**
@@ -130,11 +143,12 @@
 	<?php }
 		add_meta_box('payment-method', __('Payment Method'), 'payment_method_admin', 'donation', 'side', 'core');
 
-		// Create donor information meta box
+		/* Create donor information meta box */
 		function donor_information_admin($post){
-			// Store the existing meta data in a variables so we can access it later and prefill the fields.
-			$donation_address = get_post_meta( $post->ID, '_donation-address', true);
-			$donor_name = get_post_meta( $post->ID, '_donor-name', true);
+			global $post_id;
+			/* Store the existing meta data in a variables so we can access it later and prefill the fields. */
+			$donation_address = get_post_meta( $post_id, '_donation-address', true);
+			$donor_name = get_post_meta( $post_id, '_donor-name', true);
 
 			/**
 			* We are going to store the donation address and donation name in an array. 
@@ -167,13 +181,13 @@
 		add_meta_box('donor-information', __('Donor Information'), 'donor_information_admin', 'donation', 'normal', 'core');
 	}
 
-	// This function will be used to save the post.
-	function save_meta_boxes_data( $post_id ) {
-		// Make $post available
+	/* This function will be used to save the post. */
+	function save_donation_meta_boxes_data( $post_id ) {
+		/* Make $post available */
 		global $post, $wpdb;
-		// Check if we have a nounce set. We use this for an authentication method to make sure we are on the right page.
+		/* Check if we have a nounce set. We use this for an authentication method to make sure we are on the right page. */
 		if(isset($_POST['meta_box_nonce'])){
-			// Let's store the address in an array. We will save the array as one meta.
+			/* Let's store the address in an array. We will save the array as one meta. */
 			$address = array(
 				'street_1' => $_POST['street-address-1'],
 				'street_2' => $_POST['street-address-2'],
@@ -182,27 +196,22 @@
 				'zip'      => $_POST['zip'],
 				'country'  => $_POST['country']
 			);
-			// Let's store the name in an array. We will save the array as one meta
+			/* Let's store the name in an array. We will save the array as one meta */
 			$name = array(
 				'first' => $_POST['first-name'],
 				'middle' => $_POST['middle-name'],
 				'last' => $_POST['last-name'],
 			);
 
-			// Update each of the metadata from above. If we have to create another meta box DO NOT FORGET to add it here to be saved.
+			/* Update each of the metadata from above. If we have to create another meta box DO NOT FORGET to add it here to be saved. */
 			update_post_meta( $post_id, '_donation-address', $address );
 			update_post_meta( $post_id, '_donor-name', $name );
 			update_post_meta( $post_id, '_payment-method', $_POST['payment-method'] );
 			update_post_meta( $post_id, '_program-id', $_POST['program-id'] );
-			
-			if($_POST['payment-amount'] != 'other'):;
-				update_post_meta( $post_id, '_contribution-amount', $_POST['payment-amount'] );
-			else:;
-				update_post_meta( $post_id, '_contribution-amount', $_POST['other-payment-amount'] );
-			endif;
+			update_post_meta( $post_id, '_contribution-amount', $_POST['payment-amount'] );
 		}
 	}
-	add_action( 'save_post', 'save_meta_boxes_data' );
+	add_action( 'save_post', 'save_donation_meta_boxes_data' );
 
 	/**
 	* Below we are going to update the columns on the edit donations page. (The page where you see the table of all donations).
@@ -222,7 +231,14 @@
 	}
 	add_filter( 'manage_donation_posts_columns', 'donation_columns' ) ;
 
-	// Show the donation post content in the column.
+	/** 
+	* Below we show the donation post content in the column. 
+	* First Column is the ID with a link to the edit post page. 
+	* Second is the contribution amount. 
+	* Third is the program ID that it belong to. 
+	* Fourth is the payment method for wuick reference.
+	*/
+
 	add_action( 'manage_donation_posts_custom_column' , 'custom_donations_columns', 10, 2 );
 	function custom_donations_columns( $column, $post_id ) {
 		
@@ -234,7 +250,7 @@
 			echo '$' . get_post_meta( $post_id , '_contribution-amount' , true ) . '.00';
 			break;
 		case 'program' :
-		    echo get_post_meta( $post_id , 'publisher' , true );
+		    echo '<a href="' . get_edit_post_link(get_post_meta( $post_id, '_program-id', true)) . '">' . get_the_title(get_post_meta( $post_id, '_program-id', true)) .'</a>';
 		    break;
 		case 'payment-method':
 			echo get_post_meta( $post_id , '_payment-method' , true );
@@ -242,18 +258,26 @@
 	    }
 	}
 
-	// Add a menu item under donations to create a pdf and csv of the donations
+	/* Add a menu item under donations to create a pdf and csv of the donations */
 	add_action('admin_menu' , 'create_custom_donation_menu');
 	function create_custom_donation_menu() {
-		// We are creating a page to export our donations to a pdf or csv...Need to find the support for that.
+		/**
+		* We are creating a page to export our donations to a pdf or csv...Need to find the support for that. 
+		* Below we will create some HTML to output on to the admin screen then well addin a custom query when they decide to filter.
+		*/
 		add_submenu_page('edit.php?post_type=donation', 'Export Donations to PDF or CSV', 'Export to PDF or CSV', 'edit_posts', basename(__FILE__), 'create_donation_spreadsheets');
-		function create_donation_spreadsheets(){ global $post ?>
+		function create_donation_spreadsheets(){ global $post; 
+			/* Generate the HTML. */ ?> 
 			<div class="container full margin-right">
 				<form action="" method="post">
 					<h1>Export to PDF or CSV</h1>
 					<br />
+					
 					Starting Date: <input type="date" name="start-date" value="<?php echo date('Y-m-d') ?>">
 					Ending Date: <input type="date" name="end-date" value="<?php echo date('Y-m-d') ?>">
+					<?php /* We need to create few hidden fiels so we can access some information with javascript. */ ?> 
+					<input type="hidden" value="<?php echo rand(1111111111111, 99999999999999) ?>" name="filename">
+					<input type="hidden" value="<?php echo get_bloginfo( 'url' ); ?>" name="bloginfoURL">
 					<br />
 					<h2>PDF or CSV?</h2>
 					<input type="checkbox" value="CSV" name="csv"> CSV <br />
@@ -262,12 +286,14 @@
 					<input class="submit button" type="submit">
 				</form>
 				<br><br>
-<?php
+				<?php
+				/* Create the query if we are on have the variable $_POST; (You clicked submit.) */
 				if($_POST){
+					/* Create an array of the date so we can use it in the query. */
 					$start_date = explode('-', $_POST['start-date']);
 					$end_date = explode('-', $_POST['end-date']);
-					// Just in case we need it.
-					// print_r($end_date); 
+
+					//WP Query Arguments
 					$args = array(
 						'post_type' => 'donation',
 						'posts_per_page' => -1,
@@ -284,20 +310,38 @@
 							)
 						)
 					);
+					/* Run the query. */
 					$the_query = new WP_Query( $args );
-					// The Loop
+					
+					/* The Loop */
 					if ( $the_query->have_posts() ) {
+						/* Start the table and include the header row. */
 						echo '<table class="wp-list-table widefat fixed posts">';
-						echo '<thead><tr><th scope="col" class="manage-column">Donation ID</th><th class="manage-column">Amount</th><th class="manage-column">Program ID</th><th class="manage-column">Date</th></tr></thead>';
+						echo '<thead><tr><th scope="col" class="manage-column">Donation ID</th><th class="manage-column">Amount</th><th class="manage-column">Program ID</th><th class="manage-column">Date</th></tr></thead>'; 
+						/* We are creating a javascript element so we can access the information from the above form. Which ultimately includes the information in the hidden fields (the important bits). */ ?>
+
+						<script type='text/javascript'> var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>; </script> <?php
+
+						/**
+						* We have included a library to help us with writing to a csv file. We are going to write to a temp file.
+						* After/if the user clicks on the download the template file. The file will then be deleted.
+						*/
+
+						$writer = new \EasyCSV\Writer(ABSPATH . 'temp_csv_files/exported-csv-' . $_POST['filename'] .'.csv');
+						$writer->writeRow('Donation ID, Amount, Program ID, Date');
+						$reader = new \EasyCSV\Reader(ABSPATH . 'temp_csv_files/exported-csv-' . $_POST['filename'] .'.csv');
+						
+						/* Loop through the posts. */
 						while ( $the_query->have_posts() ) {
 							$the_query->the_post();
 							//print_r($post);
-							echo '<tbody id="the-list"><tr><td>' . $post->ID . '</td><td>' . '$' . get_post_meta( $post->ID, '_contribution-amount', true) . '</td><td>' . get_post_meta( $post->ID, '_program-id', true) . '</td><td>' . $post->post_date . '</td></tr></tbody>';
+							echo '<tr><td>' . $post->ID . '</td><td>' . '$' . get_post_meta( $post->ID, '_contribution-amount', true) . '</td><td>' . get_post_meta( $post->ID, '_program-id', true) . '</td><td>' . $post->post_date . '</td></tr>';
+							$row = $post->ID . ',' . get_post_meta( $post->ID, '_contribution-amount', true) . ',' . get_post_meta( $post->ID, '_program-id', true) . ',' . $post->post_date;
+							$writer->writeRow($row);
+
 						};
+						/* Close the table. */
 						echo '</table>';
-					}
-					else{
-						// no posts found
 					}
 
 					/* Restore original Post Data */
@@ -305,16 +349,18 @@
 
 				} ?>
 				<br />
-		<?php	if($_POST['csv'] == 'CSV'){
+				<?php
+				/* If the post shows that the box for csv was checked then show the download button and vice versa or both. */
+				if($_POST && $_POST['csv'] == 'CSV'){
 					echo '<div class="button" id="download-csv">Download CSV</div>';
 				}
-				elseif($_POST['pdf'] == 'PDF'){
+				elseif($_POST && $_POST['pdf'] == 'PDF'){
 					echo '<div class="button" id="download-pdf">Download PDF</div>';
 				}
 				else{
 
 				} ?>
 			</div>
-<?php
+			<?php
 			}
 	}
