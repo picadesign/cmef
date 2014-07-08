@@ -4,15 +4,15 @@ jQuery(function ($) {
         * This little script will shoot an ajax request back to the server to delete the file.
         */
         
-	$('#download-csv').click(function(){
+	$('#download-csv').click( function(){
 		window.open('../temp_csv_files/exported-csv-'+ $_POST['filename'] +'.csv');
 
-		$.post($_POST['bloginfoURL'] + '/wp-admin/admin-ajax.php', {
+		$.post( $_POST['bloginfoURL'] + '/wp-admin/admin-ajax.php', {
                 	//the function in ajax.php, pass the data through.
                 	action: 'delete_exported_csv',
                 	file: 'temp_csv_files/exported-csv-'+ $_POST['filename'] +'.csv'
                 }, function(){
-                	console.log('file_deleted');
+                	// console.log("file_deleted");
                 })
 	});
 
