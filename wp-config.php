@@ -19,13 +19,13 @@
 define('DB_NAME', 'cmef_wordpress');
 
 /** MySQL database username */
-define('DB_USER', 'root_remote');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '1309piCa');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
-define('DB_HOST', 'mysql.pica.is');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -78,7 +78,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
