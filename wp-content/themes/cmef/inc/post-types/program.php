@@ -227,4 +227,184 @@
 
 	}
 	add_action( 'save_post', 'save_program_meta_boxes_data' );
+
+/* Add a menu item under donations to create a pdf and csv of the donations */
+
+function create_custom_program_menu() {
+    /**
+     * We are creating a page to export our donations to a pdf or csv...Need to find the support for that.
+     * Below we will create some HTML to output on to the admin screen then well addin a custom query when they decide to filter.
+     */
+    add_submenu_page('edit.php?post_type=program', 'Create a Report', 'Create a Report', 'edit_posts', basename(__FILE__), 'create_program_spreadsheets');
+    function create_program_spreadsheets(){ global $post;
+        /* Run Some Query's. Store the query var in a array for we can run the query multiple times. */
+
+
+        /* Generate the HTML. */ ?>
+        <div class="container full margin-right">
+            <form action="" method="post">
+                <h1>Export to PDF or CSV</h1>
+                <br />
+
+                <label for="start-date">Starting Date:</label><input type="date" name="start-date" value="<?php echo date('Y-m-d') ?>">
+                <label for="end-date">Ending Date:</label><input type="date" name="end-date" value="<?php echo date('Y-m-d') ?>">
+                <label for="post-type">Run Report for:</label>
+                <select name="post-type">
+                    <option value="">- Select Post Type -</option>
+                    <option value="donation">Donations</option>
+                    <option value="expense">Expenses</option>
+                    <option value="donation, expense">Both</option>
+                </select>
+                <?php
+                    $args = array(
+                        'post_type' => 'program',
+                        'posts_per_page' => -1,
+                    );
+
+                    $program_query = new WP_Query($args);
+                    if ( $program_query->have_posts() ) {
+                        echo '<select name="program-id">
+                                    <option value="">- None -</option>';
+                        while($program_query->have_posts() ){
+                            $program_query->the_post(); ?>
+                            <option value="<?php echo $post->ID; ?>"><?php echo $post->post_title . ' - PID:' . $post->ID ?></option>
+                       <?php }
+                        echo '</select>';
+                    }
+                    /* Restore original Post Data */
+                    wp_reset_postdata();
+                ?>
+                <br/>
+                <label for="first-name">First Name: </label><input name="first-name" type="text" value="" placeholder="Search by First Name"/>
+								<label for="last-name">Last Name: </label><input name="last-name" type="text" value="" placeholder="Search by Last Name"/>
+								<label for="amount">Amount: </label><input name="amount" type="text" value="" placeholder="Search by Amount"/>
+                <?php /* We need to create few hidden fields so we can access some information with javascript. */ ?>
+                <input type="hidden" value="<?php echo rand(1111111111111, 99999999999999) ?>" name="filename">
+                <input type="hidden" value="<?php echo get_bloginfo( 'url' ); ?>" name="bloginfoURL">
+                <br />
+                <h2>PDF or CSV?</h2>
+                <input type="checkbox" value="CSV" name="csv"> CSV <br />
+                <input type="checkbox" value="PDF" name="pdf"> PDF <br />
+                <br />
+                <input class="submit button" type="submit">
+            </form>
+            <br><br>
+            <?php
+            /* Create the query if we are on have the variable $_POST; (You clicked submit.) */
+            if($_POST){
+                /* Create an array of the date so we can use it in the query. */
+                $start_date = explode('-', $_POST['start-date']);
+                $end_date = explode('-', $_POST['end-date']);
+
+                //WP Query Arguments
+                $args = array(
+                    'post_type' => 'donation',
+                    'posts_per_page' => -1,
+                    'date_query' => array(
+                        'after' => array(
+                            'year' => $start_date[0],
+                            'month'=> $start_date[1],
+                            'day' => $start_date[2],
+                        ),
+                        'before' => array(
+                            'year' => $end_date[0],
+                            'month'=> $end_date[1],
+                            'day' => $end_date[2],
+                        )
+                    )
+                );
+                /* Run the query. */
+                $the_query = new WP_Query( $args );
+
+                /* The Loop */
+                if ( $the_query->have_posts() ) {
+
+                    /* Start the table and include the header row. */
+
+                    echo '	<table class="wp-list-table widefat fixed posts">
+									<thead>
+										<tr>
+											<th class="manage-column">Program ID</th>
+											<th class="manage-column">First Name</th>
+											<th class="manage-column">Last Name</th>
+											<th class="manage-column">Street Address</th>
+											<th class="manage-column">City</th>
+											<th class="manage-column">State</th>
+											<th class="manage-column">Zip</th>
+											<th class="manage-column">Date</th>
+											<th class="manage-column">Amount</th>
+											<th class="manage-column">checkB</th>
+											<th class="manage-column">Memo</th>
+										</tr>
+									</thead>';
+
+                    /* We are creating a javascript element so we can access the information from the above form. Which ultimately includes the information in the hidden fields (the important bits). */ ?>
+
+                    <script type='text/javascript'> var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>; </script> <?php
+
+                    /**
+                     * We have included a library to help us with writing to a csv file. We are going to write to a temp file.
+                     * After/if the user clicks on the download the template file (see the javascript documentation). The file will then be deleted.
+                     */
+
+                    $writer = new \EasyCSV\Writer(ABSPATH . 'temp_csv_files/exported-csv-' . $_POST['filename'] .'.csv');
+                    $writer->writeRow('program_id, first_name, last_name, street_address, city, state, zip, date, amount, checkB, memo');
+                    $reader = new \EasyCSV\Reader(ABSPATH . 'temp_csv_files/exported-csv-' . $_POST['filename'] .'.csv');
+
+                    /* Loop through the posts. */
+                    while ( $the_query->have_posts() ) {
+                        $the_query->the_post();
+                        if(get_post_meta( $post->ID , '_payment-method' , true ) == 'Check'){
+                            $check = 1;
+                        }
+                        else{
+                            $check = 0;
+                        }
+                        echo '	<tr>
+										<td>' . get_post_meta( $post->ID, '_program-id', true) . '</td>
+										<td>' . get_post_meta( $post->ID, '_donor-name', true )['first'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donor-name', true )['last'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donation-address', true )['street_1'] . ' ' . get_post_meta( $post->ID, '_donation-address', true )['street_2'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donation-address', true )['city'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donation-address', true )['state'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donation-address', true )['zip'] . '</td>
+										<td>' . $post->post_date . '</td>
+										<td>' . '$' . get_post_meta( $post->ID, '_contribution-amount', true) . '.00' . '</td>
+										<td>' . $check . '</td>
+										<td>' . $post->post_content . '</td>
+
+									</tr>';
+
+                        /* Write the row to the csv file */
+                        $row = get_post_meta( $post->ID, '_program-id', true) . ',' . get_post_meta( $post->ID, '_donor-name', true )['first'] . ',' . get_post_meta( $post->ID, '_donor-name', true )['last'] . ',' . get_post_meta( $post->ID, '_donation-address', true )['street_1'] . ' ' . get_post_meta( $post->ID, '_donation-address', true )['street_2'] . ',' . get_post_meta( $post->ID, '_donation-address', true )['city'] . ',' . get_post_meta( $post->ID, '_donation-address', true )['state'] . ',' . get_post_meta( $post->ID, '_donation-address', true )['zip'] . ',' . $post->post_date . ',' . get_post_meta( $post->ID, '_contribution-amount', true) . ',' . $check . ',' . $post->post_content;
+                        $writer->writeRow($row);
+
+                    };
+                    /* Close the table. */
+                    echo '</table>';
+                }
+
+                /* Restore original Post Data */
+                wp_reset_postdata();
+
+            } ?>
+            <br />
+            <?php
+
+            /* If the post shows that the box for csv was checked then show the download button and vice versa or both. */
+            if($_POST && $_POST['csv'] == 'CSV'){
+                echo '<div class="button" id="download-csv">Download CSV</div>';
+            }
+            elseif($_POST && $_POST['pdf'] == 'PDF'){
+                echo '<div class="button" id="download-pdf">Download PDF</div>';
+            }
+            else{
+
+            } ?>
+
+        </div>
+    <?php
+    }
+}
+add_action('admin_menu' , 'create_custom_program_menu');
 ?>

@@ -210,13 +210,27 @@
 					$the_query = new WP_Query( $args );
 					// The Loop
 					if ( $the_query->have_posts() ) {
-						echo '<table class="wp-list-table widefat fixed posts">';
-						echo '<thead><tr><th scope="col" class="manage-column">Expense ID</th><th class="manage-column">Amount</th><th class="manage-column">Program ID</th><th class="manage-column">Date</th></tr></thead>';
-						echo '<tbody id="the-list">';
+						echo '<table class="wp-list-table widefat fixed posts">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="manage-column">Expense ID</th>
+                                        <th class="manage-column">Program ID</th>
+                                        <th class="manage-column">Date</th>
+                                        <th class="manage-column">Amount</th>
+                                        <th class="manage-column">Memo</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="the-list">';
 						while ( $the_query->have_posts() ) {
 							$the_query->the_post();
 							//print_r($post);
-							echo '<tr><td>' . $post->ID . '</td><td>' . '$' . get_post_meta( $post->ID, '_expense-amount', true) . '</td><td>' . get_post_meta( $post->ID, '_program-id', true) . '</td><td>' . $post->post_date . '</td></tr>';
+							echo '    <tr>
+                                        <td>' . $post->ID . '</td>
+                                        <td>' . get_post_meta( $post->ID, '_program-id', true) . '</td>
+                                        <td>' . $post->post_date . '</td>
+                                        <td>' . '$' . get_post_meta( $post->ID, '_expense-amount', true) . '</td>
+                                        <td>' . $post->post_content . '</td>
+                                      </tr>';
 						};
 						echo '</tbody>';
 						echo '</table>';
