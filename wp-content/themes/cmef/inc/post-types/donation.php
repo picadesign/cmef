@@ -1,5 +1,5 @@
 <?php
-	/** 
+	/**
 	* If you need to create another meta box for this post type you will have to create
 	* a add_meta_box() function inside the add_donation_meta_boxes() function, you can 
 	* follow one below as a reference. 
@@ -11,22 +11,22 @@
 	* 
 	*/
 
-	/* Pretty self explanitory but we are creating the donation post type. */
+	/* Pretty self explanatory but we are creating the donation post type. */
 	$labels = array(
-		'name'               => _x( 'Donations', 'post type general name', 'your-plugin-textdomain' ),
-		'singular_name'      => _x( 'Donation', 'post type singular name', 'your-plugin-textdomain' ),
-		'menu_name'          => _x( 'Donations', 'admin menu', 'your-plugin-textdomain' ),
-		'name_admin_bar'     => _x( 'Donation', 'add new on admin bar', 'your-plugin-textdomain' ),
-		'add_new'            => _x( 'Add New', 'Donation', 'your-plugin-textdomain' ),
-		'add_new_item'       => __( 'Add New Donation', 'your-plugin-textdomain' ),
-		'new_item'           => __( 'New Donation', 'your-plugin-textdomain' ),
-		'edit_item'          => __( 'Edit Donation', 'your-plugin-textdomain' ),
-		'view_item'          => __( 'View Donation', 'your-plugin-textdomain' ),
-		'all_items'          => __( 'All Donations', 'your-plugin-textdomain' ),
-		'search_items'       => __( 'Search Donations', 'your-plugin-textdomain' ),
-		'parent_item_colon'  => __( 'Parent Donations:', 'your-plugin-textdomain' ),
-		'not_found'          => __( 'No Donations found.', 'your-plugin-textdomain' ),
-		'not_found_in_trash' => __( 'No Donations found in Trash.', 'your-plugin-textdomain' )
+		'name'               => _x( 'Donations', 'post type general name' ),
+		'singular_name'      => _x( 'Donation', 'post type singular name' ),
+		'menu_name'          => _x( 'Donations', 'admin menu' ),
+		'name_admin_bar'     => _x( 'Donation', 'add new on admin bar' ),
+		'add_new'            => _x( 'Add New', 'Donation' ),
+		'add_new_item'       => __( 'Add New Donation' ),
+		'new_item'           => __( 'New Donation' ),
+		'edit_item'          => __( 'Edit Donation' ),
+		'view_item'          => __( 'View Donation' ),
+		'all_items'          => __( 'All Donations' ),
+		'search_items'       => __( 'Search Donations' ),
+		'parent_item_colon'  => __( 'Parent Donations:' ),
+		'not_found'          => __( 'No Donations found.' ),
+		'not_found_in_trash' => __( 'No Donations found in Trash.' )
 	);
 
 	$args = array(
@@ -79,13 +79,13 @@
 			/* CMEF has a few prefilled donation amounts. I'm giving them one more. This part needs a bit more work once we get to the front end.  */
 			?>
 			<div class="container">
-					<input type="radio" value="25" name="payment-amount" <?php checked( '25', $contribution_amount); ?>> $25 <br />
-					<input type="radio" value="50" name="payment-amount" <?php checked( '50', $contribution_amount); ?>> $50 <br />
-					<input type="radio" value="100" name="payment-amount" <?php checked( '100', $contribution_amount); ?>> $100 <br />
-					<input type="radio" value="250" name="payment-amount" <?php checked( '250', $contribution_amount); ?>> $250 <br />
-					<input type="radio" value="500" name="payment-amount" <?php checked( '500', $contribution_amount); ?>> $500 <br />
-					<input type="radio" value="1000" name="payment-amount" <?php checked( '1000', $contribution_amount); ?>> $1,000 <br />
-					<input type="number" name="payment-amount" placeholder="Other Amount" value="<?php echo $contribution_amount ?>">
+					<input type="radio" value="25" name="payment-amount" <?php checked( '25', $contribution_amount); ?>><label for="payment-amount">$25</label><br />
+					<input type="radio" value="50" name="payment-amount" <?php checked( '50', $contribution_amount); ?>><label for="payment-amount">$50</label><br />
+					<input type="radio" value="100" name="payment-amount" <?php checked( '100', $contribution_amount); ?>><label for="payment-amount">$100</label><br />
+					<input type="radio" value="250" name="payment-amount" <?php checked( '250', $contribution_amount); ?>><label for="payment-amount">$250</label><br />
+					<input type="radio" value="500" name="payment-amount" <?php checked( '500', $contribution_amount); ?>><label for="payment-amount">$500</label><br />
+					<input type="radio" value="1000" name="payment-amount" <?php checked( '1000', $contribution_amount); ?>><label for="payment-amount">$1,000</label><br />
+					<input type="number" name="other-payment-amount" placeholder="Other Amount" value="<?php echo $contribution_amount ?>">
 			</div>
 
 		<?php }
@@ -208,7 +208,12 @@
 			update_post_meta( $post_id, '_donor-name', $name );
 			update_post_meta( $post_id, '_payment-method', $_POST['payment-method'] );
 			update_post_meta( $post_id, '_program-id', $_POST['program-id'] );
-			update_post_meta( $post_id, '_contribution-amount', $_POST['payment-amount'] );
+			if(!isset($_POST['payment-amount'])){
+				update_post_meta( $post_id, '_contribution-amount', $_POST['other-payment-amount'] );
+			}
+			else{
+				update_post_meta( $post_id, '_contribution-amount', $_POST['payment-amount'] );
+			}
 		}
 	}
 	add_action( 'save_post', 'save_donation_meta_boxes_data' );
@@ -315,28 +320,64 @@
 					
 					/* The Loop */
 					if ( $the_query->have_posts() ) {
+
 						/* Start the table and include the header row. */
-						echo '<table class="wp-list-table widefat fixed posts">';
-						echo '<thead><tr><th scope="col" class="manage-column">Donation ID</th><th class="manage-column">Amount</th><th class="manage-column">Program ID</th><th class="manage-column">Date</th></tr></thead>'; 
+
+						echo '	<table class="wp-list-table widefat fixed posts">
+									<thead>
+										<tr>
+											<th class="manage-column">Program ID</th>
+											<th class="manage-column">First Name</th>
+											<th class="manage-column">Last Name</th>
+											<th class="manage-column">Street Address</th>
+											<th class="manage-column">City</th>
+											<th class="manage-column">State</th>
+											<th class="manage-column">Zip</th>
+											<th class="manage-column">Date</th>
+											<th class="manage-column">Amount</th>
+											<th class="manage-column">checkB</th>
+											<th class="manage-column">Memo</th>
+										</tr>
+									</thead>'; 
+
 						/* We are creating a javascript element so we can access the information from the above form. Which ultimately includes the information in the hidden fields (the important bits). */ ?>
 
 						<script type='text/javascript'> var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>; </script> <?php
 
 						/**
 						* We have included a library to help us with writing to a csv file. We are going to write to a temp file.
-						* After/if the user clicks on the download the template file. The file will then be deleted.
+						* After/if the user clicks on the download the template file (see the javascript documentation). The file will then be deleted.
 						*/
 
 						$writer = new \EasyCSV\Writer(ABSPATH . 'temp_csv_files/exported-csv-' . $_POST['filename'] .'.csv');
-						$writer->writeRow('Donation ID, Amount, Program ID, Date');
+						$writer->writeRow('program_id, first_name, last_name, street_address, city, state, zip, date, amount, checkB, memo');
 						$reader = new \EasyCSV\Reader(ABSPATH . 'temp_csv_files/exported-csv-' . $_POST['filename'] .'.csv');
 						
 						/* Loop through the posts. */
 						while ( $the_query->have_posts() ) {
 							$the_query->the_post();
-							//print_r($post);
-							echo '<tr><td>' . $post->ID . '</td><td>' . '$' . get_post_meta( $post->ID, '_contribution-amount', true) . '</td><td>' . get_post_meta( $post->ID, '_program-id', true) . '</td><td>' . $post->post_date . '</td></tr>';
-							$row = $post->ID . ',' . get_post_meta( $post->ID, '_contribution-amount', true) . ',' . get_post_meta( $post->ID, '_program-id', true) . ',' . $post->post_date;
+							if(get_post_meta( $post->ID , '_payment-method' , true ) == 'Check'){
+								$check = 1;
+							}
+							else{
+								$check = 0;
+							}
+							echo '	<tr>
+										<td>' . get_post_meta( $post->ID, '_program-id', true) . '</td>
+										<td>' . get_post_meta( $post->ID, '_donor-name', true )['first'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donor-name', true )['last'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donation-address', true )['street_1'] . ' ' . get_post_meta( $post->ID, '_donation-address', true )['street_2'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donation-address', true )['city'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donation-address', true )['state'] . '</td>
+										<td>' . get_post_meta( $post->ID, '_donation-address', true )['zip'] . '</td>
+										<td>' . $post->post_date . '</td>
+										<td>' . '$' . get_post_meta( $post->ID, '_contribution-amount', true) . '.00' . '</td>
+										<td>' . $check . '</td>
+										
+									</tr>';
+
+							/* Write the row to the csv file */
+							$row = get_post_meta( $post->ID, '_program-id', true) . ',' . get_post_meta( $post->ID, '_donor-name', true )['first'] . ',' . get_post_meta( $post->ID, '_donor-name', true )['last'] . ',' . get_post_meta( $post->ID, '_donation-address', true )['street_1'] . ' ' . get_post_meta( $post->ID, '_donation-address', true )['street_2'] . ',' . get_post_meta( $post->ID, '_donation-address', true )['city'] . ',' . get_post_meta( $post->ID, '_donation-address', true )['state'] . ',' . get_post_meta( $post->ID, '_donation-address', true )['zip'] . ',' . $post->post_date . ',' . get_post_meta( $post->ID, '_contribution-amount', true) . ',' . $check;
 							$writer->writeRow($row);
 
 						};
@@ -350,6 +391,7 @@
 				} ?>
 				<br />
 				<?php
+
 				/* If the post shows that the box for csv was checked then show the download button and vice versa or both. */
 				if($_POST && $_POST['csv'] == 'CSV'){
 					echo '<div class="button" id="download-csv">Download CSV</div>';
@@ -360,6 +402,7 @@
 				else{
 
 				} ?>
+				
 			</div>
 			<?php
 			}
