@@ -1,4 +1,7 @@
-wp-config.php
-wp-content/themes/cmef/.sass-cache
+.DS_Store
+Thumbs.db
 .htaccess
-wp-content/themes/cmef/config.rb
+*.sublime-project
+*.sublime-workspace
+.sass-cache
+wp-config.php
