@@ -4,4 +4,5 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 .sass-cache
+temp_csv_files/*
 wp-config.php
