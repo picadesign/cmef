@@ -47,7 +47,7 @@
 	register_post_type( 'donation', $args );
 
 	/**
-	* Below we need to add the metaboxes for the fields listed below.
+	* Below we need to add the meta-boxes for the fields listed below.
 	*
 	* • Contribution Amount
 	* DONOR INFORMATION
@@ -56,12 +56,12 @@
 	* • First Name
 	* • Middle Name
 	* • Last Name
-	* • Stree Address
+	* • Street Address
 	* • City
 	* • State
 	* • Zip
 	* • Country
-	* • Anonomize Donation Checkbox.
+	* • Anonymity Donation Checkbox.
 	* • Payment Type (Check or Credit Card)
 	* • Program ID
 	*/
@@ -71,7 +71,7 @@
 
 		/* Create contribution amount meta box */
 		function contribution_amount_admin($post){
-			/* Store the existing meta data in a variable so we can access it later and prefill the fields. */
+			/* Store the existing meta data in a variable so we can access it later and pre-fill the fields. */
 			$contribution_amount = get_post_meta( $post->ID, '_contribution-amount', true);
 			wp_nonce_field( 'meta_box', 'meta_box_nonce' );
 
@@ -144,7 +144,7 @@
 		add_meta_box('payment-method', __('Payment Method'), 'payment_method_admin', 'donation', 'side', 'core');
 
 		/* Create donor information meta box */
-		function donor_information_admin($post){
+		function donor_information_admin(){
 			global $post_id;
 			/* Store the existing meta data in a variables so we can access it later and prefill the fields. */
 			$donation_address = get_post_meta( $post_id, '_donation-address', true);
@@ -184,7 +184,7 @@
 	/* This function will be used to save the post. */
 	function save_donation_meta_boxes_data( $post_id ) {
 		/* Make $post available */
-		global $post, $wpdb;
+		// global $post, $wpdb;
 		/* Check if we have a nounce set. We use this for an authentication method to make sure we are on the right page. */
 		if(isset($_POST['meta_box_nonce'])){
 			/* Let's store the address in an array. We will save the array as one meta. */
@@ -241,7 +241,7 @@
 	* First Column is the ID with a link to the edit post page.
 	* Second is the contribution amount.
 	* Third is the program ID that it belong to.
-	* Fourth is the payment method for wuick reference.
+	* Fourth is the payment method for quick reference.
 	*/
 
 	function custom_donations_columns( $column, $post_id ) {

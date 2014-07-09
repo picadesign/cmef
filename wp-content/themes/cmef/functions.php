@@ -25,15 +25,33 @@
 		* Use full for getting post data like AJAX.
 		*/
 
+		/**
+		 * Load the custom sources.
+		 * Below we include the csv writer.
+		 * And the other plugin files that do not have much development activity on them.
+		 * I've pulled the files from the plugin file.
+		 * @todo: Document this function file more.
+		 */
+
+		// CSV Creater
+		require dirname(__FILE__) . '/inc/custom-sources/AbstractBase.php';
+		require dirname(__FILE__) . '/inc/custom-sources/Reader.php';
+		require dirname(__FILE__) . '/inc/custom-sources/Writer.php';
+
+		// Search Meta Boxes
+		require dirname(__FILE__) . '/inc/custom-sources/wp-admin-search-meta.php';
+
+
+
 		// Load in our ajax
 		include('inc/ajax.php');
 
 		// Load Our Post Types
 		include('inc/post-types.php');
+		// Load some helper functions
 		include('inc/helpers.php');
-		require dirname(__FILE__) . '/inc/AbstractBase.php'; 
-		require dirname(__FILE__) . '/inc/Reader.php'; 
-		require dirname(__FILE__) . '/inc/Writer.php';
+
+
 
 	}//mygreendowntown_theme_setup
 
