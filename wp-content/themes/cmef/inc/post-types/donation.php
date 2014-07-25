@@ -42,7 +42,7 @@
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array('editor'),
-		'menu_icon'          => 'dashicons-color-bell'
+		'menu_icon'          => 'dashicons-plus'
 	);
 	register_post_type( 'donation', $args );
 

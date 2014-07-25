@@ -32,7 +32,7 @@
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array('editor'),
-		'menu_icon'          => 'dashicons-color-coin'
+		'menu_icon'          => 'dashicons-minus'
 	);
 
 	register_post_type( 'expense', $args );

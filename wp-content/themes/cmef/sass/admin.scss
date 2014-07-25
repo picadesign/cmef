@@ -42,3 +42,8 @@ $assets-sprite: sprite-map("assets/*.png") ;
 .margin-right{
 	margin-right:20px;
 }
+
+//Overide
+.toplevel_page_phimind .wp-submenu{
+	margin: auto !important;
+}
