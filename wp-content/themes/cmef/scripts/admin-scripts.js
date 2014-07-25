@@ -26,4 +26,10 @@ jQuery(function ($) {
                 console.log('focused');
                 $('input[name="payment-amount"]').prop('checked', false);
         })
+
+        $(function() {
+            $( 'input.datepicker' ).datepicker({
+                dateFormat: 'yy-mm-dd'
+            }).val();
+          });
 });
