@@ -19,7 +19,17 @@
 	                /* Run the query. */
                 $the_query = new WP_Query( $args ); ?>
                 <?php
-	                if ( $the_query->have_posts()){ ?>
+	                if ( $the_query->have_posts()): ?>
+	                <?php
+	                /**
+	                * WRITE THE TABLE TO A CSV FILE
+	                */
+	               	$writer = new \EasyCSV\Writer(ABSPATH . 'temp_csv_files/program_balances.csv');
+                    $writer->writeRow('program_id, carry_over, revenues, expenses, balance, program_name, active (y/n), date_established, CM_name, CM_email_address');
+                    $reader = new \EasyCSV\Reader(ABSPATH . 'temp_csv_files/program_balances.csv');
+	                ?>
+	                <div class="button" id="download-program-balances-csv">Download CSV</div>
+	                <br /><br />
 	                <table class="wp-list-table widefat fixed posts">
 									<thead>
 										<tr>
@@ -35,7 +45,7 @@
 											<th class="manage-column">CM Email Address</th>
 										</tr>
 									</thead> <tbody><?php 
-	                	while ( $the_query->have_posts() ) {
+	                	while ( $the_query->have_posts() ) :
 	                        $the_query->the_post(); ?>
 							<?php
 								/**
@@ -102,9 +112,25 @@
 								<td><?php echo get_the_author() ?></td>
 								<td><?php echo antispambot(get_the_author_meta('user_email', $post->post_author)); ?></td>
 							</tr>
-	                    <?php }
-	                    echo '</tbody></table>';
-	                }
+							<?php
+								$row = $post->ID . ',';
+								$row .= 'Carry Over' . ',';
+								$row .= $donations . ',';
+								$row .= $expenses . ',';
+								$row .= $balance . ',';
+								$row .= $post->post_title . ',';
+								$row .= 'Active?' . ',';
+								$row .= $post->post_date . ',';
+								$row .= get_the_author() . ',';
+								$row .= get_the_author_meta('user_email', $post->post_author) . ',';
+                        		$writer->writeRow($row);
+							?>
+	                    <?php endwhile;
+	                    echo '</tbody></table>';    
+	                else:;
+	                	echo 'Sorry CMEF doesn\'t have any projects to report.';
+	                endif;
+
                 ?>
          	</div> 
         <?php }

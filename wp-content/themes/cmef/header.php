@@ -21,7 +21,7 @@
                 <div id="logo" class="">Logo</div>
                 <div class="clearfix left">
                     <?php
-                    wp_nav_menu();
+                    //wp_nav_menu();
                     ?>
                 </div>
             </header>

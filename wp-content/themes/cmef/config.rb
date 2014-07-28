@@ -2,7 +2,7 @@
 environment = :development
 project_type = :stand_alone
 preferred_syntax = :scss
-output_style = :compressed #:nested, :expanded, :compact, or :compressed.
+output_style = :nested #:nested, :expanded, :compact, or :compressed.
 line_comments = true
 
 #Asset Paths

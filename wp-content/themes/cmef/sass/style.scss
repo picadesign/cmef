@@ -33,7 +33,14 @@ $assets-sprite: sprite-map("assets/*.png") ;
 
 	// Please check the file 'assets/skeleton/_layout.scss' for proper font declaration
  */
-@import "assets/fonts";
 
-//Set up the theme html base and fixes
-@import "basics/theme-html-base"
+/**
+ * Header
+ */
+@import "layouts/header";
+
+/**
+ * Footer
+ */
+@import "layouts/footer";
+

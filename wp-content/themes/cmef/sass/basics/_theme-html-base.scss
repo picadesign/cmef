@@ -1,9 +1,319 @@
+@import 'colors';
+
+
 html{
 	//This is where we put the floats
 	
-	header{
-		height:100px;
+	body{
+		background: image-url("background.png");
+		font-size:17px;
+		font-family: 'trade_condensedregular';
 	}
+	/**
+	* Header Styles
+	*/
+	h1{
+		font-family:'tradegothiclight';
+		font-size:2.882352941em;
+		color: $light-blue;
+	}
+	h2{
+		font-family:'tradegothiclight';
+		font-size:1.470588235em;
+		color: $gray-text;
+	}
+	h3{
+		font-family:'trade_condensedregular';
+		font-size:1.176470588em;
+		color: $gray-text;
+	}
+	h4{
+	
+	}
+	h5{
+
+	}
+	h6{
+
+	}
+
+	/**
+	 * Paragraph Styles
+	 */
+	p{
+		font-family: 'trade_condensedregular';
+		font-size:1em;
+		color:$gray-text;
+	}
+
+	/**
+	 * Preformatted
+	 */
+	pre{
+
+	}
+
+	/**
+	 * Blockquote
+	 */
+	blockquote{
+
+	}
+	
+	/**
+	 * Lists
+	 */
+	ol{
+		font-family: 'trade_condensedregular';
+		font-size:1em;
+		color: $gray-text;
+		li{
+			//list-style-position: inside;
+		}
+	}
+	
+	ul{
+		font-family: 'trade_condensedregular';
+		font-size:1em;
+		color: $gray-text;
+		margin-left:15px;
+		li{
+			list-style:disc;
+			list-style-position: inside;
+		}
+	}
+
+	dl{
+		dt{
+
+		}
+		dd{
+
+		}
+	}
+
+	/**
+	 * Links
+	 * Such as:
+	 * Anchors
+	 * Buttons
+	 * Ect.
+	 */
+	a{
+		font-family: 'trade_condensedregular';
+		font-size:1em;
+		color:$green-link-text;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		&:visited{
+			color:$green-link-text;
+		}
+
+		&:hover{
+			color: $green-link-text-hover;
+		}
+
+		
+	}
+
+	p{
+		a{
+			font-family: 'trade_condensedregular';
+			font-size:1em;
+			color:$green-link-text;
+			text-transform: uppercase;
+			text-decoration: none;
+
+			&:visited{
+				color:$green-link-text;
+			}
+
+			&:hover{
+				color: $green-link-text-hover;
+			}
+
+
+		}
+	}
+
+	.button{
+		.orange{
+
+		}
+
+		.green{
+
+		}
+
+		.gray{
+
+		}
+	}
+
+	/**
+	 * Emphasis
+	 */
+	em{
+
+	}
+
+	/**
+	 * Bolds & Strongs
+	 */
+	b, strong{
+		font-family: 'trade_condensedbold';
+		font-size: 1em ;
+		color: $gray-text;
+	}
+
+	/**
+	 * Small
+	 */
+	small{
+
+	}
+
+	/**
+	 * Cite
+	 */
+	cite{
+
+	}
+
+	/**
+	 * Quote
+	 */
+	q{
+
+	}
+
+	/**
+	 * Italic
+	 */
+	i{
+		font-family: 'trade_condensedregular';
+		color: $gray-text;
+		font-style:italic;
+	}
+
+	/**
+	 * Underline
+	 */
+	u{
+
+	}
+
+	/**
+	 * Highlighting
+	 */
+	mark{
+
+	}
+
+	/**
+	 * Edits
+	 */
+	ins{
+
+	}
+	del{
+
+	}
+
+	/**
+	 * Image
+	 */
+	img{
+
+	}
+
+	/**
+	 * Tables
+	 */
+	
+	table{
+		caption{
+
+		}
+		colgroup{
+
+		}
+		col{
+
+		}
+		tbody{
+
+		}
+		thead{
+
+		}
+		tfoot{
+
+		}
+		tr{
+			td{
+
+			}
+		}
+		th{
+
+		}
+	}
+
+	form{
+		fieldset{
+
+		}
+		legend{
+
+		}
+		label{
+
+		}
+		input{
+
+		}
+		button{
+
+		}
+		select{
+
+		}
+		datalist{
+
+		}
+		optgroup{
+
+		}
+		option{
+
+		}
+		textarea{
+
+		}
+		keygen{
+
+		}
+		output{
+
+		}
+		progress{
+
+		}
+		meter{
+
+		}
+	}
+
+	/**
+	 * Spacer Styles
+	 * Such as:
+	 * Horizontal Rules
+	 */
+	hr{
+	}
+	
 
 
 }
