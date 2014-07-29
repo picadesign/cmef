@@ -18,8 +18,8 @@
 	***********************************************************/
 
 	/* Theme Setup Action */
-	add_action( 'init', 'mygreendowntown_theme_setup' );
-	function mygreendowntown_theme_setup() {
+	add_action( 'init', 'cmef_theme_setup' );
+	function cmef_theme_setup() {
 		/** 
 		* Everything should go in here.
 		* Use full for getting post data like AJAX.
@@ -51,9 +51,12 @@
 		// Load some helper functions
 		include('inc/helpers.php');
 
+		// Load the Menus
+		include ('inc/menus.php');
 
 
-	}//mygreendowntown_theme_setup
+
+	}//cmef_theme_setup
 
 	//Include the scripts
 	include('inc/scripts.php');

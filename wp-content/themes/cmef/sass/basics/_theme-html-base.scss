@@ -7,25 +7,26 @@ html{
 	body{
 		background: image-url("background.png");
 		font-size:17px;
-		font-family: 'trade_condensedregular';
+		//@extend .fonts.trade.condensed.regular;
+		@extend .fonts.trade.condensed.regular;
 	}
 	/**
 	* Header Styles
 	*/
 	h1{
-		font-family:'tradegothiclight';
+		@extend .fonts.trade.gothic.light;
 		font-size:2.882352941em;
-		color: $light-blue;
+		color: $eastern-blue;
 	}
 	h2{
-		font-family:'tradegothiclight';
+		@extend .fonts.trade.gothic.light;
 		font-size:1.470588235em;
-		color: $gray-text;
+		color: $scorpion;
 	}
 	h3{
-		font-family:'trade_condensedregular';
+		@extend .fonts.trade.condensed.regular;
 		font-size:1.176470588em;
-		color: $gray-text;
+		color: $scorpion;
 	}
 	h4{
 	
@@ -41,9 +42,9 @@ html{
 	 * Paragraph Styles
 	 */
 	p{
-		font-family: 'trade_condensedregular';
+		@extend .fonts.trade.condensed.regular;
 		font-size:1em;
-		color:$gray-text;
+		color:$scorpion;
 	}
 
 	/**
@@ -64,18 +65,18 @@ html{
 	 * Lists
 	 */
 	ol{
-		font-family: 'trade_condensedregular';
+		@extend .fonts.trade.condensed.regular;
 		font-size:1em;
-		color: $gray-text;
+		color: $scorpion;
 		li{
 			//list-style-position: inside;
 		}
 	}
 	
 	ul{
-		font-family: 'trade_condensedregular';
+		@extend .fonts.trade.condensed.regular;
 		font-size:1em;
-		color: $gray-text;
+		color: $scorpion;
 		margin-left:15px;
 		li{
 			list-style:disc;
@@ -100,18 +101,18 @@ html{
 	 * Ect.
 	 */
 	a{
-		font-family: 'trade_condensedregular';
+		@extend .fonts.trade.condensed.regular;
 		font-size:1em;
-		color:$green-link-text;
+		color:$apple;
 		text-transform: uppercase;
 		text-decoration: none;
 
 		&:visited{
-			color:$green-link-text;
+			color:$apple;
 		}
 
 		&:hover{
-			color: $green-link-text-hover;
+			color: $thatch-green;
 		}
 
 		
@@ -119,18 +120,18 @@ html{
 
 	p{
 		a{
-			font-family: 'trade_condensedregular';
+			@extend .fonts.trade.condensed.regular;
 			font-size:1em;
-			color:$green-link-text;
+			color:$apple;
 			text-transform: uppercase;
 			text-decoration: none;
 
 			&:visited{
-				color:$green-link-text;
+				color:$apple;
 			}
 
 			&:hover{
-				color: $green-link-text-hover;
+				color: $thatch-green;
 			}
 
 
@@ -162,9 +163,9 @@ html{
 	 * Bolds & Strongs
 	 */
 	b, strong{
-		font-family: 'trade_condensedbold';
+		@extend .fonts.trade.condensed.bold;
 		font-size: 1em ;
-		color: $gray-text;
+		color: $scorpion;
 	}
 
 	/**
@@ -192,8 +193,8 @@ html{
 	 * Italic
 	 */
 	i{
-		font-family: 'trade_condensedregular';
-		color: $gray-text;
+		@extend .fonts.trade.condensed.regular;
+		color: $scorpion;
 		font-style:italic;
 	}
 
@@ -272,8 +273,27 @@ html{
 
 		}
 		input{
+			height:35px;
+			width:100%;
+			//margin:15px;
+			border:none;
 
+			&:active{
+				//background-color:
+			}
 		}
+
+		input[type='text']{
+			background-color:white;
+			height:35px;
+			width:100%;
+			border:none;
+
+			&:focus{
+				outline:0;
+			}
+		}
+
 		button{
 
 		}
@@ -316,4 +336,12 @@ html{
 	
 
 
+}
+
+.alignright{
+	float:right;
+}
+
+.alignleft{
+	float:left;
 }

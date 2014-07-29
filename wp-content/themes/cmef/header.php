@@ -1,3 +1,9 @@
+<?php 
+    global $current_user;
+    global $post;
+    get_userdata();
+    //print_r($post);
+?>
 <!DOCTYPE HTML>
 <html <?php language_attributes('html') ?> >
     <head>
@@ -16,13 +22,45 @@
         <?php wp_head() ?>
     </head>
     <body <?php body_class() ?> >
-        <div id="root" class="container container-twelve">
-            <header class="container container-twelve">
-                <div id="logo" class="">Logo</div>
-                <div class="clearfix left">
-                    <?php
-                    //wp_nav_menu();
-                    ?>
+        <div id="root" class="">
+            <div class="full-width bleed header top">
+                <header class="container container-twelve">
+                    <div id="top-header">
+                        <div id="logo" class=""><a href="<?php bloginfo('url') ?>"></a></div>
+                        <?php if(is_user_logged_in()) : ?>
+                            <div class="logged-in alignright">Hello <span class="author-name"><a href="<?php echo $current_user->user_url; ?>"><?php echo $current_user->user_nicename; ?></a></span> | <span id="logout"><a href="<?php echo wp_logout_url(get_page_link()); ?>" title="Logout">LOG OUT</a></span></div>
+                        <?php endif; ?>
+                    </div>
+                </header>
+            </div>
+            <div class="full-width bleed header bottom">
+                <div class="container container-twelve">
+                    <div id="bottom-header">
+                        <div class="alignright bottom-header-left">
+                            <form role="search" class="alignleft" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+                                    <input type="text" class="search<?php echo (is_user_logged_in() ? ' longer' : ''); ?>" value="" placeholder="Search" name="s" id="s" />
+                            </form>
+                            <?php if(!is_user_logged_in()) : ?>
+                                <div class="sign-up alignleft">Sign Up / Log In</div>
+                                <div class="login-box">
+                                    <form name="loginform" id="loginform" action="<?php bloginfo('url') ?>/wp-login.php" method="post">
+										<input type="text" name="log" id="user_login" placeholder="Username">
+										<input type="password" name="pwd" id="user_pass" placeholder="Password">
+										<input type="submit" name="wp-submit" id="wp-submit" class="button-primary alignright" value="Log In">
+										<input type="hidden" name="redirect_to" value="http://dev.pica.is/cmef/our-programs/">
+										<div class="clear"></div>
+										<input name="rememberme" type="checkbox" class="alignleft" id="rememberme" value="forever"><label class="remember-forgot">Remember Me | Forgot Password</span>
+                                    </form>  
+                                    <div class="register">
+                                    	Don't have an account? Click here to SIGN UP
+                                    </div>                              
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <? wp_nav_menu( array( 'theme_location' => 'Main Navigation') ); ?>
+                        
+                    </div>
                 </div>
-            </header>
+            </div>
+            <div class="container">
             

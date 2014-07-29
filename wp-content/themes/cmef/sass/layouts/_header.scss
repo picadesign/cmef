@@ -1,3 +1,199 @@
-	header{
-		height:100px;
+.full-width.header{
+	background: rgba(0, 105, 163, 0.8);
+	//@include opacity(.8);
+	position:relative;
+
+	&.top{
+		header{
+			height:122px;
+			// margin: 0 20px 0 20px;
+			
+			#top-header{
+				padding-top:25px;
+				//overflow:auto;
+				position:relative;
+
+				#logo{
+					width: 204px;
+					height: 71px;
+					background: sprite($assets-sprite, cmef-logo) no-repeat;
+					margin:0;
+					float:left;
+					display:inline-block;
+
+					a{
+						height:100%;
+						width:100%;
+						display:inline-block;
+					}
+				}
+			}
+
+			.logged-in{
+				color:white;
+				//height:20px;
+				font-size:1.058823529em;
+				margin-top:51px;
+
+				.author-name, #logout{
+					text-transform: uppercase;
+
+					a{
+						color:white;
+
+						&:hover{
+							color:$mercury;
+						}
+					}
+				}
+			}
+
+		}
 	}
+	
+	&.bottom{
+		height:64px;
+		@include background-image(linear-gradient(rgb(220, 220, 220), rgb(204, 204, 204)));
+		margin-bottom:25px;
+
+		.container{
+			height:100%;
+		}
+
+		#bottom-header{
+			height:100%;
+
+			.bottom-header-left{
+				//padding-top:18px;
+
+				#searchform{
+					//height:px;
+					display:inline-block;
+					padding-top:5px;
+					width:277px;
+					input{
+						@extend .fonts.trade.gothic.bold;
+						color:$scorpion;
+						font-size: .875em;
+						height:25px;
+						background: sprite($assets-sprite, search-icon) no-repeat;
+						background-color:#fcfcfd;
+						padding:0;
+						padding-left: 30px;
+						margin-top:15px;
+
+						&.longer{
+
+						}
+					}
+				}
+
+				.sign-up{
+					@extend .fonts.trade.gothic.bold;
+					color:$scorpion;
+					text-transform: uppercase;
+					//padding-top:6px;
+					margin-left:60px;
+					//height:64px;
+					cursor:pointer;
+					padding:18.5px;
+					padding-top:24px;
+					display:inline-block;
+					&:hover{
+						background-color:$mercury;
+					}
+				}
+				.login-box{
+					width:340px;
+					height:175px;
+					background-color:$mercury;
+					position:absolute;
+					bottom:-205px;
+					right:20px;
+					z-index:1000;
+					padding:15px;
+
+					#loginform{
+						input[name='log'], input[name='pwd']{
+							margin-bottom:15px;
+							padding-left:5px;
+							height:35px;
+						}
+
+						input[name='pwd']{
+							width:220px;
+							float:left;
+						}
+						input[name='wp-submit']{
+							float:right;
+							width:90px;
+							height:37px;
+							padding:0;
+							background-color:$apple;
+							color:white;
+							text-transform: uppercase;
+							font-size:.941176471em;
+						}
+
+						input[type='checkbox']{
+							width:20px;
+							height:15px;
+							margin-top:3px;
+						}
+						.remember-forgot{
+							margin-top:10px;
+						}
+					}
+					.register{
+						//height:1
+					}
+				}
+			}
+
+			.menu-main-navigation-header-container{
+				height:100%;
+				width:40%;
+				display:none;
+				ul{
+					margin:0;
+					height:100%;
+					padding:0;
+					li{
+						list-style:none;
+						float:left;
+						height:100%;
+						border-right:1px solid #afaeae;
+						margin-bottom:0;
+
+						a{
+							//height:100%;
+							//width:100%;
+							margin:0;
+							display:block;
+							padding:14px;
+							@extend .fonts.trade.gothic.bold.oblique;
+							font-size:16px;
+							color:$scorpion;
+							text-transform: none;
+
+							.menu-first-word{
+								font-style:normal;
+								text-transform:uppercase;
+							}
+						}
+
+						&:first-child{
+							border-left:1px solid #afaeae;
+						}
+
+						&:hover, &.current-menu-item{
+							background-color:$mercury;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+	

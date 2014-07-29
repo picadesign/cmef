@@ -21,7 +21,7 @@ $assets-sprite: sprite-map("assets/*.png") ;
 @import "compass/layout";
 
 //Sticky Footer
-@include sticky-footer(100px);
+@include sticky-footer(205px);
 
 //Include the Skeleton© Framework
 @import "assets/skeleton/base";

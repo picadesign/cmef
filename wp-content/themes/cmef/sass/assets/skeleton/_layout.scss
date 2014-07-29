@@ -35,13 +35,26 @@
 	@media only screen and (min-width: 480px) and (max-width: 767px) {}
 	
 	/* Anything smaller than standard 960 */
-	@media only screen and (max-width: 959px) {}
+	@media only screen and (max-width: 959px) {
+		.full-width.header{
+			&.top{
+				margin-bottom:25px;
+			}
+			&.bottom{
+				display:none;
+			}
+		}
+	}
 	
 	/* iPad Portrait Only */
-	@media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {}
+	@media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {
+		
+	}
 	
 	/* Mobile Only */
-	@media only screen and (max-width: 767px) and (max-device-width: 1000px) {}
+	@media only screen and (max-width: 767px) and (max-device-width: 1000px) {
+		
+	}
 	
 	/* Mobile Landscape Only */
 	@media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {}
