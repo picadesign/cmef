@@ -1198,7 +1198,7 @@ or wrap each row of columns in a <div class="row"> */
 .fonts {
   font-weight: normal !important; }
   /* line 26, ../sass/assets/_fonts.scss */
-  .fonts.trade.condensed.bold, html b, html strong {
+  .fonts.trade.condensed.bold, html b, html strong, .full-width.footer footer .address .copyright {
     font-family: 'Trade Condensed Bold';
     font-weight: normal !important; }
   /* line 31, ../sass/assets/_fonts.scss */
@@ -1210,11 +1210,11 @@ or wrap each row of columns in a <div class="row"> */
     font-family: 'Trade Gothic Regular';
     font-weight: normal !important; }
   /* line 43, ../sass/assets/_fonts.scss */
-  .fonts.trade.gothic.bold, .full-width.header.bottom #bottom-header .bottom-header-left #searchform input, .full-width.header.bottom #bottom-header .bottom-header-left .sign-up, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='pwd'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a, .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span {
+  .fonts.trade.gothic.bold, .full-width.header.bottom #bottom-header .bottom-header-left #searchform input, .full-width.header.bottom #bottom-header .bottom-header-left .sign-up, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='pwd'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a, .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span, .full-width.footer footer ul li a, .full-width.footer footer .address .business-name {
     font-family: 'Trade Gothic Bold';
     font-weight: normal !important; }
     /* line 47, ../sass/assets/_fonts.scss */
-    .fonts.trade.gothic.bold.oblique, .full-width.header.bottom #bottom-header .bottom-header-left #searchform input.oblique, .full-width.header.bottom #bottom-header .bottom-header-left .oblique.sign-up, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input.oblique[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input.oblique[name='pwd'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .oblique.remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a.oblique, .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span.oblique, .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a {
+    .fonts.trade.gothic.bold.oblique, .full-width.header.bottom #bottom-header .bottom-header-left #searchform input.oblique, .full-width.header.bottom #bottom-header .bottom-header-left .oblique.sign-up, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input.oblique[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input.oblique[name='pwd'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .oblique.remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a.oblique, .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span.oblique, .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a, .full-width.footer footer ul li a.oblique, .full-width.footer footer .address .oblique.business-name {
       font-family: 'Trade Gothic Bold';
       font-weight: normal !important;
       font-style: oblique; }
@@ -1376,6 +1376,44 @@ html {
 .alignleft {
   float: left; }
 
+/**
+ * Add styling for icons etc. below.
+ */
+/* line 357, ../sass/basics/_theme-html-base.scss */
+.logo {
+  width: 204px;
+  height: 71px;
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 0 no-repeat; }
+  /* line 361, ../sass/basics/_theme-html-base.scss */
+  .logo.smaller {
+    width: 138px;
+    height: 48px;
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -91px no-repeat; }
+
+/* line 368, ../sass/basics/_theme-html-base.scss */
+.mail {
+  width: 31px;
+  height: 31px;
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1172px no-repeat; }
+
+/* line 374, ../sass/basics/_theme-html-base.scss */
+.twitter {
+  width: 31px;
+  height: 31px;
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1090px no-repeat; }
+
+/* line 380, ../sass/basics/_theme-html-base.scss */
+.facebook {
+  width: 31px;
+  height: 31px;
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1203px no-repeat; }
+
+/* line 386, ../sass/basics/_theme-html-base.scss */
+.google {
+  width: 31px;
+  height: 31px;
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1059px no-repeat; }
+
 /* #Font-Face
 ================================================== */
 /* 	This is the proper syntax for an @font-face file 
@@ -1478,41 +1516,49 @@ html {
           user-select: none;
           color: #5b5b5b;
           text-transform: uppercase;
-          margin-left: 60px;
+          margin-left: 20px;
           height: 100%;
           cursor: pointer;
           padding: 18.5px;
           padding-top: 23px;
           display: inline-block;
-          vertical-align: middle; }
-          /* line 103, ../sass/layouts/_header.scss */
+          vertical-align: middle;
+          -webkit-transition-property: all;
+          -moz-transition-property: all;
+          -o-transition-property: all;
+          transition-property: all;
+          -webkit-transition-duration: 0.1s;
+          -moz-transition-duration: 0.1s;
+          -o-transition-duration: 0.1s;
+          transition-duration: 0.1s; }
+          /* line 106, ../sass/layouts/_header.scss */
           .full-width.header.bottom #bottom-header .bottom-header-left .sign-up:hover {
             background-color: #e8e8e8; }
-        /* line 107, ../sass/layouts/_header.scss */
+        /* line 110, ../sass/layouts/_header.scss */
         .full-width.header.bottom #bottom-header .bottom-header-left .login-box {
           width: 340px;
           height: 175px;
           background-color: #e8e8e8;
           position: absolute;
           bottom: -175px;
-          right: 20px;
+          right: 10px;
           z-index: 1000;
           display: none; }
-          /* line 117, ../sass/layouts/_header.scss */
+          /* line 120, ../sass/layouts/_header.scss */
           .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform {
             width: 100%;
             padding: 15px; }
-            /* line 121, ../sass/layouts/_header.scss */
+            /* line 124, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='pwd'] {
               margin-bottom: 15px;
               padding-left: 5px;
               height: 35px;
               color: #5b5b5b; }
-            /* line 129, ../sass/layouts/_header.scss */
+            /* line 132, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='pwd'] {
               width: 205px;
               float: left; }
-            /* line 134, ../sass/layouts/_header.scss */
+            /* line 137, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='wp-submit'] {
               float: right;
               width: 90px;
@@ -1522,49 +1568,57 @@ html {
               color: white;
               text-transform: uppercase;
               font-size: .941176471em; }
-            /* line 145, ../sass/layouts/_header.scss */
+            /* line 148, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[type='checkbox'] {
               width: 20px;
               height: 15px;
               margin-top: 3px; }
-            /* line 150, ../sass/layouts/_header.scss */
+            /* line 153, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a {
               font-size: .882352941em;
               text-transform: none; }
-              /* line 156, ../sass/layouts/_header.scss */
+              /* line 159, ../sass/layouts/_header.scss */
               .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .remember-forgot a, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a a {
                 color: #1d89bb; }
-          /* line 161, ../sass/layouts/_header.scss */
+          /* line 164, ../sass/layouts/_header.scss */
           .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register {
             width: 100%;
             height: 40px;
             background-color: #6ca348;
             text-align: center;
             display: table; }
-            /* line 169, ../sass/layouts/_header.scss */
+            /* line 172, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span {
               display: table-cell;
               vertical-align: middle;
               color: white;
               font-size: .941176471em; }
-      /* line 180, ../sass/layouts/_header.scss */
+      /* line 183, ../sass/layouts/_header.scss */
       .full-width.header.bottom #bottom-header .menu-main-navigation-header-container {
         height: 100%;
         width: 40%;
         display: none; }
-        /* line 184, ../sass/layouts/_header.scss */
+        /* line 187, ../sass/layouts/_header.scss */
         .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul {
           margin: 0;
           height: 100%;
           padding: 0; }
-          /* line 188, ../sass/layouts/_header.scss */
+          /* line 191, ../sass/layouts/_header.scss */
           .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li {
             list-style: none;
             float: left;
             height: 100%;
             border-right: 1px solid #afaeae;
-            margin-bottom: 0; }
-            /* line 195, ../sass/layouts/_header.scss */
+            margin-bottom: 0;
+            -webkit-transition-property: all;
+            -moz-transition-property: all;
+            -o-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: 0.1s;
+            -moz-transition-duration: 0.1s;
+            -o-transition-duration: 0.1s;
+            transition-duration: 0.1s; }
+            /* line 200, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a {
               margin: 0;
               display: block;
@@ -1572,14 +1626,14 @@ html {
               font-size: 16px;
               color: #5b5b5b;
               text-transform: none; }
-              /* line 206, ../sass/layouts/_header.scss */
+              /* line 211, ../sass/layouts/_header.scss */
               .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a .menu-first-word {
                 font-style: normal;
                 text-transform: uppercase; }
-            /* line 212, ../sass/layouts/_header.scss */
+            /* line 217, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li:first-child {
               border-left: 1px solid #afaeae; }
-            /* line 216, ../sass/layouts/_header.scss */
+            /* line 221, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li:hover, .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li.current-menu-item {
               background-color: #e8e8e8; }
 
@@ -1589,3 +1643,80 @@ html {
 /* line 2, ../sass/layouts/_footer.scss */
 .full-width.footer {
   background: #5b5b5b; }
+  /* line 4, ../sass/layouts/_footer.scss */
+  .full-width.footer footer {
+    padding-top: 35px; }
+    /* line 6, ../sass/layouts/_footer.scss */
+    .full-width.footer footer ul {
+      margin: 0;
+      padding: 0; }
+      /* line 9, ../sass/layouts/_footer.scss */
+      .full-width.footer footer ul li {
+        list-style: none; }
+        /* line 11, ../sass/layouts/_footer.scss */
+        .full-width.footer footer ul li a {
+          font-size: .882352941em;
+          color: white;
+          padding: 0;
+          line-height: .882352941em; }
+          /* line 18, ../sass/layouts/_footer.scss */
+          .full-width.footer footer ul li a:hover {
+            color: #a8a8a8; }
+        /* line 24, ../sass/layouts/_footer.scss */
+        .full-width.footer footer ul li.current_page_item a {
+          color: #a8a8a8; }
+    /* line 30, ../sass/layouts/_footer.scss */
+    .full-width.footer footer .logo.smaller {
+      margin-bottom: 40px; }
+      /* line 32, ../sass/layouts/_footer.scss */
+      .full-width.footer footer .logo.smaller a {
+        display: block;
+        height: 100%;
+        width: 100%; }
+    /* line 41, ../sass/layouts/_footer.scss */
+    .full-width.footer footer .social ul li {
+      float: left;
+      margin-right: 5px;
+      -webkit-transition-property: all;
+      -moz-transition-property: all;
+      -o-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+      transition-duration: 0.5s; }
+      /* line 47, ../sass/layouts/_footer.scss */
+      .full-width.footer footer .social ul li a {
+        display: block;
+        height: 100%;
+        width: 100%; }
+      /* line 53, ../sass/layouts/_footer.scss */
+      .full-width.footer footer .social ul li:hover {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+        opacity: 0.8; }
+    /* line 60, ../sass/layouts/_footer.scss */
+    .full-width.footer footer .footer-menu {
+      padding-left: 5px; }
+    /* line 64, ../sass/layouts/_footer.scss */
+    .full-width.footer footer .address {
+      font-size: .941176471em;
+      color: white;
+      display: table;
+      padding-left: 5px; }
+      /* line 75, ../sass/layouts/_footer.scss */
+      .full-width.footer footer .address .email a {
+        color: white;
+        text-transform: none; }
+      /* line 81, ../sass/layouts/_footer.scss */
+      .full-width.footer footer .address .copyright {
+        font-size: .941176471em;
+        vertical-align: middle;
+        word-spacing: -5px; }
+        /* line 86, ../sass/layouts/_footer.scss */
+        .full-width.footer footer .address .copyright #report-a-bug {
+          text-transform: uppercase; }
+      /* line 92, ../sass/layouts/_footer.scss */
+      .full-width.footer footer .address .pica-mark {
+        float: right;
+        margin-right: 20px;
+        margin-top: -3px; }

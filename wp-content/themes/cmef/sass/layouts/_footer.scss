@@ -1,5 +1,102 @@
 .full-width{
 	&.footer{
 		background:$scorpion;
+		footer{
+			padding-top:35px;
+			ul{
+				margin:0;
+				padding:0;
+				li{
+					list-style:none;
+					a{
+						@extend .fonts.trade.gothic.bold;
+						font-size: .882352941em;
+						color:white;
+						padding:0;
+						line-height: .882352941em;
+
+						&:hover{
+							color:lighten($scorpion, 30%);
+						}
+					}
+
+					&.current_page_item{
+						a{
+							color:lighten($scorpion, 30%);
+						}
+					}
+				}
+			}
+			.logo.smaller{
+				margin-bottom:40px;
+				a{
+					display:block;
+					height:100%;
+					width:100%;
+				}
+			}
+
+			.social{
+				ul{
+					li{
+						float:left;
+						margin-right:5px;
+						@include transition-property(all);
+  						@include transition-duration(.5s);
+
+						a{
+							display:block;
+							height:100%;
+							width:100%;
+						}
+
+						&:hover{
+							@include opacity(.8);
+						}
+					}
+				}
+			}
+
+			.footer-menu{
+				padding-left:5px;
+			}
+
+			.address{
+				font-size: .941176471em;
+				color:white;
+				display:table;
+				padding-left:5px;
+				.business-name{
+					@extend .fonts.trade.gothic.bold;
+				}
+
+				.email{
+					
+					a{
+						color:white;
+						text-transform: none;
+					}
+				}
+
+				.copyright{
+					font-size: .941176471em;
+					vertical-align:middle;
+					@extend .fonts.trade.condensed.bold;
+					word-spacing:-5px;
+					#report-a-bug{
+						//@extend .fonts.trade.gothic.bold;
+						text-transform: uppercase;
+						
+					}
+				}
+				.pica-mark{
+					float:right;
+					margin-right:20px;
+					margin-top:-3px;
+					//vertical-align:middle;
+					//padding-top:10px;
+				}
+			}
+		}
 	}
 }

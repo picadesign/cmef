@@ -349,3 +349,42 @@ html{
 .alignleft{
 	float:left;
 }
+
+/**
+ * Add styling for icons etc. below.
+ */
+
+ .logo{
+ 	width: 204px;
+	height: 71px;
+	background: sprite($assets-sprite, cmef-logo) no-repeat;
+ 	&.smaller{
+		width: 138px;
+		height: 48px;
+		background: sprite($assets-sprite, cmef-logo-smaller) no-repeat;
+ 	}
+ }
+
+ .mail{
+ 	width: 31px;
+	height: 31px;
+	background: sprite($assets-sprite, mail-icon) no-repeat;
+ }
+
+ .twitter{
+ 	width:31px;
+ 	height:31px;
+ 	background: sprite($assets-sprite, twitter-icon) no-repeat;
+ }
+
+ .facebook{
+ 	width:31px;
+ 	height:31px;
+ 	background: sprite($assets-sprite, facebook-icon) no-repeat;
+ }
+
+ .google{
+ 	width:31px;
+ 	height:31px;
+ 	background: sprite($assets-sprite, google-icon) no-repeat;
+ }

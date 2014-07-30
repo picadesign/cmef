@@ -93,13 +93,16 @@
 					@include user-select(none);
 					color:$scorpion;
 					text-transform: uppercase;
-					margin-left:60px;
+					margin-left:20px;
 					height:100%;
 					cursor:pointer;
 					padding:18.5px;
 					padding-top:23px;
 					display:inline-block;
 					vertical-align: middle;
+					@include transition-property(all);
+  					@include transition-duration(.1s);
+
 					&:hover{
 						background-color:$mercury;
 					}
@@ -110,7 +113,7 @@
 					background-color:$mercury;
 					position:absolute;
 					bottom:-175px;
-					right:20px;
+					right:10px;
 					z-index:1000;
 					display:none;
 
@@ -191,6 +194,8 @@
 						height:100%;
 						border-right:1px solid #afaeae;
 						margin-bottom:0;
+						@include transition-property(all);
+  						@include transition-duration(.1s);
 
 						a{
 							//height:100%;
