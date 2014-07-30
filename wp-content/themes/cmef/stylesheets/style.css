@@ -460,9 +460,9 @@ th {
 /* line 24, ../sass/assets/skeleton/_skeleton.scss */
 .container {
   position: relative;
-  width: 940px;
+  width: 960px;
   margin: 0 auto;
-  padding: 0 20px 0 20px; }
+  padding: 0 10px 0 10px; }
 
 /* line 25, ../sass/assets/skeleton/_skeleton.scss */
 .column, .columns {
@@ -473,7 +473,7 @@ th {
 
 /* line 26, ../sass/assets/skeleton/_skeleton.scss */
 .row {
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 /* Nested Column Classes */
 /* line 29, ../sass/assets/skeleton/_skeleton.scss */
@@ -1287,7 +1287,7 @@ html {
    */ }
   /* line 7, ../sass/basics/_theme-html-base.scss */
   html body {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1406574822');
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1406735156');
     font-size: 17px; }
   /* line 16, ../sass/basics/_theme-html-base.scss */
   html h1 {
@@ -1415,7 +1415,7 @@ html {
       .full-width.header.top header #top-header #logo {
         width: 204px;
         height: 71px;
-        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s9d4b6c8dcf.png') 0 0 no-repeat;
+        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 0 no-repeat;
         margin: 0;
         float: left;
         display: inline-block; }
@@ -1466,7 +1466,7 @@ html {
             color: #5b5b5b;
             font-size: .875em;
             height: 25px;
-            background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s9d4b6c8dcf.png') 0 -1098px no-repeat;
+            background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1146px no-repeat;
             background-color: #fcfcfd;
             padding: 0;
             padding-left: 30px;
