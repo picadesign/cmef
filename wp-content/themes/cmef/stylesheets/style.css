@@ -1369,6 +1369,9 @@ html {
     /* line 296, ../sass/basics/_theme-html-base.scss */
     html form input[type='text']:focus {
       outline: 0; }
+  /* line 328, ../sass/basics/_theme-html-base.scss */
+  html form meter {
+    background-color: #cccccc; }
 
 /* line 345, ../sass/basics/_theme-html-base.scss */
 .alignright {
@@ -1738,6 +1741,11 @@ html {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333; }
-  /* line 10, ../sass/layouts/partials/_project-card.scss */
+  /* line 14, ../sass/layouts/partials/_project-card.scss */
   .project-card .description {
     padding: 20px; }
+    /* line 17, ../sass/layouts/partials/_project-card.scss */
+    .project-card .description h2 {
+      margin-top: 0px;
+      margin-bottom: 10px;
+      padding: 0; }

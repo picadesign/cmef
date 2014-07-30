@@ -7,13 +7,13 @@
 				<img src="http://placekitten.com/g/300/350" alt="">
 				<div class="description">
 				<h2>This is the Title</h2>
-				Started By: Jay O'Toole
+				<span class="author-name">Started By: Jay O'Toole</span>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				<meter value="0.6">60%</meter>
-				<span class="alignRight">Raised $15k</span><span class="alignLeft">Goal: $50K</span>
-				<a href="" class="button">Donate Now</a>
+				<span class="alignRight raised-amount">Raised $15k</span><span class="alignLeft goal-amount">Goal: $50K</span>
+				<a href="" class="button donate">Donate Now</a>
 				<hr>
-				Share:
+				<span class="share">Share:</span>
 				<ul>
 					<li class="twitter"></li>
 					<li class="facebook"></li>
@@ -25,14 +25,14 @@
 				<img src="http://placekitten.com/g/300/200" alt="">
 				<div class="description">
 				<h2>This is the Title</h2>
-				Started By: Jay O'Toole
+				<span class="author-name">Started By: Jay O'Toole</span>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				<meter value="0.6">60%</meter>
-				<span class="alignRight">Raised $15k</span><span class="alignLeft">Goal: $50K</span>
-				<a href="" class="button">Donate Now</a>
+				<span class="alignRight raised-amount">Raised $15k</span><span class="alignLeft goal-amount">Goal: $50K</span>
+				<a href="" class="button donate">Donate Now</a>
 				<hr>
-				Share:
+				<span class="share">Share:</span>
 				<ul>
 					<li class="twitter"></li>
 					<li class="facebook"></li>
@@ -44,13 +44,13 @@
 				<img src="http://placekitten.com/g/300/150" alt="">
 				<div class="description">
 				<h2>This is the Title</h2>
-				Started By: Jay O'Toole
+				<span class="author-name">Started By: Jay O'Toole</span>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				<meter value="0.6">60%</meter>
-				<span class="alignRight">Raised $15k</span><span class="alignLeft">Goal: $50K</span>
-				<a href="" class="button">Donate Now</a>
+				<span class="alignRight raised-amount">Raised $15k</span><span class="alignLeft goal-amount">Goal: $50K</span>
+				<a href="" class="button donate">Donate Now</a>
 				<hr>
-				Share:
+				<span class="share">Share:</span>
 				<ul>
 					<li class="twitter"></li>
 					<li class="facebook"></li>
@@ -62,13 +62,13 @@
 				<img src="http://placekitten.com/g/300/300" alt="">
 				<div class="description">
 				<h2>This is the Title</h2>
-				Started By: Jay O'Toole
+				<span class="author-name">Started By: Jay O'Toole</span>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				<meter value="0.6">60%</meter>
-				<span class="alignRight">Raised $15k</span><span class="alignLeft">Goal: $50K</span>
-				<a href="" class="button">Donate Now</a>
+				<span class="alignRight raised-amount">Raised $15k</span><span class="alignLeft goal-amount">Goal: $50K</span>
+				<a href="" class="button donate">Donate Now</a>
 				<hr>
-				Share:
+				<span class="share">Share:</span>
 				<ul>
 					<li class="twitter"></li>
 					<li class="facebook"></li>
@@ -80,14 +80,14 @@
 				<img src="http://placekitten.com/g/300/225" alt="">
 				<div class="description">
 				<h2>This is the Title</h2>
-				Started By: Jay O'Toole
+				<span class="author-name">Started By: Jay O'Toole</span>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<</p>
 				<meter value="0.6">60%</meter>
-				<span class="alignRight">Raised $15k</span><span class="alignLeft">Goal: $50K</span>
-				<a href="" class="button">Donate Now</a>
+				<span class="alignRight raised-amount">Raised $15k</span><span class="alignLeft goal-amount">Goal: $50K</span>
+				<a href="" class="button donate">Donate Now</a>
 				<hr>
-				Share:
+				<span class="share">Share:</span>
 				<ul>
 					<li class="twitter"></li>
 					<li class="facebook"></li>
@@ -99,14 +99,14 @@
 				<img src="http://placekitten.com/g/300/175" alt="">
 				<div class="description">
 				<h2>This is the Title</h2>
-				Started By: Jay O'Toole
+				<span class="author-name">Started By: Jay O'Toole</span>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<</p>
 				<meter value="0.6">60%</meter>
-				<span class="alignRight">Raised $15k</span><span class="alignLeft">Goal: $50K</span>
-				<a href="" class="button">Donate Now</a>
+				<span class="alignRight raised-amount">Raised $15k</span><span class="alignLeft goal-amount">Goal: $50K</span>
+				<a href="" class="button donate">Donate Now</a>
 				<hr>
-				Share:
+				<span class="share">Share:</span>
 				<ul>
 					<li class="twitter"></li>
 					<li class="facebook"></li>

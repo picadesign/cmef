@@ -6,8 +6,30 @@
 	margin-bottom:20px;
 	background-color:white;
 	@include single-box-shadow;
+	
+
+
+
 
 	.description{
 		padding:20px;
+
+		h2{
+			margin-top:0px;
+			margin-bottom:10px;
+			padding:0;
+		}
+
+		.author-name{
+
+		}
+
+		p{
+
+		}
+
+		meter{
+
+		}
 	}
 }
