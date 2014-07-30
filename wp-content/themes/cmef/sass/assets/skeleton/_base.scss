@@ -1,5 +1,4 @@
-		
-		
+
 /* #Basic Styles
 ================================================== */
 	body { 
@@ -8,6 +7,8 @@
 		color: #444; 
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
  }
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */

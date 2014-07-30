@@ -29,14 +29,16 @@ html, body {
 
 /* #Basic Styles
 ================================================== */
-/* line 5, ../sass/assets/skeleton/_base.scss */
+/* line 4, ../sass/assets/skeleton/_base.scss */
 body {
   background: #fff;
   font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
   -webkit-font-smoothing: antialiased;
   /* Fix for webkit rendering */
-  -webkit-text-size-adjust: none; }
+  -webkit-text-size-adjust: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal; }
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
@@ -44,7 +46,7 @@ body {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 21, ../sass/assets/skeleton/_base.scss */
+/* line 22, ../sass/assets/skeleton/_base.scss */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -56,7 +58,7 @@ html {
 /**
  * Remove default margin.
  */
-/* line 31, ../sass/assets/skeleton/_base.scss */
+/* line 32, ../sass/assets/skeleton/_base.scss */
 body {
   margin: 0; }
 
@@ -67,7 +69,7 @@ body {
  * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-/* line 55, ../sass/assets/skeleton/_base.scss */
+/* line 56, ../sass/assets/skeleton/_base.scss */
 article,
 aside,
 details,
@@ -86,7 +88,7 @@ summary {
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-/* line 67, ../sass/assets/skeleton/_base.scss */
+/* line 68, ../sass/assets/skeleton/_base.scss */
 audio,
 canvas,
 progress,
@@ -100,7 +102,7 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 77, ../sass/assets/skeleton/_base.scss */
+/* line 78, ../sass/assets/skeleton/_base.scss */
 audio:not([controls]) {
   display: none;
   height: 0; }
@@ -109,7 +111,7 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-/* line 88, ../sass/assets/skeleton/_base.scss */
+/* line 89, ../sass/assets/skeleton/_base.scss */
 [hidden],
 template {
   display: none; }
@@ -119,14 +121,14 @@ template {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-/* line 99, ../sass/assets/skeleton/_base.scss */
+/* line 100, ../sass/assets/skeleton/_base.scss */
 a {
   background: transparent; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-/* line 108, ../sass/assets/skeleton/_base.scss */
+/* line 109, ../sass/assets/skeleton/_base.scss */
 a:active,
 a:hover {
   outline: 0; }
@@ -136,14 +138,14 @@ a:hover {
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
-/* line 119, ../sass/assets/skeleton/_base.scss */
+/* line 120, ../sass/assets/skeleton/_base.scss */
 abbr[title] {
   border-bottom: 1px dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-/* line 128, ../sass/assets/skeleton/_base.scss */
+/* line 129, ../sass/assets/skeleton/_base.scss */
 b,
 strong {
   font-weight: bold; }
@@ -151,7 +153,7 @@ strong {
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 136, ../sass/assets/skeleton/_base.scss */
+/* line 137, ../sass/assets/skeleton/_base.scss */
 dfn {
   font-style: italic; }
 
@@ -159,7 +161,7 @@ dfn {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-/* line 145, ../sass/assets/skeleton/_base.scss */
+/* line 146, ../sass/assets/skeleton/_base.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -167,7 +169,7 @@ h1 {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 154, ../sass/assets/skeleton/_base.scss */
+/* line 155, ../sass/assets/skeleton/_base.scss */
 mark {
   background: #ff0;
   color: #000; }
@@ -175,14 +177,14 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 163, ../sass/assets/skeleton/_base.scss */
+/* line 164, ../sass/assets/skeleton/_base.scss */
 small {
   font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 172, ../sass/assets/skeleton/_base.scss */
+/* line 173, ../sass/assets/skeleton/_base.scss */
 sub,
 sup {
   font-size: 75%;
@@ -190,11 +192,11 @@ sup {
   position: relative;
   vertical-align: baseline; }
 
-/* line 179, ../sass/assets/skeleton/_base.scss */
+/* line 180, ../sass/assets/skeleton/_base.scss */
 sup {
   top: -0.5em; }
 
-/* line 183, ../sass/assets/skeleton/_base.scss */
+/* line 184, ../sass/assets/skeleton/_base.scss */
 sub {
   bottom: -0.25em; }
 
@@ -203,14 +205,14 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
-/* line 194, ../sass/assets/skeleton/_base.scss */
+/* line 195, ../sass/assets/skeleton/_base.scss */
 img {
   border: 0; }
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
-/* line 202, ../sass/assets/skeleton/_base.scss */
+/* line 203, ../sass/assets/skeleton/_base.scss */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -219,14 +221,14 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari.
  */
-/* line 213, ../sass/assets/skeleton/_base.scss */
+/* line 214, ../sass/assets/skeleton/_base.scss */
 figure {
   margin: 1em 40px; }
 
 /**
  * Address differences between Firefox and other browsers.
  */
-/* line 221, ../sass/assets/skeleton/_base.scss */
+/* line 222, ../sass/assets/skeleton/_base.scss */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -235,14 +237,14 @@ hr {
 /**
  * Contain overflow in all browsers.
  */
-/* line 231, ../sass/assets/skeleton/_base.scss */
+/* line 232, ../sass/assets/skeleton/_base.scss */
 pre {
   overflow: auto; }
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-/* line 242, ../sass/assets/skeleton/_base.scss */
+/* line 243, ../sass/assets/skeleton/_base.scss */
 code,
 kbd,
 pre,
@@ -262,7 +264,7 @@ samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-/* line 266, ../sass/assets/skeleton/_base.scss */
+/* line 267, ../sass/assets/skeleton/_base.scss */
 button,
 input,
 optgroup,
@@ -278,7 +280,7 @@ textarea {
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-/* line 276, ../sass/assets/skeleton/_base.scss */
+/* line 277, ../sass/assets/skeleton/_base.scss */
 button {
   overflow: visible; }
 
@@ -288,7 +290,7 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-/* line 288, ../sass/assets/skeleton/_base.scss */
+/* line 289, ../sass/assets/skeleton/_base.scss */
 button,
 select {
   text-transform: none; }
@@ -300,7 +302,7 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 303, ../sass/assets/skeleton/_base.scss */
+/* line 304, ../sass/assets/skeleton/_base.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -313,7 +315,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 313, ../sass/assets/skeleton/_base.scss */
+/* line 314, ../sass/assets/skeleton/_base.scss */
 button[disabled],
 html input[disabled] {
   cursor: default; }
@@ -321,7 +323,7 @@ html input[disabled] {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 322, ../sass/assets/skeleton/_base.scss */
+/* line 323, ../sass/assets/skeleton/_base.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -331,7 +333,7 @@ input::-moz-focus-inner {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 332, ../sass/assets/skeleton/_base.scss */
+/* line 333, ../sass/assets/skeleton/_base.scss */
 input {
   line-height: normal; }
 
@@ -342,7 +344,7 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 345, ../sass/assets/skeleton/_base.scss */
+/* line 346, ../sass/assets/skeleton/_base.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -355,7 +357,7 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 357, ../sass/assets/skeleton/_base.scss */
+/* line 358, ../sass/assets/skeleton/_base.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
@@ -365,7 +367,7 @@ input[type="number"]::-webkit-outer-spin-button {
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 367, ../sass/assets/skeleton/_base.scss */
+/* line 368, ../sass/assets/skeleton/_base.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -379,7 +381,7 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 381, ../sass/assets/skeleton/_base.scss */
+/* line 382, ../sass/assets/skeleton/_base.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -387,7 +389,7 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 389, ../sass/assets/skeleton/_base.scss */
+/* line 390, ../sass/assets/skeleton/_base.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -397,7 +399,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 400, ../sass/assets/skeleton/_base.scss */
+/* line 401, ../sass/assets/skeleton/_base.scss */
 legend {
   border: 0;
   /* 1 */
@@ -407,7 +409,7 @@ legend {
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-/* line 409, ../sass/assets/skeleton/_base.scss */
+/* line 410, ../sass/assets/skeleton/_base.scss */
 textarea {
   overflow: auto; }
 
@@ -415,7 +417,7 @@ textarea {
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 418, ../sass/assets/skeleton/_base.scss */
+/* line 419, ../sass/assets/skeleton/_base.scss */
 optgroup {
   font-weight: bold; }
 
@@ -424,17 +426,17 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
-/* line 429, ../sass/assets/skeleton/_base.scss */
+/* line 430, ../sass/assets/skeleton/_base.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 435, ../sass/assets/skeleton/_base.scss */
+/* line 436, ../sass/assets/skeleton/_base.scss */
 td,
 th {
   padding: 0; }
 
-/* line 438, ../sass/assets/skeleton/_base.scss */
+/* line 439, ../sass/assets/skeleton/_base.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
