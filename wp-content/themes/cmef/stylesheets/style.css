@@ -1722,3 +1722,22 @@ html {
         float: right;
         margin-right: 20px;
         margin-top: -3px; }
+
+/**
+ * Project Card Styles
+ */
+/* line 1, ../sass/layouts/partials/_project-card.scss */
+.projects {
+  display: none; }
+
+/* line 4, ../sass/layouts/partials/_project-card.scss */
+.project-card {
+  margin-right: px !important;
+  margin-bottom: 20px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333; }
+  /* line 10, ../sass/layouts/partials/_project-card.scss */
+  .project-card .description {
+    padding: 20px; }

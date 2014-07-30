@@ -1,0 +1,13 @@
+.projects{
+	display:none;
+}
+.project-card{
+	margin-right:px !important;
+	margin-bottom:20px;
+	background-color:white;
+	@include single-box-shadow;
+
+	.description{
+		padding:20px;
+	}
+}

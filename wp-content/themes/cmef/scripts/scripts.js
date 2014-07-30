@@ -12,8 +12,16 @@ jQuery(function ($) {
 
 	$( window ).load( function()
 	{
-	    $( '.masonry' ).masonry( { itemSelector: '.columns' } );
+	    $( '.masonry' ).masonry( { 
+	    	itemSelector: '.columns',
+	    	gutter: 20,
+	    	columnWidth: 300
+	    } );
 	});
+	$(window).ready(function(){
+		$('.masonry').show();
+	})
+	
 	/* You can safely use $ in this code block to reference jQuery */
 
 	//Style the first word of the menu item in the header.
