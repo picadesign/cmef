@@ -2,7 +2,9 @@
     global $current_user;
     global $post;
     get_userdata();
-    //print_r($post);
+    //echo '<pre>';
+    //print_r($current_user);
+    //echo '</pre>';
 ?>
 <!DOCTYPE HTML>
 <html <?php language_attributes('html') ?> >
@@ -28,7 +30,7 @@
                     <div id="top-header">
                         <div id="logo" class=""><a href="<?php bloginfo('url') ?>"></a></div>
                         <?php if(is_user_logged_in()) : ?>
-                            <div class="logged-in alignright">Hello <span class="author-name"><a href="<?php echo $current_user->user_url; ?>"><?php echo $current_user->user_nicename; ?></a></span> | <span id="logout"><a href="<?php echo wp_logout_url(get_page_link()); ?>" title="Logout">LOG OUT</a></span></div>
+                            <div class="logged-in alignright">Hello <span class="author-name"><a href="<?php echo get_author_posts_url( $current_user->ID, $current_user->user_nicename ); ?>"><?php echo $current_user->user_nicename; ?></a></span> | <span id="logout"><a href="<?php echo wp_logout_url(get_page_link()); ?>" title="Logout">LOG OUT</a></span></div>
                         <?php endif; ?>
                     </div>
                 </header>
@@ -47,12 +49,12 @@
 										<input type="text" name="log" id="user_login" placeholder="Username">
 										<input type="password" name="pwd" id="user_pass" placeholder="Password">
 										<input type="submit" name="wp-submit" id="wp-submit" class="button-primary alignright" value="Log In">
-										<input type="hidden" name="redirect_to" value="http://dev.pica.is/cmef/our-programs/">
+										<input type="hidden" name="redirect_to" value="<?php echo $post->guid; ?>">
 										<div class="clear"></div>
-										<input name="rememberme" type="checkbox" class="alignleft" id="rememberme" value="forever"><label class="remember-forgot">Remember Me | Forgot Password</span>
+										<input name="rememberme" type="checkbox" class="alignleft" id="rememberme" value="forever"><span class="remember-forgot">Remember Me &nbsp;|&nbsp;  <a href="">Forgot Password</a></span>
                                     </form>  
                                     <div class="register">
-                                    	Don't have an account? Click here to SIGN UP
+                                    	<span>Don't have an account? Click here to SIGN UP</span>
                                     </div>                              
                                 </div>
                             <?php endif; ?>

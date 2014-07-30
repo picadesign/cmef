@@ -281,6 +281,10 @@ html{
 			&:active{
 				//background-color:
 			}
+
+			&:focus{
+				outline:0;
+			}
 		}
 
 		input[type='text']{

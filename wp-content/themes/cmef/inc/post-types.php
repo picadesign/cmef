@@ -9,3 +9,6 @@
 
 	// Include the expenses post type.
 	include('post-types/expense.php');
+
+	//Resources
+	include('post-types/resource.php');

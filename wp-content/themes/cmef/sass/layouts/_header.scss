@@ -64,7 +64,7 @@
 			height:100%;
 
 			.bottom-header-left{
-				//padding-top:18px;
+				height:100%;
 
 				#searchform{
 					//height:px;
@@ -90,15 +90,16 @@
 
 				.sign-up{
 					@extend .fonts.trade.gothic.bold;
+					@include user-select(none);
 					color:$scorpion;
 					text-transform: uppercase;
-					//padding-top:6px;
 					margin-left:60px;
-					//height:64px;
+					height:100%;
 					cursor:pointer;
 					padding:18.5px;
-					padding-top:24px;
+					padding-top:23px;
 					display:inline-block;
+					vertical-align: middle;
 					&:hover{
 						background-color:$mercury;
 					}
@@ -108,26 +109,32 @@
 					height:175px;
 					background-color:$mercury;
 					position:absolute;
-					bottom:-205px;
+					bottom:-175px;
 					right:20px;
 					z-index:1000;
-					padding:15px;
+					display:none;
 
 					#loginform{
+						width:100%;
+						padding:15px;
+
 						input[name='log'], input[name='pwd']{
 							margin-bottom:15px;
 							padding-left:5px;
 							height:35px;
+							@extend .fonts.trade.gothic.bold;
+							color: $scorpion;
 						}
 
 						input[name='pwd']{
-							width:220px;
+							width:205px;
 							float:left;
+							//margin-right:15px;
 						}
 						input[name='wp-submit']{
 							float:right;
 							width:90px;
-							height:37px;
+							height:35px;
 							padding:0;
 							background-color:$apple;
 							color:white;
@@ -140,12 +147,32 @@
 							height:15px;
 							margin-top:3px;
 						}
-						.remember-forgot{
-							margin-top:10px;
+						.remember-forgot, a{
+							//margin-top:10px;
+							@extend .fonts.trade.gothic.bold;
+							font-size:.882352941em;
+							text-transform: none;
+
+							a{
+								color: $eastern-blue;
+							}
 						}
 					}
 					.register{
 						//height:1
+						width:100%;
+						height:40px;
+						background-color:$apple;
+						text-align: center;
+						display:table;
+
+						span{
+							display: table-cell;
+  							vertical-align: middle;
+  							@extend .fonts.trade.gothic.bold;
+  							color:white;
+  							font-size: .941176471em;
+						}
 					}
 				}
 			}
