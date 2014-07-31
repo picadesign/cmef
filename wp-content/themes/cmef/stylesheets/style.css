@@ -6,22 +6,22 @@
 /*
 	IMAGE SPRITES
  */
-/* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 html, body {
   height: 100%; }
 
-/* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #root {
   clear: both;
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin-bottom: -205px; }
-  /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root #root_footer {
     height: 205px; }
 
-/* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #footer {
   clear: both;
   position: relative;
@@ -40,7 +40,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: normal; }
 
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/* normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -1070,8 +1070,9 @@ th {
 /* Use clearfix class on parent to clear nested columns, 
 or wrap each row of columns in a <div class="row"> */
 /* line 297, ../sass/assets/skeleton/_skeleton.scss */
-.clearfix:before,
+.clearfix:before, .project-card .description a.donate:before,
 .clearfix:after,
+.project-card .description a.donate:after,
 .row:before,
 .row:after {
   content: '\0020';
@@ -1083,12 +1084,14 @@ or wrap each row of columns in a <div class="row"> */
 
 /* line 305, ../sass/assets/skeleton/_skeleton.scss */
 .row:after,
-.clearfix:after {
+.clearfix:after,
+.project-card .description a.donate:after {
   clear: both; }
 
 /* line 308, ../sass/assets/skeleton/_skeleton.scss */
 .row,
-.clearfix {
+.clearfix,
+.project-card .description a.donate {
   zoom: 1; }
 
 /* You can also use a <br class="clear" /> to clear columns */
@@ -1221,7 +1224,7 @@ or wrap each row of columns in a <div class="row"> */
       font-weight: normal !important;
       font-style: oblique; }
   /* line 54, ../sass/assets/_fonts.scss */
-  .fonts.trade.gothic.light, html h1, html h2 {
+  .fonts.trade.gothic.light, html h1, html h2, .project-card .description h2 a {
     font-family: 'Trade Gothic Light';
     font-weight: normal !important; }
 
@@ -1289,7 +1292,7 @@ html {
    */ }
   /* line 7, ../sass/basics/_theme-html-base.scss */
   html body {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1406735156');
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1406760312');
     font-size: 17px; }
   /* line 16, ../sass/basics/_theme-html-base.scss */
   html h1 {
@@ -1369,55 +1372,115 @@ html {
     /* line 296, ../sass/basics/_theme-html-base.scss */
     html form input[type='text']:focus {
       outline: 0; }
-  /* line 328, ../sass/basics/_theme-html-base.scss */
-  html form meter {
-    background-color: #cccccc; }
+  /* line 329, ../sass/basics/_theme-html-base.scss */
+  html .meter {
+    width: 100%;
+    background-color: #cccccc;
+    height: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 15px 0 15px 0; }
+    /* line 337, ../sass/basics/_theme-html-base.scss */
+    html .meter .meter-progress {
+      background-color: #6ca348;
+      height: 100%; }
 
-/* line 345, ../sass/basics/_theme-html-base.scss */
+/* line 356, ../sass/basics/_theme-html-base.scss */
 .alignright {
   float: right; }
 
-/* line 349, ../sass/basics/_theme-html-base.scss */
+/* line 360, ../sass/basics/_theme-html-base.scss */
 .alignleft {
   float: left; }
 
 /**
  * Add styling for icons etc. below.
  */
-/* line 357, ../sass/basics/_theme-html-base.scss */
+/* line 368, ../sass/basics/_theme-html-base.scss */
 .logo {
   width: 204px;
   height: 71px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 0 no-repeat; }
-  /* line 361, ../sass/basics/_theme-html-base.scss */
+  /* line 372, ../sass/basics/_theme-html-base.scss */
   .logo.smaller {
     width: 138px;
     height: 48px;
     background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -91px no-repeat; }
 
-/* line 368, ../sass/basics/_theme-html-base.scss */
+/* line 379, ../sass/basics/_theme-html-base.scss */
 .mail {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1172px no-repeat; }
 
-/* line 374, ../sass/basics/_theme-html-base.scss */
+/* line 385, ../sass/basics/_theme-html-base.scss */
 .twitter {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1090px no-repeat; }
 
-/* line 380, ../sass/basics/_theme-html-base.scss */
+/* line 391, ../sass/basics/_theme-html-base.scss */
 .facebook {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1203px no-repeat; }
 
-/* line 386, ../sass/basics/_theme-html-base.scss */
+/* line 397, ../sass/basics/_theme-html-base.scss */
 .google {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1059px no-repeat; }
+
+/**
+* Styling for the buttons
+* Buttons go anchor then span (usually)
+*/
+/* line 409, ../sass/basics/_theme-html-base.scss */
+.button {
+  display: table;
+  height: 30px;
+  text-align: center;
+  margin: 15px 0 15px 0; }
+  /* line 414, ../sass/basics/_theme-html-base.scss */
+  .button.orange {
+    background-color: #ec6f17;
+    color: white; }
+    /* line 417, ../sass/basics/_theme-html-base.scss */
+    .button.orange * {
+      display: table-cell;
+      vertical-align: middle; }
+
+/* line 425, ../sass/basics/_theme-html-base.scss */
+.social ul {
+  overflow: auto;
+  margin: 0;
+  padding: 0; }
+  /* line 429, ../sass/basics/_theme-html-base.scss */
+  .social ul li {
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s; }
+    /* line 436, ../sass/basics/_theme-html-base.scss */
+    .social ul li a {
+      display: block;
+      height: 100%;
+      width: 100%; }
+    /* line 442, ../sass/basics/_theme-html-base.scss */
+    .social ul li:hover {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+      opacity: 0.8; }
 
 /* #Font-Face
 ================================================== */
@@ -1741,11 +1804,43 @@ html {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333; }
-  /* line 14, ../sass/layouts/partials/_project-card.scss */
+  /* line 9, ../sass/layouts/partials/_project-card.scss */
+  .project-card img {
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    overflow: hidden; }
+  /* line 17, ../sass/layouts/partials/_project-card.scss */
   .project-card .description {
     padding: 20px; }
-    /* line 17, ../sass/layouts/partials/_project-card.scss */
+    /* line 22, ../sass/layouts/partials/_project-card.scss */
     .project-card .description h2 {
       margin-top: 0px;
       margin-bottom: 10px;
       padding: 0; }
+      /* line 26, ../sass/layouts/partials/_project-card.scss */
+      .project-card .description h2 a {
+        color: #5b5b5b;
+        text-transform: none; }
+    /* line 41, ../sass/layouts/partials/_project-card.scss */
+    .project-card .description .goal-amount {
+      float: right; }
+    /* line 45, ../sass/layouts/partials/_project-card.scss */
+    .project-card .description a.donate {
+      width: 100%; }
+    /* line 50, ../sass/layouts/partials/_project-card.scss */
+    .project-card .description .social {
+      overflow: auto;
+      display: table;
+      width: 100%;
+      padding-top: 10px; }
+      /* line 55, ../sass/layouts/partials/_project-card.scss */
+      .project-card .description .social .share {
+        display: table-cell;
+        vertical-align: middle; }
+      /* line 59, ../sass/layouts/partials/_project-card.scss */
+      .project-card .description .social ul {
+        display: inline-block;
+        text-align: right;
+        float: right; }

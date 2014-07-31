@@ -1,9 +1,0 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="600" measuredH="434" mockupW="567" mockupH="400">
-  <controls>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::Component" x="33" y="34" w="567" h="400" measuredW="567" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>./assets/symbols.bmml#Open Dialog Mac OS X</src>
-      </controlProperties>
-    </control>
-  </controls>
-</mockup>

@@ -14,8 +14,8 @@ jQuery(function ($) {
 	{
 	    $( '.masonry' ).masonry( { 
 	    	itemSelector: '.columns',
-	    	gutter: 20,
-	    	columnWidth: 300
+	    	gutter: 30,
+	    	columnWidth: 290
 	    } );
 	});
 	$(window).ready(function(){

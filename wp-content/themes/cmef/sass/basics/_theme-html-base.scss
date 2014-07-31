@@ -325,10 +325,21 @@ html{
 		progress{
 
 		}
-		meter{
-			background-color:#cccccc;
-		}
 	}
+	.meter{
+			width:100%;
+			background-color:#cccccc;
+			height:10px;
+			@include border-radius(5px);
+			overflow:hidden;
+			margin:15px 0 15px 0;
+
+			.meter-progress{
+				background-color:$apple;
+				height:100%;
+
+			}
+		}
 
 	/**
 	 * Spacer Styles
@@ -388,3 +399,49 @@ html{
  	height:31px;
  	background: sprite($assets-sprite, google-icon) no-repeat;
  }
+
+
+/**
+* Styling for the buttons
+* Buttons go anchor then span (usually)
+*/
+
+ .button{
+ 	display:table;
+ 	height:30px;
+ 	text-align: center;
+ 	margin:15px 0 15px 0;
+ 	&.orange{
+		background-color:$tango;
+		color:white;
+		*{
+			display:table-cell;
+			vertical-align: middle;
+		}
+ 	}
+ }
+
+ .social{
+	ul{
+		overflow:auto;
+		margin:0;
+		padding:0;
+		li{
+			list-style:none;
+			float:left;
+			margin-right:5px;
+			@include transition-property(all);
+				@include transition-duration(.5s);
+
+			a{
+				display:block;
+				height:100%;
+				width:100%;
+			}
+
+			&:hover{
+				@include opacity(.8);
+			}
+		}
+	}
+}

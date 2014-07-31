@@ -78,3 +78,12 @@ function wpclean_metabox_menu_posttype_archive() {
  
     endif;
 }
+
+/**
+* Restrict the amount of text in the excerpt
+*/
+
+add_filter('excerpt_length', 'my_excerpt_length');
+function my_excerpt_length($length) {
+    return 175; // Or whatever you want the length to be.
+}

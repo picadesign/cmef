@@ -1,9 +1,0 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="416" measuredH="315" mockupW="400" mockupH="300">
-  <controls>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::Component" x="16" y="15" w="400" h="300" measuredW="400" measuredH="300" zOrder="0" locked="false" isInGroup="-1">
-      <controlProperties>
-        <src>./assets/symbols.bmml#Email Dialog</src>
-      </controlProperties>
-    </control>
-  </controls>
-</mockup>

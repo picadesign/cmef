@@ -45,7 +45,8 @@
 
 		// Load in our ajax
 		include('inc/ajax.php');
-
+		// Load in the post attachments
+		include('inc/post-attachments.php');
 		// Load Our Post Types
 		include('inc/post-types.php');
 		// Load some helper functions
