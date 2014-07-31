@@ -18,6 +18,8 @@
 
 function enqueue_scripts(){
     //Only include jQuery
-    wp_enqueue_script('main-script', get_bloginfo('template_url') . '/scripts/scripts.js', $deps = array('jquery'), $ver = false, $in_footer = true);
+    wp_enqueue_script('main-script', get_bloginfo('template_url') . '/scripts/scripts.js', $deps = array('jquery', 'mustache'), $ver = false, $in_footer = true);
+
+    wp_enqueue_script('mustache', get_bloginfo('template_url') . '/scripts/mustache/mustache.js', $deps = array('jquery'), $ver = false, $in_footer = true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

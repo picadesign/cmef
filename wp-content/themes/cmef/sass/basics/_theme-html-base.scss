@@ -22,6 +22,7 @@ html{
 		@extend .fonts.trade.gothic.light;
 		font-size:1.470588235em;
 		color: $scorpion;
+		line-height:1.1em;
 	}
 	h3{
 		@extend .fonts.trade.condensed.regular;
@@ -44,7 +45,30 @@ html{
 	p{
 		@extend .fonts.trade.condensed.regular;
 		font-size:1em;
-		color:$scorpion;
+		color:$scorpion !important; 
+		margin:7px 0 7px 0;
+
+		*{
+			color:$scorpion !important; 
+		}
+
+		a{
+			@extend .fonts.trade.condensed.regular;
+			font-size:1em;
+			color:$apple !important;
+			text-transform: uppercase;
+			text-decoration: none;
+
+			&:visited{
+				color:$apple !important;
+			}
+
+			&:hover{
+				color: $thatch-green !important;
+			}
+
+
+		}
 	}
 
 	/**
@@ -106,6 +130,8 @@ html{
 		color:$apple;
 		text-transform: uppercase;
 		text-decoration: none;
+		@include transition-property(all);
+		@include transition-duration(.1s);
 
 		&:visited{
 			color:$apple;
@@ -135,7 +161,7 @@ html{
 			}
 
 
-		}
+		}	
 	}
 
 	.button{
@@ -332,7 +358,7 @@ html{
 			height:10px;
 			@include border-radius(5px);
 			overflow:hidden;
-			margin:15px 0 15px 0;
+			margin:10px 0 7px 0;
 
 			.meter-progress{
 				background-color:$apple;
@@ -347,6 +373,9 @@ html{
 	 * Horizontal Rules
 	 */
 	hr{
+		background:#cccccc;
+		border:0;
+		height:1px;
 	}
 	
 
@@ -400,23 +429,67 @@ html{
  	background: sprite($assets-sprite, google-icon) no-repeat;
  }
 
+ .linkedin{
+ 	width:31px;
+ 	height:31px;
+ 	background: sprite($assets-sprite, linkedin-icon) no-repeat;
+ }
+
 
 /**
 * Styling for the buttons
 * Buttons go anchor then span (usually)
 */
 
+.box-shadow{
+	@include box-shadow(lighten($scorpion, 35%) 0 0 3px 1px);
+}
+
  .button{
  	display:table;
  	height:30px;
  	text-align: center;
- 	margin:15px 0 15px 0;
+ 	margin:10px 0 10px 0;
+ 	@extend .fonts.trade.gothic.bold;
+ 	padding:3px 17px 0 17px; 
+ 	text-transform: uppercase;
  	&.orange{
 		background-color:$tango;
 		color:white;
 		*{
+			padding:3px 5px 0 5px; 
 			display:table-cell;
 			vertical-align: middle;
+		}
+
+		&:hover{
+			background-color:$fiery-orange;
+		}
+ 	}
+
+ 	&.gray{
+ 		background-color:#b3b3b3;
+		color:white;
+		*{
+			display:table-cell;
+			vertical-align: middle;
+		}
+
+		&:hover{
+			background-color:$alto;
+		}
+ 	}
+
+ 	&.green{
+ 		background-color:$apple;
+		color:white;
+		*{
+			display:table-cell;
+			vertical-align: middle;
+		}
+
+		&:hover{
+			background-color:$thatch-green;
 		}
  	}
  }
@@ -431,7 +504,7 @@ html{
 			float:left;
 			margin-right:5px;
 			@include transition-property(all);
-				@include transition-duration(.5s);
+			@include transition-duration(.5s);
 
 			a{
 				display:block;

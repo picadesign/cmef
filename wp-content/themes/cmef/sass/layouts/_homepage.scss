@@ -1,0 +1,14 @@
+.bottom-buttons{
+	margin:0 auto;
+	display:block;
+	overflow:auto;
+	display:table;
+	a, div.button{
+		float:left;
+		margin-right:5px;
+		cursor:pointer;
+		span{
+
+		}
+	}	
+}

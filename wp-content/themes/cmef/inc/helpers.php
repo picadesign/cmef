@@ -87,3 +87,15 @@ add_filter('excerpt_length', 'my_excerpt_length');
 function my_excerpt_length($length) {
     return 175; // Or whatever you want the length to be.
 }
+
+/**
+ * Add the ajaxurl variable for javascript
+ */
+add_action('wp_head','pluginname_ajaxurl');
+function pluginname_ajaxurl() {
+?>
+<script type="text/javascript">
+var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+</script>
+<?php
+}

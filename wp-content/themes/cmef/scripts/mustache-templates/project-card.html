@@ -1,0 +1,24 @@
+<div class="four columns alpha omega project-card">
+	{{{ the_thumbnail }}}
+	<div class="description">
+		<h2><a href="{{{ the_permalink }}}">{{ title }}</a></h2>
+		<span class="author-name">Started By: {{ author }}</span>
+		<p>{{{post_content}}}... <a href="{{{ the_permalink }}}">MORE</a></p>
+		<div class="meter">
+			<div class="meter-progress" style="width: {{ percentage_raised }}%;"></div>
+		</div>
+		<span class="alignRight raised-amount">Raised <b>{{ amount_raised }}</b></span><span class="alignLeft goal-amount">Goal <b>{{  fundraiser_goal }}</b></span>
+		<a href="" class="button donate orange"><span>Donate Now</span></a>
+		<hr>
+		
+		<div class="social">
+			<span class="share">Share</span>
+			<ul>
+				<li class="twitter"><a href="{{ twitter_url }}" target="_blank"></a></li>
+				<li class="linkedin"><a href="{{ linkedin_url }}" target="_blank"></a></li>
+				<li class="facebook"><a href="{{ facebook_url }}" target="_blank"></a></li>
+				<li class="google"><a href="{{ google_url }}" target="_blank"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>

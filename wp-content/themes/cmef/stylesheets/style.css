@@ -6,27 +6,6 @@
 /*
 	IMAGE SPRITES
  */
-/* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-html, body {
-  height: 100%; }
-
-/* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-#root {
-  clear: both;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin-bottom: -205px; }
-  /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-  #root #root_footer {
-    height: 205px; }
-
-/* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-#footer {
-  clear: both;
-  position: relative;
-  height: 205px; }
-
 /* #Basic Styles
 ================================================== */
 /* line 4, ../sass/assets/skeleton/_base.scss */
@@ -40,7 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: normal; }
 
-/* normalize.css v3.0.1 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -1125,19 +1104,180 @@ or wrap each row of columns in a <div class="row"> */
 /* #Media Queries
 ================================================== */
 /* iPad Portrait/Browser */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  html, body {
+    height: 100%; }
+
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #root {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -205px; }
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    #root #root_footer {
+      height: 205px; }
+
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #footer {
+    clear: both;
+    position: relative;
+    height: 205px; } }
 /* Mobile/Browser */
+@media only screen and (max-width: 767px) {
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  html, body {
+    height: 100%; }
+
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #root {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -435px; }
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    #root #root_footer {
+      height: 435px; }
+
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #footer {
+    clear: both;
+    position: relative;
+    height: 435px; }
+
+  /* line 34, ../sass/assets/skeleton/_layout.scss */
+  .project-card {
+    width: auto !important; } }
 /* Mobile Landscape/Browser */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  html, body {
+    height: 100%; }
+
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #root {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -435px; }
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    #root #root_footer {
+      height: 435px; }
+
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #footer {
+    clear: both;
+    position: relative;
+    height: 435px; } }
 /* Anything smaller than standard 960 */
 @media only screen and (max-width: 959px) {
-  /* line 40, ../sass/assets/skeleton/_layout.scss */
+  /* line 48, ../sass/assets/skeleton/_layout.scss */
   .full-width.header.top {
     margin-bottom: 25px; }
-  /* line 43, ../sass/assets/skeleton/_layout.scss */
+  /* line 51, ../sass/assets/skeleton/_layout.scss */
   .full-width.header.bottom {
-    display: none; } }
+    display: none; }
+
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  html, body {
+    height: 100%; }
+
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #root {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -470px; }
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    #root #root_footer {
+      height: 470px; }
+
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #footer {
+    clear: both;
+    position: relative;
+    height: 470px; }
+
+  /* line 58, ../sass/assets/skeleton/_layout.scss */
+  .copyright {
+    width: 62%;
+    float: left; }
+
+  /* line 63, ../sass/assets/skeleton/_layout.scss */
+  .footer-menu, .address {
+    padding-left: 0 !important;
+    margin-top: 5px; } }
 /* iPad Portrait Only */
+@media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  html, body {
+    height: 100%; }
+
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #root {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -435px; }
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    #root #root_footer {
+      height: 435px; }
+
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #footer {
+    clear: both;
+    position: relative;
+    height: 435px; } }
 /* Mobile Only */
+@media only screen and (max-width: 767px) and (max-device-width: 1000px) {
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  html, body {
+    height: 100%; }
+
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #root {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -205px; }
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    #root #root_footer {
+      height: 205px; }
+
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #footer {
+    clear: both;
+    position: relative;
+    height: 205px; } }
 /* Mobile Landscape Only */
+@media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  html, body {
+    height: 100%; }
+
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #root {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -205px; }
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    #root #root_footer {
+      height: 205px; }
+
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #footer {
+    clear: both;
+    position: relative;
+    height: 205px; } }
 @font-face {
   font-family: "Helvetica Neue LT Pro Condensed";
   src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/helveticaneueltpro-cn.otf') format('opentype'); }
@@ -1207,7 +1347,7 @@ or wrap each row of columns in a <div class="row"> */
     font-family: 'Trade Condensed Bold';
     font-weight: normal !important; }
   /* line 31, ../sass/assets/_fonts.scss */
-  .fonts.trade.condensed.regular, html body, html h3, html p, html ol, html ul, html a, html p a, html i {
+  .fonts.trade.condensed.regular, html body, html h3, html p, html p a, html ol, html ul, html a, html i {
     font-family: 'Trade Condensed Regular';
     font-weight: normal !important; }
   /* line 38, ../sass/assets/_fonts.scss */
@@ -1215,11 +1355,11 @@ or wrap each row of columns in a <div class="row"> */
     font-family: 'Trade Gothic Regular';
     font-weight: normal !important; }
   /* line 43, ../sass/assets/_fonts.scss */
-  .fonts.trade.gothic.bold, .full-width.header.bottom #bottom-header .bottom-header-left #searchform input, .full-width.header.bottom #bottom-header .bottom-header-left .sign-up, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='pwd'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a, .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span, .full-width.footer footer ul li a, .full-width.footer footer .address .business-name {
+  .fonts.trade.gothic.bold, .button, .full-width.header.bottom #bottom-header .bottom-header-left #searchform input, .full-width.header.bottom #bottom-header .bottom-header-left .sign-up, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input[name='pwd'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a, .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span, .full-width.footer footer ul li a, .full-width.footer footer .address .business-name {
     font-family: 'Trade Gothic Bold';
     font-weight: normal !important; }
     /* line 47, ../sass/assets/_fonts.scss */
-    .fonts.trade.gothic.bold.oblique, .full-width.header.bottom #bottom-header .bottom-header-left #searchform input.oblique, .full-width.header.bottom #bottom-header .bottom-header-left .oblique.sign-up, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input.oblique[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input.oblique[name='pwd'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .oblique.remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a.oblique, .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span.oblique, .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a, .full-width.footer footer ul li a.oblique, .full-width.footer footer .address .oblique.business-name {
+    .fonts.trade.gothic.bold.oblique, .oblique.button, .full-width.header.bottom #bottom-header .bottom-header-left #searchform input.oblique, .full-width.header.bottom #bottom-header .bottom-header-left .oblique.sign-up, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input.oblique[name='log'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform input.oblique[name='pwd'], .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform .oblique.remember-forgot, .full-width.header.bottom #bottom-header .bottom-header-left .login-box #loginform a.oblique, .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span.oblique, .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a, .full-width.footer footer ul li a.oblique, .full-width.footer footer .address .oblique.business-name {
       font-family: 'Trade Gothic Bold';
       font-weight: normal !important;
       font-style: oblique; }
@@ -1292,7 +1432,7 @@ html {
    */ }
   /* line 7, ../sass/basics/_theme-html-base.scss */
   html body {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1406760312');
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1406735156');
     font-size: 17px; }
   /* line 16, ../sass/basics/_theme-html-base.scss */
   html h1 {
@@ -1301,78 +1441,103 @@ html {
   /* line 21, ../sass/basics/_theme-html-base.scss */
   html h2 {
     font-size: 1.470588235em;
-    color: #5b5b5b; }
-  /* line 26, ../sass/basics/_theme-html-base.scss */
+    color: #5b5b5b;
+    line-height: 1.1em; }
+  /* line 27, ../sass/basics/_theme-html-base.scss */
   html h3 {
     font-size: 1.176470588em;
     color: #5b5b5b; }
-  /* line 44, ../sass/basics/_theme-html-base.scss */
+  /* line 45, ../sass/basics/_theme-html-base.scss */
   html p {
     font-size: 1em;
-    color: #5b5b5b; }
-  /* line 67, ../sass/basics/_theme-html-base.scss */
+    color: #5b5b5b !important;
+    margin: 7px 0 7px 0; }
+    /* line 51, ../sass/basics/_theme-html-base.scss */
+    html p * {
+      color: #5b5b5b !important; }
+    /* line 55, ../sass/basics/_theme-html-base.scss */
+    html p a {
+      font-size: 1em;
+      color: #6ca348 !important;
+      text-transform: uppercase;
+      text-decoration: none; }
+      /* line 62, ../sass/basics/_theme-html-base.scss */
+      html p a:visited {
+        color: #6ca348 !important; }
+      /* line 66, ../sass/basics/_theme-html-base.scss */
+      html p a:hover {
+        color: #375b20 !important; }
+  /* line 91, ../sass/basics/_theme-html-base.scss */
   html ol {
     font-size: 1em;
     color: #5b5b5b; }
-  /* line 76, ../sass/basics/_theme-html-base.scss */
+  /* line 100, ../sass/basics/_theme-html-base.scss */
   html ul {
     font-size: 1em;
     color: #5b5b5b;
     margin-left: 15px; }
-    /* line 81, ../sass/basics/_theme-html-base.scss */
+    /* line 105, ../sass/basics/_theme-html-base.scss */
     html ul li {
       list-style: disc;
       list-style-position: inside; }
-  /* line 103, ../sass/basics/_theme-html-base.scss */
+  /* line 127, ../sass/basics/_theme-html-base.scss */
   html a {
     font-size: 1em;
     color: #6ca348;
     text-transform: uppercase;
-    text-decoration: none; }
-    /* line 110, ../sass/basics/_theme-html-base.scss */
+    text-decoration: none;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.1s;
+    -moz-transition-duration: 0.1s;
+    -o-transition-duration: 0.1s;
+    transition-duration: 0.1s; }
+    /* line 136, ../sass/basics/_theme-html-base.scss */
     html a:visited {
       color: #6ca348; }
-    /* line 114, ../sass/basics/_theme-html-base.scss */
+    /* line 140, ../sass/basics/_theme-html-base.scss */
     html a:hover {
       color: #375b20; }
-  /* line 122, ../sass/basics/_theme-html-base.scss */
+  /* line 148, ../sass/basics/_theme-html-base.scss */
   html p a {
     font-size: 1em;
     color: #6ca348;
     text-transform: uppercase;
     text-decoration: none; }
-    /* line 129, ../sass/basics/_theme-html-base.scss */
+    /* line 155, ../sass/basics/_theme-html-base.scss */
     html p a:visited {
       color: #6ca348; }
-    /* line 133, ../sass/basics/_theme-html-base.scss */
+    /* line 159, ../sass/basics/_theme-html-base.scss */
     html p a:hover {
       color: #375b20; }
-  /* line 165, ../sass/basics/_theme-html-base.scss */
+  /* line 191, ../sass/basics/_theme-html-base.scss */
   html b, html strong {
     font-size: 1em;
     color: #5b5b5b; }
-  /* line 195, ../sass/basics/_theme-html-base.scss */
+  /* line 221, ../sass/basics/_theme-html-base.scss */
   html i {
     color: #5b5b5b;
     font-style: italic; }
-  /* line 275, ../sass/basics/_theme-html-base.scss */
+  /* line 301, ../sass/basics/_theme-html-base.scss */
   html form input {
     height: 35px;
     width: 100%;
     border: none; }
-    /* line 285, ../sass/basics/_theme-html-base.scss */
+    /* line 311, ../sass/basics/_theme-html-base.scss */
     html form input:focus {
       outline: 0; }
-  /* line 290, ../sass/basics/_theme-html-base.scss */
+  /* line 316, ../sass/basics/_theme-html-base.scss */
   html form input[type='text'] {
     background-color: white;
     height: 35px;
     width: 100%;
     border: none; }
-    /* line 296, ../sass/basics/_theme-html-base.scss */
+    /* line 322, ../sass/basics/_theme-html-base.scss */
     html form input[type='text']:focus {
       outline: 0; }
-  /* line 329, ../sass/basics/_theme-html-base.scss */
+  /* line 355, ../sass/basics/_theme-html-base.scss */
   html .meter {
     width: 100%;
     background-color: #cccccc;
@@ -1383,83 +1548,128 @@ html {
     -o-border-radius: 5px;
     border-radius: 5px;
     overflow: hidden;
-    margin: 15px 0 15px 0; }
-    /* line 337, ../sass/basics/_theme-html-base.scss */
+    margin: 10px 0 7px 0; }
+    /* line 363, ../sass/basics/_theme-html-base.scss */
     html .meter .meter-progress {
       background-color: #6ca348;
       height: 100%; }
+  /* line 375, ../sass/basics/_theme-html-base.scss */
+  html hr {
+    background: #cccccc;
+    border: 0;
+    height: 1px; }
 
-/* line 356, ../sass/basics/_theme-html-base.scss */
+/* line 385, ../sass/basics/_theme-html-base.scss */
 .alignright {
   float: right; }
 
-/* line 360, ../sass/basics/_theme-html-base.scss */
+/* line 389, ../sass/basics/_theme-html-base.scss */
 .alignleft {
   float: left; }
 
 /**
  * Add styling for icons etc. below.
  */
-/* line 368, ../sass/basics/_theme-html-base.scss */
+/* line 397, ../sass/basics/_theme-html-base.scss */
 .logo {
   width: 204px;
   height: 71px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 0 no-repeat; }
-  /* line 372, ../sass/basics/_theme-html-base.scss */
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 0 no-repeat; }
+  /* line 401, ../sass/basics/_theme-html-base.scss */
   .logo.smaller {
     width: 138px;
     height: 48px;
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -91px no-repeat; }
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -91px no-repeat; }
 
-/* line 379, ../sass/basics/_theme-html-base.scss */
+/* line 408, ../sass/basics/_theme-html-base.scss */
 .mail {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1172px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1172px no-repeat; }
 
-/* line 385, ../sass/basics/_theme-html-base.scss */
+/* line 414, ../sass/basics/_theme-html-base.scss */
 .twitter {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1090px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1090px no-repeat; }
 
-/* line 391, ../sass/basics/_theme-html-base.scss */
+/* line 420, ../sass/basics/_theme-html-base.scss */
 .facebook {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1203px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1234px no-repeat; }
 
-/* line 397, ../sass/basics/_theme-html-base.scss */
+/* line 426, ../sass/basics/_theme-html-base.scss */
 .google {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1059px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1059px no-repeat; }
+
+/* line 432, ../sass/basics/_theme-html-base.scss */
+.linkedin {
+  width: 31px;
+  height: 31px;
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1203px no-repeat; }
 
 /**
 * Styling for the buttons
 * Buttons go anchor then span (usually)
 */
-/* line 409, ../sass/basics/_theme-html-base.scss */
+/* line 444, ../sass/basics/_theme-html-base.scss */
+.box-shadow {
+  -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
+  -moz-box-shadow: #b4b4b4 0 0 3px 1px;
+  box-shadow: #b4b4b4 0 0 3px 1px; }
+
+/* line 448, ../sass/basics/_theme-html-base.scss */
 .button {
   display: table;
   height: 30px;
   text-align: center;
-  margin: 15px 0 15px 0; }
-  /* line 414, ../sass/basics/_theme-html-base.scss */
+  margin: 10px 0 10px 0;
+  padding: 3px 17px 0 17px;
+  text-transform: uppercase; }
+  /* line 456, ../sass/basics/_theme-html-base.scss */
   .button.orange {
     background-color: #ec6f17;
     color: white; }
-    /* line 417, ../sass/basics/_theme-html-base.scss */
+    /* line 459, ../sass/basics/_theme-html-base.scss */
     .button.orange * {
+      padding: 3px 5px 0 5px;
       display: table-cell;
       vertical-align: middle; }
+    /* line 465, ../sass/basics/_theme-html-base.scss */
+    .button.orange:hover {
+      background-color: #b75716; }
+  /* line 470, ../sass/basics/_theme-html-base.scss */
+  .button.gray {
+    background-color: #b3b3b3;
+    color: white; }
+    /* line 473, ../sass/basics/_theme-html-base.scss */
+    .button.gray * {
+      display: table-cell;
+      vertical-align: middle; }
+    /* line 478, ../sass/basics/_theme-html-base.scss */
+    .button.gray:hover {
+      background-color: #dadada; }
+  /* line 483, ../sass/basics/_theme-html-base.scss */
+  .button.green {
+    background-color: #6ca348;
+    color: white; }
+    /* line 486, ../sass/basics/_theme-html-base.scss */
+    .button.green * {
+      display: table-cell;
+      vertical-align: middle; }
+    /* line 491, ../sass/basics/_theme-html-base.scss */
+    .button.green:hover {
+      background-color: #375b20; }
 
-/* line 425, ../sass/basics/_theme-html-base.scss */
+/* line 498, ../sass/basics/_theme-html-base.scss */
 .social ul {
   overflow: auto;
   margin: 0;
   padding: 0; }
-  /* line 429, ../sass/basics/_theme-html-base.scss */
+  /* line 502, ../sass/basics/_theme-html-base.scss */
   .social ul li {
     list-style: none;
     float: left;
@@ -1472,12 +1682,12 @@ html {
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     transition-duration: 0.5s; }
-    /* line 436, ../sass/basics/_theme-html-base.scss */
+    /* line 509, ../sass/basics/_theme-html-base.scss */
     .social ul li a {
       display: block;
       height: 100%;
       width: 100%; }
-    /* line 442, ../sass/basics/_theme-html-base.scss */
+    /* line 515, ../sass/basics/_theme-html-base.scss */
     .social ul li:hover {
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
       opacity: 0.8; }
@@ -1521,7 +1731,7 @@ html {
       .full-width.header.top header #top-header #logo {
         width: 204px;
         height: 71px;
-        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 0 no-repeat;
+        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 0 no-repeat;
         margin: 0;
         float: left;
         display: inline-block; }
@@ -1572,7 +1782,7 @@ html {
             color: #5b5b5b;
             font-size: .875em;
             height: 25px;
-            background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd6808eb8b.png') 0 -1146px no-repeat;
+            background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1146px no-repeat;
             background-color: #fcfcfd;
             padding: 0;
             padding-left: 30px;
@@ -1801,46 +2011,62 @@ html {
   margin-right: px !important;
   margin-bottom: 20px;
   background-color: white;
-  -webkit-box-shadow: 0px 0px 5px #333333;
-  -moz-box-shadow: 0px 0px 5px #333333;
-  box-shadow: 0px 0px 5px #333333; }
-  /* line 9, ../sass/layouts/partials/_project-card.scss */
+  -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
+  -moz-box-shadow: #b4b4b4 0 0 3px 1px;
+  box-shadow: #b4b4b4 0 0 3px 1px; }
+  /* line 10, ../sass/layouts/partials/_project-card.scss */
   .project-card img {
     min-width: 100%;
     max-width: 100%;
     height: auto;
-    max-height: 350px;
+    max-height: 200px;
     overflow: hidden; }
-  /* line 17, ../sass/layouts/partials/_project-card.scss */
+  /* line 18, ../sass/layouts/partials/_project-card.scss */
   .project-card .description {
-    padding: 20px; }
-    /* line 22, ../sass/layouts/partials/_project-card.scss */
+    padding: 10px 20px 20px 20px; }
+    /* line 21, ../sass/layouts/partials/_project-card.scss */
     .project-card .description h2 {
       margin-top: 0px;
       margin-bottom: 10px;
       padding: 0; }
-      /* line 26, ../sass/layouts/partials/_project-card.scss */
+      /* line 25, ../sass/layouts/partials/_project-card.scss */
       .project-card .description h2 a {
         color: #5b5b5b;
         text-transform: none; }
-    /* line 41, ../sass/layouts/partials/_project-card.scss */
+    /* line 40, ../sass/layouts/partials/_project-card.scss */
     .project-card .description .goal-amount {
       float: right; }
-    /* line 45, ../sass/layouts/partials/_project-card.scss */
+    /* line 44, ../sass/layouts/partials/_project-card.scss */
     .project-card .description a.donate {
       width: 100%; }
-    /* line 50, ../sass/layouts/partials/_project-card.scss */
+    /* line 49, ../sass/layouts/partials/_project-card.scss */
     .project-card .description .social {
       overflow: auto;
       display: table;
       width: 100%;
       padding-top: 10px; }
-      /* line 55, ../sass/layouts/partials/_project-card.scss */
+      /* line 54, ../sass/layouts/partials/_project-card.scss */
       .project-card .description .social .share {
         display: table-cell;
-        vertical-align: middle; }
+        vertical-align: middle;
+        text-transform: uppercase; }
       /* line 59, ../sass/layouts/partials/_project-card.scss */
       .project-card .description .social ul {
         display: inline-block;
         text-align: right;
         float: right; }
+
+/**
+ * Homepage Specific Styles
+ */
+/* line 1, ../sass/layouts/_homepage.scss */
+.bottom-buttons {
+  margin: 0 auto;
+  display: block;
+  overflow: auto;
+  display: table; }
+  /* line 6, ../sass/layouts/_homepage.scss */
+  .bottom-buttons a, .bottom-buttons div.button {
+    float: left;
+    margin-right: 5px;
+    cursor: pointer; }
