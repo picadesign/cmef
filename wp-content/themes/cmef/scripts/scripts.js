@@ -45,7 +45,7 @@ jQuery(function ($) {
 					var rendered = Mustache.render(template, {
 						title: program['post_title'],
 						author: program['author'],
-						post_content: program['post_content'],
+						post_content: program['post_content'].substring(0,175),
 						the_thumbnail: program['post_thumbnail'],
 						the_permalink: program['guid'],
 						percentage_raised: program['percentage_raised'],
@@ -54,8 +54,8 @@ jQuery(function ($) {
 						twitter_url: program['twitter_url'],
 						linkedin_url: program['linkedin_url'],
 						facebook_url: program['facebook_url'],
-						google_url: program['google_url']
-						donateion_url
+						google_url: program['google_url'],
+						donateion_url: ''
 
 					});
 					$('.projects').append(rendered);

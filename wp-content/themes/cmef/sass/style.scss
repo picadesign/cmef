@@ -22,7 +22,7 @@ $assets-sprite: sprite-map("assets/*.png") ;
 @import "compass/css3/user-interface";
 
 //Sticky Footer
-//@include sticky-footer(205px);
+@include sticky-footer(205px);
 
 //Include the Skeleton© Framework
 @import "assets/skeleton/base";
