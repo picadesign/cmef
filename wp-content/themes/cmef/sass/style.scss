@@ -59,5 +59,6 @@ $assets-sprite: sprite-map("assets/*.png") ;
 /**
  * Page Template and othe General Interior Styles
  */
-@import "layouts/page-general"
+@import "layouts/page-general";
+@import "layouts/single-program";
 

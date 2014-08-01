@@ -1,0 +1,36 @@
+.single-program{
+	h2.title{
+		font-size:1.6em;
+	}
+	.program-image{
+		img{
+			min-width: 90%;
+			max-width:90%;
+			height:auto;
+		}
+	}
+
+	.meter{
+		margin-top:5px;
+		//margin-left:20px / 960px * 100%;
+	}
+
+	.quick-stats{
+		table{
+			width:100%;
+			tr{
+				td{
+					&:first-child{
+						width:43.5%;
+					}
+				}
+			}
+		}
+	}
+
+	.fundraising-activity{
+		table{
+			width:100%; 
+		}
+	}
+}

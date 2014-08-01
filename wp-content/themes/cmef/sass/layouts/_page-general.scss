@@ -2,24 +2,21 @@
 	background-color:white;
 	height:100%;
 	min-height:100%;
+	width:100%;
 	//width:100%;
 	//margin:10px auto;
 	
 	&.page{
 		margin-top:25px;
 		margin-bottom:25px;
-		padding-top:25px;
-		padding-bottom:25px;
+		//padding-top:25px;
+		//padding-bottom:25px;
 		overflow:auto;
-
-		.title{
-			 padding-left:25px;
-			 padding-right:25px;
+		padding:25px;
+		h2.title{
+			margin:0;
 		}
-
 		.content{
-			
-
 			&.border-right{
 				padding-right:50px;
 			}
@@ -27,14 +24,11 @@
 			p{
 				margin-top:0;
 				margin-bottom:14px;
-				padding-left:25px;
 			}
 		}
 
 		.sidebar{
-			padding-right:25px;
 			margin-left:0;
-			padding-left:25px;
 			ul{
 				padding-left:0;
 				margin:0;
@@ -54,5 +48,4 @@
 	margin-bottom:25px;
 	text-transform:uppercase;
 	margin-bottom:64px;
-	padding-left:25px;
 }
