@@ -1582,52 +1582,56 @@ html {
     height: 1px; }
 
 /* line 386, ../sass/basics/_theme-html-base.scss */
+.no-margin {
+  margin: 0 !important; }
+
+/* line 390, ../sass/basics/_theme-html-base.scss */
 .alignright {
   float: right; }
 
-/* line 390, ../sass/basics/_theme-html-base.scss */
+/* line 394, ../sass/basics/_theme-html-base.scss */
 .alignleft {
   float: left; }
 
 /**
  * Add styling for icons etc. below.
  */
-/* line 398, ../sass/basics/_theme-html-base.scss */
+/* line 402, ../sass/basics/_theme-html-base.scss */
 .logo {
   width: 204px;
   height: 71px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 0 no-repeat; }
-  /* line 402, ../sass/basics/_theme-html-base.scss */
+  /* line 406, ../sass/basics/_theme-html-base.scss */
   .logo.smaller {
     width: 138px;
     height: 48px;
     background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -91px no-repeat; }
 
-/* line 409, ../sass/basics/_theme-html-base.scss */
+/* line 413, ../sass/basics/_theme-html-base.scss */
 .mail {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1172px no-repeat; }
 
-/* line 415, ../sass/basics/_theme-html-base.scss */
+/* line 419, ../sass/basics/_theme-html-base.scss */
 .twitter {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1090px no-repeat; }
 
-/* line 421, ../sass/basics/_theme-html-base.scss */
+/* line 425, ../sass/basics/_theme-html-base.scss */
 .facebook {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1234px no-repeat; }
 
-/* line 427, ../sass/basics/_theme-html-base.scss */
+/* line 431, ../sass/basics/_theme-html-base.scss */
 .google {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s7ca187a80b.png') 0 -1059px no-repeat; }
 
-/* line 433, ../sass/basics/_theme-html-base.scss */
+/* line 437, ../sass/basics/_theme-html-base.scss */
 .linkedin {
   width: 31px;
   height: 31px;
@@ -1637,13 +1641,13 @@ html {
 * Styling for the buttons
 * Buttons go anchor then span (usually)
 */
-/* line 445, ../sass/basics/_theme-html-base.scss */
+/* line 449, ../sass/basics/_theme-html-base.scss */
 .box-shadow {
   -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
   -moz-box-shadow: #b4b4b4 0 0 3px 1px;
   box-shadow: #b4b4b4 0 0 3px 1px; }
 
-/* line 449, ../sass/basics/_theme-html-base.scss */
+/* line 453, ../sass/basics/_theme-html-base.scss */
 .button {
   display: table;
   height: 30px;
@@ -1651,47 +1655,47 @@ html {
   margin: 10px 0 10px 0;
   padding: 3px 17px 0 17px;
   text-transform: uppercase; }
-  /* line 457, ../sass/basics/_theme-html-base.scss */
+  /* line 461, ../sass/basics/_theme-html-base.scss */
   .button.orange {
     background-color: #ec6f17;
     color: white; }
-    /* line 460, ../sass/basics/_theme-html-base.scss */
+    /* line 464, ../sass/basics/_theme-html-base.scss */
     .button.orange * {
       padding: 3px 5px 0 5px;
       display: table-cell;
       vertical-align: middle; }
-    /* line 466, ../sass/basics/_theme-html-base.scss */
+    /* line 470, ../sass/basics/_theme-html-base.scss */
     .button.orange:hover {
       background-color: #b75716; }
-  /* line 471, ../sass/basics/_theme-html-base.scss */
+  /* line 475, ../sass/basics/_theme-html-base.scss */
   .button.gray {
     background-color: #b3b3b3;
     color: white; }
-    /* line 474, ../sass/basics/_theme-html-base.scss */
+    /* line 478, ../sass/basics/_theme-html-base.scss */
     .button.gray * {
       display: table-cell;
       vertical-align: middle; }
-    /* line 479, ../sass/basics/_theme-html-base.scss */
+    /* line 483, ../sass/basics/_theme-html-base.scss */
     .button.gray:hover {
       background-color: #dadada; }
-  /* line 484, ../sass/basics/_theme-html-base.scss */
+  /* line 488, ../sass/basics/_theme-html-base.scss */
   .button.green {
     background-color: #6ca348;
     color: white; }
-    /* line 487, ../sass/basics/_theme-html-base.scss */
+    /* line 491, ../sass/basics/_theme-html-base.scss */
     .button.green * {
       display: table-cell;
       vertical-align: middle; }
-    /* line 492, ../sass/basics/_theme-html-base.scss */
+    /* line 496, ../sass/basics/_theme-html-base.scss */
     .button.green:hover {
       background-color: #375b20; }
 
-/* line 499, ../sass/basics/_theme-html-base.scss */
+/* line 503, ../sass/basics/_theme-html-base.scss */
 .social ul {
   overflow: auto;
   margin: 0;
   padding: 0; }
-  /* line 503, ../sass/basics/_theme-html-base.scss */
+  /* line 507, ../sass/basics/_theme-html-base.scss */
   .social ul li {
     list-style: none;
     float: left;
@@ -1704,12 +1708,12 @@ html {
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     transition-duration: 0.5s; }
-    /* line 510, ../sass/basics/_theme-html-base.scss */
+    /* line 514, ../sass/basics/_theme-html-base.scss */
     .social ul li a {
       display: block;
       height: 100%;
       width: 100%; }
-    /* line 516, ../sass/basics/_theme-html-base.scss */
+    /* line 520, ../sass/basics/_theme-html-base.scss */
     .social ul li:hover {
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
       opacity: 0.8; }
@@ -1783,8 +1787,7 @@ html {
     background-image: -webkit-linear-gradient(#dcdcdc, #cccccc);
     background-image: -moz-linear-gradient(#dcdcdc, #cccccc);
     background-image: -o-linear-gradient(#dcdcdc, #cccccc);
-    background-image: linear-gradient(#dcdcdc, #cccccc);
-    margin-bottom: 25px; }
+    background-image: linear-gradient(#dcdcdc, #cccccc); }
     /* line 59, ../sass/layouts/_header.scss */
     .full-width.header.bottom .container {
       height: 100%; }
@@ -2100,3 +2103,11 @@ h1.homepage {
     float: left;
     margin-right: 5px;
     cursor: pointer; }
+
+/**
+ * Page Template and othe General Interior Styles
+ */
+/* line 1, ../sass/layouts/_page-general.scss */
+.white-background {
+  background-color: white;
+  height: 100%; }

@@ -54,7 +54,7 @@
 	&.bottom{
 		height:64px;
 		@include background-image(linear-gradient(rgb(220, 220, 220), rgb(204, 204, 204)));
-		margin-bottom:25px;
+		//margin-bottom:25px;
 
 		.container{
 			height:100%;

@@ -65,5 +65,5 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container <?php echo is_front_page() == false ? 'white-background' : ''; ?>">
             

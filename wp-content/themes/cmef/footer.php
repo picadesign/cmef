@@ -9,7 +9,7 @@
                     </div>
                     <div class="social">
                         <ul>
-                            <li class="mail"><a href="mailto:<?php echo antispambot( get_option('qs_contact_email'), 0 ) ?>?subject=Inquiry" "Email CMEF"></a></li>
+                            <li class="mail"><a href="mailto:<?php echo antispambot( get_option('qs_contact_email'), 0 ) ?>?subject=Inquiry" title="Email CMEF"></a></li>
                             <li class="twitter"><a href="<?php echo get_option('qs_contact_twitter') ?>" target="_blank"></a></li>
                             <li class="facebook"><a href="<?php echo get_option('qs_contact_facebook') ?>" target="_blank"></a></li>
                             <li class="google"><a href="<?php echo get_option('qs_contact_google') ?>" target="_blank"></a></li>
