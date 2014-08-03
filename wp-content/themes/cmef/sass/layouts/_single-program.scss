@@ -3,10 +3,14 @@
 		font-size:1.6em;
 	}
 	.program-image{
-		img{
-			min-width: 90%;
-			max-width:90%;
+		.thumbnail img{
+			min-width: 100%;
+			max-width:100%;
 			height:auto;
+		}
+
+		.thumbnails{
+			text-align:justify;
 		}
 	}
 
