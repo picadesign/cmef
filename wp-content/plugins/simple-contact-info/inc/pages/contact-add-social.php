@@ -6,13 +6,13 @@ if ( !defined('ABSPATH') ) {
 
 // ------------- Functions -------------
 
-function sciGetOptions() {
+function sci_get_options() {
 	global $wpdb;
 
 	return $wpdb->get_results("SELECT `option_name` FROM $wpdb->options WHERE `option_name` LIKE 'qs_contact_custom_%'");
 }
 
-function sciShowCustomOptions() {
+function sci_show_custom_options() {
 	global $wpdb;
 
 	$results = $wpdb->get_results("SELECT `option_name` FROM $wpdb->options WHERE `option_name` LIKE 'qs_contact_custom_%'");
@@ -27,24 +27,28 @@ function sciShowCustomOptions() {
 	return $out;
 }
 
-function sciContactInfoAddSocial() {
+function sci_contact_info_add_social() {
 	$hidden_field_name = 'add_social';
 
 	if (isset($_POST['name']) && $_POST[$hidden_field_name] == 'Y') {
-		add_action('admin_notices', 'sciUpdatedNotice');
+		
+		do_action( 'sci_updated_info' ); // clear widgets cache
+
+		add_action('admin_notices', 'sci_updated_notice'); // show sci notice message
+
 		if (!empty($_POST['name'])) {
 			$name = str_replace(' ', '_', trim(strip_tags(strtolower($_POST['name'])))); 
 
 			add_option('qs_contact_custom_'.$name);
 			add_option('qs_contact_'.$name.'_icon');
 			$msg = __(' was successfully added.', 'simple-contact-info');
-			sciUpdatedNotice(ucfirst($name).$msg);
+			sci_updated_notice(ucfirst($name).$msg);
 		} else {
 			$msg = __('You forgot write name.', 'simple-contact-info');
-			sciUpdatedNotice($msg);	
+			sci_updated_notice($msg);	
 		}
 	}
-	$options = sciGetOptions();
+	$options = sci_get_options();
 	?>
 	<div class="wrap">
 		<div class="icon-sci-contact">

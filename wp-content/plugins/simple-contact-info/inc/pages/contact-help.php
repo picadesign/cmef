@@ -6,7 +6,7 @@ if ( !defined('ABSPATH') ) {
 
 // ------------- Functions ------------- 
 
-function sciContactInfoHelp() {
+function sci_contact_info_help() {
 	?>
 	<div class="wrap">
 		<div class="icon-sci-contact">

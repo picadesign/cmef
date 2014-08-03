@@ -1,6 +1,5 @@
 <?php 
 get_header(); 
-setlocale(LC_MONETARY, 'en_US');
 ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<h1 class="box-shadow homepage"><?php echo $post->post_content ?></h1>

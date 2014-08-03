@@ -1,6 +1,7 @@
 <?php 
     global $current_user;
     global $post;
+    setlocale(LC_MONETARY, 'en_US');
     get_userdata();
     //echo '<pre>';
     //print_r($current_user);

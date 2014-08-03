@@ -1145,7 +1145,36 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 205px; } }
+    height: 205px; }
+
+  /* line 29, ../sass/assets/skeleton/_layout.scss */
+  .project-card {
+    width: 32% !important; } }
+@media only screen and (min-width: 991px) {
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  html, body {
+    height: 100%; }
+
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #root {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -205px; }
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    #root #root_footer {
+      height: 205px; }
+
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #footer {
+    clear: both;
+    position: relative;
+    height: 205px; }
+
+  /* line 36, ../sass/assets/skeleton/_layout.scss */
+  .project-card {
+    width: 32% !important; } }
 /* Mobile/Browser */
 @media only screen and (max-width: 767px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1169,9 +1198,9 @@ or wrap each row of columns in a <div class="row"> */
     position: relative;
     height: 435px; }
 
-  /* line 34, ../sass/assets/skeleton/_layout.scss */
+  /* line 44, ../sass/assets/skeleton/_layout.scss */
   .project-card {
-    width: auto !important; } }
+    width: 100% !important; } }
 /* Mobile Landscape/Browser */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1193,13 +1222,17 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 435px; } }
+    height: 435px; }
+
+  /* line 53, ../sass/assets/skeleton/_layout.scss */
+  .project-card {
+    width: 100% !important; } }
 /* Anything smaller than standard 960 */
 @media only screen and (max-width: 959px) {
-  /* line 48, ../sass/assets/skeleton/_layout.scss */
+  /* line 62, ../sass/assets/skeleton/_layout.scss */
   .full-width.header.top {
     margin-bottom: 25px; }
-  /* line 51, ../sass/assets/skeleton/_layout.scss */
+  /* line 65, ../sass/assets/skeleton/_layout.scss */
   .full-width.header.bottom {
     display: none; }
 
@@ -1224,15 +1257,19 @@ or wrap each row of columns in a <div class="row"> */
     position: relative;
     height: 470px; }
 
-  /* line 58, ../sass/assets/skeleton/_layout.scss */
+  /* line 72, ../sass/assets/skeleton/_layout.scss */
   .copyright {
     width: 62%;
     float: left; }
 
-  /* line 63, ../sass/assets/skeleton/_layout.scss */
+  /* line 77, ../sass/assets/skeleton/_layout.scss */
   .footer-menu, .address {
     padding-left: 0 !important;
-    margin-top: 5px; } }
+    margin-top: 5px; }
+
+  /* line 82, ../sass/assets/skeleton/_layout.scss */
+  .project-card {
+    width: 100% !important; } }
 /* iPad Portrait Only */
 @media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1254,7 +1291,11 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 435px; } }
+    height: 435px; }
+
+  /* line 90, ../sass/assets/skeleton/_layout.scss */
+  .project-card {
+    width: 100% !important; } }
 /* Mobile Only */
 @media only screen and (max-width: 767px) and (max-device-width: 1000px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1276,7 +1317,11 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 205px; } }
+    height: 205px; }
+
+  /* line 99, ../sass/assets/skeleton/_layout.scss */
+  .project-card {
+    width: 32% !important; } }
 /* Mobile Landscape Only */
 @media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1298,7 +1343,11 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 205px; } }
+    height: 205px; }
+
+  /* line 107, ../sass/assets/skeleton/_layout.scss */
+  .project-card {
+    width: 32% !important; } }
 @font-face {
   font-family: "Helvetica Neue LT Pro Condensed";
   src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/helveticaneueltpro-cn.otf') format('opentype'); }
@@ -2057,46 +2106,47 @@ html {
   margin-right: px !important;
   margin-bottom: 20px;
   background-color: white;
+  width: 32%;
   -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
   -moz-box-shadow: #b4b4b4 0 0 3px 1px;
   box-shadow: #b4b4b4 0 0 3px 1px; }
-  /* line 10, ../sass/layouts/partials/_project-card.scss */
+  /* line 11, ../sass/layouts/partials/_project-card.scss */
   .project-card img {
     min-width: 100%;
     max-width: 100%;
     height: auto;
     max-height: 200px;
     overflow: hidden; }
-  /* line 18, ../sass/layouts/partials/_project-card.scss */
+  /* line 19, ../sass/layouts/partials/_project-card.scss */
   .project-card .description {
     padding: 10px 20px 20px 20px; }
-    /* line 21, ../sass/layouts/partials/_project-card.scss */
+    /* line 22, ../sass/layouts/partials/_project-card.scss */
     .project-card .description h2 {
       margin-top: 0px;
       margin-bottom: 10px;
       padding: 0; }
-      /* line 25, ../sass/layouts/partials/_project-card.scss */
+      /* line 26, ../sass/layouts/partials/_project-card.scss */
       .project-card .description h2 a {
         color: #5b5b5b;
         text-transform: none; }
-    /* line 40, ../sass/layouts/partials/_project-card.scss */
+    /* line 41, ../sass/layouts/partials/_project-card.scss */
     .project-card .description .goal-amount {
       float: right; }
-    /* line 44, ../sass/layouts/partials/_project-card.scss */
+    /* line 45, ../sass/layouts/partials/_project-card.scss */
     .project-card .description a.donate {
       width: 100%; }
-    /* line 49, ../sass/layouts/partials/_project-card.scss */
+    /* line 50, ../sass/layouts/partials/_project-card.scss */
     .project-card .description .social {
       overflow: auto;
       display: table;
       width: 100%;
       padding-top: 10px; }
-      /* line 54, ../sass/layouts/partials/_project-card.scss */
+      /* line 55, ../sass/layouts/partials/_project-card.scss */
       .project-card .description .social .share {
         display: table-cell;
         vertical-align: middle;
         text-transform: uppercase; }
-      /* line 59, ../sass/layouts/partials/_project-card.scss */
+      /* line 60, ../sass/layouts/partials/_project-card.scss */
       .project-card .description .social ul {
         display: inline-block;
         text-align: right;
@@ -2194,3 +2244,11 @@ h1.homepage {
 /* line 36, ../sass/layouts/_single-program.scss */
 .single-program .fundraising-activity table {
   width: 100%; }
+
+/* line 2, ../sass/layouts/_author-styles.scss */
+.profile-image img {
+  max-width: 100%; }
+
+/* line 8, ../sass/layouts/_author-styles.scss */
+.author-projects .project-card {
+  width: 300px !important; }

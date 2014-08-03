@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
 									_this.parent('li').remove();
 								}
 							});
-						};
+						}
 						$('#dialog-confirm').dialog("close");
 					});
 				},
@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
 				}
 			}
 		});
-	})
+	});
 
 	$('.sci-delete-option').live('click', function(){
 		var _this = $(this);
@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
 			height:190,
 			modal: true,
 			buttons: {
-				"Delete": function() {
+				Delete: function() {
 					var data = {
 						action: 'sci_ajax_delete_option',
 						option: _this.parent("td").find('.sci-option').val()
@@ -72,5 +72,5 @@ jQuery(document).ready(function($) {
 				}
 			}
 		});
-	})
+	});
 });

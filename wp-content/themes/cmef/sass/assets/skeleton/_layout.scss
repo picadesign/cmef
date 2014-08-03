@@ -26,19 +26,33 @@
 	/* iPad Portrait/Browser */
 	@media only screen and (min-width: 768px) and (max-width: 991px) {
 		@include sticky-footer(205px);
+		.project-card{
+			width: 32% !important;
+		}
+	}
+
+	@media only screen and (min-width: 991px) {
+		@include sticky-footer(205px);
+		.project-card{
+			width: 32% !important;
+		}
 	}
 	
 	/* Mobile/Browser */
 	@media only screen and (max-width: 767px) {
 		@include sticky-footer(435px);
 		.project-card{
-			width: auto !important;
+			width: 100% !important;
 		}
 	}
 	
 	/* Mobile Landscape/Browser */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {
 		@include sticky-footer(435px);
+
+		.project-card{
+			width: 100% !important;
+		}
 
 	}
 	
@@ -64,22 +78,35 @@
 			padding-left:0 !important;
 			margin-top:5px;
 		}
+
+		.project-card{
+			width: 100% !important;
+		}
 	}
 	
 	/* iPad Portrait Only */
 	@media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {
 		@include sticky-footer(435px);
+		.project-card{
+			width: 100% !important;
+		}
 
 	}
 	
 	/* Mobile Only */
 	@media only screen and (max-width: 767px) and (max-device-width: 1000px) {
 		@include sticky-footer(205px);
+		.project-card{
+			width: 32% !important;
+		}
 	}
 	
 	/* Mobile Landscape Only */
 	@media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {
 		@include sticky-footer(205px);
+		.project-card{
+			width: 32% !important;
+		}
 	}
 	
 @import "../fonts";

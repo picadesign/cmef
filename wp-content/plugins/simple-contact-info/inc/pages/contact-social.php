@@ -6,7 +6,7 @@ if ( !defined('ABSPATH') ) {
 
 // ------------- Functions ------------- 
 
-function sciReadDir($path){
+function sci_read_dir($path){
 	$files = array();
 	if ($handle = opendir($path)) {
 		while (false !== ($file = readdir($handle))) {
@@ -20,24 +20,24 @@ function sciReadDir($path){
 	return $files;
 }
 
-function sciGetImages($custom = false) {
+function sci_get_images($custom = false) {
 	if ($custom) {
-		$path = sciGetFilesPath('', $custom);
+		$path = sci_get_files_path('', $custom);
 	} else {
-		$path = sciGetFilesPath();
+		$path = sci_get_files_path();
 	}
 
-	$folders = sciReadDir($path);
+	$folders = sci_read_dir($path);
 
 	$images = array();
 	if (!empty($folders)) {
 		foreach ($folders as $folder) {
 			if ($custom) {
-				$path = sciGetFilesPath($folder.'/', $custom).$folder;
+				$path = sci_get_files_path($folder.'/', $custom).$folder;
 			} else {
-				$path = sciGetFilesPath($folder.'/');
+				$path = sci_get_files_path($folder.'/');
 			}
-			$images[$folder] = sciReadDir($path);
+			$images[$folder] = sci_read_dir($path);
 			if (empty($images[$folder])) {
 				unset($images[$folder]);
 			}
@@ -47,7 +47,7 @@ function sciGetImages($custom = false) {
 	return $images;
 }
 
-function sciGetFilesPath($folder = '', $custom = false) {
+function sci_get_files_path($folder = '', $custom = false) {
 	if ($custom) {
 		$upload_dir = wp_upload_dir();
 		$path = $upload_dir['basedir'].'/sci-custom-icons/';
@@ -58,14 +58,14 @@ function sciGetFilesPath($folder = '', $custom = false) {
 	return $path;
 }
 
-function sciGetDropdown() {
-	$path 		= sciGetFilesPath();
-	$folders 	= sciReadDir($path);
+function sci_get_dropdown() {
+	$path 		= sci_get_files_path();
+	$folders 	= sci_read_dir($path);
 
 	$select = '<select name="folder" id="folder">';
 	
 	// Add custom social networks to dropdown
-	$customSocial = sciGetOptions();
+	$customSocial = sci_get_options();
 	if (!empty($customSocial)) {
 		foreach ($customSocial as $social) {
 			$name = str_replace('qs_contact_custom_', '', $social->option_name);
@@ -82,7 +82,7 @@ function sciGetDropdown() {
 	return $select;
 }
 
-function checkCustomPath() {
+function sci_check_custom_path() {
 	$upload_dir = wp_upload_dir();
 	$path = $upload_dir['basedir'].'/sci-custom-icons/';
 
@@ -100,7 +100,7 @@ function sci_filter_upload_dir($params) {
 	return $params;
 }
 
-function sciContactInfoSocial() {
+function sci_contact_info_social() {
 	$hidden_field_select = 'contact_info_icons_select';
 	$hidden_field_upload = 'contact_info_icons_upload';
 
@@ -109,9 +109,9 @@ function sciContactInfoSocial() {
 		foreach ($_POST['icons'] as $key => $value) {
 			update_option("qs_contact_".$key."_icon", $value);
 		}
-		add_action( 'admin_notices', 'sciUpdatedNotice' );
+		add_action( 'admin_notices', 'sci_updated_notice' );
 		$msg = __('Settings succesfully updated.', 'simple-contact-info');
-		sciUpdatedNotice($msg);
+		sci_updated_notice($msg);
 	}
 
 	// Submit form upload
@@ -124,20 +124,20 @@ function sciContactInfoSocial() {
 			
 			$file = wp_handle_upload($_FILES['img'], array('test_form' => false));
 
-			add_action( 'admin_notices', 'sciUpdatedNotice' );
+			add_action( 'admin_notices', 'sci_updated_notice' );
 			if (isset($file['error'])) {
-				sciUpdatedNotice($file['error'], $error);
+				sci_updated_notice($file['error'], $error);
 			} else {
-				sciUpdatedNotice('Image succesfully uploaded.');
+				sci_updated_notice('Image succesfully uploaded.');
 			}
 		}
 	}
 
-	$images = sciGetImages();
-	if (checkCustomPath()) {
-		$imagesCustom = sciGetImages(true); // true - for custom icons
+	$images = sci_get_images();
+	if (sci_check_custom_path()) {
+		$imagesCustom = sci_get_images(true); // true - for custom icons
 	}
-	$dropdown = sciGetDropdown();
+	$dropdown = sci_get_dropdown();
 	?>
 	<div class="wrap">
 		<div class="icon-sci-contact">

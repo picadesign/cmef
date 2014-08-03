@@ -1,4 +1,4 @@
-<div class="four columns alpha omega project-card">
+<div class="four columns omega alpha project-card">
 	<?php if(has_post_thumbnail($post->ID)): ?>
 		<?php the_post_thumbnail($size = 'post-thumbnail', $attr = ''); ?>
 	<?php else : ?>

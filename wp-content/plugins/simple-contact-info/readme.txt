@@ -5,7 +5,7 @@ Tags: contact info, google map, contact information, twitter, facebook, youtube,
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: Wordpress 3.5
-Tested up to: 3.9
+Tested up to: 3.9.1
 Stable tag: trunk
 
 Write contact information, social links, google map and display on your website where you want. Do it easy!
@@ -24,6 +24,7 @@ Also you can show social links on front-end using predefined (facebook, twitter,
 * 4 widgets to display information
 * Shortcode supported
 * W3C valid widgets
+* Transient cache widgets
 
 = Supported Languages =
 * Russian 
@@ -91,6 +92,11 @@ Dont worry, be happy. :)
 5. Widgets in frontend.
 
 == Changelog ==
+
+= 1.1.8 =
+* Added cache widgets for speed improvement. ( Transient )
+* Small code improvement. ( WordPress PHP Coding Standards )
+* Added Lat\Long and MapType for GoogleMap Widget.
 
 = 1.1.7 =
 * Support WordPress 3.9+

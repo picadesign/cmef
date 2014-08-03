@@ -89,24 +89,12 @@
 							<tr>
 								<td><b>Name</b></td>
 								<td><b>Email</b></td>
-								<td><b>Phone Number</b></td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Somebody Special</td>
-								<td>somebody@email.com</td>
-								<td>207-564-4556</td>
-							</tr>
-							<tr>
-								<td>Somebody Special</td>
-								<td>somebody@email.com</td>
-								<td>207-564-4556</td>
-							</tr>
-							<tr>
-								<td>Somebody Special</td>
-								<td>somebody@email.com</td>
-								<td>207-564-4556</td>
+								<td><?php the_author_posts_link(); ?></td>
+								<td><a href="mailto:<?php antispambot(the_author_meta('user_email')); ?>"><?php antispambot(the_author_meta('user_email')); ?></a></td>
 							</tr>
 						</tbody>
 					</table>
