@@ -622,182 +622,510 @@ th {
 .container .offset-by-fifteen {
   padding-left: 900px; }
 
+/* White Background (Interior Page) 
+We need to make a new version for the interior 
+because the interior pages only have a width of 910 which doesnt really work. */
+/* line 76, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0; }
+
+/* line 78, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .column,
+.container .white-background .columns {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+/* line 79, ../sass/assets/skeleton/_skeleton.scss */
+.row {
+  margin-bottom: 20px;
+  margin-right: 25px;
+  margin-left: 25px; }
+
+/* Nested Column Classes */
+/* line 82, ../sass/assets/skeleton/_skeleton.scss */
+.white-background .column.alpha, .white-background .columns.alpha {
+  margin-left: 0; }
+
+/* line 83, ../sass/assets/skeleton/_skeleton.scss */
+.white-background .column.omega, .white-background .columns.omega {
+  margin-right: 0; }
+
+/* Base Grid */
+/* line 87, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .one.column,
+.container .white-background .one.columns {
+  width: 38.1px; }
+
+/* line 88, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .two.columns {
+  width: 96.25px; }
+
+/* line 89, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .three.columns {
+  width: 154.33px; }
+
+/* line 90, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .four.columns {
+  width: 212.5px; }
+
+/* line 91, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .five.columns {
+  width: 270.5px; }
+
+/* line 92, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .six.columns {
+  width: 328.33px; }
+
+/* line 93, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .seven.columns {
+  width: 386.33px; }
+
+/* line 94, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .eight.columns {
+  width: 445px; }
+
+/* line 95, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .nine.columns {
+  width: 503.68px; }
+
+/* line 96, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .ten.columns {
+  width: 561.67px; }
+
+/* line 97, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .eleven.columns {
+  width: 619.5px; }
+
+/* line 98, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .twelve.columns {
+  width: 677.5px; }
+
+/* line 99, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .thirteen.columns {
+  width: 735.67px; }
+
+/* line 100, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .fourteen.columns {
+  width: 793.75px; }
+
+/* line 101, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .fifteen.columns {
+  width: 851.9px; }
+
+/* line 102, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .sixteen.columns {
+  width: 910px; }
+
+/* line 104, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .one-third.column {
+  width: 300px; }
+
+/* line 105, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .two-thirds.column {
+  width: 620px; }
+
+/* Offsets */
+/* line 108, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-one {
+  padding-left: 58.1px; }
+
+/* line 109, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-two {
+  padding-left: 116.25px; }
+
+/* line 110, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-three {
+  padding-left: 174.33px; }
+
+/* line 111, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-four {
+  padding-left: 232.5px; }
+
+/* line 112, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-five {
+  padding-left: 290.5px; }
+
+/* line 113, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-six {
+  padding-left: 348.33px; }
+
+/* line 114, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-seven {
+  padding-left: 406.33px; }
+
+/* line 115, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-eight {
+  padding-left: 465px; }
+
+/* line 116, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-nine {
+  padding-left: 523.68px; }
+
+/* line 117, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-ten {
+  padding-left: 581.67px; }
+
+/* line 118, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-eleven {
+  padding-left: 639.5px; }
+
+/* line 119, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-twelve {
+  padding-left: 697.5px; }
+
+/* line 120, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-thirteen {
+  padding-left: 755.67px; }
+
+/* line 121, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-fourteen {
+  padding-left: 813.75px; }
+
+/* line 122, ../sass/assets/skeleton/_skeleton.scss */
+.container .white-background .offset-by-fifteen {
+  padding-left: 871.9px; }
+
 /* #Tablet (Portrait)
 ================================================== */
 /* Note: Design for a width of 768px */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 80, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 130, ../sass/assets/skeleton/_skeleton.scss */
   .container {
     width: 768px; }
 
-  /* line 82, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 132, ../sass/assets/skeleton/_skeleton.scss */
   .container .column,
   .container .columns {
     margin-left: 10px;
     margin-right: 10px; }
 
-  /* line 83, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 133, ../sass/assets/skeleton/_skeleton.scss */
   .column.alpha, .columns.alpha {
     margin-left: 0;
     margin-right: 10px; }
 
-  /* line 84, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 134, ../sass/assets/skeleton/_skeleton.scss */
   .column.omega, .columns.omega {
     margin-right: 0;
     margin-left: 10px; }
 
-  /* line 85, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 135, ../sass/assets/skeleton/_skeleton.scss */
   .alpha.omega {
     margin-left: 0;
     margin-right: 0; }
 
-  /* line 88, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 138, ../sass/assets/skeleton/_skeleton.scss */
   .container .one.column,
   .container .one.columns {
     width: 28px; }
 
-  /* line 89, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 139, ../sass/assets/skeleton/_skeleton.scss */
   .container .two.columns {
     width: 76px; }
 
-  /* line 90, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 140, ../sass/assets/skeleton/_skeleton.scss */
   .container .three.columns {
     width: 124px; }
 
-  /* line 91, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 141, ../sass/assets/skeleton/_skeleton.scss */
   .container .four.columns {
     width: 172px; }
 
-  /* line 92, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 142, ../sass/assets/skeleton/_skeleton.scss */
   .container .five.columns {
     width: 220px; }
 
-  /* line 93, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 143, ../sass/assets/skeleton/_skeleton.scss */
   .container .six.columns {
     width: 268px; }
 
-  /* line 94, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 144, ../sass/assets/skeleton/_skeleton.scss */
   .container .seven.columns {
     width: 316px; }
 
-  /* line 95, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 145, ../sass/assets/skeleton/_skeleton.scss */
   .container .eight.columns {
     width: 364px; }
 
-  /* line 96, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 146, ../sass/assets/skeleton/_skeleton.scss */
   .container .nine.columns {
     width: 412px; }
 
-  /* line 97, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 147, ../sass/assets/skeleton/_skeleton.scss */
   .container .ten.columns {
     width: 460px; }
 
-  /* line 98, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 148, ../sass/assets/skeleton/_skeleton.scss */
   .container .eleven.columns {
     width: 508px; }
 
-  /* line 99, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 149, ../sass/assets/skeleton/_skeleton.scss */
   .container .twelve.columns {
     width: 556px; }
 
-  /* line 100, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 150, ../sass/assets/skeleton/_skeleton.scss */
   .container .thirteen.columns {
     width: 604px; }
 
-  /* line 101, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 151, ../sass/assets/skeleton/_skeleton.scss */
   .container .fourteen.columns {
     width: 652px; }
 
-  /* line 102, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 152, ../sass/assets/skeleton/_skeleton.scss */
   .container .fifteen.columns {
     width: 700px; }
 
-  /* line 103, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 153, ../sass/assets/skeleton/_skeleton.scss */
   .container .sixteen.columns {
     width: 748px; }
 
-  /* line 105, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 155, ../sass/assets/skeleton/_skeleton.scss */
   .container .one-third.column {
     width: 236px; }
 
-  /* line 106, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 156, ../sass/assets/skeleton/_skeleton.scss */
   .container .two-thirds.column {
     width: 492px; }
 
   /* Offsets */
-  /* line 109, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 159, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-one {
     padding-left: 48px; }
 
-  /* line 110, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 160, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-two {
     padding-left: 96px; }
 
-  /* line 111, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 161, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-three {
     padding-left: 144px; }
 
-  /* line 112, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 162, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-four {
     padding-left: 192px; }
 
-  /* line 113, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 163, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-five {
     padding-left: 240px; }
 
-  /* line 114, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 164, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-six {
     padding-left: 288px; }
 
-  /* line 115, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 165, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-seven {
     padding-left: 336px; }
 
-  /* line 116, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 166, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-eight {
     padding-left: 384px; }
 
-  /* line 117, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 167, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-nine {
     padding-left: 432px; }
 
-  /* line 118, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 168, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-ten {
     padding-left: 480px; }
 
-  /* line 119, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 169, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-eleven {
     padding-left: 528px; }
 
-  /* line 120, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 170, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-twelve {
     padding-left: 576px; }
 
-  /* line 121, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 171, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-thirteen {
     padding-left: 624px; }
 
-  /* line 122, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 172, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-fourteen {
     padding-left: 672px; }
 
-  /* line 123, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 173, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-fifteen {
+    padding-left: 720px; }
+
+  /* White Container Background*/
+  /* line 176, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background {
+    width: 768px; }
+
+  /* line 178, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .column,
+  .container .white-background .columns {
+    margin-left: 5px;
+    margin-right: 5px; }
+
+  /* line 179, ../sass/assets/skeleton/_skeleton.scss */
+  .white-background .column.alpha, .white-background .columns.alpha {
+    margin-left: 0 !important;
+    margin-right: 5px !important; }
+
+  /* line 180, ../sass/assets/skeleton/_skeleton.scss */
+  .white-background .column.omega, .white-background .columns.omega {
+    margin-right: 0 !important;
+    margin-left: 5px !important; }
+
+  /* line 181, ../sass/assets/skeleton/_skeleton.scss */
+  .white-background .alpha.omega {
+    margin-left: 0 !important;
+    margin-right: 0 !important; }
+
+  /* line 184, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .one.column,
+  .container .white-background .one.columns {
+    width: 35.5px; }
+
+  /* line 185, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .two.columns {
+    width: 81px; }
+
+  /* line 186, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .three.columns {
+    width: 126.5px; }
+
+  /* line 187, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .four.columns {
+    width: 172px; }
+
+  /* line 188, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .five.columns {
+    width: 217.5px; }
+
+  /* line 189, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .six.columns {
+    width: 263px; }
+
+  /* line 190, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .seven.columns {
+    width: 308.5px; }
+
+  /* line 191, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .eight.columns {
+    width: 354px; }
+
+  /* line 192, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .nine.columns {
+    width: 399.5px; }
+
+  /* line 193, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .ten.columns {
+    width: 445px; }
+
+  /* line 194, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .eleven.columns {
+    width: 490.5px; }
+
+  /* line 195, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .twelve.columns {
+    width: 536px; }
+
+  /* line 196, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .thirteen.columns {
+    width: 581.5px; }
+
+  /* line 197, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .fourteen.columns {
+    width: 627px; }
+
+  /* line 198, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .fifteen.columns {
+    width: 672.5px; }
+
+  /* line 199, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .sixteen.columns {
+    width: 718px; }
+
+  /* line 201, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .one-third.column {
+    width: 236px; }
+
+  /* line 202, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .two-thirds.column {
+    width: 492px; }
+
+  /* Offsets */
+  /* line 205, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-one {
+    padding-left: 48px; }
+
+  /* line 206, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-two {
+    padding-left: 96px; }
+
+  /* line 207, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-three {
+    padding-left: 144px; }
+
+  /* line 208, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-four {
+    padding-left: 192px; }
+
+  /* line 209, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-five {
+    padding-left: 240px; }
+
+  /* line 210, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-six {
+    padding-left: 288px; }
+
+  /* line 211, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-seven {
+    padding-left: 336px; }
+
+  /* line 212, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-eight {
+    padding-left: 384px; }
+
+  /* line 213, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-nine {
+    padding-left: 432px; }
+
+  /* line 214, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-ten {
+    padding-left: 480px; }
+
+  /* line 215, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-eleven {
+    padding-left: 528px; }
+
+  /* line 216, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-twelve {
+    padding-left: 576px; }
+
+  /* line 217, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-thirteen {
+    padding-left: 624px; }
+
+  /* line 218, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-fourteen {
+    padding-left: 672px; }
+
+  /* line 219, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-fifteen {
     padding-left: 720px; } }
 /*  #Mobile (Portrait)
 ================================================== */
 /* Note: Design for a width of 320px */
 @media only screen and (max-width: 767px) {
-  /* line 133, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 229, ../sass/assets/skeleton/_skeleton.scss */
   .container {
     width: 300px; }
 
-  /* line 135, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 231, ../sass/assets/skeleton/_skeleton.scss */
   .container .columns,
   .container .column {
     margin: 0; }
 
-  /* line 155, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 251, ../sass/assets/skeleton/_skeleton.scss */
   .container .one.column,
   .container .one.columns,
   .container .two.columns,
@@ -820,7 +1148,7 @@ th {
     width: 300px; }
 
   /* Offsets */
-  /* line 172, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 268, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-one,
   .container .offset-by-two,
   .container .offset-by-three,
@@ -836,21 +1164,71 @@ th {
   .container .offset-by-thirteen,
   .container .offset-by-fourteen,
   .container .offset-by-fifteen {
+    padding-left: 0; }
+
+  /* line 270, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background {
+    width: 300px; }
+
+  /* line 272, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .columns,
+  .container .white-background .column {
+    margin: 0; }
+
+  /* line 292, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .one.column,
+  .container .white-background .one.columns,
+  .container .white-background .two.columns,
+  .container .white-background .three.columns,
+  .container .white-background .four.columns,
+  .container .white-background .five.columns,
+  .container .white-background .six.columns,
+  .container .white-background .seven.columns,
+  .container .white-background .eight.columns,
+  .container .white-background .nine.columns,
+  .container .white-background .ten.columns,
+  .container .white-background .eleven.columns,
+  .container .white-background .twelve.columns,
+  .container .white-background .thirteen.columns,
+  .container .white-background .fourteen.columns,
+  .container .white-background .fifteen.columns,
+  .container .white-background .sixteen.columns,
+  .container .white-background .one-third.column,
+  .container .white-background .two-thirds.column {
+    width: 250px; }
+
+  /* Offsets */
+  /* line 309, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .offset-by-one,
+  .container .white-background .offset-by-two,
+  .container .white-background .offset-by-three,
+  .container .white-background .offset-by-four,
+  .container .white-background .offset-by-five,
+  .container .white-background .offset-by-six,
+  .container .white-background .offset-by-seven,
+  .container .white-background .offset-by-eight,
+  .container .white-background .offset-by-nine,
+  .container .white-background .offset-by-ten,
+  .container .white-background .offset-by-eleven,
+  .container .white-background .offset-by-twelve,
+  .container .white-background .offset-by-thirteen,
+  .container .white-background .offset-by-fourteen,
+  .container .white-background .offset-by-fifteen {
     padding-left: 0; } }
 /* #Mobile (Landscape)
 ================================================== */
 /* Note: Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 183, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 320, ../sass/assets/skeleton/_skeleton.scss */
   .container {
     width: 420px; }
 
-  /* line 185, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 322, ../sass/assets/skeleton/_skeleton.scss */
   .container .columns,
   .container .column {
     margin: 0; }
 
-  /* line 205, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 342, ../sass/assets/skeleton/_skeleton.scss */
   .container .one.column,
   .container .one.columns,
   .container .two.columns,
@@ -870,11 +1248,42 @@ th {
   .container .sixteen.columns,
   .container .one-third.column,
   .container .two-thirds.column {
-    width: 420px; } }
+    width: 420px; }
+
+  /* line 344, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background {
+    width: 420px; }
+
+  /* line 346, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .columns,
+  .container .white-background .column {
+    margin: 0; }
+
+  /* line 366, ../sass/assets/skeleton/_skeleton.scss */
+  .container .white-background .one.column,
+  .container .white-background .one.columns,
+  .container .white-background .two.columns,
+  .container .white-background .three.columns,
+  .container .white-background .four.columns,
+  .container .white-background .five.columns,
+  .container .white-background .six.columns,
+  .container .white-background .seven.columns,
+  .container .white-background .eight.columns,
+  .container .white-background .nine.columns,
+  .container .white-background .ten.columns,
+  .container .white-background .eleven.columns,
+  .container .white-background .twelve.columns,
+  .container .white-background .thirteen.columns,
+  .container .white-background .fourteen.columns,
+  .container .white-background .fifteen.columns,
+  .container .white-background .sixteen.columns,
+  .container .white-background .one-third.column,
+  .container .white-background .two-thirds.column {
+    width: 370px; } }
 /* #Clearing
 ================================================== */
 /* Self Clearing Goodness */
-/* line 213, ../sass/assets/skeleton/_skeleton.scss */
+/* line 374, ../sass/assets/skeleton/_skeleton.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -884,7 +1293,7 @@ th {
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 220, ../sass/assets/skeleton/_skeleton.scss */
+/* line 381, ../sass/assets/skeleton/_skeleton.scss */
 .clearfix:before, .project-card .description a.donate:before,
 .clearfix:after,
 .project-card .description a.donate:after,
@@ -897,20 +1306,20 @@ or wrap each row of columns in a <div class="row"> */
   width: 0;
   height: 0; }
 
-/* line 228, ../sass/assets/skeleton/_skeleton.scss */
+/* line 389, ../sass/assets/skeleton/_skeleton.scss */
 .row:after,
 .clearfix:after,
 .project-card .description a.donate:after {
   clear: both; }
 
-/* line 231, ../sass/assets/skeleton/_skeleton.scss */
+/* line 392, ../sass/assets/skeleton/_skeleton.scss */
 .row,
 .clearfix,
 .project-card .description a.donate {
   zoom: 1; }
 
 /* You can also use a <br class="clear" /> to clear columns */
-/* line 235, ../sass/assets/skeleton/_skeleton.scss */
+/* line 396, ../sass/assets/skeleton/_skeleton.scss */
 .clear {
   clear: both;
   display: block;
@@ -918,6 +1327,10 @@ or wrap each row of columns in a <div class="row"> */
   visibility: hidden;
   width: 0;
   height: 0; }
+
+/* line 405, ../sass/assets/skeleton/_skeleton.scss */
+.container-padding {
+  padding: 25px; }
 
 /* 
 * Skeleton V1.0.2
@@ -964,7 +1377,8 @@ or wrap each row of columns in a <div class="row"> */
 
   /* line 29, ../sass/assets/skeleton/_layout.scss */
   .project-card {
-    width: 32% !important; } }
+    margin-bottom: 30px !important;
+    width: 300px !important; } }
 @media only screen and (min-width: 991px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
@@ -985,11 +1399,7 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 205px; }
-
-  /* line 36, ../sass/assets/skeleton/_layout.scss */
-  .project-card {
-    width: 32% !important; } }
+    height: 205px; } }
 /* Mobile/Browser */
 @media only screen and (max-width: 767px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1011,11 +1421,7 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 435px; }
-
-  /* line 44, ../sass/assets/skeleton/_layout.scss */
-  .project-card {
-    width: 100% !important; } }
+    height: 435px; } }
 /* Mobile Landscape/Browser */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1037,17 +1443,13 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 435px; }
-
-  /* line 53, ../sass/assets/skeleton/_layout.scss */
-  .project-card {
-    width: 100% !important; } }
+    height: 435px; } }
 /* Anything smaller than standard 960 */
 @media only screen and (max-width: 959px) {
-  /* line 62, ../sass/assets/skeleton/_layout.scss */
+  /* line 54, ../sass/assets/skeleton/_layout.scss */
   .full-width.header.top {
     margin-bottom: 25px; }
-  /* line 65, ../sass/assets/skeleton/_layout.scss */
+  /* line 57, ../sass/assets/skeleton/_layout.scss */
   .full-width.header.bottom {
     display: none; }
 
@@ -1072,19 +1474,15 @@ or wrap each row of columns in a <div class="row"> */
     position: relative;
     height: 470px; }
 
-  /* line 72, ../sass/assets/skeleton/_layout.scss */
+  /* line 64, ../sass/assets/skeleton/_layout.scss */
   .copyright {
     width: 62%;
     float: left; }
 
-  /* line 77, ../sass/assets/skeleton/_layout.scss */
+  /* line 69, ../sass/assets/skeleton/_layout.scss */
   .footer-menu, .address {
     padding-left: 0 !important;
-    margin-top: 5px; }
-
-  /* line 82, ../sass/assets/skeleton/_layout.scss */
-  .project-card {
-    width: 100% !important; } }
+    margin-top: 5px; } }
 /* iPad Portrait Only */
 @media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1106,11 +1504,7 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 435px; }
-
-  /* line 90, ../sass/assets/skeleton/_layout.scss */
-  .project-card {
-    width: 100% !important; } }
+    height: 435px; } }
 /* Mobile Only */
 @media only screen and (max-width: 767px) and (max-device-width: 1000px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1132,11 +1526,7 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 205px; }
-
-  /* line 99, ../sass/assets/skeleton/_layout.scss */
-  .project-card {
-    width: 32% !important; } }
+    height: 205px; } }
 /* Mobile Landscape Only */
 @media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {
   /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
@@ -1158,11 +1548,7 @@ or wrap each row of columns in a <div class="row"> */
   #footer {
     clear: both;
     position: relative;
-    height: 205px; }
-
-  /* line 107, ../sass/assets/skeleton/_layout.scss */
-  .project-card {
-    width: 32% !important; } }
+    height: 205px; } }
 @font-face {
   font-family: "Helvetica Neue LT Pro Condensed";
   src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/helveticaneueltpro-cn.otf') format('opentype'); }
@@ -1918,10 +2304,9 @@ html {
 
 /* line 4, ../sass/layouts/partials/_project-card.scss */
 .project-card {
-  margin-right: px !important;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: white;
-  width: 32%;
+  width: 300px;
   -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
   -moz-box-shadow: #b4b4b4 0 0 3px 1px;
   box-shadow: #b4b4b4 0 0 3px 1px; }
@@ -2004,8 +2389,7 @@ h1.homepage {
   .white-background.page {
     margin-top: 25px;
     margin-bottom: 25px;
-    overflow: auto;
-    padding: 25px; }
+    overflow: auto; }
     /* line 16, ../sass/layouts/_page-general.scss */
     .white-background.page h2.title {
       margin: 0; }

@@ -1,18 +1,16 @@
 <?php get_header(); ?>
-	<div class="white-background page program box-shadow">
-		<div class="row">
-		<div class="breadcrumbs sixteen columns">
+	<div class="white-background page program box-shadow container-twelve">
+		<div class="breadcrumbs twelve columns">
 		    <?php if(function_exists('bcn_display'))
 		    {
 		        bcn_display();
 		    }?>
 		</div>
-	</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div class="six offset-by-ten columns alpha omega">
-					<a href="" class="button green"><span class="donate-button">Donate to this program</span></a>
+			<div class="four offset-by-eight columns alpha omega">
+					<a href="" class="button green alignright"><span class="donate-button">Donate to this program</span></a>
 				<?php if(is_user_logged_in()) : ?>
-					<a class="button green button-margin"><span>Edit</span></a>
+					<a class="button green alignright button-margin"><span>Edit</span></a>
 				<?php endif; ?>
 			</div>
 			<h2 class="title eight columns alpha"><?php the_title(); ?></h2>

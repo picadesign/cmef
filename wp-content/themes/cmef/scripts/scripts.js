@@ -13,9 +13,9 @@ jQuery(function ($) {
 	$( window ).load( function()
 	{
 	    $( '.masonry' ).masonry( { 
-	    	itemSelector: '.columns',
+	    	itemSelector: '.project-card',
 	    	gutter: 30,
-	    	columnWidth: 290
+	    	columnWidth: 300
 	    } );
 	});
 	$(window).ready(function(){

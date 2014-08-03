@@ -12,7 +12,7 @@ get_header();
 			$the_query = new WP_Query( $args ); ?>
 			<?php // The Loop
 			if ( $the_query->have_posts() ) : ?>
-				<div class="container-twelve masonry projects">
+				<div class="container-sixteen masonry projects">
 				 <?php while ( $the_query->have_posts() ) : ?>
 					<?php $the_query->the_post(); ?>
 					<?php include('inc/partials/project-card.php'); ?>
