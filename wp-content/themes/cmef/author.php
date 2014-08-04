@@ -1,18 +1,32 @@
 <?php get_header(); ?>
 	<div class="white-background page box-shadow container-twelve">
-		<div class="breadcrumbs">
-		    <a href="<?php bloginfo('url'); ?>">HOME</a> > <?php the_author(); ?>
+		<div class="row">
+			<div class="sixteen columns alpha omega">
+				<div class="breadcrumbs">
+				    <?php if(function_exists('bcn_display'))
+				    {
+				        bcn_display();
+				    }?>
+				</div>
+			</div>
 		</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<h2><?php the_author(); ?></h2>
-		<hr>
-		<div class="four columns alpha profile-image">
-			<img src="http://placekitten.com/g/300" alt="">
+		<div class="row">
+			<div class="eight columns alpha">&nbsp;</div>
+			<div class="eight columns omega">
+				<a href="" class="button green alignright button-margin"><span>Edit Profile</span></a>
+			</div>
 		</div>
-		<div class="eight columns omega">
-			<h3>Started 5 Projects • Joined May 2014</h3>
-			<h3>Profile Description	</h3>
-			<p><?php the_author_meta('description'); ?></p>
+		<div class="row">
+			<div class="sixteen columns alpha omega"><h2><?php the_author(); ?></h2></div>
+			<div class="clear"></div>
+			<hr>
+			<div class="five columns alpha profile-image">
+				<img src="http://placekitten.com/g/274/238" alt="">
+			</div>
+			<div class="eleven columns omega">Started 5 Projects • Joined May 2014</div>
+			<div class="eleven columns omega"><h3>Profile Description</h3></div>
+			<div class="eleven columns omega"><?php the_author_meta('description') ?></div>
 		</div>
 	<?php endwhile; ?>
 	<?php endif; ?>

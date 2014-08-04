@@ -6,22 +6,22 @@
 /*
 	IMAGE SPRITES
  */
-/* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 html, body {
   height: 100%; }
 
-/* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #root {
   clear: both;
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin-bottom: -205px; }
-  /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root #root_footer {
     height: 205px; }
 
-/* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #footer {
   clear: both;
   position: relative;
@@ -40,7 +40,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: normal; }
 
-/* normalize.css v3.0.1 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -642,7 +642,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
 
 /* line 79, ../sass/assets/skeleton/_skeleton.scss */
 .row {
-  margin-bottom: 20px;
+  margin-bottom: 0;
   margin-right: 25px;
   margin-left: 25px; }
 
@@ -1354,22 +1354,22 @@ or wrap each row of columns in a <div class="row"> */
 ================================================== */
 /* iPad Portrait/Browser */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -205px; }
-    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 205px; }
 
-  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
@@ -1380,66 +1380,66 @@ or wrap each row of columns in a <div class="row"> */
     margin-bottom: 30px !important;
     width: 300px !important; } }
 @media only screen and (min-width: 991px) {
-  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -205px; }
-    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 205px; }
 
-  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 205px; } }
 /* Mobile/Browser */
 @media only screen and (max-width: 767px) {
-  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -435px; }
-    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 435px; }
 
-  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 435px; } }
 /* Mobile Landscape/Browser */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -435px; }
-    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 435px; }
 
-  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
@@ -1453,22 +1453,22 @@ or wrap each row of columns in a <div class="row"> */
   .full-width.header.bottom {
     display: none; }
 
-  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -470px; }
-    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 470px; }
 
-  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
@@ -1485,66 +1485,66 @@ or wrap each row of columns in a <div class="row"> */
     margin-top: 5px; } }
 /* iPad Portrait Only */
 @media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {
-  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -435px; }
-    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 435px; }
 
-  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 435px; } }
 /* Mobile Only */
 @media only screen and (max-width: 767px) and (max-device-width: 1000px) {
-  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -205px; }
-    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 205px; }
 
-  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 205px; } }
 /* Mobile Landscape Only */
 @media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {
-  /* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -205px; }
-    /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 205px; }
 
-  /* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
@@ -1703,7 +1703,7 @@ html {
    */ }
   /* line 7, ../sass/basics/_theme-html-base.scss */
   html body {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1407015463');
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1406735156');
     font-size: 17px;
     line-height: normal; }
   /* line 17, ../sass/basics/_theme-html-base.scss */
@@ -2452,7 +2452,7 @@ h1.homepage {
 
 /* line 2, ../sass/layouts/_author-styles.scss */
 .profile-image img {
-  max-width: 100%; }
+  width: 100%; }
 
 /* line 8, ../sass/layouts/_author-styles.scss */
 .author-projects .project-card {
