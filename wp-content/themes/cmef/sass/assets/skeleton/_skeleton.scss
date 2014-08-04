@@ -53,21 +53,21 @@
     .container .two-thirds.column               { width: 620px; }
 
     /* Offsets */
-    .container .offset-by-one                   { padding-left: 60px;  }
-    .container .offset-by-two                   { padding-left: 120px; }
-    .container .offset-by-three                 { padding-left: 180px; }
-    .container .offset-by-four                  { padding-left: 240px; }
-    .container .offset-by-five                  { padding-left: 300px; }
-    .container .offset-by-six                   { padding-left: 360px; }
-    .container .offset-by-seven                 { padding-left: 420px; }
-    .container .offset-by-eight                 { padding-left: 480px; }
-    .container .offset-by-nine                  { padding-left: 540px; }
-    .container .offset-by-ten                   { padding-left: 600px; }
-    .container .offset-by-eleven                { padding-left: 660px; }
-    .container .offset-by-twelve                { padding-left: 720px; }
-    .container .offset-by-thirteen              { padding-left: 780px; }
-    .container .offset-by-fourteen              { padding-left: 840px; }
-    .container .offset-by-fifteen               { padding-left: 900px; }
+    .container .offset-by-one                   { margin-left: 60px;  }
+    .container .offset-by-two                   { margin-left: 120px; }
+    .container .offset-by-three                 { margin-left: 180px; }
+    .container .offset-by-four                  { margin-left: 240px; }
+    .container .offset-by-five                  { margin-left: 300px; }
+    .container .offset-by-six                   { margin-left: 360px; }
+    .container .offset-by-seven                 { margin-left: 420px; }
+    .container .offset-by-eight                 { margin-left: 480px; }
+    .container .offset-by-nine                  { margin-left: 540px; }
+    .container .offset-by-ten                   { margin-left: 600px; }
+    .container .offset-by-eleven                { margin-left: 660px; }
+    .container .offset-by-twelve                { margin-left: 720px; }
+    .container .offset-by-thirteen              { margin-left: 780px; }
+    .container .offset-by-fourteen              { margin-left: 840px; }
+    .container .offset-by-fifteen               { margin-left: 900px; }
 
 /* White Background (Interior Page) 
 We need to make a new version for the interior 
@@ -84,7 +84,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
 
     /* Base Grid */
     .container .white-background .one.column,
-    .container .white-background .one.columns                     { width: 38.1px;  }
+    .container .white-background .one.columns                     { width: 38px;  }
     .container .white-background .two.columns                     { width: 96.25px; }
     .container .white-background .three.columns                   { width: 154.33px; }
     .container .white-background .four.columns                    { width: 212.5px; }
@@ -105,21 +105,21 @@ because the interior pages only have a width of 910 which doesnt really work. */
     .container .white-background .two-thirds.column               { width: 620px; }
 
     /* Offsets */
-    .container .white-background .offset-by-one                   { padding-left: 58.1px;  }
-    .container .white-background .offset-by-two                   { padding-left: 116.25px; }
-    .container .white-background .offset-by-three                 { padding-left: 174.33px; }
-    .container .white-background .offset-by-four                  { padding-left: 232.5px; }
-    .container .white-background .offset-by-five                  { padding-left: 290.5px; }
-    .container .white-background .offset-by-six                   { padding-left: 348.33px; }
-    .container .white-background .offset-by-seven                 { padding-left: 406.33px; }
-    .container .white-background .offset-by-eight                 { padding-left: 465px; }
-    .container .white-background .offset-by-nine                  { padding-left: 523.68px; }
-    .container .white-background .offset-by-ten                   { padding-left: 581.67px; }
-    .container .white-background .offset-by-eleven                { padding-left: 639.5px; }
-    .container .white-background .offset-by-twelve                { padding-left: 697.5px; }
-    .container .white-background .offset-by-thirteen              { padding-left: 755.67px; }
-    .container .white-background .offset-by-fourteen              { padding-left: 813.75px; }
-    .container .white-background .offset-by-fifteen               { padding-left: 871.9px; }
+    .container .white-background .offset-by-one                   { margin-left: 58.1px;  }
+    .container .white-background .offset-by-two                   { margin-left: 116.25px; }
+    .container .white-background .offset-by-three                 { margin-left: 174.33px; }
+    .container .white-background .offset-by-four                  { margin-left: 232.5px; }
+    .container .white-background .offset-by-five                  { margin-left: 290.5px; }
+    .container .white-background .offset-by-six                   { margin-left: 348.33px; }
+    .container .white-background .offset-by-seven                 { margin-left: 406.33px; }
+    .container .white-background .offset-by-eight                 { margin-left: 465px; }
+    .container .white-background .offset-by-nine                  { margin-left: 523.68px; }
+    .container .white-background .offset-by-ten                   { margin-left: 581.67px; }
+    .container .white-background .offset-by-eleven                { margin-left: 639.5px; }
+    .container .white-background .offset-by-twelve                { margin-left: 697.5px; }
+    .container .white-background .offset-by-thirteen              { margin-left: 755.67px; }
+    .container .white-background .offset-by-fourteen              { margin-left: 813.75px; }
+    .container .white-background .offset-by-fifteen               { margin-left: 871.9px; }
 
 /* #Tablet (Portrait)
 ================================================== */
@@ -156,21 +156,21 @@ because the interior pages only have a width of 910 which doesnt really work. */
         .container .two-thirds.column               { width: 492px; }
 
         /* Offsets */
-        .container .offset-by-one                   { padding-left: 48px; }
-        .container .offset-by-two                   { padding-left: 96px; }
-        .container .offset-by-three                 { padding-left: 144px; }
-        .container .offset-by-four                  { padding-left: 192px; }
-        .container .offset-by-five                  { padding-left: 240px; }
-        .container .offset-by-six                   { padding-left: 288px; }
-        .container .offset-by-seven                 { padding-left: 336px; }
-        .container .offset-by-eight                 { padding-left: 384px; }
-        .container .offset-by-nine                  { padding-left: 432px; }
-        .container .offset-by-ten                   { padding-left: 480px; }
-        .container .offset-by-eleven                { padding-left: 528px; }
-        .container .offset-by-twelve                { padding-left: 576px; }
-        .container .offset-by-thirteen              { padding-left: 624px; }
-        .container .offset-by-fourteen              { padding-left: 672px; }
-        .container .offset-by-fifteen               { padding-left: 720px; }
+        .container .offset-by-one                   { margin-left: 48px; }
+        .container .offset-by-two                   { margin-left: 96px; }
+        .container .offset-by-three                 { margin-left: 144px; }
+        .container .offset-by-four                  { margin-left: 192px; }
+        .container .offset-by-five                  { margin-left: 240px; }
+        .container .offset-by-six                   { margin-left: 288px; }
+        .container .offset-by-seven                 { margin-left: 336px; }
+        .container .offset-by-eight                 { margin-left: 384px; }
+        .container .offset-by-nine                  { margin-left: 432px; }
+        .container .offset-by-ten                   { margin-left: 480px; }
+        .container .offset-by-eleven                { margin-left: 528px; }
+        .container .offset-by-twelve                { margin-left: 576px; }
+        .container .offset-by-thirteen              { margin-left: 624px; }
+        .container .offset-by-fourteen              { margin-left: 672px; }
+        .container .offset-by-fifteen               { margin-left: 720px; }
 
         /* White Container Background*/
         .container .white-background                                  { width: 768px; }
@@ -202,21 +202,21 @@ because the interior pages only have a width of 910 which doesnt really work. */
         .container .white-background .two-thirds.column               { width: 492px; }
 
         /* Offsets */
-        .container .white-background .offset-by-one                   { padding-left: 48px; }
-        .container .white-background .offset-by-two                   { padding-left: 96px; }
-        .container .white-background .offset-by-three                 { padding-left: 144px; }
-        .container .white-background .offset-by-four                  { padding-left: 192px; }
-        .container .white-background .offset-by-five                  { padding-left: 240px; }
-        .container .white-background .offset-by-six                   { padding-left: 288px; }
-        .container .white-background .offset-by-seven                 { padding-left: 336px; }
-        .container .white-background .offset-by-eight                 { padding-left: 384px; }
-        .container .white-background .offset-by-nine                  { padding-left: 432px; }
-        .container .white-background .offset-by-ten                   { padding-left: 480px; }
-        .container .white-background .offset-by-eleven                { padding-left: 528px; }
-        .container .white-background .offset-by-twelve                { padding-left: 576px; }
-        .container .white-background .offset-by-thirteen              { padding-left: 624px; }
-        .container .white-background .offset-by-fourteen              { padding-left: 672px; }
-        .container .white-background .offset-by-fifteen               { padding-left: 720px; }
+        .container .white-background .offset-by-one                   { margin-left: 48px; }
+        .container .white-background .offset-by-two                   { margin-left: 96px; }
+        .container .white-background .offset-by-three                 { margin-left: 144px; }
+        .container .white-background .offset-by-four                  { margin-left: 192px; }
+        .container .white-background .offset-by-five                  { margin-left: 240px; }
+        .container .white-background .offset-by-six                   { margin-left: 288px; }
+        .container .white-background .offset-by-seven                 { margin-left: 336px; }
+        .container .white-background .offset-by-eight                 { margin-left: 384px; }
+        .container .white-background .offset-by-nine                  { margin-left: 432px; }
+        .container .white-background .offset-by-ten                   { margin-left: 480px; }
+        .container .white-background .offset-by-eleven                { margin-left: 528px; }
+        .container .white-background .offset-by-twelve                { margin-left: 576px; }
+        .container .white-background .offset-by-thirteen              { margin-left: 624px; }
+        .container .white-background .offset-by-fourteen              { margin-left: 672px; }
+        .container .white-background .offset-by-fifteen               { margin-left: 720px; }
     }
 
 

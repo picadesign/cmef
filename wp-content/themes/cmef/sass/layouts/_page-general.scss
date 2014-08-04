@@ -5,6 +5,8 @@
 	width:100%;
 	//width:100%;
 	//margin:10px auto;
+	padding-top:25px !important;
+	padding-bottom:25px !important;
 	
 	&.page{
 		margin-top:25px;
@@ -45,7 +47,5 @@
 }
 
 .breadcrumbs{
-	margin-bottom:25px;
 	text-transform:uppercase;
-	margin-bottom:64px;
 }

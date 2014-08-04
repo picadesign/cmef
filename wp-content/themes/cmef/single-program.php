@@ -1,168 +1,193 @@
 <?php get_header(); ?>
 	<div class="white-background page program box-shadow">
 		<div class="row">
-		<div class="breadcrumbs sixteen columns">
-		    <?php if(function_exists('bcn_display'))
-		    {
-		        bcn_display();
-		    }?>
-		</div>
-	</div>
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div class="six offset-by-ten columns alpha omega">
-					<a href="" class="button green"><span class="donate-button">Donate to this program</span></a>
-				<?php if(is_user_logged_in()) : ?>
-					<a class="button green button-margin"><span>Edit</span></a>
-				<?php endif; ?>
+			<div class="sixteen columns alpha omega">
+				<div class="breadcrumbs">
+				    <?php if(function_exists('bcn_display'))
+				    {
+				        bcn_display();
+				    }?>
+				</div>
 			</div>
-			<h2 class="title eight columns alpha"><?php the_title(); ?></h2>
-			<div class="four columns omega">
-				<span class="caps">Share this Project:</span>
-				<div class="alignright social">
+		</div>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<div class="row">
+			<div class="eight columns alpha">&nbsp;</div>
+			<div class="eight columns omega">
+				<a href="" class="button green alignright"><span>Donate to this program</span></a>
+				<a href="" class="button green alignright button-margin"><span>Edit</span></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eleven columns alpha"><h2>Program Name</h2></div>
+			<div class="five columns omega">
+				<span class="alignleft">Share this Program:</span>
+				<div class="social alignright">
 					<ul>
-						<li class="mail"><a href=""></a></li>
-						<li class="google"><a href=""></a></li>
-						<li class="twitter"><a href=""></a></li>
-						<li class="facebook"><a href=""></a></li>
+						<li class="mail"></li>
+						<li class="google"></li>
+						<li class="twitter"></li>
+						<li class="facebook"></li>
 					</ul>
 				</div>
 			</div>
-			<div class="clear"></div>
-			<hr>
-			<div class="four columns alpha program-image">
-				<div class="thumbnail"><?php the_post_thumbnail( $size="medium", $attr ); ?></div>
-				<div class="clear"></div>
-				<div class="twelve columns alpha omega thumbnails">
-					<a href=""><img src="http://placekitten.com/g/66/66" alt=""></a>
-					<a href=""><img src="http://placekitten.com/g/66/66" alt=""></a>
-					<a href=""><img src="http://placekitten.com/g/66/66" alt=""></a>
-					<a href=""><img src="http://placekitten.com/g/66/66" alt=""></a>
-					<a href=""><img src="http://placekitten.com/g/66/66" alt=""></a>
-					<a href=""><img src="http://placekitten.com/g/66/66" alt=""></a>
-					<a href=""><img src="http://placekitten.com/g/66/66" alt=""></a>
-					<div class="twelve columns alpha omega"><a href="">View All Images</a></div>
+			<div class="sixteen columns alpha omega"><hr></div>
+		</div>
+		<div class="row">
+			<div class="six columns alpha gallery">
+				<div class="six columns alpha omega">
+					<?php //THis needs work the images cannot span one columns because on small screens they blow up. ?>
+					<?php the_post_thumbnail($size = 'medium', $attr = '') ?>
+				</div>
+				<div class="one columns alpha">
+					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
+				</div>
+				<div class="one columns">
+					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
+				</div>
+				<div class="one columns">
+					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
+				</div>
+				<div class="one columns">
+					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
+				</div>
+				<div class="one columns">
+					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
+				</div>
+				<div class="one columns omega">
+					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
 				</div>
 			</div>
-			<div class="eight columns quick-stats omega">
-				<div class="twelve columns omega alpha">
-					<div class="five columns alpha">
-					<span class="caps">Fundraising Progress:</span>
-					</div>
-					<div class="seven columns omega">
+			<div class="ten columns omega">
+				<div class="four columns alpha">Fundraising Progress</div>
+				<div class="six columns omega">
 					<div class="meter">
 						<div class="meter-progress" style="width:<?php $goal = get_post_meta(get_the_ID(), '_fundraising-goal', true); echo (47523/(int) $goal)*100; ?>%;"></div>
-						</div>
 					</div>
+					<span class="alignleft raised-amount">Raised <b><?php echo money_format('%.0n', 15000) . "\n"; ?></b></span><span class="alignright goal-amount">Goal <b><?php echo money_format('%.0n', $goal) . "\n"; ?></b></span>
 				</div>
-				<div class="clear"></div>
-				<div class="twelve columns omega alpha row">
-					<table>
+				<div class="ten columns alpha omega">
+					<br>
+					<table width="100%">
 						<tr>
-							<td>Type of Program:</td>
+							<td width="41%"><b>Type of Program</b></td>
 							<td>Field Trip</td>
 						</tr>
 						<tr>
-							<td>TFA Region:</td>
+							<td><b>TFA Region</b></td>
 							<td>Rio Grande Valley</td>
 						</tr>
 						<tr>
-							<td>Fundraising Goal:</td>
-							<td>$50,0000</td>
+							<td><b>School</b></td>
+							<td> Medomak Valley Highs School</td>
 						</tr>
 						<tr>
-							<td>School:</td>
-							<td>Medomak Valley</td>
+							<td><b>Grade Level</b></td>
+							<td>9th</td>
 						</tr>
 						<tr>
-							<td>Grade Level:</td>
-							<td>9-10</td>
-						</tr>
-						<tr>
-							<td>Number of Students:</td>
+							<td><b>Number of Students</b></td>
 							<td>120</td>
 						</tr>
 					</table>
-				</div>
-				<div class="clear"></div>
-				<div class="twelve columns alpha omega row">
-					<hr>
-					<table>
-						<thead>
-							<tr>
-								<td><b>Name</b></td>
-								<td><b>Email</b></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><?php the_author_posts_link(); ?></td>
-								<td><a href="mailto:<?php antispambot(the_author_meta('user_email')); ?>"><?php antispambot(the_author_meta('user_email')); ?></a></td>
-							</tr>
-						</tbody>
+					<h3>Key Contacts</h3>
+					<br>
+					<table width="100%">
+						<tr>
+							<td>Somebody Special</td>
+							<td><a href="mailto:<?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?>"><?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?></a></td>
+							<td>207-123-4567</td>
+						</tr>
+						<tr>
+							<td>Somebody Special</td>
+							<td><a href="mailto:<?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?>"><?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?></a></td>
+							<td>207-123-4567</td>
+						</tr>
+						<tr>
+							<td>Somebody Special</td>
+							<td><a href="mailto:<?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?>"><?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?></a></td>
+							<td>207-123-4567</td>
+						</tr>
 					</table>
 				</div>
 			</div>
 			<div class="clear"></div>
+			<br>
 			<hr>
-			<div class="six columns alpha">
-				<h2>Description</h2>
-				<?php the_content(); ?>
+		</div>
+		<div class="row">
+			<div class="eight columns alpha">
+				<h3>Description</h3>
+				<p>
+					<?php the_content(); ?>
+				</p>
 			</div>
-			<div class="six columns omega fundraising-activity">
-				<h2>Fundraising Activity Snapshot</h2>
-				<table>
-					<tr>
-						<td>Date</td>
-						<td>Donor</td>
-						<td>Donation Amount</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
-					<tr>
-						<td>02/15/2014</td>
-						<td>Jason Walker</td>
-						<td>$40.00</td>
-					</tr>
+			<div class="eight columns omega">
+				<h3>Fundraising Activity</h3>
+				<table width="100%">
+					<thead>
+						<tr>
+							<td><b>Name</b></td>
+							<td><b>Email</b></td>
+							<td><b>Phone Number</b></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+						<tr>
+							<td>02/12/2014</td>
+							<td>Jason Walker</td>
+							<td>$40.00</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
+		</div>
+			
 		<?php endwhile; ?>
 		<?php endif; ?>
 	</div>

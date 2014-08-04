@@ -2,6 +2,8 @@
 	h2.title{
 		font-size:1.6em;
 	}
+
+
 	.program-image{
 		.thumbnail img{
 			min-width: 100%;
@@ -9,8 +11,9 @@
 			height:auto;
 		}
 
-		.thumbnails{
-			text-align:justify;
+		.thumbnails, .gallery .one img{
+			width:100%;
+			height:auto;
 		}
 	}
 
@@ -37,4 +40,9 @@
 			width:100%; 
 		}
 	}
+}
+
+.gallery img{
+	width:100%;
+	height:auto;
 }
