@@ -20,6 +20,13 @@ function enqueue_scripts(){
     //Only include jQuery
     wp_enqueue_script('main-script', get_bloginfo('template_url') . '/scripts/scripts.js', $deps = array('jquery', 'mustache'), $ver = false, $in_footer = true);
 
+    wp_enqueue_script('redactor', get_bloginfo('template_url') . '/scripts/redactor.min.js', $deps = array('jquery'), $ver = false, $in_footer = true);
+
     wp_enqueue_script('mustache', get_bloginfo('template_url') . '/scripts/mustache/mustache.js', $deps = array('jquery'), $ver = false, $in_footer = true);
+
+    if(is_author()){
+      wp_enqueue_script('author-editing', get_bloginfo('template_url') . '/scripts/front-end-editing/author-page.js', $deps = array('jquery', 'redactor'), $ver = false, $in_footer = true);
+    }
+
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

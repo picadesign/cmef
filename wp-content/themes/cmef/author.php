@@ -1,43 +1,49 @@
-<?php get_header(); ?>
+<?php get_header(); the_post(); global $current_user; $author_meta = get_user_meta(get_the_author_meta('ID'));?>
 	<div class="white-background page box-shadow">
-		<div class="row">
-			<div class="sixteen columns alpha omega">
-				<div class="breadcrumbs">
-				    <?php if(function_exists('bcn_display'))
-				    {
-				        bcn_display();
-				    }?>
-				</div>
-			</div>
-		</div>
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-		<div class="row">
-			<div class="eight columns alpha">&nbsp;</div>
-			<div class="eight columns omega">
-				<a href="" class="button green alignright button-margin"><span>Edit Profile</span></a>
-			</div>
-		</div>
-		<div class="row">
-			<hr>
+		<?php
+		$args = array(
+			'post_type'   => 'program',
+			'posts_per_page' => -1,
+			'author' => get_the_author_meta('ID')
+		);
+		$the_query = new WP_Query( $args ); ?>
+		<div class="row author-information">
 			<div class="five columns alpha profile-image">
-				<img src="http://placekitten.com/g/274/238" alt="">
+				<div class="image-box">
+				<?php echo get_avatar( get_the_author_meta('ID'), 271); ?> 
+				</div>
+				<div class="one-third alignleft new-avatar">
+					<?php echo do_shortcode('[avatar_upload]' ); ?>
+				</div> 
 			</div>
-			<div class="eleven columns omega"><h2><?php the_author(); ?></h2></div>
-			<div class="eleven columns omega">Started 5 Projects • Joined May 2014</div>
-			<div class="eleven columns omega"><h3>Profile Description</h3></div>
-			<div class="eleven columns omega"><?php the_author_meta('description') ?></div>
+			<div class="eight columns profile-name">
+				<h2><?php the_author(); ?></h2>
+
+			</div>
+
+			<div class="three columns omega edit">
+				<?php if($current_user->ID === get_the_author_meta('ID')): ?>
+					<input type="hidden" id="author_ID" value="<?php the_author_meta('ID') ?>">
+					<div href="" class="button no-margin green alignright button-margin edit">
+						<span>Edit Profile</span>
+					</div>
+					<div href="" class="button no-margin green alignright button-margin save">
+						<span>Save Profile</span>
+					</div>
+				<?php endif; ?>
+			</div>
+			<div class="eleven columns omega quick-stats">
+				Started <?php echo $the_query->post_count; ?> Projects • Joined <?php echo date("F Y", strtotime(get_userdata(get_current_user_id( ))->user_registered)); ?>
+			</div>
+			<div class="eleven columns omega description">
+				<h3>Profile Description</h3>
+			</div>
+			<div class="eleven columns omega description-content">
+				<div id="redactor"><?php the_author_meta('description') ?></div>
+			</div>
 		</div>
-	<?php endwhile; ?>
-	<?php endif; ?>
 	</div>
-	<?php
-	$args = array(
-		'post_type'   => 'program',
-		'posts_per_page' => -1,
-		'author' => get_the_author_meta('ID')
-	);
-	$the_query = new WP_Query( $args ); ?>
+	
 	<?php // The Loop
 	if ( $the_query->have_posts() ) : ?>
 		<div class="container-twelve masonry projects">

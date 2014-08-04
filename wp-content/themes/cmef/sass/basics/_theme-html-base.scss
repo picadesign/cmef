@@ -552,3 +552,19 @@ html{
 	text-transform: uppercase;
 	font-size:.9em;
 }
+
+.button{
+	cursor:pointer;
+
+	&.save{
+		display:none;
+	}
+
+	&.edit{
+
+	}
+
+	&.edit, &.save{
+		//cursor
+	}
+}

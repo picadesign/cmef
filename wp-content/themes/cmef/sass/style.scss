@@ -28,7 +28,8 @@ $assets-sprite: sprite-map("assets/*.png") ;
 @import "assets/skeleton/base";
 @import "assets/skeleton/skeleton";
 @import "assets/skeleton/layout";
-//@import "assets/gumby/gumby.scss";
+//Redactor Styles
+@import "assets/redactor";
 
 /*
 	Fonts

@@ -41,3 +41,24 @@
     	endif;
     	die(); 
     }//ajax_fetch_programs
+
+    //Save Author
+    add_action('wp_ajax_save_author', 'ajax_save_author');
+    function ajax_save_author(){
+        global $post;
+        //Get the informatioan from the author.
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $description = $_POST['description'];
+        $author_ID = $_POST['author_ID'];
+
+        //Update the information.
+        $user_id = wp_update_user(array(
+            'ID' => $author_ID,
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'description' => $description,
+            'display_name' => $first_name . ' ' . $last_name
+        ));
+        die();
+    }//end ajax_save_author

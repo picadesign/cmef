@@ -1,11 +1,43 @@
-.profile-image{
-	img{
-		width:100%;
-	}
-}
-
 .author-projects{
 	.project-card{
 		width:300px !important;
 	}
+}
+
+.author-information{
+	margin-bottom:0;
+	.profile-image{
+		img{
+			width:100%;
+			height:auto;
+		}
+	}
+
+	.profile-name{
+		h2{
+			margin-bottom:0;
+		}
+	}
+
+	.description{
+		margin-top:10px;
+		h3{
+			margin-bottom:10px;
+		}
+	}
+	
+	.name{
+		//display:none;
+	}
+
+	.new-avatar{
+		display:none;
+	}
+
+	#wpua-images{
+		p img{
+			width:auto !important;
+		}
+	}
+
 }

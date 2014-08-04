@@ -102,14 +102,20 @@ jQuery(function ($) {
 	//This is to show the login menu
 	//Close the div if anywhere else is click on the screen
 	$(document).on('click', function(e) {
-    if ( $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').length ) {
-        $('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '#e8e8e8');
-        $('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').show();
+	    if ( $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').length ) {
+	        $('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '#e8e8e8');
+	        $('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').show();
 
-    }else if ( ! $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').length ) {
-        $('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '');
-        $('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').hide();
-    }
-});
+	    }else if ( ! $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').length ) {
+	        $('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '');
+	        $('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').hide();
+	    }
+	});
+
+	/**
+	 * Below are the front end editing scripts for the front end editing
+	 */
+	
+	
 
 });
