@@ -3,7 +3,8 @@ Thumbs.db
 .htaccess
 *.sublime-project
 *.sublime-workspace
-wp-content/themes/cmef/.sass-cache/*
+.sass-cache
+.sass-cache/*
 temp_csv_files/*
 wp-config.php
 .idea
