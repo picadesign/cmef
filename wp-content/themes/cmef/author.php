@@ -11,9 +11,26 @@
 			</div>
 		</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<?php the_title(); ?>
-		<?php endwhile; ?>
-		<?php endif; ?>
+
+		<div class="row">
+			<div class="eight columns alpha">&nbsp;</div>
+			<div class="eight columns omega">
+				<a href="" class="button green alignright button-margin"><span>Edit Profile</span></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="sixteen columns alpha omega"><h2><?php the_author(); ?></h2></div>
+			<div class="clear"></div>
+			<hr>
+			<div class="five columns alpha profile-image">
+				<img src="http://placekitten.com/g/274/238" alt="">
+			</div>
+			<div class="eleven columns omega">Started 5 Projects • Joined May 2014</div>
+			<div class="eleven columns omega"><h3>Profile Description</h3></div>
+			<div class="eleven columns omega"><?php the_author_meta('description') ?></div>
+		</div>
+	<?php endwhile; ?>
+	<?php endif; ?>
 	</div>
 	<?php
 	$args = array(

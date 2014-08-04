@@ -93,6 +93,9 @@ Dont worry, be happy. :)
 
 == Changelog ==
 
+= 1.1.9 =
+* Hotfix
+
 = 1.1.8 =
 * Added cache widgets for speed improvement. ( Transient )
 * Small code improvement. ( WordPress PHP Coding Standards )

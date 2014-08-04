@@ -90,21 +90,10 @@
 							<td>120</td>
 						</tr>
 					</table>
-					<h3>Key Contacts</h3>
-					<br>
+					<h3>Key Contact</h3>
 					<table width="100%">
 						<tr>
-							<td>Somebody Special</td>
-							<td><a href="mailto:<?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?>"><?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?></a></td>
-							<td>207-123-4567</td>
-						</tr>
-						<tr>
-							<td>Somebody Special</td>
-							<td><a href="mailto:<?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?>"><?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?></a></td>
-							<td>207-123-4567</td>
-						</tr>
-						<tr>
-							<td>Somebody Special</td>
+							<td><?php the_author_posts_link(); ?></td>
 							<td><a href="mailto:<?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?>"><?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?></a></td>
 							<td>207-123-4567</td>
 						</tr>

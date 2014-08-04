@@ -3,7 +3,7 @@
 	Plugin Name: Simple Contact Info
 	Plugin Uri: http://wordpress.org/plugins/simple-contact-info/
 	Description: You can write contact information (facebook, phone, fax, address etc). You can use widgets or shortcode to display it anywhere you want.
-	Version: 1.1.8
+	Version: 1.1.9
 	Author: LehaMotovilov
 	Author URI: http://lehaqs.wordpress.com/
 	Text Domain: simple-contact-info
