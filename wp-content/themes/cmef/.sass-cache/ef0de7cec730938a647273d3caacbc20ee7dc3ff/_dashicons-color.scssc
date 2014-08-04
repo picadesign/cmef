@@ -1,608 +1,0 @@
-3.2.9 (Media Mark)
-d9cb043d2d4bbafa2b23df237323e8f2778be3ab
-o:Sass::Tree::RootNode
-:@template"L#.dashicons-color-bag:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-bag.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-bell:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-bell.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-bookmark:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-bookmark.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-bow-arrow:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-bow-arrow.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-burger:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-burger.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-button:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-button.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-cake:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-cake.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-calculator:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-calculator.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-camera:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-camera.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-car:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-car.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-clock:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-clock.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-coffee:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-coffee.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-coin:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-coin.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-compass:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-compass.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-couch:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-couch.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-cube:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-cube.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-eye:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-eye.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-fire:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-fire.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-firecracker:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-firecracker.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-flower-pot:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-flower-pot.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-game-boy:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-game-boy.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-game-controller:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-game-controller.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-globe:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-globe.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-guard:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-guard.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-health:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-health.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-lightbulb:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-lightbulb.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-magnetize:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-magnetize.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-map:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-map.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-mouse:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-mouse.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-mustache:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-mustache.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-paddle:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-paddle.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-paint-roller:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-paint-roller.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-pie:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-pie.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-play:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-play.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-ring:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-ring.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-science:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-science.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-scissors:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-scissors.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-settings:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-settings.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-shake:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-shake.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-smileyface:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-smileyface.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-thermometer:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-thermometer.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-toilet-paper:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-toilet-paper.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-vinyl:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-vinyl.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-wallet:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-wallet.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-watermelon:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-watermelon.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}
-
-.dashicons-color-wrenches:before {
-	content:"";
-	background: url(../images/dashicons-color/dashicon-color-wrenches.png) ;
-	background-repeat:no-repeat;
-	height:20px;
-	width:20px;
-	margin-top:6px;
-}:@has_childrenT:@options{ :@children[3o:Sass::Tree::RuleNode:
-@rule[" .dashicons-color-bag:before:@parsed_ruleso:"Sass::Selector::CommaSequence:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence
-:@subject0:@sourceso:Set:
-@hash{ ;[o:Sass::Selector::Class:
-@name["dashicons-color-bag:@filename" :
-@lineio:Sass::Selector::Pseudo
-;["before:
-@type:
-class:	@arg0;@;i;@;i;@;i;T;@:
-@tabsi ;	[o:Sass::Tree::PropNode;["content:@valueo:Sass::Script::String;:identifier;""";@:@prop_syntax:new;@;i ;	[ ;io;;["background;o; 	;;!;":url(../images/dashicons-color/dashicon-color-bag.png);@;i;";#;@;i ;	[ ;io;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i	o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i
-o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i;io;
-;["!.dashicons-color-bell:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-bell;" ;io;
-;["before;;;0;@N;i;@N;i;@N;i;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;io;;["background;o; 	;;!;";url(../images/dashicons-color/dashicon-color-bell.png);@;i;";#;@;i ;	[ ;io;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;io;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i;io;
-;["%.dashicons-color-bookmark:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-bookmark;" ;io;
-;["before;;;0;@€;i;@€;i;@€;i;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;io;;["background;o; 	;;!;"?url(../images/dashicons-color/dashicon-color-bookmark.png);@;i;";#;@;i ;	[ ;io;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;io;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i;io;
-;["&.dashicons-color-bow-arrow:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-bow-arrow;" ;i!o;
-;["before;;;0;@·;i!;@·;i!;@·;i!;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i"o;;["background;o; 	;;!;"@url(../images/dashicons-color/dashicon-color-bow-arrow.png);@;i#;";#;@;i ;	[ ;i#o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i$o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i%o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i&o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i';i!o;
-;["#.dashicons-color-burger:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-burger;" ;i*o;
-;["before;;;0;@î;i*;@î;i*;@î;i*;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i+o;;["background;o; 	;;!;"=url(../images/dashicons-color/dashicon-color-burger.png);@;i,;";#;@;i ;	[ ;i,o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i-o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i.o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i/o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i0;i*o;
-;["#.dashicons-color-button:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-button;" ;i3o;
-;["before;;;0;@%;i3;@%;i3;@%;i3;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i4o;;["background;o; 	;;!;"=url(../images/dashicons-color/dashicon-color-button.png);@;i5;";#;@;i ;	[ ;i5o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i6o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i7o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i8o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i9;i3o;
-;["!.dashicons-color-cake:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-cake;" ;i<o;
-;["before;;;0;@\;i<;@\;i<;@\;i<;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i=o;;["background;o; 	;;!;";url(../images/dashicons-color/dashicon-color-cake.png);@;i>;";#;@;i ;	[ ;i>o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i?o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i@o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iAo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iB;i<o;
-;["'.dashicons-color-calculator:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-calculator;" ;iEo;
-;["before;;;0;@“;iE;@“;iE;@“;iE;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iFo;;["background;o; 	;;!;"Aurl(../images/dashicons-color/dashicon-color-calculator.png);@;iG;";#;@;i ;	[ ;iGo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iHo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iIo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iJo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iK;iEo;
-;["#.dashicons-color-camera:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-camera;" ;iNo;
-;["before;;;0;@Ê;iN;@Ê;iN;@Ê;iN;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iOo;;["background;o; 	;;!;"=url(../images/dashicons-color/dashicon-color-camera.png);@;iP;";#;@;i ;	[ ;iPo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iQo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iRo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iSo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iT;iNo;
-;[" .dashicons-color-car:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-car;" ;iWo;
-;["before;;;0;@;iW;@;iW;@;iW;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iXo;;["background;o; 	;;!;":url(../images/dashicons-color/dashicon-color-car.png);@;iY;";#;@;i ;	[ ;iYo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iZo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i[o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i\o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i];iWo;
-;["".dashicons-color-clock:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-clock;" ;i`o;
-;["before;;;0;@8;i`;@8;i`;@8;i`;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iao;;["background;o; 	;;!;"<url(../images/dashicons-color/dashicon-color-clock.png);@;ib;";#;@;i ;	[ ;ibo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;ico;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;ido;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;ieo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;if;i`o;
-;["#.dashicons-color-coffee:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-coffee;" ;iio;
-;["before;;;0;@o;ii;@o;ii;@o;ii;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;ijo;;["background;o; 	;;!;"=url(../images/dashicons-color/dashicon-color-coffee.png);@;ik;";#;@;i ;	[ ;iko;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;ilo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;imo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;ino;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;io;iio;
-;["!.dashicons-color-coin:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-coin;" ;iro;
-;["before;;;0;@¦;ir;@¦;ir;@¦;ir;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iso;;["background;o; 	;;!;";url(../images/dashicons-color/dashicon-color-coin.png);@;it;";#;@;i ;	[ ;ito;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iuo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;ivo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iwo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;ix;iro;
-;["$.dashicons-color-compass:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-compass;" ;i{o;
-;["before;;;0;@Ý;i{;@Ý;i{;@Ý;i{;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i|o;;["background;o; 	;;!;">url(../images/dashicons-color/dashicon-color-compass.png);@;i};";#;@;i ;	[ ;i}o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i~o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i{o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i|;i{o;
-;["".dashicons-color-couch:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-couch;" ;io;
-;["before;;;0;@;i;@;i;@;i;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i€o;;["background;o; 	;;!;"<url(../images/dashicons-color/dashicon-color-couch.png);@;i;";#;@;i ;	[ ;io;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i‚o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iƒo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i„o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i…;io;
-;["!.dashicons-color-cube:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-cube;" ;iˆo;
-;["before;;;0;@K;iˆ;@K;iˆ;@K;iˆ;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i‰o;;["background;o; 	;;!;";url(../images/dashicons-color/dashicon-color-cube.png);@;iŠ;";#;@;i ;	[ ;iŠo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i‹o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iŒo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iŽ;iˆo;
-;[" .dashicons-color-eye:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-eye;" ;i‘o;
-;["before;;;0;@‚;i‘;@‚;i‘;@‚;i‘;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i’o;;["background;o; 	;;!;":url(../images/dashicons-color/dashicon-color-eye.png);@;i“;";#;@;i ;	[ ;i“o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i”o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i•o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i–o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i—;i‘o;
-;["!.dashicons-color-fire:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-fire;" ;išo;
-;["before;;;0;@¹;iš;@¹;iš;@¹;iš;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i›o;;["background;o; 	;;!;";url(../images/dashicons-color/dashicon-color-fire.png);@;iœ;";#;@;i ;	[ ;iœo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;io;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;ižo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iŸo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i ;išo;
-;["(.dashicons-color-firecracker:before;o;;[o;;[o;
-;0;o;;{ ;[o;;[" dashicons-color-firecracker;" ;i£o;
-;["before;;;0;@ð;i£;@ð;i£;@ð;i£;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i¤o;;["background;o; 	;;!;"Burl(../images/dashicons-color/dashicon-color-firecracker.png);@;i¥;";#;@;i ;	[ ;i¥o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i¦o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i§o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i¨o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i©;i£o;
-;["'.dashicons-color-flower-pot:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-flower-pot;" ;i¬o;
-;["before;;;0;@';i¬;@';i¬;@';i¬;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i­o;;["background;o; 	;;!;"Aurl(../images/dashicons-color/dashicon-color-flower-pot.png);@;i®;";#;@;i ;	[ ;i®o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i¯o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i°o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i±o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i²;i¬o;
-;["%.dashicons-color-game-boy:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-game-boy;" ;iµo;
-;["before;;;0;@^;iµ;@^;iµ;@^;iµ;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i¶o;;["background;o; 	;;!;"?url(../images/dashicons-color/dashicon-color-game-boy.png);@;i·;";#;@;i ;	[ ;i·o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i¸o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i¹o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iºo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i»;iµo;
-;[",.dashicons-color-game-controller:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["$dashicons-color-game-controller;" ;i¾o;
-;["before;;;0;@•;i¾;@•;i¾;@•;i¾;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i¿o;;["background;o; 	;;!;"Furl(../images/dashicons-color/dashicon-color-game-controller.png);@;iÀ;";#;@;i ;	[ ;iÀo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iÁo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iÂo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iÃo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iÄ;i¾o;
-;["".dashicons-color-globe:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-globe;" ;iÇo;
-;["before;;;0;@Ì;iÇ;@Ì;iÇ;@Ì;iÇ;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iÈo;;["background;o; 	;;!;"<url(../images/dashicons-color/dashicon-color-globe.png);@;iÉ;";#;@;i ;	[ ;iÉo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iÊo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iËo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iÌo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iÍ;iÇo;
-;["".dashicons-color-guard:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-guard;" ;iÐo;
-;["before;;;0;@;iÐ;@;iÐ;@;iÐ;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iÑo;;["background;o; 	;;!;"<url(../images/dashicons-color/dashicon-color-guard.png);@;iÒ;";#;@;i ;	[ ;iÒo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iÓo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iÔo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iÕo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iÖ;iÐo;
-;["#.dashicons-color-health:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-health;" ;iÙo;
-;["before;;;0;@:;iÙ;@:;iÙ;@:;iÙ;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iÚo;;["background;o; 	;;!;"=url(../images/dashicons-color/dashicon-color-health.png);@;iÛ;";#;@;i ;	[ ;iÛo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iÜo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iÝo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iÞo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iß;iÙo;
-;["&.dashicons-color-lightbulb:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-lightbulb;" ;iâo;
-;["before;;;0;@q;iâ;@q;iâ;@q;iâ;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;ião;;["background;o; 	;;!;"@url(../images/dashicons-color/dashicon-color-lightbulb.png);@;iä;";#;@;i ;	[ ;iäo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iåo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iæo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iço;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iè;iâo;
-;["&.dashicons-color-magnetize:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-magnetize;" ;iëo;
-;["before;;;0;@¨;ië;@¨;ië;@¨;ië;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iìo;;["background;o; 	;;!;"@url(../images/dashicons-color/dashicon-color-magnetize.png);@;ií;";#;@;i ;	[ ;iío;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iîo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iïo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iðo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iñ;iëo;
-;[" .dashicons-color-map:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-map;" ;iôo;
-;["before;;;0;@ß;iô;@ß;iô;@ß;iô;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iõo;;["background;o; 	;;!;":url(../images/dashicons-color/dashicon-color-map.png);@;iö;";#;@;i ;	[ ;iöo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i÷o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iøo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iùo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iú;iôo;
-;["".dashicons-color-mouse:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-mouse;" ;iýo;
-;["before;;;0;@;iý;@;iý;@;iý;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iþo;;["background;o; 	;;!;"<url(../images/dashicons-color/dashicon-color-mouse.png);@;iÿ;";#;@;i ;	[ ;iÿo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i;iýo;
-;["%.dashicons-color-mustache:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-mustache;" ;io;
-;["before;;;0;@M;i;@M;i;@M;i;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;io;;["background;o; 	;;!;"?url(../images/dashicons-color/dashicon-color-mustache.png);@;i;";#;@;i ;	[ ;io;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i	o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i
-o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i;io;
-;["#.dashicons-color-paddle:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-paddle;" ;io;
-;["before;;;0;@„;i;@„;i;@„;i;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;io;;["background;o; 	;;!;"=url(../images/dashicons-color/dashicon-color-paddle.png);@;i;";#;@;i ;	[ ;io;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;io;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i;io;
-;[").dashicons-color-paint-roller:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["!dashicons-color-paint-roller;" ;io;
-;["before;;;0;@»;i;@»;i;@»;i;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;io;;["background;o; 	;;!;"Curl(../images/dashicons-color/dashicon-color-paint-roller.png);@;i;";#;@;i ;	[ ;io;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;io;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i;io;
-;[" .dashicons-color-pie:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-pie;" ;i!o;
-;["before;;;0;@ò;i!;@ò;i!;@ò;i!;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i"o;;["background;o; 	;;!;":url(../images/dashicons-color/dashicon-color-pie.png);@;i#;";#;@;i ;	[ ;i#o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i$o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i%o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i&o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i';i!o;
-;["!.dashicons-color-play:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-play;" ;i*o;
-;["before;;;0;@);i*;@);i*;@);i*;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i+o;;["background;o; 	;;!;";url(../images/dashicons-color/dashicon-color-play.png);@;i,;";#;@;i ;	[ ;i,o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i-o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i.o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i/o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i0;i*o;
-;["!.dashicons-color-ring:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-ring;" ;i3o;
-;["before;;;0;@`;i3;@`;i3;@`;i3;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i4o;;["background;o; 	;;!;";url(../images/dashicons-color/dashicon-color-ring.png);@;i5;";#;@;i ;	[ ;i5o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i6o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i7o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i8o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i9;i3o;
-;["$.dashicons-color-science:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-science;" ;i<o;
-;["before;;;0;@—;i<;@—;i<;@—;i<;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i=o;;["background;o; 	;;!;">url(../images/dashicons-color/dashicon-color-science.png);@;i>;";#;@;i ;	[ ;i>o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i?o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i@o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iAo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iB;i<o;
-;["%.dashicons-color-scissors:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-scissors;" ;iEo;
-;["before;;;0;@Î;iE;@Î;iE;@Î;iE;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iFo;;["background;o; 	;;!;"?url(../images/dashicons-color/dashicon-color-scissors.png);@;iG;";#;@;i ;	[ ;iGo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iHo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iIo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iJo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iK;iEo;
-;["%.dashicons-color-settings:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-settings;" ;iNo;
-;["before;;;0;@;iN;@;iN;@;iN;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iOo;;["background;o; 	;;!;"?url(../images/dashicons-color/dashicon-color-settings.png);@;iP;";#;@;i ;	[ ;iPo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iQo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iRo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iSo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iT;iNo;
-;["".dashicons-color-shake:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-shake;" ;iWo;
-;["before;;;0;@<;iW;@<;iW;@<;iW;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iXo;;["background;o; 	;;!;"<url(../images/dashicons-color/dashicon-color-shake.png);@;iY;";#;@;i ;	[ ;iYo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iZo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i[o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i\o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i];iWo;
-;["'.dashicons-color-smileyface:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-smileyface;" ;i`o;
-;["before;;;0;@s;i`;@s;i`;@s;i`;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iao;;["background;o; 	;;!;"Aurl(../images/dashicons-color/dashicon-color-smileyface.png);@;ib;";#;@;i ;	[ ;ibo;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;ico;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;ido;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;ieo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;if;i`o;
-;["(.dashicons-color-thermometer:before;o;;[o;;[o;
-;0;o;;{ ;[o;;[" dashicons-color-thermometer;" ;iio;
-;["before;;;0;@ª;ii;@ª;ii;@ª;ii;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;ijo;;["background;o; 	;;!;"Burl(../images/dashicons-color/dashicon-color-thermometer.png);@;ik;";#;@;i ;	[ ;iko;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;ilo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;imo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;ino;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;io;iio;
-;[").dashicons-color-toilet-paper:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["!dashicons-color-toilet-paper;" ;iro;
-;["before;;;0;@á;ir;@á;ir;@á;ir;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iso;;["background;o; 	;;!;"Curl(../images/dashicons-color/dashicon-color-toilet-paper.png);@;it;";#;@;i ;	[ ;ito;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;iuo;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;ivo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;iwo;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;ix;iro;
-;["".dashicons-color-vinyl:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-vinyl;" ;i{o;
-;["before;;;0;@	;i{;@	;i{;@	;i{;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i|o;;["background;o; 	;;!;"<url(../images/dashicons-color/dashicon-color-vinyl.png);@;i};";#;@;i ;	[ ;i}o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i~o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;io;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i€o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i;i{o;
-;["#.dashicons-color-wallet:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-wallet;" ;i„o;
-;["before;;;0;@O	;i„;@O	;i„;@O	;i„;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i…o;;["background;o; 	;;!;"=url(../images/dashicons-color/dashicon-color-wallet.png);@;i†;";#;@;i ;	[ ;i†o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i‡o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;iˆo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i‰o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iŠ;i„o;
-;["'.dashicons-color-watermelon:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-watermelon;" ;io;
-;["before;;;0;@†	;i;@†	;i;@†	;i;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;iŽo;;["background;o; 	;;!;"Aurl(../images/dashicons-color/dashicon-color-watermelon.png);@;i;";#;@;i ;	[ ;io;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;io;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;i‘o;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i’o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;i“;io;
-;["%.dashicons-color-wrenches:before;o;;[o;;[o;
-;0;o;;{ ;[o;;["dashicons-color-wrenches;" ;i–o;
-;["before;;;0;@½	;i–;@½	;i–;@½	;i–;T;@;i ;	[o;;["content;o; ;;!;""";@;";#;@;i ;	[ ;i—o;;["background;o; 	;;!;"?url(../images/dashicons-color/dashicon-color-wrenches.png);@;i˜;";#;@;i ;	[ ;i˜o;;["background-repeat;o; ;;!;"no-repeat;@;";#;@;i ;	[ ;i™o;;["height;o; ;;!;"	20px;@;";#;@;i ;	[ ;išo;;["
-width;o; ;;!;"	20px;@;";#;@;i ;	[ ;i›o;;["margin-top;o; ;;!;"6px;@;";#;@;i ;	[ ;iœ;i–;i
