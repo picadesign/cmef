@@ -1,21 +1,19 @@
 <?php get_header(); ?>
-	<div class="white-background page box-shadow container-twelve">
-		<div class="breadcrumbs">
-		    <a href="<?php bloginfo('url'); ?>">HOME</a> > <?php the_author(); ?>
+	<div class="white-background page box-shadow">
+		<div class="row">
+			<div class="sixteen columns alpha omega">
+				<div class="breadcrumbs">
+				    <?php if(function_exists('bcn_display'))
+				    {
+				        bcn_display();
+				    }?>
+				</div>
+			</div>
 		</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<h2><?php the_author(); ?></h2>
-		<hr>
-		<div class="four columns alpha profile-image">
-			<img src="http://placekitten.com/g/300" alt="">
-		</div>
-		<div class="eight columns omega">
-			<h3>Started 5 Projects • Joined May 2014</h3>
-			<h3>Profile Description	</h3>
-			<p><?php the_author_meta('description'); ?></p>
-		</div>
-	<?php endwhile; ?>
-	<?php endif; ?>
+		<?php the_title(); ?>
+		<?php endwhile; ?>
+		<?php endif; ?>
 	</div>
 	<?php
 	$args = array(
