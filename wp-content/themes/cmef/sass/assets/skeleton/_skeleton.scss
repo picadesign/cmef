@@ -76,7 +76,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
     .container .white-background                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
     .container .white-background .column,
     .container .white-background .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
-    .row                                        { margin-bottom: 0; margin-right:25px; margin-left:25px; }
+    .row                                        { margin-bottom: 20px; margin-right:25px; margin-left:25px; }
 
     /* Nested Column Classes */
     .white-background .column.alpha, .white-background .columns.alpha               { margin-left: 0; }
