@@ -35,7 +35,7 @@
 					<li>Page</li>
 				</ul>
 			</div>
-			</div>
+		</div>
 		<?php endwhile; ?>
 		<?php endif; ?>
 	</div>

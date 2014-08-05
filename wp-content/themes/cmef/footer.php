@@ -30,9 +30,6 @@
                 </div>
 	        </footer>
         </div>
-        <script type="text/javascript">
-            var templateUrl = '<?php bloginfo('template_directory'); ?>';
-        </script>
         <?php wp_footer(); ?>
     </body>
 </html>

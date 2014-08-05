@@ -55,6 +55,10 @@
 		// Load the Menus
 		include ('inc/menus.php');
 
+		//Include the states
+		include ('inc/php-states-dropdown.php');
+
+
 
 
 	}//cmef_theme_setup
@@ -68,4 +72,6 @@
 	add_action( 'admin_init', 'custom_admin' );
 	function custom_admin(){
 		include('inc/custom-admin.php');
+		//Author Meta Fields
+		include ('inc/author-meta-fields.php');
 	}

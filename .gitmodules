@@ -1,0 +1,3 @@
+[submodule "wp-content/themes/cmef/inc/sdk-php-master"]
+	path = wp-content/themes/cmef/inc/sdk-php-master
+	url = https://github.com/AuthorizeNet/sdk-php.git

@@ -30,6 +30,7 @@ $assets-sprite: sprite-map("assets/*.png") ;
 @import "assets/skeleton/layout";
 //Redactor Styles
 @import "assets/redactor";
+
 /*
 	Fonts
 
@@ -63,4 +64,3 @@ $assets-sprite: sprite-map("assets/*.png") ;
 @import "layouts/single-program";
 @import "layouts/author-styles";
 @import "layouts/donate-page";
-

@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="eight columns alpha">&nbsp;</div>
 			<div class="eight columns omega">
-				<a href="" class="button green alignright"><span>Donate to this program</span></a>
+				<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button green alignright"><span>Donate to this program</span></a>
 				<a href="" class="button green alignright button-margin"><span>Edit</span></a>
 			</div>
 		</div>
@@ -59,6 +59,7 @@
 				</div>
 			</div>
 			<div class="ten columns omega">
+				<section>
 				<div class="four columns alpha">Fundraising Progress</div>
 				<div class="six columns omega">
 					<div class="meter">
@@ -66,30 +67,33 @@
 					</div>
 					<span class="alignleft raised-amount">Raised <b><?php echo money_format('%.0n', 15000) . "\n"; ?></b></span><span class="alignright goal-amount">Goal <b><?php echo money_format('%.0n', $goal) . "\n"; ?></b></span>
 				</div>
+				</section>
 				<div class="ten columns alpha omega">
-					<br>
+					<section>
 					<table width="100%">
 						<tr>
-							<td width="41%"><b>Type of Program</b></td>
-							<td>Field Trip</td>
+							<td class="four columns alpha"><b>Type of Program</b></td>
+							<td class="five columns alignleft">Field Trip</td>
 						</tr>
 						<tr>
-							<td><b>TFA Region</b></td>
-							<td>Rio Grande Valley</td>
+							<td class="four columns alpha"><b>TFA Region</b></td>
+							<td class="five columns alignleft">Rio Grande Valley</td>
 						</tr>
 						<tr>
-							<td><b>School</b></td>
-							<td> Medomak Valley Highs School</td>
+							<td class="four columns alpha"><b>School</b></td>
+							<td class="five columns alignleft"> Medomak Valley Highs School</td>
 						</tr>
 						<tr>
-							<td><b>Grade Level</b></td>
-							<td>9th</td>
+							<td class="four columns alpha"><b>Grade Level</b></td>
+							<td class="five columns alignleft">9th</td>
 						</tr>
 						<tr>
-							<td><b>Number of Students</b></td>
-							<td>120</td>
+							<td class="four columns alpha"><b>Number of Students</b></td>
+							<td class="five columns alignleft">120</td>
 						</tr>
 					</table>
+					</section>
+					<section>
 					<h3>Key Contact</h3>
 					<table width="100%">
 						<tr>
@@ -98,6 +102,7 @@
 							<td>207-123-4567</td>
 						</tr>
 					</table>
+					</section>
 				</div>
 			</div>
 			<div class="clear"></div>

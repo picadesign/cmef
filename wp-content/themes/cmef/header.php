@@ -19,7 +19,7 @@
         <!-- End Meta Tags -->
         <title><?php wp_title() ?></title>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
-        <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/stylesheets/style.css" media="screen" />
+        <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/stylesheets/style.css" media="screen, print" />
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' )?>" />
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=0.9">

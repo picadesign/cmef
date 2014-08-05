@@ -21,28 +21,39 @@ html{
 	}
 	h2{
 		@extend .fonts.trade.gothic.light;
-		font-size:1.470588235em;
-		color: $scorpion;
+		font-size:1.870588235em;
+		color: $eastern-blue;
 		line-height:1.1em;
 	}
 	h3{
-		@extend .fonts.trade.condensed.regular;
-		font-size:1.176470588em;
-		color: $scorpion;
+		@extend .fonts.trade.gothic.light;
+		font-size:1.125em;
+		color: $eastern-blue;
+		line-height:1.1em;
+		margin-bottom:0;
 	}
 	h4{
-	
+		@extend .fonts.trade.condensed.bold;
+		font-size:1em;
+		color: $scorpion;
+		word-spacing: -3px;
 	}
 	h5{
-
+	@extend .fonts.trade.condensed.bold;
+		font-size:.85em;
+		color: $scorpion;
+		word-spacing: -3px;
 	}
 	h6{
-
+		@extend .fonts.trade.condensed.bold;
+		font-size:.7em;
+		color: $scorpion;
+		word-spacing: -3px;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		margin-top:0;
-		margin-bottom:20px;
+		margin-bottom:5px;
 	}
 
 	/**
@@ -198,6 +209,7 @@ html{
 		@extend .fonts.trade.condensed.bold;
 		font-size: 1em ;
 		color: $scorpion;
+		word-spacing: -5px;
 	}
 
 	/**
@@ -309,6 +321,10 @@ html{
 			width:100%;
 			//margin:15px;
 			border:none;
+			background-color:#fcfcfc;
+			
+			padding:5px;
+			margin-bottom:10px;
 
 			&:active{
 				//background-color:
@@ -319,22 +335,28 @@ html{
 			}
 		}
 
-		input[type='text']{
-			background-color:white;
+		input[type='text'], input[type='password']{
 			height:35px;
 			width:100%;
 			border:none;
-
+			@include box-shadow($mercury 0 1px 3px inset);
 			&:focus{
 				outline:0;
 			}
+		}
+		input[type='radio'], input[type='checkbox']{
+			width:auto !important;
+			height:auto;
+			display:inline;
+			margin-right:5px;
 		}
 
 		button{
 
 		}
 		select{
-
+			margin-left:1px;
+			margin-right:5px;
 		}
 		datalist{
 
@@ -467,7 +489,7 @@ html{
 	@include box-shadow(lighten($scorpion, 35%) 0 0 3px 1px);
 }
 
- .button{
+ .button, input[type='submit']{
  	display:table;
  	height:30px;
  	text-align: center;
@@ -475,6 +497,10 @@ html{
  	@extend .fonts.trade.gothic.bold;
  	padding:3px 17px 0 17px; 
  	text-transform: uppercase;
+ 	width:auto;
+ 	@include transition-property(all);
+	@include transition-duration(.5s);
+	
  	&.orange{
 		background-color:$tango;
 		color:white;
@@ -502,7 +528,7 @@ html{
 		}
  	}
 
- 	&.green{
+ 	&.green, input[type='submit']{
  		background-color:$apple;
 		color:white;
 		*{
@@ -567,4 +593,9 @@ html{
 	&.edit, &.save{
 		//cursor
 	}
+}
+
+section{
+	margin-bottom:15px;
+	overflow:auto;
 }
