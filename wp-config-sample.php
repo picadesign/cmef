@@ -16,16 +16,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'cmef_wordpress');
+define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
-define('DB_USER', 'root_remote');
+define('DB_USER', 'username_here');
 
 /** MySQL database password */
-define('DB_PASSWORD', '1309piCa');
+define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
-define('DB_HOST', 'mysql.pica.is');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'zYi2zpozpRck[vS,T#|4LdyoQEjz$r{CR y<*u_lpm:Y2mzik`5pulc!?iNJSy=J');
-define('SECURE_AUTH_KEY',  '6:$pCrs{[1n~35l|%]0w>+TnE5`<m%!Us-Q8o7TCU5h|>>n3;g&n,i^k=EUrq(mG');
-define('LOGGED_IN_KEY',    '1`0P!h_ps.rT*p-|K=M2xT}&|+lw&t[52AQ3mF_pqz>ciT7JjAp-:q8{N|p5pR|c');
-define('NONCE_KEY',        '|53b~!vq)VRqa0:>SBLx gA]-FW,ANI<??5jH2]Z;{r+9+[QVW87HDIysoF4m-Ed');
-define('AUTH_SALT',        '~HW/NsZK<g)x^&o,qMl*}^.NYQZdB:v2P!+j|bq[gBH3CXW}+[!jR$;#?TBg]r$$');
-define('SECURE_AUTH_SALT', '<Cc;mD@H9?=jlx{zCWGGG]!Y>u.;BkJVT`iuFG@$?G{*[ellD1jyjp>k?-`++A%^');
-define('LOGGED_IN_SALT',   'J=tx|J0(UVbq;}(ldVBt8jWrl=#8new6+Yrd<t?=hR|<v.y:yQ`V@CMy]bY=V|Nv');
-define('NONCE_SALT',       '<zgU* VQgy*Mn~O9!m50s/hO;zN%kHpL3 R#wp9.JmU6L%@G0E^ N[?nzyz0tF2?');
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
 
 /**#@-*/
 
@@ -59,7 +59,7 @@ define('NONCE_SALT',       '<zgU* VQgy*Mn~O9!m50s/hO;zN%kHpL3 R#wp9.JmU6L%@G0E^ 
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'cmef_wp_';
+$table_prefix  = 'wp_';
 
 /**
  * WordPress Localized Language, defaults to English.

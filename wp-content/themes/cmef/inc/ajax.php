@@ -34,7 +34,8 @@
     			$program->twitter_url = get_post_meta($post->ID, '_social-networks', true)['twitter'];
     			$program->linkedin_url = get_post_meta($post->ID, '_social-networks', true)['linkedin'];
     			$program->facebook_url = get_post_meta($post->ID, '_social-networks', true)['facebook'];
-    			$program->googel_url = get_post_meta($post->ID, '_social-networks', true)['google'];
+    			$program->google_url = get_post_meta($post->ID, '_social-networks', true)['google'];
+                $program->donation_url = add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) );
     	endwhile;
 
     	echo json_encode($programsDataObject);

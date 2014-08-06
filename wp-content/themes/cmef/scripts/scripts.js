@@ -1,18 +1,29 @@
 jQuery(function ($) {
 
 	var mustache_template_path = 'wp-content/themes/cmef/scripts/mustache-templates/';
-	//Initialize Masoney
+	//Initialize Masonry
 	$( window ).load( function()
 	{
-	    $( '.masonry' ).masonry( { 
-	    	itemSelector: '.project-card',
-	    	gutter: 30,
-	    	columnWidth: 300
-	    } );
+		$('.masonry').masonry({
+			itemSelector: '.project-card',
+			gutter: 30,
+			columnWidth: 300
+		});
 	});
 	$(window).ready(function(){
 		$('.masonry').show();
-	})
+	});
+
+
+
+
+
+
+
+
+
+
+
 
 	/**
 	 * Submit Donation Form
@@ -30,7 +41,7 @@ jQuery(function ($) {
 		}
 		else{
 			pay_for_transaction = false;
-		};
+		}
 
 		var donate_to_cmef = true;
 		if($('input[name=donate_to_cmef').val() == 'on'){
@@ -38,9 +49,14 @@ jQuery(function ($) {
 		}
 		else{
 			donate_to_cmef = false;
-		};
-
-		var amount = $('input[name=amount]:checked').val();
+		}
+		var amount;
+		if($('input[name=amount]:checked').val() === 'other'){
+			amount = $('input[name=otheramount]').val();
+		}
+		else{
+			amount = $('input[name=amount]:checked').val()
+		}
 		var card_type = $('input[name=card_type]').val();
 		var card_number = $('input[name=card_number]').val();
 		var three_digit = $('input[name=three_digit]').val();
@@ -78,8 +94,8 @@ jQuery(function ($) {
 		}, function(response){
 			//console.log(response);
 			var authorization = JSON.parse(response);
-			console.log(authorization);
-			if(authorization['approved'] == false){
+			//console.log(authorization);
+			if(authorization['approved'] === false){
 				var error = '<p class="error">' + authorization['response_reason_text'] + '</p>';
 				$('.alert-messages').html(error);
 				$('#donation-form input[type=submit]').attr('value', 'Donate!').removeAttr('disabled');
@@ -87,9 +103,61 @@ jQuery(function ($) {
 				window.location.href = redirect;
 			}
 		});
+	});
+	var total = parseInt(0);
+	var donation_amount = parseInt(0);
+	var cmef_donation = parseInt(0);
+	$('input[name=amount]').change(function(){
+		if($(this).val() === 'other'){
+			$('input[name=otheramount][type=number]').removeAttr('disabled');
+		}
+		else{
+			$('input[name=otheramount][type=number]').attr('disabled', 'disabled');
+			donation_amount = parseInt($(this).val());
+			console.log(donation_amount);
+		}
+		cmef_donation = parseInt(cmef_donation);
+		total = Math.floor(cmef_donation + donation_amount);
+		$('.donate #total').html(total + '.00');
+	});
 
+	if($('input[name=donate_to_cmef]').is(':checked')){
+		cmef_donation = $('input[name=donate_to_cmef]').val();
+		total = parseInt(total + cmef_donation);
+		$('.donate #total').html(total + '.00');
+		console.log(parseInt(cmef_donation));
+	}
 
+	$('input[name=otheramount]').change(function(){
+			donation_amount = parseInt($(this).val());
+			console.log(donation_amount);
+			total = Math.floor(cmef_donation + donation_amount);
+			$('.donate #total').html(total + '.00');
 	})
+
+	$('input[name=donate_to_cmef]').change(function(){
+		if(!$(this).is(':checked')){
+			cmef_donation = $(this).val();
+			total = parseInt(total - cmef_donation);
+			$('.donate #total').html(total + '.00');
+		}
+		else{
+			cmef_donation = $(this).val();
+			total = parseInt(total + cmef_donation);
+			$('.donate #total').html(total + '.00');	
+		}
+	});
+
+
+
+
+
+
+
+
+
+
+
 
 	//Load More Programs and add to the masonry
 	$('.bottom-buttons .show-more').on('click', function(){
@@ -124,7 +192,7 @@ jQuery(function ($) {
 						linkedin_url: program['linkedin_url'],
 						facebook_url: program['facebook_url'],
 						google_url: program['google_url'],
-						donateion_url: ''
+						donation_url: program['donation_url']
 
 					});
 					$('.projects').append(rendered);
@@ -132,13 +200,16 @@ jQuery(function ($) {
 				$('.masonry').masonry('reloadItems');
     		$('.projects').masonry();
 			});
-
-			
-
-			
 			//alert(response);
 		})
     })
+
+
+
+
+
+
+
 
 	/**
 	 * Scroll to top
@@ -150,6 +221,14 @@ jQuery(function ($) {
 		}, 800);
 		return false;
 	});
+
+
+
+
+
+
+
+
 
 	/**
 	 * Style the first word of the menu item
@@ -186,4 +265,12 @@ jQuery(function ($) {
 	        $('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').hide();
 	    }
 	});
+
+
+
+
+
+
+
+
 });

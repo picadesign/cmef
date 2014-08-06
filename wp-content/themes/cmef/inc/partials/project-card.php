@@ -14,7 +14,7 @@
 			<div class="meter-progress" style="width:<?php $goal = get_post_meta(get_the_ID(), '_fundraising-goal', true); echo (47523/(int) $goal)*100; ?>%;"></div>
 		</div>
 		<span class="alignRight raised-amount">Raised <b><?php echo money_format('%.0n', 15000) . "\n"; ?></b></span><span class="alignLeft goal-amount">Goal <b><?php echo money_format('%.0n', $goal) . "\n"; ?></b></span>
-		<a href="" class="button donate orange"><span>Donate Now</span></a>
+		<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button donate orange"><span>Donate Now</span></a>
 		<hr>
 		
 		<div class="social">

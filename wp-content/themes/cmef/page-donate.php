@@ -40,7 +40,7 @@
 							<li><input name="amount" type="radio" required="required" value="500.00">$500.00</li>
 							<li><input name="amount" type="radio" required="required" value="1000.00">$1,000.00</li>
 							<li><input name="amount" type="radio" required="required" value="other">Other Amount</li>
-							<input type="text" name="amount" placeholder="Other Amount" disabled="disabled">
+							<input type="number" name="otheramount" placeholder="Other Amount" disabled="disabled">
 						</ul>
 					</div>
 					<div class="eight coumns omega email">
@@ -59,7 +59,7 @@
 								<input type="text" name="organization_name" placeholder="Organization Name" disabled="disabled">
 								<input type="checkbox" name="pay_for_transaction" checked="checked"><label for="pay_for_transaction">Pay For Credit Card Transaction (%1)</label>
 								<br>
-								<input type="checkbox" name="donate_to_cmef" checked="checked"><label for="donate_to_cmef">Donate $5.00 to CMEF</label>
+								<input type="checkbox" name="donate_to_cmef" checked="checked" value="5"><label for="donate_to_cmef">Donate $5.00 to CMEF</label>
 							</div>
 						</section>
 					</div>
@@ -122,6 +122,9 @@
 						</select>
 					</div>
 					
+				</div>
+				<div class="sixteen columns alpha omega">
+					<div class="alignright"><h3>Total Donation: $<span id="total"></span></h3></div>
 				</div>
 				<div class="clear"></div>
 				<div class="sixteen columns alpha omega">
