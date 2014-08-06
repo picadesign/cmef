@@ -2,7 +2,6 @@
     global $current_user;
     global $post;$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     setlocale(LC_MONETARY, 'en_US');
-    get_userdata();
     //echo '<pre>';
     //print_r($current_user);
     //echo '</pre>';

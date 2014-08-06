@@ -75,13 +75,19 @@
     function process_donation(){
     	//Set the authorize.net variables
     	include ('sdk-php-master/autoload.php');
-    	define("AUTHORIZENET_API_LOGIN_ID", "6KRWv8m7WtF");
-		define("AUTHORIZENET_TRANSACTION_KEY", "45DnnA8Q659jxqFj");
-		define("AUTHORIZENET_SANDBOX", true);
+        if(get_option('sandbox_mode') == 'true'){
+            $sandbox = true;
+        }
+        else{
+            $sandbox = false;
+        }
+    	define("AUTHORIZENET_API_LOGIN_ID", get_option('api_login_id'));
+		define("AUTHORIZENET_TRANSACTION_KEY", get_option('api_transaction_key'));
+		define("AUTHORIZENET_SANDBOX", $sandbox );
 		
     	//Store the variables (again...).. There must be a better way of doing this........
 		//print_r($_POST); 
-		$amount = $_POST[''];
+		$amount = $_POST['amount'];
 		$pay_for_transaction = $_POST['pay_for_transaction'];
 		$donate_to_cmef = $_POST['donate_to_cmef'];
 		$card_type = $_POST['card_type'];
@@ -95,6 +101,7 @@
 		$city = $_POST['city'];
 		$zip = $_POST['zip'];
 		$state = $_POST['state'];
+        $program_id = $_POST['program_id'];
 
 		/**
 		 * We need to do a few things here.
@@ -116,29 +123,44 @@
         $sale->state              = $state;
         $sale->zip                = $zip;
         $sale->country            = $country = "US";
-        //$sale->email              = $email;
-        //$sale->cust_id            = $customer_id = "55";
-        //$sale->customer_ip        = "98.5.5.5";
-        //$sale->invoice_num        = $invoice_number = "123";
-        //$sale->ship_to_first_name = $ship_to_first_name = "John";
-        //$sale->ship_to_last_name  = $ship_to_last_name = "Smith";
-        //$sale->ship_to_company    = $ship_to_company = "Smith Enterprises Inc.";
-        //$sale->ship_to_address    = $ship_to_address = "10 Main Street";
-        //$sale->ship_to_city       = $ship_to_city = "San Francisco";
-        //$sale->ship_to_state      = $ship_to_state = "CA";
-        //$sale->ship_to_zip        = $ship_to_zip_code = "94110";
-        //$sale->ship_to_country    = $ship_to_country = "US";
-        //$sale->tax                = $tax = "0.00";
-        //$sale->freight            = $freight = "Freight<|>ground overnight<|>12.95";
-        //$sale->duty               = $duty = "Duty1<|>export<|>15.00";
-        //$sale->tax_exempt         = $tax_exempt = "FALSE";
-        //$sale->po_num             = $po_num = "12";
 
-        print_r($sale);
         $response = $sale->authorizeAndCapture();
         if ($response->approved) {
 		    $transaction_id = $response->transaction_id;
+            //Set up the post data for a new post into the database to get a record of the donation.
+            $post = array(
+              'post_name'      => 'Donation ' . $transaction_id, 
+              'post_title'     => 'Donation ' . $transaction_id, 
+              'post_status'    => 'publish', 
+              'post_type'      => 'donation', 
+              'post_author'    => 1, 
+            );  
+            //Create a new donation post.
+            $new_post_id = wp_insert_post($post);
+
+            $address = array(
+                'street_1' => $street,
+                'street_2' => ' ',
+                'city'     => $city,
+                'state'    => $state,
+                'zip'      => $zip,
+                'country'  => 'US',
+            );
+            $name = array(
+                'first' => $first_name,
+                'middle' => ' ',
+                'last' => $last_name,
+            );
+            //Update the various needed post data.
+            update_post_meta($new_post_id, '_program-id', $program_id);
+            update_post_meta($new_post_id, '_contribution-amount', $amount);
+            update_post_meta($new_post_id, '_donation-address', $address);
+            update_post_meta($new_post_id, '_donor-name', $name);
+            update_post_meta( $new_post_id, '_payment-method', 'Credit Card' );
+
+
 		}
+        // Send back the response.
 		echo json_encode($response);
 		die();
     }

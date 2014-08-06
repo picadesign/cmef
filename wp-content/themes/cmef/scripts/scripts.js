@@ -1,4 +1,5 @@
 jQuery(function ($) {
+
 	var mustache_template_path = 'wp-content/themes/cmef/scripts/mustache-templates/';
 	//Initialize Masoney
 	$( window ).load( function()
@@ -20,7 +21,7 @@ jQuery(function ($) {
 		//Prevent the form from actually submitting.
 		event.preventDefault();
 		//Change the word of the submit button.
-		//$(this).find('input[type=submit]').attr('value', 'Processing').attr('disabled', 'disabled');
+		$(this).find('input[type=submit]').attr('value', 'Processing').attr('disabled', 'disabled');
 
 		//Get the form information and store it in variables.
 		var pay_for_transaction = true;
@@ -39,7 +40,7 @@ jQuery(function ($) {
 			donate_to_cmef = false;
 		};
 
-		var amount = $('input[name=amount]').val();
+		var amount = $('input[name=amount]:checked').val();
 		var card_type = $('input[name=card_type]').val();
 		var card_number = $('input[name=card_number]').val();
 		var three_digit = $('input[name=three_digit]').val();
@@ -50,8 +51,13 @@ jQuery(function ($) {
 		var street = $('input[name=street]').val();
 		var city = $('input[name=city]').val();
 		var zip = $('input[name=zip]').val();
-		var state = $('input[name=state]').val();
-		console.log(month);
+		var state = $('select[name=state]').val();
+		var redirect = $('input[name=thank_you_url]').val();
+		var program_id = $('input[name=program_id]').val();
+		console.log(redirect);
+
+
+
 		$.post(ajaxurl, {
 			action: 'process_donation',
 			amount: amount,
@@ -67,9 +73,19 @@ jQuery(function ($) {
 			zip: zip,
 			state: state,
 			donate_to_cmef: donate_to_cmef,
-			pay_for_transaction: pay_for_transaction
+			pay_for_transaction: pay_for_transaction,
+			program_id: program_id
 		}, function(response){
-			console.log(response);
+			//console.log(response);
+			var authorization = JSON.parse(response);
+			console.log(authorization);
+			if(authorization['approved'] == false){
+				var error = '<p class="error">' + authorization['response_reason_text'] + '</p>';
+				$('.alert-messages').html(error);
+				$('#donation-form input[type=submit]').attr('value', 'Donate!').removeAttr('disabled');
+			}else{
+				window.location.href = redirect;
+			}
 		});
 
 

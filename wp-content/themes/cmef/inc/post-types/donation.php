@@ -251,7 +251,7 @@
 	    	echo '<a href="' . get_edit_post_link($post_id) . '">' . $post_id . '</a>';
 	    	break;
 		case 'contribution-amount' :
-			echo '$' . get_post_meta( $post_id , '_contribution-amount' , true ) . '.00';
+			echo '$' . get_post_meta( $post_id , '_contribution-amount' , true );
 			break;
 		case 'program' :
 		    echo '<a href="' . get_edit_post_link(get_post_meta( $post_id, '_program-id', true)) . '">' . get_the_title(get_post_meta( $post_id, '_program-id', true)) .'</a>';

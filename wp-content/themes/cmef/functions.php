@@ -57,6 +57,8 @@
 
 		//Include the states
 		include ('inc/php-states-dropdown.php');
+		//Settings Page
+		include ('inc/settings-page.php');
 
 
 

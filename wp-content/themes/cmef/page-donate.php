@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header();?>
 	<div class="white-background page box-shadow donate">
 		<div class="row">
 			<div class="sixteen columns alpha omega">
@@ -19,21 +19,26 @@
 		</div>
 		<?php $program = get_post(htmlspecialchars($_GET["program_id"])); //print_r($program) ?>
 		<div class="row">
-			<div class="sixteen columns alpha omega dontation-description">
+			<div class="sixteen columns alpha dontation-description">
 				<p>Your donation will help support the cause '<?php echo $program->post_title?>'. Thank You!</p>
+			</div>
+			<div class="eight columns alpha omega alert-messages">
+				
 			</div>
 			<div class="clear"></div>
 			<form action="" id="donation-form">
+				<input type="hidden" name="thank_you_url" value="<?php echo get_the_permalink(261) ?>">
+				<input type="hidden" name="program_id" value="<?php echo $program->ID ?>">
 				<section>
 					<div class="eight columns alpha">
 						<h3>Contribution Amount</h3>
 						<ul class="no-margin no-padding donation-amount">
-							<li><input name="amount" type="radio" required="required" value="25">$25.00</li>
-							<li><input name="amount" type="radio" required="required" value="50">$50.00</li>
-							<li><input name="amount" type="radio" required="required" value="100">$100.00</li>
-							<li><input name="amount" type="radio" required="required" value="250">$250.00</li>
-							<li><input name="amount" type="radio" required="required" value="500">$500.00</li>
-							<li><input name="amount" type="radio" required="required" value="1000">$1,000.00</li>
+							<li><input name="amount" type="radio" required="required" value="25.00">$25.00</li>
+							<li><input name="amount" type="radio" required="required" value="50.00">$50.00</li>
+							<li><input name="amount" type="radio" required="required" value="100.00">$100.00</li>
+							<li><input name="amount" type="radio" required="required" value="250.00">$250.00</li>
+							<li><input name="amount" type="radio" required="required" value="500.00">$500.00</li>
+							<li><input name="amount" type="radio" required="required" value="1000.00">$1,000.00</li>
 							<li><input name="amount" type="radio" required="required" value="other">Other Amount</li>
 							<input type="text" name="amount" placeholder="Other Amount" disabled="disabled">
 						</ul>
@@ -42,7 +47,7 @@
 						<section>
 							<h3>Email Address</h3>
 							<div class="eight columns alpha omega">
-								<input type="text" placeholder="email@domain.com" required="required">
+								<input type="text" placeholder="email@domain.com" rrequired="required">
 							</div>
 						</section>
 						<section>
@@ -65,14 +70,14 @@
 						<h3>Credit Card Information</h3>
 						<h4>Card Type</h4>
 						<ul class="no-margin no-padding">
-							<li><input type="radio" name="card_type" required="required" value="Visa">Visa</li>
-							<li><input type="radio" name="card_type" required="required" value="mastercard">Mastercard</li>
+							<li><input type="radio" name="card_type" rrequired="required" value="Visa">Visa</li>
+							<li><input type="radio" name="card_type" rrequired="required" value="mastercard">Mastercard</li>
 						</ul>
-						<input type="text" name="card_number" placeholder="Card Number" required="required">
-						<input type="text" name="three_digit" placeholder="Security Code" required="required">
+						<input type="text" name="card_number" placeholder="Card Number" rrequired="required">
+						<input type="text" name="three_digit" placeholder="Security Code" rrequired="required">
 						<div class="three columns alpha">
 						<h4>Expiriation Month</h4>
-							<select name="month" id="" required="required">
+							<select name="month" id="month" rrequired="required">
 
 								<option value="01">January</option>
 								<option value="02">February</option>
@@ -90,7 +95,7 @@
 						</div>
 						<div class="three columns omega">
 							<h4>Expiration Year</h4>
-							<select name="credit_card_expiry_year" id="credit-card-expiration-year" required="required">
+							<select name="credit_card_expiry_year" id="credit-card-expiration-year" rrequired="required">
 							  <?php
 							   for($i = date("Y"); $i < date("Y")+12; $i++){
 							     echo "<option value='" . $i . "'>" . $i . "</option>";
@@ -103,10 +108,10 @@
 				</div>
 				<div class="eight columns omega">
 					<h3>Billing Name and Address</h3>
-					<input type="text" name="first_name" placeholder="First Name" required="required">
-					<input type="text" name="last_name" placeholder="Last Name" required="required">
-					<input type="text" name="street" placeholder="Street Address" required="required">
-					<input type="text" name="city" placeholder="City" required="required">
+					<input type="text" name="first_name" placeholder="First Name" rrequired="required">
+					<input type="text" name="last_name" placeholder="Last Name" rrequired="required">
+					<input type="text" name="street" placeholder="Street Address" rrequired="required">
+					<input type="text" name="city" placeholder="City" rrequired="required">
 					<div class="four columns alpha">
 						<input type="text" name="zip" placeholder="Zip Code">
 					</div>
