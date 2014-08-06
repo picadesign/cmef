@@ -1,9 +1,11 @@
 <div class="project-card">
+	<?php if(!is_search()){ ?>
 	<?php if(has_post_thumbnail($post->ID)): ?>
 		<?php the_post_thumbnail($size = 'post-thumbnail', $attr = ''); ?>
 	<?php else : ?>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/placeholder.png" alt="">
 	<?php endif; ?>
+	<?php } ?>
 	<div class="description">
 		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<span class="author-name">Started By: <?php the_author(); ?></span>
