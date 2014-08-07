@@ -35,6 +35,25 @@ jQuery(function ($) {
 		$(this).find('input[type=submit]').attr('value', 'Processing').attr('disabled', 'disabled');
 
 		//Get the form information and store it in variables.
+		
+
+		var amount;
+		if($('input[name=amount]:checked').val() === 'other'){
+			amount = $('input[name=otheramount]').val();
+		}
+		else{
+			amount = $('input[name=amount]:checked').val()
+		}
+
+		var donate_to_cmef = true;
+		if($('input[name=donate_to_cmef]').is(":checked")){
+			donate_to_cmef = true;
+			amount = amount + 5;
+		}
+		else{
+			donate_to_cmef = false;
+		}
+
 		var pay_for_transaction = true;
 		if($('input[name=pay_for_transaction').val() == 'on'){
 			pay_for_transaction = true;
@@ -43,19 +62,12 @@ jQuery(function ($) {
 			pay_for_transaction = false;
 		}
 
-		var donate_to_cmef = true;
-		if($('input[name=donate_to_cmef').val() == 'on'){
-			donate_to_cmef = true;
+		var remain_anonymous = false;
+		if($('input[name=remain_anonymous]').is(":checked")){
+			remain_anonymous = true;
 		}
 		else{
-			donate_to_cmef = false;
-		}
-		var amount;
-		if($('input[name=amount]:checked').val() === 'other'){
-			amount = $('input[name=otheramount]').val();
-		}
-		else{
-			amount = $('input[name=amount]:checked').val()
+			remain_anonymous = false;
 		}
 		var card_type = $('input[name=card_type]').val();
 		var card_number = $('input[name=card_number]').val();
@@ -90,7 +102,8 @@ jQuery(function ($) {
 			state: state,
 			donate_to_cmef: donate_to_cmef,
 			pay_for_transaction: pay_for_transaction,
-			program_id: program_id
+			program_id: program_id,
+			remain_anonymous: remain_anonymous
 		}, function(response){
 			//console.log(response);
 			var authorization = JSON.parse(response);
@@ -134,6 +147,12 @@ jQuery(function ($) {
 			total = Math.floor(cmef_donation + donation_amount);
 			$('.donate #total').html(total + '.00');
 	})
+
+	$("input[name=otheramount]").bind('click keyup mouseup', function () {
+		donation_amount = parseInt($(this).val());
+			total = Math.floor(cmef_donation + donation_amount);
+			$('.donate #total').html(total + '.00');
+	});
 
 	$('input[name=donate_to_cmef]').change(function(){
 		if(!$(this).is(':checked')){
@@ -256,13 +275,13 @@ jQuery(function ($) {
 	//This is to show the login menu
 	//Close the div if anywhere else is click on the screen
 	$(document).on('click', function(e) {
-	    if ( $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').length ) {
-	        $('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '#e8e8e8');
-	        $('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').show();
+		if ( $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').length ) {
+			$('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '#e8e8e8');
+			$('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').show();
 
-	    }else if ( ! $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').length ) {
-	        $('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '');
-	        $('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').hide();
+		}else if ( ! $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').length ) {
+			$('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '');
+			$('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').hide();
 	    }
 	});
 

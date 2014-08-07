@@ -1703,7 +1703,7 @@ html {
    */ }
   /* line 7, ../sass/basics/_theme-html-base.scss */
   html body {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1406735156');
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1407350076');
     font-size: 17px;
     line-height: normal; }
   /* line 17, ../sass/basics/_theme-html-base.scss */
@@ -1826,7 +1826,7 @@ html {
     html form input:focus {
       outline: 0; }
   /* line 338, ../sass/basics/_theme-html-base.scss */
-  html form input[type='text'], html form input[type='password'] {
+  html form input[type='text'], html form input[type='password'], html form input[type='number'] {
     height: 35px;
     width: 100%;
     border: none;
@@ -1834,7 +1834,7 @@ html {
     -moz-box-shadow: #e8e8e8 0 1px 3px inset;
     box-shadow: #e8e8e8 0 1px 3px inset; }
     /* line 343, ../sass/basics/_theme-html-base.scss */
-    html form input[type='text']:focus, html form input[type='password']:focus {
+    html form input[type='text']:focus, html form input[type='password']:focus, html form input[type='number']:focus {
       outline: 0; }
   /* line 347, ../sass/basics/_theme-html-base.scss */
   html form input[type='radio'], html form input[type='checkbox'] {
@@ -1967,7 +1967,6 @@ html {
     color: white; }
     /* line 507, ../sass/basics/_theme-html-base.scss */
     .button.orange *, input[type='submit'].orange * {
-      padding: 3px 5px 0 5px;
       display: table-cell;
       vertical-align: middle; }
     /* line 513, ../sass/basics/_theme-html-base.scss */

@@ -11,11 +11,12 @@
 			</div>
 		</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
 		<div class="row">
 			<div class="eight columns alpha">&nbsp;</div>
 			<div class="eight columns omega">
-				<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button green alignright"><span>Donate to this program</span></a>
-				<a href="" class="button green alignright button-margin"><span>Edit</span></a>
+				<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button orange alignright"><span>Donate to this program</span></a>
+				<?php if($current_user->ID === get_the_author_meta('ID')){?><a href="" class="button green alignright button-margin"><span>Edit</span></a><?php } ?>
 			</div>
 		</div>
 		<div class="row">
@@ -24,10 +25,10 @@
 				<span class="alignleft">Share this Program:</span>
 				<div class="social alignright">
 					<ul>
-						<li class="mail"></li>
-						<li class="google"></li>
-						<li class="twitter"></li>
-						<li class="facebook"></li>
+						<li class="mail"><a href=""></a></li>
+						<li class="google"><a href=""></a></li>
+						<li class="twitter"><a href=""></a></li>
+						<li class="facebook"><a href=""></a></li>
 					</ul>
 				</div>
 			</div>
@@ -63,9 +64,10 @@
 				<div class="four columns alpha">Fundraising Progress</div>
 				<div class="six columns omega">
 					<div class="meter">
-						<div class="meter-progress" style="width:<?php $goal = get_post_meta(get_the_ID(), '_fundraising-goal', true); echo (47523/(int) $goal)*100; ?>%;"></div>
+
+						<div class="meter-progress" style="width:<?php $goal = get_post_meta(get_the_ID(), '_fundraising-goal', true); $donation_total = program_donation_total($post->ID); echo ((int) $donation_total/(int) $goal)*100; ?>%;"></div>
 					</div>
-					<span class="alignleft raised-amount">Raised <b><?php echo money_format('%.0n', 15000) . "\n"; ?></b></span><span class="alignright goal-amount">Goal <b><?php echo money_format('%.0n', $goal) . "\n"; ?></b></span>
+					<span class="alignleft raised-amount">Raised <b><?php echo money_format('%.0n', $donation_total) . "\n"; ?></b></span><span class="alignright goal-amount">Goal <b><?php echo money_format('%.0n', $goal) . "\n"; ?></b></span>
 				</div>
 				</section>
 				<div class="ten columns alpha omega">
@@ -73,23 +75,23 @@
 					<table width="100%">
 						<tr>
 							<td class="four columns alpha"><b>Type of Program</b></td>
-							<td class="five columns alignleft">Field Trip</td>
+							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_program-type', true ) ?></td>
 						</tr>
 						<tr>
 							<td class="four columns alpha"><b>TFA Region</b></td>
-							<td class="five columns alignleft">Rio Grande Valley</td>
+							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_tfa-region', true ) ?></td>
 						</tr>
 						<tr>
 							<td class="four columns alpha"><b>School</b></td>
-							<td class="five columns alignleft"> Medomak Valley Highs School</td>
+							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_school-name', true ) ?></td>
 						</tr>
 						<tr>
 							<td class="four columns alpha"><b>Grade Level</b></td>
-							<td class="five columns alignleft">9th</td>
+							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_grade-level', true ) ?></td>
 						</tr>
 						<tr>
 							<td class="four columns alpha"><b>Number of Students</b></td>
-							<td class="five columns alignleft">120</td>
+							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_number-students', true ) ?></td>
 						</tr>
 					</table>
 					</section>
@@ -123,60 +125,40 @@
 						<tr>
 							<td><b>Name</b></td>
 							<td><b>Email</b></td>
-							<td><b>Phone Number</b></td>
+							<td><b>Amount</b></td>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
-						<tr>
-							<td>02/12/2014</td>
-							<td>Jason Walker</td>
-							<td>$40.00</td>
-						</tr>
+						<?php
+							/**
+							 * The WordPress Query class.
+							 * @link http://codex.wordpress.org/Function_Reference/WP_Query
+							 *
+							 */
+							$args = array(
+								'post_type'   => 'donation',
+								//Custom Field Parameters
+								'meta_key'       => '_program-id',
+								'meta_value'     => $post->ID,
+								'posts_per_page' => -1
+								
+							);
+						
+							$donation_query = new WP_Query( $args );
+							if($donation_query->have_posts()):
+								while($donation_query->have_posts()): $donation_query->the_post(); ?>
+									<?php if(get_post_meta($post->ID, '_remain-anonymous', true) === 'true') :?>
+									<?php else: ?>
+									<tr>
+										<td><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></td>
+										<td><a id="donation-email">email@email.com</a></td>
+										<td><?php echo money_format('%.0n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; ?></td>
+									</tr>
+									<?php endif; ?>
+								<?php endwhile;
+							endif;
+							wp_reset_postdata();
+						?>
 					</tbody>
 				</table>
 			</div>

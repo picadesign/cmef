@@ -40,7 +40,7 @@
 							<li><input name="amount" type="radio" required="required" value="500.00">$500.00</li>
 							<li><input name="amount" type="radio" required="required" value="1000.00">$1,000.00</li>
 							<li><input name="amount" type="radio" required="required" value="other">Other Amount</li>
-							<input type="number" name="otheramount" placeholder="Other Amount" disabled="disabled">
+							<input type="number" name="otheramount" placeholder="Other Amount" disabled="disabled" value="">
 						</ul>
 					</div>
 					<div class="eight coumns omega email">
@@ -76,7 +76,7 @@
 						<input type="text" name="card_number" placeholder="Card Number" rrequired="required">
 						<input type="text" name="three_digit" placeholder="Security Code" rrequired="required">
 						<div class="three columns alpha">
-						<h4>Expiriation Month</h4>
+						<h4>Expiration Month</h4>
 							<select name="month" id="month" rrequired="required">
 
 								<option value="01">January</option>
@@ -123,7 +123,10 @@
 					</div>
 					
 				</div>
-				<div class="sixteen columns alpha omega">
+				<div class="eight offset-by-eight columns alpha omega">
+					<div class="alignleft">
+						<input type="checkbox" value="true" name="remain_anonymous"><label for="remain_anonymous">Remain Anonymous</label>
+					</div>
 					<div class="alignright"><h3>Total Donation: $<span id="total"></span></h3></div>
 				</div>
 				<div class="clear"></div>

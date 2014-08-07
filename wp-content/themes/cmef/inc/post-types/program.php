@@ -41,18 +41,18 @@
 	add_action( 'add_meta_boxes', 'add_program_meta_boxes' );  
 	function add_program_meta_boxes(){
 		function fundraising_goal_admin($post){ ?>
-			<input type="number" value="<?php echo get_post_meta( $post->ID, '_fundraising-goal', true );  ?>" name="fundraising-goal" placeholder="5000 for $5,000" required="required">
+			<input type="number" value="<?php echo get_post_meta( $post->ID, '_fundraising-goal', true );  ?>" name="fundraising-goal" placeholder="5000 for $5,000">
 
 		<?php }
 		add_meta_box('fundraising-goal', __('Fundraising Goal'), 'fundraising_goal_admin', 'program', 'side', 'core');
 
 		function school_name_admin($post){ ?>
-			<input type="text" value="<?php echo get_post_meta( $post->ID, '_school-name', true );  ?>" name="school-name" placeholder="Your School Name" required="required">
+			<input type="text" value="<?php echo get_post_meta( $post->ID, '_school-name', true );  ?>" name="school-name" placeholder="Your School Name">
 		<?php }
 		add_meta_box( 'school-name', __('School Name'), 'school_name_admin', 'program', 'side', 'core' );
 
 		function grade_level_admin($post){ ?>
-			<select name="grade-level" id="grade-level" required="required">
+			<select name="grade-level" id="grade-level">
 				<option value="Kindergarten" <?php selected( 'Kindergarten', get_post_meta( $post->ID, '_grade-level', true ), true) ?>>Kindergarten</option>
 				<option value="Elementary School" <?php selected( 'Elementary School', get_post_meta( $post->ID, '_grade-level', true ), true) ?>>Elementary School</option>
 				<option value="Middle School" <?php selected( 'Middle School', get_post_meta( $post->ID, '_grade-level', true ), true) ?>>Middle School</option>
@@ -63,7 +63,7 @@
 		add_meta_box( 'grade-level', __('Grade Level'), 'grade_level_admin', 'program', 'side', 'core' );
 
 		function number_students_admin($post){ ?>
-			<input type="number" name="number-students" value="<?php echo get_post_meta( $post->ID, '_number-students', true );  ?>" required="required">
+			<input type="number" name="number-students" value="<?php echo get_post_meta( $post->ID, '_number-students', true );  ?>">
 		<?php }
 		add_meta_box( 'number-students', __('Number of Students'), 'number_students_admin', 'program', 'side', 'core' );
 
@@ -135,11 +135,11 @@
 		function social_networks_admin($post){ ?>
 			<?php $social_meta = get_post_meta( $post->ID, '_social-networks', true ); ?>
 			<h4>Google Plus</h4>
-			<input type="url" name="google-plus" placeholder="http://plus.google.com/###" value="<?php echo $social_meta['google'] ?>" required="required">
+			<input type="url" name="google-plus" placeholder="http://plus.google.com/###" value="<?php echo $social_meta['google'] ?>">
 			<h4>Twitter URL</h4>
-			<input type="url" name="twitter" placeholder="http://www.twitter.com/" value="<?php echo $social_meta['twitter'] ?>" required="required">
+			<input type="url" name="twitter" placeholder="http://www.twitter.com/" value="<?php echo $social_meta['twitter'] ?>">
 			<h4>Facebook URL</h4>
-			<input type="url" name="facebook" placeholder="http://www.facebook.com/" value="<?php echo $social_meta['facebook'] ?>" required="required">
+			<input type="url" name="facebook" placeholder="http://www.facebook.com/" value="<?php echo $social_meta['facebook'] ?>">
 		<?php }
 		add_meta_box( 'social-networks-admin', __('Social Network URLs'), 'social_networks_admin', 'program', 'side', 'core' );
 

@@ -103,6 +103,7 @@
 		$zip = $_POST['zip'];
 		$state = $_POST['state'];
         $program_id = $_POST['program_id'];
+        $remain_anonymous = $_POST['remain_anonymous'];
 
 		/**
 		 * We need to do a few things here.
@@ -158,6 +159,41 @@
             update_post_meta($new_post_id, '_donation-address', $address);
             update_post_meta($new_post_id, '_donor-name', $name);
             update_post_meta( $new_post_id, '_payment-method', 'Credit Card' );
+            update_post_meta( $new_post_id, '_remain-anonymous', $remain_anonymous);
+
+            if($donate_to_cmef === 'true'){
+                //Create a donation for cmef.
+                $post = array(
+                  'post_name'      => 'Donation To CMEF ' . $transaction_id, 
+                  'post_title'     => 'Donation to CMEF' . $transaction_id, 
+                  'post_status'    => 'publish', 
+                  'post_type'      => 'donation', 
+                  'post_author'    => 1, 
+                );  
+                //Create a new donation post.
+                $cmef_new_post_id = wp_insert_post($post);
+
+                $address = array(
+                    'street_1' => $street,
+                    'street_2' => ' ',
+                    'city'     => $city,
+                    'state'    => $state,
+                    'zip'      => $zip,
+                    'country'  => 'US',
+                );
+                $name = array(
+                    'first' => $first_name,
+                    'middle' => ' ',
+                    'last' => $last_name,
+                );
+                //Update the various needed post data.
+                update_post_meta($cmef_new_post_id, '_program-id', 276);
+                update_post_meta($cmef_new_post_id, '_contribution-amount', 5);
+                update_post_meta($cmef_new_post_id, '_donation-address', $address);
+                update_post_meta($cmef_new_post_id, '_donor-name', $name);
+                update_post_meta( $cmef_new_post_id, '_payment-method', 'Credit Card' );
+                update_post_meta( $cmef_new_post_id, '_remain-anonymous', $remain_anonymous);
+            }
 
 
 		}

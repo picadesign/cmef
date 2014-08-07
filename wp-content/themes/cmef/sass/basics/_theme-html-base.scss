@@ -335,7 +335,7 @@ html{
 			}
 		}
 
-		input[type='text'], input[type='password']{
+		input[type='text'], input[type='password'], input[type='number']{
 			height:35px;
 			width:100%;
 			border:none;
@@ -505,7 +505,7 @@ html{
 		background-color:$tango;
 		color:white;
 		*{
-			padding:3px 5px 0 5px; 
+			//padding:3px 5px 0 5px; 
 			display:table-cell;
 			vertical-align: middle;
 		}

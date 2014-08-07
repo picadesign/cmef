@@ -95,7 +95,45 @@ add_action('wp_head','pluginname_ajaxurl');
 function pluginname_ajaxurl() {
 ?>
 <script type="text/javascript">
-var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+    var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
 </script>
 <?php
+}
+
+/**
+ * Add Project Donations
+ */
+function program_donation_total($program_id){
+    global $post;
+        /**
+         * The WordPress Query class.
+         * @link http://codex.wordpress.org/Function_Reference/WP_Query
+         *
+         */
+        $args = array(
+            //Type & Status Parameters
+            'post_type'   => 'donation',
+            //Custom Field Parameters
+            'meta_key'       => '_program-id',
+            'meta_value'     => $program_id,
+            'posts_per_page' => -1
+        );
+    
+    $query = new WP_Query( $args );
+    if ( $query->have_posts() ) :
+        $donation_total = 0;
+            while ( $query->have_posts() ) :
+            $query->the_post();
+            //print_r($post->post_title);
+            $donation_total += (int) get_post_meta( $post->ID , '_contribution-amount' , true );
+            //print_r(get_post_meta( $post->ID , '_contribution-amount' , true ));
+            endwhile;
+        //echo '</div>';
+    else :
+        // no posts found
+    endif; 
+    wp_reset_postdata();
+
+    //print_r($query);
+    return (int) $donation_total;
 }
