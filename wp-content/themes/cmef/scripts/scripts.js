@@ -12,15 +12,29 @@ jQuery(function ($) {
 	});
 	$(window).ready(function(){
 		$('.masonry').show();
+		//$('.cycle-slideshow img').show();
 	});
 
 
 
 
-
-
-
-
+	/**
+	 * Front-end editing Program
+	 */
+	$('.single-program .edit-program').click(function(){
+		console.log('Edit Program');
+		$('.single-program .description').redactor();
+		var program_type = [
+			{val: 'field_trip', text: 'Field Trip'},
+			{val: },
+			{},
+			{}
+		];
+		var program_type_el = $('.program-type');
+		program_type_el.html('<select></select>');
+		var program_sel_el = $(program_type_el).find('select').attr('name', 'program-type')
+		$('<option>').appendTo(program_sel_el).attr('value', 'Field Trip').text('Field Trip');
+	})
 
 
 
@@ -282,14 +296,8 @@ jQuery(function ($) {
 		}else if ( ! $(e.target).closest('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').length ) {
 			$('.full-width.header.bottom #bottom-header .bottom-header-left .sign-up').css('background-color', '');
 			$('.full-width.header.bottom #bottom-header .bottom-header-left .login-box').hide();
-	    }
+		}
 	});
-
-
-
-
-
-
 
 
 });

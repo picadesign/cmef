@@ -46,3 +46,23 @@
 	width:100%;
 	height:auto;
 }
+
+.cycle-slideshow img{
+	display:none;
+}
+
+#adv-custom-pager{
+	margin-top:10px;
+	//display:none;
+	#pager-image{
+		width: 22%;
+		display: block;
+		float: left;
+		margin-right: 13px;
+		height:67px;
+
+		&:nth-child(4n){
+			margin-right:0;
+		}
+	}
+}

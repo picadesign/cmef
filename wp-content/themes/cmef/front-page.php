@@ -7,7 +7,8 @@ get_header();
 		<?php
 			$args = array(
 				'post_type'   => 'program',
-				'posts_per_page' => 6
+				'posts_per_page' => 6,
+				'post__not_in' => array(276)
 			);
 			$the_query = new WP_Query( $args ); ?>
 			<?php // The Loop

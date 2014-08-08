@@ -16,7 +16,7 @@
 			<div class="eight columns alpha">&nbsp;</div>
 			<div class="eight columns omega">
 				<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button orange alignright"><span>Donate to this program</span></a>
-				<?php if($current_user->ID === get_the_author_meta('ID')){?><a href="" class="button green alignright button-margin"><span>Edit</span></a><?php } ?>
+				<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()){?><div href="" class="button green alignright button-margin edit-program"><span>Edit</span></div><?php } ?>
 			</div>
 		</div>
 		<div class="row">
@@ -36,28 +36,44 @@
 		</div>
 		<div class="row">
 			<div class="six columns alpha gallery">
-				<div class="six columns alpha omega">
+				<div class="six columns alpha omega cycle-slideshow"
+					data-cycle-fx="scrollHorz"
+				    data-cycle-pause-on-hover="true"
+				    data-cycle-speed="500"
+				    data-cycle-pager="#adv-custom-pager"
+					data-cycle-pager-template="<a href='#' id='pager-image'><img src='{{src}}' width=20 height=20></a>"
+				    >
 					<?php //THis needs work the images cannot span one columns because on small screens they blow up. ?>
 					<?php the_post_thumbnail($size = 'medium', $attr = '') ?>
+					<?php 	
+						/**
+						* The WordPress Query class.
+						* @link http://codex.wordpress.org/Function_Reference/WP_Query
+						*
+						*/
+						$args = array(
+							//Post & Page Parameters
+							'post_parent'  => $post->ID,
+							'post_type'   => 'attachment',
+							'post_status' => 'inherit',
+							'post__not_in' => array(get_post_thumbnail_id( $post->ID )),
+							'orderby' => 'menu_order',
+							'order' => 'ASC'
+						);
+						$the_query = new WP_Query( $args );
+						//print_r($the_query);
+						if ( $the_query->have_posts() ) :
+							while ( $the_query->have_posts() ) :
+								$the_query->the_post();
+								 echo wp_get_attachment_image( $post->ID, $size = 'medium', true, array('data-large' => $post->guid, 'data-lightbox' => 'slideshow' ));
+							endwhile;
+						else:
+							echo 'no posts';
+						endif;
+						wp_reset_postdata();
+					 ?>
 				</div>
-				<div class="one columns alpha">
-					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
-				</div>
-				<div class="one columns">
-					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
-				</div>
-				<div class="one columns">
-					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
-				</div>
-				<div class="one columns">
-					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
-				</div>
-				<div class="one columns">
-					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
-				</div>
-				<div class="one columns omega">
-					<?php the_post_thumbnail($size = 'thumbnail', $attr = '') ?>
-				</div>
+				<div id="adv-custom-pager" class="six columns alpha omega center external"></div>
 			</div>
 			<div class="ten columns omega">
 				<section>
@@ -75,23 +91,23 @@
 					<table width="100%">
 						<tr>
 							<td class="four columns alpha"><b>Type of Program</b></td>
-							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_program-type', true ) ?></td>
+							<td class="five columns alignleft program-type"><?php echo get_post_meta($post->ID, '_program-type', true ) ?></td>
 						</tr>
 						<tr>
 							<td class="four columns alpha"><b>TFA Region</b></td>
-							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_tfa-region', true ) ?></td>
+							<td class="five columns alignleft tfa-region"><?php echo get_post_meta($post->ID, '_tfa-region', true ) ?></td>
 						</tr>
 						<tr>
 							<td class="four columns alpha"><b>School</b></td>
-							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_school-name', true ) ?></td>
+							<td class="five columns alignleft school-name"><?php echo get_post_meta($post->ID, '_school-name', true ) ?></td>
 						</tr>
 						<tr>
 							<td class="four columns alpha"><b>Grade Level</b></td>
-							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_grade-level', true ) ?></td>
+							<td class="five columns alignleft grade-level"><?php echo get_post_meta($post->ID, '_grade-level', true ) ?></td>
 						</tr>
 						<tr>
 							<td class="four columns alpha"><b>Number of Students</b></td>
-							<td class="five columns alignleft"><?php echo get_post_meta($post->ID, '_number-students', true ) ?></td>
+							<td class="five columns alignleft number-students"><?php echo get_post_meta($post->ID, '_number-students', true ) ?></td>
 						</tr>
 					</table>
 					</section>
@@ -114,9 +130,9 @@
 		<div class="row">
 			<div class="eight columns alpha">
 				<h3>Description</h3>
-				<p>
+				<div class="description">
 					<?php the_content(); ?>
-				</p>
+				</div>
 			</div>
 			<div class="eight columns omega">
 				<h3>Fundraising Activity</h3>

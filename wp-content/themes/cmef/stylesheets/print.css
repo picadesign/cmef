@@ -3500,6 +3500,24 @@ h1.homepage {
   width: 100%;
   height: auto; }
 
+/* line 50, ../sass/layouts/_single-program.scss */
+.cycle-slideshow img {
+  display: none; }
+
+/* line 54, ../sass/layouts/_single-program.scss */
+#adv-custom-pager {
+  margin-top: 10px; }
+  /* line 57, ../sass/layouts/_single-program.scss */
+  #adv-custom-pager #pager-image {
+    width: 22%;
+    display: block;
+    float: left;
+    margin-right: 13px;
+    height: 67px; }
+    /* line 64, ../sass/layouts/_single-program.scss */
+    #adv-custom-pager #pager-image:nth-child(4n) {
+      margin-right: 0; }
+
 /* line 2, ../sass/layouts/_author-styles.scss */
 .author-projects .project-card {
   width: 300px !important; }
