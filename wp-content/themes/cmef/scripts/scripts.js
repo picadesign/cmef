@@ -1,6 +1,6 @@
 jQuery(function ($) {
 
-	var mustache_template_path = 'wp-content/themes/cmef/scripts/mustache-templates/';
+	window.mustache_template_path = 'wp-content/themes/cmef/scripts/mustache-templates/';
 	//Initialize Masonry
 	$( window ).load( function()
 	{
@@ -15,6 +15,7 @@ jQuery(function ($) {
 		//$('.cycle-slideshow img').show();
 	});
 
+	$('.new-program-description').redactor({ minHeight: 200 });
 
 
 
@@ -30,57 +31,59 @@ jQuery(function ($) {
 			{val: 'Technology', text: 'Technology'},
 			{val: 'Other', text: 'Other'}
 		];
+
 		var tfa_region = [
-				{val: "All Regions", text: "All Regions"},
-				{val: "Alabama", text: "Alabama"},
-				{val: "Appalachia", text: "Appalachia"},
-				{val: "Arkansas", text: "Arkansas"},
-				{val: "Baltimore", text: "Baltimore"},
-				{val: "Bay Area", text: "Bay Area"},
-				{val: "Charlotte", text: "Charlotte"},
-				{val: "Chicago", text: "Chicago"},
-				{val: "Colorado", text: "Colorado"},
-				{val: "Connecticut", text: "Connecticut"},
-				{val: "D.C. Region", text: "D.C. Region"},
-				{val: "Dallas-Fort Worth", text: "Dallas-Fort Worth"},
-				{val: "Delaware", text: "Delaware"},
-				{val: "Detroit", text: "Detroit"},
-				{val: "Eastern North Carolina", text: "Eastern North Carolina"},
-				{val: "Greater Nashville", text: "Greater Nashville"},
-				{val: "Greater New Orleans-Louisiana Delta", text: "Greater New Orleans-Louisiana Delta"},
-				{val: "Greater Philadelphia", text: "Greater Philadelphia"},
-				{val: "Hawai'i", text: "Hawai'i"},
-				{val: "Houston", text: "Houston"},
-				{val: "Indianapolis", text: "Indianapolis"},
-				{val: "Jacksonville", text: "Jacksonville"},
-				{val: "Kansas City", text: "Kansas City"},
-				{val: "Las Vegas Valley", text: "Las Vegas Valley"},
-				{val: "Los Angeles", text: "Los Angeles"},
-				{val: "Massachusetts", text: "Massachusetts"},
-				{val: "Memphis", text: "Memphis"},
-				{val: "Metro Atlanta", text: "Metro Atlanta"},
-				{val: "Miami-Dade", text: "Miami-Dade"},
-				{val: "Milwaukee", text: "Milwaukee"},
-				{val: "Mississippi", text: "Mississippi"},
-				{val: "New Jersey", text: "New Jersey"},
-				{val: "New Mexico", text: "New Mexico"},
-				{val: "New York", text: "New York"},
-				{val: "Northeast Ohio-Cleveland", text: "Northeast Ohio-Cleveland"},
-				{val: "Oklahoma", text: "Oklahoma"},
-				{val: "Phoenix", text: "Phoenix"},
-				{val: "Rhode Island", text: "Rhode Island"},
-				{val: "Rio Grande Valley", text: "Rio Grande Valley"},
-				{val: "Sacramento", text: "Sacramento"},
-				{val: "San Antonio", text: "San Antonio"},
-				{val: "San Diego", text: "San Diego"},
-				{val: "South Carolina", text: "South Carolina"},
-				{val: "South Dakota", text: "South Dakota"},
-				{val: "South Louisiana", text: "South Louisiana"},
-				{val: "Southwest Ohio", text: "Southwest Ohio"},
-				{val: "St. Louis", text: "St. Louis"},
-				{val: "Twin Cities", text: "Twin Cities"},
-				{val: "Washington", text: "Washington"},
-			]
+			{val: "All Regions", text: "All Regions"},
+			{val: "Alabama", text: "Alabama"},
+			{val: "Appalachia", text: "Appalachia"},
+			{val: "Arkansas", text: "Arkansas"},
+			{val: "Baltimore", text: "Baltimore"},
+			{val: "Bay Area", text: "Bay Area"},
+			{val: "Charlotte", text: "Charlotte"},
+			{val: "Chicago", text: "Chicago"},
+			{val: "Colorado", text: "Colorado"},
+			{val: "Connecticut", text: "Connecticut"},
+			{val: "D.C. Region", text: "D.C. Region"},
+			{val: "Dallas-Fort Worth", text: "Dallas-Fort Worth"},
+			{val: "Delaware", text: "Delaware"},
+			{val: "Detroit", text: "Detroit"},
+			{val: "Eastern North Carolina", text: "Eastern North Carolina"},
+			{val: "Greater Nashville", text: "Greater Nashville"},
+			{val: "Greater New Orleans-Louisiana Delta", text: "Greater New Orleans-Louisiana Delta"},
+			{val: "Greater Philadelphia", text: "Greater Philadelphia"},
+			{val: "Hawai'i", text: "Hawai'i"},
+			{val: "Houston", text: "Houston"},
+			{val: "Indianapolis", text: "Indianapolis"},
+			{val: "Jacksonville", text: "Jacksonville"},
+			{val: "Kansas City", text: "Kansas City"},
+			{val: "Las Vegas Valley", text: "Las Vegas Valley"},
+			{val: "Los Angeles", text: "Los Angeles"},
+			{val: "Massachusetts", text: "Massachusetts"},
+			{val: "Memphis", text: "Memphis"},
+			{val: "Metro Atlanta", text: "Metro Atlanta"},
+			{val: "Miami-Dade", text: "Miami-Dade"},
+			{val: "Milwaukee", text: "Milwaukee"},
+			{val: "Mississippi", text: "Mississippi"},
+			{val: "New Jersey", text: "New Jersey"},
+			{val: "New Mexico", text: "New Mexico"},
+			{val: "New York", text: "New York"},
+			{val: "Northeast Ohio-Cleveland", text: "Northeast Ohio-Cleveland"},
+			{val: "Oklahoma", text: "Oklahoma"},
+			{val: "Phoenix", text: "Phoenix"},
+			{val: "Rhode Island", text: "Rhode Island"},
+			{val: "Rio Grande Valley", text: "Rio Grande Valley"},
+			{val: "Sacramento", text: "Sacramento"},
+			{val: "San Antonio", text: "San Antonio"},
+			{val: "San Diego", text: "San Diego"},
+			{val: "South Carolina", text: "South Carolina"},
+			{val: "South Dakota", text: "South Dakota"},
+			{val: "South Louisiana", text: "South Louisiana"},
+			{val: "Southwest Ohio", text: "Southwest Ohio"},
+			{val: "St. Louis", text: "St. Louis"},
+			{val: "Twin Cities", text: "Twin Cities"},
+			{val: "Washington", text: "Washington"},
+		];
+
 		var program_type_el = $('.program-type');
 		program_type_el.html('<select></select>');
 		var program_sel_el = $(program_type_el).find('select').attr('name', 'program-type')
@@ -369,5 +372,40 @@ jQuery(function ($) {
 		}
 	});
 
+	requirejs.config({
+		//By default load any module IDs from js/lib
+		baseUrl: cmef_settings.templateURL + '/scripts/',
+		//except, if the module ID starts with "app",
+		//load it from the js/app directory. paths
+		//config is relative to the baseUrl, and
+		//never includes a ".js" extension since
+		//the paths config could be for a directory.
+		paths: {
+			//app: '../app'
+		}
+	});
+
+	require(['views/views', 'models/models', 'collections/collections'], function(home, models, collection) {
+
+		var ApplicationRouter = Backbone.Router.extend({
+			routes: {
+				"home/start-a-program/": "NewProgram",
+				//"*actions": "home"
+			},
+			initialize: function() {
+				//this.headerView = new HeaderView();
+				//this.headerView.render();
+				//this.footerView = new FooterView();
+				//this.footerView.render();
+			},
+			NewProgram: function() {
+				this.newProgramView = new StartProgramView();
+				//this.homeView.render();
+			}
+		});
+
+		app = new ApplicationRouter();
+		Backbone.history.start({pushState: true, root: "/cmef/"});
+	});
 
 });
