@@ -25,15 +25,85 @@ jQuery(function ($) {
 		console.log('Edit Program');
 		$('.single-program .description').redactor();
 		var program_type = [
-			{val: 'field_trip', text: 'Field Trip'},
-			{val: },
-			{},
-			{}
+			{val: 'Field Trip', text: 'Field Trip'},
+			{val: 'Scholarship', text: 'Scholarship Fund'},
+			{val: 'Technology', text: 'Technology'},
+			{val: 'Other', text: 'Other'}
 		];
+		var tfa_region = [
+				{val: "All Regions", text: "All Regions"},
+				{val: "Alabama", text: "Alabama"},
+				{val: "Appalachia", text: "Appalachia"},
+				{val: "Arkansas", text: "Arkansas"},
+				{val: "Baltimore", text: "Baltimore"},
+				{val: "Bay Area", text: "Bay Area"},
+				{val: "Charlotte", text: "Charlotte"},
+				{val: "Chicago", text: "Chicago"},
+				{val: "Colorado", text: "Colorado"},
+				{val: "Connecticut", text: "Connecticut"},
+				{val: "D.C. Region", text: "D.C. Region"},
+				{val: "Dallas-Fort Worth", text: "Dallas-Fort Worth"},
+				{val: "Delaware", text: "Delaware"},
+				{val: "Detroit", text: "Detroit"},
+				{val: "Eastern North Carolina", text: "Eastern North Carolina"},
+				{val: "Greater Nashville", text: "Greater Nashville"},
+				{val: "Greater New Orleans-Louisiana Delta", text: "Greater New Orleans-Louisiana Delta"},
+				{val: "Greater Philadelphia", text: "Greater Philadelphia"},
+				{val: "Hawai'i", text: "Hawai'i"},
+				{val: "Houston", text: "Houston"},
+				{val: "Indianapolis", text: "Indianapolis"},
+				{val: "Jacksonville", text: "Jacksonville"},
+				{val: "Kansas City", text: "Kansas City"},
+				{val: "Las Vegas Valley", text: "Las Vegas Valley"},
+				{val: "Los Angeles", text: "Los Angeles"},
+				{val: "Massachusetts", text: "Massachusetts"},
+				{val: "Memphis", text: "Memphis"},
+				{val: "Metro Atlanta", text: "Metro Atlanta"},
+				{val: "Miami-Dade", text: "Miami-Dade"},
+				{val: "Milwaukee", text: "Milwaukee"},
+				{val: "Mississippi", text: "Mississippi"},
+				{val: "New Jersey", text: "New Jersey"},
+				{val: "New Mexico", text: "New Mexico"},
+				{val: "New York", text: "New York"},
+				{val: "Northeast Ohio-Cleveland", text: "Northeast Ohio-Cleveland"},
+				{val: "Oklahoma", text: "Oklahoma"},
+				{val: "Phoenix", text: "Phoenix"},
+				{val: "Rhode Island", text: "Rhode Island"},
+				{val: "Rio Grande Valley", text: "Rio Grande Valley"},
+				{val: "Sacramento", text: "Sacramento"},
+				{val: "San Antonio", text: "San Antonio"},
+				{val: "San Diego", text: "San Diego"},
+				{val: "South Carolina", text: "South Carolina"},
+				{val: "South Dakota", text: "South Dakota"},
+				{val: "South Louisiana", text: "South Louisiana"},
+				{val: "Southwest Ohio", text: "Southwest Ohio"},
+				{val: "St. Louis", text: "St. Louis"},
+				{val: "Twin Cities", text: "Twin Cities"},
+				{val: "Washington", text: "Washington"},
+			]
 		var program_type_el = $('.program-type');
 		program_type_el.html('<select></select>');
 		var program_sel_el = $(program_type_el).find('select').attr('name', 'program-type')
-		$('<option>').appendTo(program_sel_el).attr('value', 'Field Trip').text('Field Trip');
+
+		var tfa_region_el = $('.tfa-region');
+		tfa_region_el.html('<select></select>');
+		var tfa_region_sel_el = $(tfa_region_el).find('select').attr('name', 'tfa-region')
+		//$('<option>').appendTo(program_sel_el).attr('value', 'Field Trip').text('Field Trip');
+		for(index in program_type){
+			var opt = document.createElement("option");
+			opt.value = program_type[index].val;
+			opt.innerHTML = program_type[index].text;
+
+			program_sel_el.append(opt);
+		}
+		for(index in tfa_region){
+			var opt = document.createElement("option");
+			//console.log(tfa_region[index]);
+			opt.value = tfa_region[index].val;
+			opt.innerHTML = tfa_region[index].text;
+
+			tfa_region_sel_el.append(opt);
+		}
 	})
 
 
