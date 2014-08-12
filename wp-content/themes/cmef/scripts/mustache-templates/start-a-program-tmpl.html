@@ -1,22 +1,10 @@
-<div class="row">
-			<div class="sixteen columns alpha omega">
-				<div class="breadcrumbs">
-				    <?php if(function_exists('bcn_display'))
-				    {
-				        bcn_display();
-				    }?>
-				</div>
-			</div>
-		</div>
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div class="row">
-			<div class="sixteen columns alpha omega">
-				<h2 class="title"><?php the_title(); ?></h2>
-				<hr>
-			</div>
-		</div>
-		<form action="">
+
+		<form action="" id="new_program">
 			<div class="row">
+				<div class="eight columns alpha omega alert-messages">
+				
+				</div>
+				<div class="clear"></div>
 				<div class="six columns alpha">Program Image</div>
 				<div class="ten columns omega">
 						<p><b>* Hint:</b> Try to limit the program name to 70 characters or less.</p>
@@ -36,52 +24,45 @@
 			<div class="row">
 				<div class="new-program-description"></div>
 			</div>
-			<?php
-				if(!is_user_logged_in()):
-			?>
-			<div class="row">
-				<div class="sixteen columns alpha omega">
-					<h3 class="alignleft">Register</h3>&nbsp;<small> or log in.</small>
-					<hr>
+			{{^userLoggedIn}}
+				<div class="row">
+					<div class="sixteen columns alpha omega">
+						<h3 class="alignleft">Register</h3>&nbsp;<small> or log in.</small>
+						<hr>
+					</div>
+					<div class="six columns alpha">
+						Profile Image
+					</div>
+					<div class="ten columns omega">
+						<input type="text" name="username" placeholder="Username *">
+						<input required="required" type="text" name="email" placeholder="Email Address *">
+						<input required="required" type="text" name="confirm_email" placeholder="Confirm Email Address *">
+					</div>
 				</div>
-				<div class="six columns alpha">
-					Profile Image
+				<div class="row">
+					<div class="sixteen columns alpha omega">
+						<h3>Teacher Profile</h3>
+						<hr>
+					</div>
+					<div class="eight columns alpha">
+						<input type="text" name="corp_region" placeholder="Corps Region *">
+						<input type="text" name="first_name" placeholder="First Name *">
+						<input type="text" name="last_name" placeholder="Last Name *">
+						<input type="text" name="corp_year" placeholder="Corps Year *">
+						<input type="text" name="phone" placeholder="Phone Number *">
+					</div>
+					<div class="eight columns omega">
+						<input type="text" name="street_1" placeholder="Street Address 1 *">
+						<input type="text" name="street_2" placeholder="Street Address 2">
+						<input type="text" name="city" placeholder="City *">
+						<input type="text" name="state" placeholder="State *">
+						<input type="text" name="zip" placeholder="Zip *">
+					</div>
 				</div>
-				<div class="ten columns omega">
-					<input type="text" name="username" placeholder="Username *">
-					<input type="text" name="email" placeholder="Email Address *">
-					<input type="text" name="conf_email" placeholder="Confirm Email Address *">
-					<input type="text" name-"pass" placeholder="Password *">
-					<input type="text" name="conf_pass" placeholder="Confirm Password *">
+			{{/userLoggedIn}}
+				<div class="row">
+					<div class="sixteen columns alpha omega">
+						<div class="button green alignright" id="submit-new-program"><span>Create Program</span></div>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="sixteen columns alpha omega">
-					<h3>Teacher Profile</h3>
-					<hr>
-				</div>
-				<div class="eight columns alpha">
-					<input type="text" name="corp_region" placeholder="Corps Region *">
-					<input type="text" name="first_name" placeholder="First Name *">
-					<input type="text" name="last_name" placeholder="Last Name *">
-					<input type="text" name="corp_year" placeholder="Corps Year *">
-					<input type="text" name="phone" placeholder="Phone Number *">
-				</div>
-				<div class="eight columns omega">
-					<input type="text" name="street_1" placeholder="Street Address 1 *">
-					<input type="text" name="street_2" placeholder="Street Address 2">
-					<input type="text" name="city" placeholder="City *">
-					<input type="text" name="state" placeholder="State *">
-					<input type="text" name="zip" placeholder="Zip *">
-				</div>
-				<div class="sixteen columns alpha omega">
-					<div class="button green alignright" id="submit-new-program"><span>Create Program</span></div>
-				</div>
-			</div>
-			<?php
-				endif;
-			?>
-
 		</form>
-		<?php endwhile; ?>
-		<?php endif; ?>

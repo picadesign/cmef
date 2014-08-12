@@ -18,15 +18,10 @@
 
 function enqueue_scripts(){
     wp_enqueue_script('redactor', get_bloginfo('template_url') . '/scripts/redactor.min.js', array('jquery'));
-
     wp_enqueue_script('mustache', get_bloginfo('template_url') . '/scripts/mustache/mustache.js', array('jquery'));
-
     wp_enqueue_script('masonry', get_bloginfo('template_url') . '/scripts/mustache/masonry.min.js', array('jquery'));
-
     wp_enqueue_script('cycle2', get_bloginfo('template_url') . '/scripts/jquery.cycle2.min.js', array('jquery'));
-
     wp_enqueue_script('lightbox', get_bloginfo('template_url') . '/scripts/lightbox.min.js', array('jquery'));
-
     wp_enqueue_script('require', get_bloginfo('template_url') . '/scripts/require.js', array('jquery', 'backbone'), false, true);
 
     wp_enqueue_script('views', get_bloginfo('template_url') . '/scripts/views/views.js', array('jquery', 'backbone', 'models'),  false, true);
@@ -49,7 +44,7 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 add_action('wp_footer', 'wp_footer_injection');
   function wp_footer_injection () { 
-    global $post, $projectData, $comments, $total_pages_of_posts ; ?>
+    global $post, $comments, $total_pages_of_posts ; ?>
   
   <script type="text/javascript">
     //Site settings client side requires
@@ -62,10 +57,38 @@ add_action('wp_footer', 'wp_footer_injection');
         'mustache_template_path' => get_bloginfo('template_url') . '/scripts/mustache-templates/',
         'paged' => 1,
         'post_ID' => $post->ID,
-        'userLoggedIn' => is_user_logged_in() ? 1 : 0 )) . "\n" ?>
+        'userID' => get_current_user_id(), 
+        'userLoggedIn' => is_user_logged_in() ? true : false )) . "\n" ?>
 
         //Output our list of initial projects to load
-        <?php echo "var projectData = " . json_encode($projectData) . "\n" ?> 
+        <?php echo "var postData = " . json_encode(array(
+            'post_title' => $post->post_title,
+            'ID' => $post->ID,
+            'post_author' => $post->post_author,
+            'post_date' => $post->post_date,
+            'post_date_gmt' => $post->post_date_gmt,
+            'post_content' => wpautop($post->post_content),
+            'post_title' => $post->post_title,
+            'post_excerpt' => $post->post_excerpt,
+            'post_status' => $post->post_status,
+            'comment_status' => $post->comment_status,
+            'ping_status' => $post->ping_status,
+            'post_password' => $post->post_password,
+            'post_name' => $post->post_name,
+            'to_ping' => $post->to_ping,
+            'pinged' => $post->pinged,
+            'post_modified' => $post->post_modified,
+            'post_modified_gmt' => $post->post_modified_gmt,
+            'post_content_filtered' => $post->post_content_filtered,
+            'post_parent' => $post->post_parent,
+            'guid' => $post->guid,
+            'menu_order' => $post->menu_order,
+            'post_type' => $post->post_type,
+            'post_mime_type' => $post->post_mime_type,
+            'comment_count' => $post->comment_count,
+            'ancestors' => $post->ancestors,
+            'filter' => $post->filter,
+        )) . "\n" ?> 
 
         <?php if (!empty($comments)) echo "var comments = " . json_encode($comments) . "\n"; ?>
     </script>

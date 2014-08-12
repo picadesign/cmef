@@ -201,3 +201,157 @@
 		echo json_encode($response);
 		die();
     }
+
+    /**
+     * Add a New Program
+     */
+    add_action('wp_ajax_nopriv_new_program', 'new_program');
+    add_action('wp_ajax_new_program', 'new_program');
+    function new_program(){
+        /**
+         * Depending on whether the author is assigned or not,
+         * we may create a new author for the panding post
+         */
+        $alerts = array();
+        if(!$_POST['author'] === false){
+            $program_name = $_POST['program_name'];
+            $fundraising_goal = $_POST['fundraising_goal'];
+            $number_students = $_POST['number_students'];
+            $grade_level = $_POST['grade_level'];
+            $tfa_region = $_POST['tfa_region'];
+            $author = $_POST['author'];
+            $description = $_POST['description'];
+
+            if(strlen($program_name) === 0){
+                array_push($alerts, "You must enter a program name.");
+                //print_r($alerts);
+            }
+            elseif(strlen($fundraising_goal) === 0){
+                array_push($alerts, "You must enter a fundraising goal.");
+            }
+            elseif(strlen($number_students) === 0){
+                array_push($alerts, "You must enter the number of students this program is for.");
+            }
+            elseif(strlen($grade_level) === 0){
+                array_push($alerts, "Please select a grade level.");
+            }
+            elseif(strlen($tfa_region) === 0 ){
+                array_push($alerts, "Please select a TFA Region.");
+            }
+            elseif(strlen($description) === 0 ){
+                array_push($alerts, "Please enter a description about your program.");
+            }
+            else{
+                $new_program = array(
+                    'post_type' => 'program',
+                    'post_title' => $program_name,
+                    'post_content' => $description,
+                    'post_author' => $author,
+                    'post_status' => 'publish'
+                );
+                $new_program_ID = wp_insert_post( $new_program );
+                update_post_meta($new_program_ID, '_fundraising-goal', $fundraising_goal);
+                //update_post_meta($new_program_ID, '_school-name', $);
+                update_post_meta($new_program_ID, '_grade-level', $grade_level);
+                update_post_meta($new_program_ID, '_number-students', $number_students);
+                update_post_meta($new_program_ID, '_tfa-region', $tfa_region);
+                //update_post_meta($new_program_ID, '_program-type', $program);
+
+            }
+        }
+        elseif($_POST['author'] === false){
+            $program_name = $_POST['program_name'];
+            $fundraising_goal = $_POST['fundraising_goal'];
+            $number_students = $_POST['number_students'];
+            $grade_level = $_POST['grade_level'];
+            $tfa_region = $_POST['tfa_region'];
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $confirm_email = $_POST['confirm_email'];
+            $corps_region = $_POST['corps_region'];
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $corps_year = $_POST['corps_year'];
+            $phone = $_POST['phone'];
+            $street_1 = $_POST['street_1'];
+            $street_2 = $_POST['street_2'];
+            $city = $_POST['city'];
+            $state = $_POST['state'];
+            $zip = $_POST['zip'];
+            $author = $_POST['author'];
+            
+           
+            
+            if(strlen($program_name) === 0){
+                array_push($alerts, "You must enter a program name.");
+                //print_r($alerts);
+            }
+            elseif(strlen($fundraising_goal) === 0){
+                array_push($alerts, "You must enter a fundraising goal.");
+            }
+            elseif(strlen($number_students) === 0){
+                array_push($alerts, "You must enter the number of students this program is for.");
+            }
+            elseif(strlen($grade_level) === 0){
+                array_push($alerts, "Please select a grade level.");
+            }
+            elseif(strlen($tfa_region) === 0 ){
+                array_push($alerts, "Please select a TFA Region.");
+            }
+            elseif(strlen($description) === 0 ){
+                array_push($alerts, "Please enter a description about your program.");
+            }
+            elseif(strlen($username) === 0){
+                array_push($alerts, "Please enter a username.");
+            }
+            elseif(username_exists($username) != null){
+                 array_push($alerts, "Sorry, this username already exists.");
+            }
+            elseif($email != $confirm_email){
+                array_push($alerts, "Emails do not match.");
+            }
+            elseif(strlen($corps_region) === 0){
+                array_push($alerts, "Please select a corps region");
+            }
+            elseif(strlen($first_name) === 0){
+                array_push($alerts, "Please enter your first name.");
+            }
+            elseif(strlen($last_name) === 0){
+                array_push($alerts, "Please enter your last name");
+            }
+            elseif(strlen($corps_year) === 0){
+                array_push($alerts, "Please enter a valid corp year.");
+            }
+            elseif(strlen($phone) === 0){
+                array_push($al, "Please enter you phone number.");
+            }
+            elseif(strlen($street_1)){
+                array_push($alerts, "Please enter your street address.");
+            }
+            elseif(strlen($city) === 0){
+                array_push($alerts, "Please enter your city.");
+            }
+            elseif(strlen($stat) === 0){
+                array_push($alerts, "Please select your state.");
+            }
+            elseif(strlen($zip) === 0){
+                array_push($alerts, "Please enter a valid zip code.");
+            }
+            else{
+                $random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+                $userdata = array(
+                    'user_pass' => $random_password,
+                    'user_login' => $username,
+                    'user_nicename' => $first_name . ' ' . $last_name,
+                    'user_email' => $email,
+                    'first_name' => $first_name,
+                    'last_name' => $last_name,
+                    'role' => 'corp_member'
+                );
+                $user_id = wp_insert_user( $userdata );
+            }
+            
+        }
+        echo json_encode($alerts);
+        die();
+    }

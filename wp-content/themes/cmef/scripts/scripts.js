@@ -382,7 +382,8 @@ jQuery(function ($) {
 		//the paths config could be for a directory.
 		paths: {
 			//app: '../app'
-		}
+		},
+		urlArgs: "v=" +  (new Date()).getTime()
 	});
 
 	require(['views/views', 'models/models', 'collections/collections'], function(home, models, collection) {

@@ -1,5 +1,5 @@
 <?php get_header();?>
-	<div class="white-background page box-shadow donate">
+	<div class="white-background page box-shadow">
 		<div class="row">
 			<div class="sixteen columns alpha omega">
 				<div class="breadcrumbs">
@@ -16,10 +16,6 @@
 				<h2 class="title"><?php the_title(); ?></h2>
 				<hr>
 			</div>
-		</div>
-
-		<div class="row">
-			
 		</div>
 		<?php endwhile; ?>
 		<?php endif; ?>
