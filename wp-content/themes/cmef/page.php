@@ -17,6 +17,11 @@
 				<hr>
 			</div>
 		</div>
+		<div class="row">
+			<div class="sixteen columns alpha omega">
+				<?php the_content(); ?>
+			</div>
+		</div>
 		<?php endwhile; ?>
 		<?php endif; ?>
 	</div>

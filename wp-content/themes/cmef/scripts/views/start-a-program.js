@@ -1,12 +1,13 @@
 jQuery(function ($) {
 	StartProgramView = Backbone.View.extend({
-		el: $('.white-background'),
+		el: $('.white-background.page.box-shadow'),
+		cachedEl: $('.white-background'),
 		template: cmef_settings.mustache_template_path + 'start-a-program-tmpl.html',
 		program_name_el: '#new_program input[name="program_name"]',
 		fundraising_goal_el: '#new_program input[name="fundraising_goal"]',
 		number_students_el: '#new_program input[name="number_students"]',
-		grade_level_el: '#new_program input[name="grade_level"]',
-		tfa_region_el: '#new_program input[name="tfa_region"]',
+		grade_level_el: '#new_program select[name="grade_level"]',
+		tfa_region_el: '#new_program select[name="tfa_region"]',
 		program_description_el: '.new-program-description',
 		username_el: '#new_program input[name="username"]',
 		email_el: '#new_program input[name="email"]',
@@ -28,7 +29,6 @@ jQuery(function ($) {
 		},
 		initialize: function(){
 			this.render();
-
 		},
 		render: function(){
 			othis = this;
@@ -89,7 +89,34 @@ jQuery(function ($) {
 			var zip = $(this.zip_el).val();
 			var author = null;
 			var description = $(this.program_description_el).redactor('get');
+
+			//Create the alerts
+			var alertAction = function(response){
+				var alerts = jQuery.parseJSON(response);
+				console.log(cmef_settings.userLoggedIn);
+				
+				if(alerts.alert != 'success'){
+					//console.log(description);
+					var error = '<p class="error">' + alerts.alert + '</p>';
+					$('.alert-messages').html(error);
+					$('body,html').animate({
+						scrollTop: 0
+					}, 800);
+				}
+				else if(alerts.alert === 'success'){
+					if(cmef_settings.userLoggedIn === false){
+						window.location.href = 'registration-complete';
+					}
+					else{
+						window.location.href = alerts.new_program;
+					}
+					
+				}
+			}
+
+			//console.log(cmef_settings.userLoggedIn);
 			if(cmef_settings.userLoggedIn === true){
+				//console.log(program_name);
 				$.post(ajaxurl, {
 					action: 'new_program',
 					program_name: program_name,
@@ -100,20 +127,15 @@ jQuery(function ($) {
 					author: cmef_settings.userID,
 					description: description
 				}, function(response){
-					console.log(response);
-					if(response.length > 2){
-						var alerts = jQuery.parseJSON(response);
-						var error = '<p class="error">' + alerts[0] + '</p>';
-						$('.alert-messages').html(error);
-						$('body,html').animate({
-							scrollTop: 0
-						}, 800);
-					}
+					//console.log(response);
+					alertAction(response);
 				});
 			}
 			else{
+				//console.log(cmef_settings.userLoggedIn);
+				othis = this;
 				$.post(ajaxurl, {
-					action: 'new_program',
+					action: 'new_program_no_priv',
 					program_name: program_name,
 					fundraising_goal: fundraising_goal,
 					number_students: number_students,
@@ -135,15 +157,7 @@ jQuery(function ($) {
 					author: false,
 					description: description
 				}, function(response){
-					console.log(response.length);
-					if(response.length > 3){
-						var alerts = jQuery.parseJSON(response);
-						var error = '<p class="error">' + alerts[0] + '</p>';
-						$('.alert-messages').html(error);
-						$('body,html').animate({
-							scrollTop: 0
-						}, 800);
-					}
+					alertAction(response);
 				});
 			}
 			

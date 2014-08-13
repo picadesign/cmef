@@ -1,4 +1,4 @@
-require(['views/home', 'views/start-a-program'], function(home, startProgram) {
+require(['views/home', 'views/start-a-program'], function() {
 
     //Your script goes here
     //some-dependency.js is fetched.   
