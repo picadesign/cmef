@@ -202,20 +202,13 @@
 		die();
     }
     /**
-     * Add a new program (not logged in)
+     * Register (not logged in)
      */
-    add_action('wp_ajax_nopriv_new_program_no_priv', 'new_program_no_priv');
-    function new_program_no_priv(){
+    add_action('wp_ajax_nopriv_new_registration', 'new_registration');
+    function new_registration(){
         /**
-         * Depending on whether the author is assigned or not,
-         * we may create a new author for the panding post
+         * The user is being created here
          */
-
-        $program_name = $_POST['program_name'];
-        $fundraising_goal = $_POST['fundraising_goal'];
-        $number_students = $_POST['number_students'];
-        $grade_level = $_POST['grade_level'];
-        $tfa_region = $_POST['tfa_region'];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $confirm_email = $_POST['confirm_email'];
@@ -230,40 +223,8 @@
         $state = $_POST['state'];
         $zip = $_POST['zip'];
         $author = $_POST['author'];
-        $description = $_POST['description'];
         
-        if(strlen($program_name) === 0){
-            $alerts = array(
-                'alert' => "You must enter a program name."
-                );
-            //print_r($alerts);
-        }
-        elseif(strlen($fundraising_goal) === 0){
-            $alerts = array(
-                'alert' => "You must enter a fundraising goal."
-                );
-        }
-        elseif(strlen($number_students) === 0){
-            $alerts = array(
-                'alert' => "You must enter the number of students this program is for."
-                );
-        }
-        elseif(strlen($grade_level) === 0){
-            $alerts = array(
-                'alert' => "Please select a grade level."
-                );
-        }
-        elseif(strlen($tfa_region) === 0 ){
-            $alerts = array(
-                'alert' => "Please select a TFA Region."
-                );
-        }
-        elseif(strlen($description) === 0 ){
-            $alerts = array(
-                'alert' => "Please enter a description about your program."
-                );
-        }
-        elseif(strlen($username) === 0){
+        if(strlen($username) === 0){
             $alerts = array(
                 'alert' => "Please enter a username."
                 );
@@ -274,16 +235,13 @@
                 );
         }
         elseif(strlen($email) ===0 && strlen($confirm) === 0){
-            array_push($alerts, 'Please enter an email address.');
+            $alerts = array(
+                'alert' => 'Please enter an email address.'
+            );
         }
         elseif($email != $confirm_email){
             $alerts = array(
                 'alert' => "Emails do not match."
-                );
-        }
-        elseif(strlen($corps_region) === 0){
-            $alerts = array(
-                'alert' => "Please select a corps region"
                 );
         }
         elseif(strlen($first_name) === 0){
@@ -294,6 +252,11 @@
         elseif(strlen($last_name) === 0){
             $alerts = array(
                 'alert' => "Please enter your last name"
+                );
+        }
+        elseif(strlen($corps_region) === 0){
+            $alerts = array(
+                'alert' => "Please select a corps region"
                 );
         }
         elseif(strlen($corps_year) === 0){
@@ -347,43 +310,22 @@
             update_user_meta( $user_id, 'state', $state );
             update_user_meta( $user_id, 'zip', $zip );
 
-            $new_program = array(
-                'post_type' => 'program',
-                'post_title' => $program_name,
-                'post_content' => $description,
-                'post_author' => $user_id,
-                'post_status' => 'draft'
-            );
-            $new_program_ID = wp_insert_post( $new_program );
-            update_post_meta($new_program_ID, '_fundraising-goal', $fundraising_goal);
-            //update_post_meta($new_program_ID, '_school-name', $);
-            update_post_meta($new_program_ID, '_grade-level', $grade_level);
-            update_post_meta($new_program_ID, '_number-students', $number_students);
-            update_post_meta($new_program_ID, '_tfa-region', $tfa_region);
-            //update_post_meta($new_program_ID, '_program-type', $program);
             $alerts = array(
-                'alert' => 'success'
+                'alert' => 'success',
+                'user_id' => $user_id
             );
         }
-        //if(defined($alerts)){
-           echo json_encode($alerts);
-        //}
-        //else{
-        //  echo json_encode('success');
-        //}
+        // Get the alerts back to the dom
+        echo json_encode($alerts);
         die();
     }
 
     /**
-     * Add a New Program (Logged in)
+     * Add a New Program
      */
+    add_action('wp_ajax_nopriv_new_program', 'new_program');
     add_action('wp_ajax_new_program', 'new_program');
     function new_program(){
-        /**
-         * Depending on whether the author is assigned or not,
-         * we may create a new author for the panding post
-         */
-        //echo $_POST['author'];
 
         $program_name = $_POST['program_name'];
         $fundraising_goal = $_POST['fundraising_goal'];
@@ -425,12 +367,13 @@
                 );
         }
         else{
+            $post_status = (is_user_logged_in() == true ? 'publish' : 'draft');
             $new_program = array(
                 'post_type' => 'program',
                 'post_title' => $program_name,
                 'post_content' => $description,
                 'post_author' => $author,
-                'post_status' => 'publish'
+                'post_status' => $post_status
             );
             $new_program_ID = wp_insert_post( $new_program );
             update_post_meta($new_program_ID, '_fundraising-goal', $fundraising_goal);
@@ -442,7 +385,8 @@
             //
             $alerts = array(
                 'alert' => 'success',
-                'new_program' => get_the_permalink($new_program_ID)
+                'new_program' => get_the_permalink($new_program_ID),
+                'new_program_id' => $new_program_ID
             );
         }
 
@@ -450,3 +394,18 @@
         echo json_encode($alerts);
         die();
     }
+
+    /**
+     * Upload an image to a program
+     */
+    add_action('wp_ajax_nopriv_upload_image', 'upload_image');
+    add_action('wp_ajax_upload_image', 'upload_image');
+    function upload_image(){
+
+        //print_r($_FILES['image']);
+        $attachment_id = media_handle_upload('image', 250);
+        $attachment = wp_get_attachment_image_src( $attachment_id );
+        echo json_encode($attachment);
+        die();
+    }
+    

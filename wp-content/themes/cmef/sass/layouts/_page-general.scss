@@ -49,3 +49,27 @@
 .breadcrumbs{
 	text-transform:uppercase;
 }
+
+.ui-accordion-header{
+	background-color:$mercury;
+	height:30px;
+	color:$eastern-blue;
+	padding:5px;
+	padding-left:10px;
+	@extend .fonts.trade.condensed.bold;
+	word-spacing: -5px;
+	outline:none;
+	pointer-events: none ;
+
+	&.ui-state-active{
+		background-color:$eastern-blue;
+		//@extend .fonts.trade.condensed.bold;
+		color:white;
+	}
+}
+
+.image-uploader{display: none;}
+
+.image-uploader-button{
+	margin-right:5px;
+}

@@ -9,23 +9,27 @@ jQuery(function ($) {
 		grade_level_el: '#new_program select[name="grade_level"]',
 		tfa_region_el: '#new_program select[name="tfa_region"]',
 		program_description_el: '.new-program-description',
-		username_el: '#new_program input[name="username"]',
-		email_el: '#new_program input[name="email"]',
-		confirm_email_el: '#new_program input[name="confirm_email"]',
-		password_el: '#new_program input[name="pass"]',
-		confirm_password_el: '#new_program input[name="confirm_pass"]',
-		corps_region_el: '#new_program input[name="corp_region"]',
-		first_name_el: '#new_program input[name="first_name"]',
-		last_name_el: '#new_program input[name="last_name"]',
-		corps_year_el: '#new_program input[name="corp_year"]',
-		phone_el: '#new_program input[name="phone"]',
-		street_1_el: '#new_program input[name="street_1"]',
-		street_2_el: '#new_program input[name="street_2"]',
-		city_el: '#new_program input[name="city"]',
-		state_el: '#new_program input[name="state"]',
-		zip_el: '#new_program input[name="zip"]',
+		username_el: '#register input[name="username"]',
+		email_el: '#register input[name="email"]',
+		confirm_email_el: '#register input[name="confirm_email"]',
+		password_el: '#register input[name="pass"]',
+		confirm_password_el: '#register input[name="confirm_pass"]',
+		corps_region_el: '#register input[name="corp_region"]',
+		first_name_el: '#register input[name="first_name"]',
+		last_name_el: '#register input[name="last_name"]',
+		corps_year_el: '#register input[name="corp_year"]',
+		phone_el: '#register input[name="phone"]',
+		street_1_el: '#register input[name="street_1"]',
+		street_2_el: '#register input[name="street_2"]',
+		city_el: '#register input[name="city"]',
+		state_el: '#register input[name="state"]',
+		zip_el: '#register input[name="zip"]',
 		events: {
-			'click #submit-new-program': 'newProgram'
+			'click #submit-new-program': 'newProgram',
+			'click #submit-registration': 'newRegistration',
+			'click .button.image-uploader-choose-file': 'chooseFileUpload',
+			'change .image-uploader': 'updateImageInputBox',
+			'click .button.image-uploader-button': 'uploadImage'
 		},
 		initialize: function(){
 			this.render();
@@ -61,19 +65,42 @@ jQuery(function ($) {
 					ancestors: postData.ancestors,
 					filter: postData.filter,
 					userLoggedIn: cmef_settings.userLoggedIn,
+					ajaxurl: ajaxurl
 				});
 				othis.$el.append(rendered);
 				//othis.test = $('.new-program-description');
 				$(othis.program_description_el).redactor({minHeight: 200});
+				$("#accordion").accordion({ 
+					animated: 'bounceslide',
+					collapsible: false, 
+					heightStyle: "content"
+				});
 				
 			});
 		},
-		newProgram: function(event){
-			var program_name = $(this.program_name_el).val();
-			var fundraising_goal = $(this.fundraising_goal_el).val();
-			var number_students = $(this.number_students_el).val();
-			var grade_level = $(this.grade_level_el).val();
-			var tfa_region = $(this.tfa_region_el).val();
+		alertAction: function(response){
+			var alerts = jQuery.parseJSON(response);
+			
+			if(alerts.alert != 'success'){
+				//console.log(description);
+				var error = '<p class="error">' + alerts.alert + '</p>';
+				$('.alert-messages').html(error);
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+			}
+			else if(alerts.alert === 'success'){
+				$('.alert-messages').html('');
+				var active = $( "#accordion" ).accordion( "option", "active" );
+				$("#accordion").accordion({ 
+					animated: 'bounceslide',
+					collapsible: false, 
+					heightStyle: "content",
+					active: active + 1
+				});
+			}
+		},
+		newRegistration: function(){
 			var username = $(this.username_el).val();
 			var email = $(this.email_el).val();
 			var confirm_email = $(this.confirm_email_el).val();
@@ -87,80 +114,80 @@ jQuery(function ($) {
 			var city = $(this.city_el).val();
 			var state = $(this.state_el).val();
 			var zip = $(this.zip_el).val();
-			var author = null;
+			othis = this;
+			$.post(ajaxurl, {
+				action: 'new_registration',
+				username: username,
+				email: email,
+				confirm_email: confirm_email,
+				corps_region: corps_region,
+				first_name: first_name,
+				last_name: last_name,
+				corps_year: corps_year,
+				phone: phone,
+				street_1: street_1,
+				street_2: street_2,
+				city: city,
+				state: state,
+				zip: zip,
+			}, function(response){
+				var alerts = jQuery.parseJSON(response);
+				othis.alertAction(response);
+				console.log(alerts);
+				if(alerts.alert === 'success'){
+					$('#new_program').attr('data-user-id', alerts.user_id);
+				}
+			});
+		},
+		newProgram: function(event){
+			othis = this
+			var program_name = $(this.program_name_el).val();
+			var fundraising_goal = $(this.fundraising_goal_el).val();
+			var number_students = $(this.number_students_el).val();
+			var grade_level = $(this.grade_level_el).val();
+			var tfa_region = $(this.tfa_region_el).val();
+			var author = $('#new_program').attr('data-user-id');
 			var description = $(this.program_description_el).redactor('get');
 
-			//Create the alerts
-			var alertAction = function(response){
-				var alerts = jQuery.parseJSON(response);
-				console.log(cmef_settings.userLoggedIn);
-				
-				if(alerts.alert != 'success'){
-					//console.log(description);
-					var error = '<p class="error">' + alerts.alert + '</p>';
-					$('.alert-messages').html(error);
-					$('body,html').animate({
-						scrollTop: 0
-					}, 800);
-				}
-				else if(alerts.alert === 'success'){
-					if(cmef_settings.userLoggedIn === false){
-						window.location.href = 'registration-complete';
-					}
-					else{
-						window.location.href = alerts.new_program;
-					}
-					
-				}
-			}
-
 			//console.log(cmef_settings.userLoggedIn);
-			if(cmef_settings.userLoggedIn === true){
-				//console.log(program_name);
-				$.post(ajaxurl, {
-					action: 'new_program',
-					program_name: program_name,
-					fundraising_goal: fundraising_goal,
-					number_students: number_students,
-					grade_level: grade_level,
-					tfa_region: tfa_region,
-					author: cmef_settings.userID,
-					description: description
-				}, function(response){
-					//console.log(response);
-					alertAction(response);
-				});
-			}
-			else{
-				//console.log(cmef_settings.userLoggedIn);
-				othis = this;
-				$.post(ajaxurl, {
-					action: 'new_program_no_priv',
-					program_name: program_name,
-					fundraising_goal: fundraising_goal,
-					number_students: number_students,
-					grade_level: grade_level,
-					tfa_region: tfa_region,
-					username: username,
-					email: email,
-					confirm_email: confirm_email,
-					corps_region: corps_region,
-					first_name: first_name,
-					last_name: last_name,
-					corps_year: corps_year,
-					phone: phone,
-					street_1: street_1,
-					street_2: street_2,
-					city: city,
-					state: state,
-					zip: zip,
-					author: false,
-					description: description
-				}, function(response){
-					alertAction(response);
-				});
-			}
-			
+			//console.log(program_name);
+			$.post(ajaxurl, {
+				action: 'new_program',
+				program_name: program_name,
+				fundraising_goal: fundraising_goal,
+				number_students: number_students,
+				grade_level: grade_level,
+				tfa_region: tfa_region,
+				author: author,
+				description: description
+			}, function(response){
+				var alerts = jQuery.parseJSON(response);
+				othis.alertAction(response);
+				console.log(alerts.new_program_id);
+
+				// If everything processes correctly we should see a success message and if that is there we will some information to the DOM for the photo uploader to get.
+				if(alerts.alert === 'success'){
+					$('#photo_upload').attr('data-new-program-id', alerts.new_program_id)
+				}
+			});
+		},
+		chooseFileUpload: function(){
+			$('input[name="image"]').click();
+		},
+		updateImageInputBox: function(){
+			var imageVal = $('input[name="image"]').val().replace("C:\\fakepath\\", "");;
+			$('.image-uploader-placeholder').val(imageVal);
+		},
+		uploadImage: function(){
+			$('#photo_upload').ajaxSubmit({
+				data: {
+					program_id: 250
+				},
+				success: function(response){
+					var image = jQuery.parseJSON(response);
+					console.log(image);
+				}
+			})
 		}
 	});
 });
