@@ -29,7 +29,7 @@
 				<input type="text" name="zip" placeholder="Zip *">
 			</div>
 			<div class="sixteen columns alpha omega">
-				<div class="button alignright green" id="submit-registration"><span>Register</span></div>
+				<div class="button alignright green" id="submit-registration"><span class="button-text">Register</span></div>
 			</div>
 		</form>
 		{{/userLoggedIn}}
@@ -115,7 +115,7 @@
 				<div class="new-program-description"></div>
 				</div>
 			<div class="sixteen columns alpha omega">
-				<div class="button green alignright" id="submit-new-program"><span>Create Program</span></div>
+				<div class="button green alignright" id="submit-new-program"><span class="button-text">Create Program</span></div>
 			</div>
 		</form>
 		<h3>Upload Your Photos</h3>
@@ -126,129 +126,16 @@
 					
 					<input type="file" name="image" class="image-uploader">
 					<input type="text" placeholder="Choose File" class="image-uploader-placeholder" disabled="disabled">
-					<div class="button green image-uploader-button alignleft"><span>Upload</span></div>
+					<div class="button green image-uploader-button alignleft"><span class="button-text">Upload</span></div>
 					<div class="button green image-uploader-choose-file"><span>Choose File</span></div>
 				</div>
-				<div class="eight columns omega">
-					Images Uploaded over here.
+				<div class="eight columns omega uploaded-images">
+					
+				</div>
+				<div class="eight offset-by-eight columns alpha omega">
+					<p>Click on one of your uploaded images to make it your program's cover image.</p>
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
-<!--
-{{^userLoggedIn}}
-<form action="" id="register">
-	<div class="row">
-		<h3 class="alignleft">Register</h3>&nbsp;<small> or log in.</small>
-		<div class="clear"></div>
-		<div class="eight columns alpha">
-			<input type="text" name="username" placeholder="Username *">
-			<input required="required" type="text" name="email" placeholder="Email Address *">
-			<input required="required" type="text" name="confirm_email" placeholder="Confirm Email Address *">
-		</div>
-		<div class="sixteen columns alpha omega">
-			<h3>Corps Member Profile</h3>
-		</div>
-		<div class="eight columns alpha">
-			<input type="text" name="first_name" placeholder="First Name *">
-			<input type="text" name="last_name" placeholder="Last Name *">
-			<input type="text" name="corp_region" placeholder="Corps Region *">
-			<input type="text" name="corp_year" placeholder="Corps Year *">
-			<input type="text" name="phone" placeholder="Phone Number *">
-		</div>
-		<div class="eight columns omega">
-			<input type="text" name="street_1" placeholder="Street Address 1 *">
-			<input type="text" name="street_2" placeholder="Street Address 2">
-			<input type="text" name="city" placeholder="City *">
-			<input type="text" name="state" placeholder="State *">
-			<input type="text" name="zip" placeholder="Zip *">
-		</div>
-		<div class="sixteen columns alpha omega">
-			<div class="button alignright green"><span>Register</span></div>
-		</div>
-	</form>
-	{{/userLoggedIn}}
-	<form action="" id="new_program">
-			<div class="sixteen columns alpha omega">
-				<h3>Create Your New Program</h3>
-				<hr>
-			</div>
-			<div class="six columns alpha">Program Image</div>
-			<div class="ten columns omega">
-				<p><b>* Hint:</b> Try to limit the program name to 70 characters or less.</p>
-				<input type="text" name="program_name" placeholder="Program Name *">
-				<input type="number" name="fundraising_goal" placeholder="Fundraising Goal">
-				<input type="number" name="number_students" placeholder="Number of Students *">
-				<select name="grade_level" id="grade-level">
-					<option value="Kindergarten">Kindergarten</option>
-					<option value="Elementary School">Elementary School</option>
-					<option value="Middle School">Middle School</option>
-					<option value="High School">High School</option>
-					<option value="All Grades">All Grades</option>
-				</select>
-				<select name="tfa_region" require="required">
-					<option value="All Regions">All Regions</option>
-					<option value="Alabama">Alabama</option>
-					<option value="Appalachia">Appalachia</option>
-					<option value="Arkansas">Arkansas</option>
-					<option value="Baltimore">Baltimore</option>
-					<option value="Bay Area">Bay Area</option>
-					<option value="Charlotte">Charlotte</option>
-					<option value="Chicago">Chicago</option>
-					<option value="Colorado">Colorado</option>
-					<option value="Connecticut">Connecticut</option>
-					<option value="D.C. Region">D.C. Region</option>
-					<option value="Dallas-Fort Worth">Dallas-Fort Worth</option>
-					<option value="Delaware">Delaware</option>
-					<option value="Detroit">Detroit</option>
-					<option value="Eastern North Carolina">Eastern North Carolina</option>
-					<option value="Greater Nashville">Greater Nashville</option>
-					<option value="Greater New Orleans-Louisiana Delta">Greater New Orleans-Louisiana Delta</option>
-					<option value="Greater Philadelphia">Greater Philadelphia</option>
-					<option value="Hawai'i">Hawai'i</option>
-					<option value="Houston">Houston</option>
-					<option value="Indianapolis">Indianapolis</option>
-					<option value="Jacksonville">Jacksonville</option>
-					<option value="Kansas City">Kansas City</option>
-					<option value="Las Vegas Valley">Las Vegas Valley</option>
-					<option value="Los Angeles">Los Angeles</option>
-					<option value="Massachusetts">Massachusetts</option>
-					<option value="Memphis">Memphis</option>
-					<option value="Metro Atlanta">Metro Atlanta</option>
-					<option value="Miami-Dade">Miami-Dade</option>
-					<option value="Milwaukee">Milwaukee</option>
-					<option value="Mississippi">Mississippi</option>
-					<option value="New Jersey">New Jersey</option>
-					<option value="New Mexico">New Mexico</option>
-					<option value="New York">New York</option>
-					<option value="Northeast Ohio-Cleveland">Northeast Ohio-Cleveland</option>
-					<option value="Oklahoma">Oklahoma</option>
-					<option value="Phoenix">Phoenix</option>
-					<option value="Rhode Island">Rhode Island</option>
-					<option value="Rio Grande Valley">Rio Grande Valley</option>
-					<option value="Sacramento">Sacramento</option>
-					<option value="San Antonio">San Antonio</option>
-					<option value="San Diego">San Diego</option>
-					<option value="South Carolina">South Carolina</option>
-					<option value="South Dakota">South Dakota</option>
-					<option value="South Louisiana">South Louisiana</option>
-					<option value="Southwest Ohio">Southwest Ohio</option>
-					<option value="St. Louis">St. Louis</option>
-					<option value="Twin Cities">Twin Cities</option>
-					<option value="Washington">Washington</option>
-				</select>
-			</div>	
-				<div class="sixteen columns alpha omega">
-					<h3>Program Description</h3>
-				</div>				
-				<div class="new-program-description"></div>
-			<div class="sixteen columns alpha omega">
-				<div class="button green alignright" id="submit-new-program"><span>Create Program</span></div>
-			</div>
-			<div class="sixteen columns alpha omega">
-				<h3>Upload Your Photos</h3>
-				<hr>
-			</div>
-		</div>
-</form>-->

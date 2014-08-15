@@ -405,7 +405,34 @@
         //print_r($_FILES['image']);
         $attachment_id = media_handle_upload('image', 250);
         $attachment = wp_get_attachment_image_src( $attachment_id );
+        array_push($attachment, $attachment_id);
         echo json_encode($attachment);
+        die();
+    }
+
+    /**
+     * Make Image Featured
+     */
+    add_action('wp_ajax_nopriv_make_featured', 'make_featured');
+    add_action('wp_ajax_make_featured', 'make_featured');
+    function make_featured(){
+
+        $program_id = $_POST['program_ID'];
+        $image_id = $_POST['image_ID'];
+        $return = set_post_thumbnail( $program_id, $image_id );
+        echo json_encode($return);
+        die();
+    }
+
+    /**
+     * Delete Image From Media
+     */
+    add_action('wp_ajax_nopriv_delete_image', 'delete_image');
+    add_action('wp_ajax_delete_image', 'delete_image');
+    function delete_image(){
+        $image_id = $_POST['image_ID'];
+        $return = wp_delete_attachment( $image_id, true );
+        echo json_encode($return);
         die();
     }
     

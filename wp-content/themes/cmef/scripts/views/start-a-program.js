@@ -29,7 +29,9 @@ jQuery(function ($) {
 			'click #submit-registration': 'newRegistration',
 			'click .button.image-uploader-choose-file': 'chooseFileUpload',
 			'change .image-uploader': 'updateImageInputBox',
-			'click .button.image-uploader-button': 'uploadImage'
+			'click .button.image-uploader-button': 'uploadImage',
+			'click .uploaded-image': 'setFeaturedImage',
+			'click .image-container .delete-image': 'deleteImage'
 		},
 		initialize: function(){
 			this.render();
@@ -115,6 +117,11 @@ jQuery(function ($) {
 			var state = $(this.state_el).val();
 			var zip = $(this.zip_el).val();
 			othis = this;
+
+			var obutton = $("#submit-registration .button-text");
+			obuttonhtml = obutton.html()
+			obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('#submit-registration').addClass('disabled')
+
 			$.post(ajaxurl, {
 				action: 'new_registration',
 				username: username,
@@ -134,6 +141,8 @@ jQuery(function ($) {
 				var alerts = jQuery.parseJSON(response);
 				othis.alertAction(response);
 				console.log(alerts);
+				obutton.html(obuttonhtml).siblings('.loading').remove()
+				obutton.parent('#submit-registration').removeClass('disabled');
 				if(alerts.alert === 'success'){
 					$('#new_program').attr('data-user-id', alerts.user_id);
 				}
@@ -149,8 +158,11 @@ jQuery(function ($) {
 			var author = $('#new_program').attr('data-user-id');
 			var description = $(this.program_description_el).redactor('get');
 
-			//console.log(cmef_settings.userLoggedIn);
-			//console.log(program_name);
+			//Change the state of the button
+			var obutton = $("#submit-new-program .button-text");
+			obuttonhtml = obutton.html()
+			obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('#submit-new-program').addClass('disabled')
+
 			$.post(ajaxurl, {
 				action: 'new_program',
 				program_name: program_name,
@@ -164,7 +176,8 @@ jQuery(function ($) {
 				var alerts = jQuery.parseJSON(response);
 				othis.alertAction(response);
 				console.log(alerts.new_program_id);
-
+				obutton.html(obuttonhtml).siblings('.loading').remove()
+				obutton.parent('#submit-new-program').removeClass('disabled');
 				// If everything processes correctly we should see a success message and if that is there we will some information to the DOM for the photo uploader to get.
 				if(alerts.alert === 'success'){
 					$('#photo_upload').attr('data-new-program-id', alerts.new_program_id)
@@ -179,13 +192,56 @@ jQuery(function ($) {
 			$('.image-uploader-placeholder').val(imageVal);
 		},
 		uploadImage: function(){
-			$('#photo_upload').ajaxSubmit({
-				data: {
-					program_id: 250
-				},
-				success: function(response){
-					var image = jQuery.parseJSON(response);
-					console.log(image);
+			var obutton = $(".image-uploader-button .button-text");
+			
+			$('.alert-messages').html('');
+			if($('.image-uploader-placeholder').val() != ''){
+				obuttonhtml = obutton.html()
+				obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('.image-uploader-button').addClass('disabled')
+				$('#photo_upload').ajaxSubmit({
+					data: {
+						program_id: $('#photo_upload').attr('data-new-program-id')
+					},
+					success: function(response){
+						var image = jQuery.parseJSON(response);
+						$('.image-uploader-placeholder').val('');
+						var imageContainer = $('.uploaded-images');
+						var newImgContainer = $('<div class="image-container"><div class="delete-image">&#x2716;</div></div>')
+						var newImg = $('<img src="" class="uploaded-image" />');
+						newImg.attr('src', image[0]).attr('data-image-id', image[4]);
+						newImgContainer.append(newImg);
+						imageContainer.append(newImgContainer);
+						obutton.html(obuttonhtml).siblings('.loading').remove()
+						obutton.parent('.image-uploader-button').removeClass('disabled');
+					}
+				})
+			}else{
+				$('.alert-messages').append('<p class="error">Please select an image.</p>')
+			}
+		},
+		setFeaturedImage: function(ev){
+			var imageID = $(ev.target).attr('data-image-id')
+			var programID = $('#photo_upload').attr('data-new-program-id');
+			$.post(ajaxurl, {
+				action: 'make_featured',
+				program_ID: parseInt(programID),
+				image_ID: imageID
+			}, function(ajaxresponse){
+				$('.featured-text').remove();
+				$(ev.target).parent('.image-container').append('<div class="featured-text">Cover Image</div>');
+			})
+		},
+		deleteImage: function(ev){
+			var imageID = $(ev.target).siblings('img').attr('data-image-id');
+			console.log(imageID);
+			$.post(ajaxurl, {
+				action: 'delete_image',
+				image_ID: imageID
+			}, function(ajaxresponse){
+				var response = $.parseJSON(ajaxresponse);
+				console.log(response);
+				if(response != false){
+					$(ev.target).parent('.image-container').remove();
 				}
 			})
 		}

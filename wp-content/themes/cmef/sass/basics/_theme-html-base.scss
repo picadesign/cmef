@@ -502,6 +502,10 @@ html{
  	width:auto;
  	@include transition-property(all);
 	@include transition-duration(.5s);
+
+	&.disabled{
+		pointer-events: none ;
+	}
 	
  	&.orange{
 		background-color:$tango;
@@ -512,7 +516,7 @@ html{
 			vertical-align: middle;
 		}
 
-		&:hover{
+		&:hover, &.disabled{
 			background-color:$fiery-orange;
 		}
  	}
@@ -525,7 +529,7 @@ html{
 			vertical-align: middle;
 		}
 
-		&:hover{
+		&:hover, &.disabled{
 			background-color:$alto;
 		}
  	}
@@ -538,7 +542,7 @@ html{
 			vertical-align: middle;
 		}
 
-		&:hover{
+		&:hover, &.disabled{
 			background-color:$thatch-green;
 		}
  	}
