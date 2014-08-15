@@ -174,8 +174,8 @@ function publish_user_posts($user_id){
 				'post_status' => 'publish'
 			);
 
-		// Update the post into the database
-		wp_update_post( $my_post );
+			// Update the post into the database
+			wp_update_post( $my_post );
 		endwhile;
 	endif;
 	wp_reset_postdata();
