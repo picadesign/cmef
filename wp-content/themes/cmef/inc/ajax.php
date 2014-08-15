@@ -290,9 +290,9 @@
                 );
         }
         else{
-            $random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+            
             $userdata = array(
-                'user_pass' => $random_password,
+                'user_pass' => wp_generate_password(),
                 'user_login' => $username,
                 'user_nicename' => $first_name . ' ' . $last_name,
                 'user_email' => $email,
@@ -403,7 +403,7 @@
     function upload_image(){
 
         //print_r($_FILES['image']);
-        $attachment_id = media_handle_upload('image', 250);
+        $attachment_id = media_handle_upload('image', $_POST['program_id']);
         $attachment = wp_get_attachment_image_src( $attachment_id );
         array_push($attachment, $attachment_id);
         echo json_encode($attachment);

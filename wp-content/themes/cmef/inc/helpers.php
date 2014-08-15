@@ -149,3 +149,34 @@ function insert_attachment($file_handler,$post_id,$setthumb='false') {
     $attach_id = media_handle_upload( $file_handler, $post_id );
 
 }
+
+/**
+ * Publish the user when they get approved.
+ */
+add_action( 'new_user_approve_approve_user', 'publish_user_posts');
+function publish_user_posts($user_id){
+	/**
+	 * Get All the post from the new user.
+	 * @var array
+	 */
+	$args = array(
+		'author'    => $user_id,
+		'post_type' => 'program',
+	);
+	$the_query = new WP_Query( $args );
+
+	// The Loop
+	if ( $the_query->have_posts() )   :
+		while ( $the_query->have_posts() ):
+			$the_query->the_post();
+			$my_post = array(
+				'ID'          => $post->ID,
+				'post_status' => 'publish'
+			);
+
+		// Update the post into the database
+		wp_update_post( $my_post );
+		endwhile;
+	endif;
+	wp_reset_postdata();
+}
