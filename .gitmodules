@@ -1,3 +1,6 @@
 [submodule "wp-content/themes/cmef/inc/sdk-php-master"]
 	path = wp-content/themes/cmef/inc/sdk-php-master
 	url = https://github.com/AuthorizeNet/sdk-php.git
+[submodule "wp-content/themes/cmef/scripts/imagesLoaded"]
+	path = wp-content/themes/cmef/scripts/imagesLoaded
+	url = https://github.com/desandro/imagesloaded.git

@@ -77,7 +77,7 @@ jQuery(function ($) {
 
 	window.mustache_template_path = 'wp-content/themes/cmef/scripts/mustache-templates/';
 	//Initialize Masonry
-	$( window ).load( function()
+	$('.masonry').imagesLoaded( function()
 	{
 		$('.masonry').masonry({
 			itemSelector: '.project-card',
@@ -89,7 +89,6 @@ jQuery(function ($) {
 		$('.masonry').show();
 		//$('.cycle-slideshow img').show();
 	});
-
 	$('.new-program-description').redactor({ minHeight: 200 });
 
 
@@ -378,8 +377,11 @@ jQuery(function ($) {
 					});
 					$('.projects').append(rendered);
 				}
-				$('.masonry').masonry('reloadItems');
-    		$('.projects').masonry();
+				$('.gallery-masonry').imagesLoaded( function(){
+					$('.masonry').masonry('reloadItems');
+		    		$('.projects').masonry();
+		    	})
+	    		
 			});
 			//alert(response);
 		})

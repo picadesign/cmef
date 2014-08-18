@@ -19,12 +19,13 @@
 function enqueue_scripts(){
     wp_enqueue_script('redactor', get_bloginfo('template_url') . '/scripts/redactor.min.js', array('jquery'));
     wp_enqueue_script('mustache', get_bloginfo('template_url') . '/scripts/mustache/mustache.js', array('jquery'));
-    wp_enqueue_script('masonry', get_bloginfo('template_url') . '/scripts/mustache/masonry.min.js', array('jquery'));
+    wp_enqueue_script('jquery-masonry');
     wp_enqueue_script('cycle2', get_bloginfo('template_url') . '/scripts/jquery.cycle2.min.js', array('jquery'));
     wp_enqueue_script('lightbox', get_bloginfo('template_url') . '/scripts/lightbox.min.js', array('jquery'));
     wp_enqueue_script('forms', get_bloginfo('template_url') . '/scripts/jquery.form.js', array('jquery'));
     wp_enqueue_script('require', get_bloginfo('template_url') . '/scripts/require.js', array('jquery', 'backbone'), false, true);
     wp_enqueue_script('jquery-ui-accordion');
+    wp_enqueue_script('imagesloaded', get_bloginfo('template_url') . '/scripts/imagesLoaded/imagesloaded.pkgd.min.js', array('jquery-masonry'));
 
     wp_enqueue_script('views', get_bloginfo('template_url') . '/scripts/views/views.js', array('jquery', 'backbone', 'models'),  false, true);
 
