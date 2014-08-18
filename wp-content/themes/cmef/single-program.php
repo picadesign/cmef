@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="eleven columns alpha"><h2>Program Name</h2></div>
+			<div class="eleven columns alpha"><h2><?php the_title(); ?></h2></div>
 			<div class="five columns omega">
 				<span class="alignleft">Share this Program:</span>
 				<div class="social alignright">
@@ -36,13 +36,7 @@
 		</div>
 		<div class="row">
 			<div class="six columns alpha gallery">
-				<div class="six columns alpha omega cycle-slideshow"
-					data-cycle-fx="scrollHorz"
-				    data-cycle-pause-on-hover="true"
-				    data-cycle-speed="500"
-				    data-cycle-pager="#adv-custom-pager"
-					data-cycle-pager-template="<a href='#' id='pager-image'><img src='{{src}}' width=20 height=20></a>"
-				    >
+				<div class="six columns alpha omega">
 					<?php //THis needs work the images cannot span one columns because on small screens they blow up. ?>
 					<?php the_post_thumbnail($size = 'medium', $attr = '') ?>
 					<?php 	
@@ -67,8 +61,6 @@
 								$the_query->the_post();
 								 echo wp_get_attachment_image( $post->ID, $size = 'medium', true, array('data-large' => $post->guid, 'data-lightbox' => 'slideshow' ));
 							endwhile;
-						else:
-							echo 'no posts';
 						endif;
 						wp_reset_postdata();
 					 ?>
@@ -88,28 +80,30 @@
 				</section>
 				<div class="ten columns alpha omega">
 					<section>
-					<table width="100%">
-						<tr>
-							<td class="four columns alpha"><b>Type of Program</b></td>
-							<td class="five columns alignleft program-type"><?php echo get_post_meta($post->ID, '_program-type', true ) ?></td>
-						</tr>
-						<tr>
-							<td class="four columns alpha"><b>TFA Region</b></td>
-							<td class="five columns alignleft tfa-region"><?php echo get_post_meta($post->ID, '_tfa-region', true ) ?></td>
-						</tr>
-						<tr>
-							<td class="four columns alpha"><b>School</b></td>
-							<td class="five columns alignleft school-name"><?php echo get_post_meta($post->ID, '_school-name', true ) ?></td>
-						</tr>
-						<tr>
-							<td class="four columns alpha"><b>Grade Level</b></td>
-							<td class="five columns alignleft grade-level"><?php echo get_post_meta($post->ID, '_grade-level', true ) ?></td>
-						</tr>
-						<tr>
-							<td class="four columns alpha"><b>Number of Students</b></td>
-							<td class="five columns alignleft number-students"><?php echo get_post_meta($post->ID, '_number-students', true ) ?></td>
-						</tr>
-					</table>
+					<form action="" class="meta-data-form">
+						<table width="100%" class="meta-data">
+							<tr>
+								<td class="four columns alpha"><b>Type of Program</b></td>
+								<td class="five columns alignleft program-type"><?php echo get_post_meta($post->ID, '_program-type', true ) ?></td>
+							</tr>
+							<tr>
+								<td class="four columns alpha"><b>TFA Region</b></td>
+								<td class="five columns alignleft tfa-region"><?php echo get_post_meta($post->ID, '_tfa-region', true ) ?></td>
+							</tr>
+							<tr>
+								<td class="four columns alpha"><b>School</b></td>
+								<td class="five columns alignleft school-name"><?php echo get_post_meta($post->ID, '_school-name', true ) ?></td>
+							</tr>
+							<tr>
+								<td class="four columns alpha"><b>Grade Level</b></td>
+								<td class="five columns alignleft grade-level"><?php echo get_post_meta($post->ID, '_grade-level', true ) ?></td>
+							</tr>
+							<tr>
+								<td class="four columns alpha"><b>Number of Students</b></td>
+								<td class="five columns alignleft number-students"><?php echo get_post_meta($post->ID, '_number-students', true ) ?></td>
+							</tr>
+						</table>
+					</form>
 					</section>
 					<section>
 					<h3>Key Contact</h3>
@@ -178,8 +172,7 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
-			
+		</div>	
 		<?php endwhile; ?>
 		<?php endif; ?>
 	</div>

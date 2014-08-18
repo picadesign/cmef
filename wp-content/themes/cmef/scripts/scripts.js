@@ -465,7 +465,9 @@ jQuery(function ($) {
 
 		var ApplicationRouter = Backbone.Router.extend({
 			routes: {
-				"home/start-a-program/": "NewProgram",
+				"start-a-program/": "NewProgram",
+				"our-programs/": "OurPrograms",
+				"program/:program_name/": "SingleProgram"
 				//"*actions": "home"
 			},
 			initialize: function() {
@@ -477,6 +479,12 @@ jQuery(function ($) {
 			NewProgram: function() {
 				this.newProgramView = new StartProgramView();
 				//this.homeView.render();
+			},
+			OurPrograms: function(){
+				this.ourProgramsView = new OurProgramsView();
+			},
+			SingleProgram: function(){
+				this.singleProgramView = new SingleProgramView();
 			}
 		});
 

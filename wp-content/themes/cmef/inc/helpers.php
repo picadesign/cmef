@@ -83,10 +83,29 @@ function wpclean_metabox_menu_posttype_archive() {
 * Restrict the amount of text in the excerpt
 */
 
-add_filter('excerpt_length', 'my_excerpt_length');
+add_filter('excerpt_length', 'my_excerpt_length', 999);
 function my_excerpt_length($length) {
-    return 175; // Or whatever you want the length to be.
+    return 50; // Or whatever you want the length to be.
 }
+
+//Modigy the read more text
+add_filter( 'excerpt_more', 'modify_read_more_link' );
+function modify_read_more_link() {
+	return '...<a class="more-link" href="' . get_permalink() . '">Read More</a>';
+}
+
+/**
+ * Include Custom Post Types in search
+ * Remember to include the type you want.
+ */
+
+function filter_search($query) {
+    if ($query->is_search) {
+		$query->set('post_type', array('post', 'program', 'page'));
+    };
+    return $query;
+};
+add_filter('pre_get_posts', 'filter_search');
 
 /**
  * Add the ajaxurl variable for javascript
@@ -180,3 +199,18 @@ function publish_user_posts($user_id){
 	endif;
 	wp_reset_postdata();
 }
+
+//pagination for posts
+function pagination() {
+        global $wp_query;
+        $big = 999999999; // need an unlikely integer ?>
+
+        <div class='pagination-links'><?php
+        echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages
+        )) ?>
+        </div><?php 
+    }

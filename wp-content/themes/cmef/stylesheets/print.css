@@ -1635,7 +1635,7 @@ or wrap each row of columns in a <div class="row"> */
       font-weight: normal !important;
       font-style: oblique; }
   /* line 54, ../sass/assets/_fonts.scss */
-  .fonts.trade.gothic.light, html h1, html h2, html h3, .project-card .description h2 a {
+  .fonts.trade.gothic.light, html h1, html h2, html a h2, html h3, .project-card .description h2 a {
     font-family: 'Trade Gothic Light';
     font-weight: normal !important; }
 
@@ -1711,69 +1711,70 @@ html {
     font-size: 2.882352941em;
     color: #1d89bb; }
   /* line 22, ../sass/basics/_theme-html-base.scss */
-  html h2 {
+  html h2, html a h2 {
     font-size: 1.870588235em;
     color: #1d89bb;
-    line-height: 1.1em; }
-  /* line 28, ../sass/basics/_theme-html-base.scss */
+    line-height: 1.1em;
+    text-transform: none !important; }
+  /* line 29, ../sass/basics/_theme-html-base.scss */
   html h3 {
     font-size: 1.125em;
     color: #1d89bb;
     line-height: 1.1em;
     margin-bottom: 0; }
-  /* line 35, ../sass/basics/_theme-html-base.scss */
+  /* line 36, ../sass/basics/_theme-html-base.scss */
   html h4 {
     font-size: 1em;
     color: #5b5b5b;
     word-spacing: -3px; }
-  /* line 41, ../sass/basics/_theme-html-base.scss */
+  /* line 42, ../sass/basics/_theme-html-base.scss */
   html h5 {
     font-size: .85em;
     color: #5b5b5b;
     word-spacing: -3px; }
-  /* line 47, ../sass/basics/_theme-html-base.scss */
+  /* line 48, ../sass/basics/_theme-html-base.scss */
   html h6 {
     font-size: .7em;
     color: #5b5b5b;
     word-spacing: -3px; }
-  /* line 54, ../sass/basics/_theme-html-base.scss */
+  /* line 55, ../sass/basics/_theme-html-base.scss */
   html h1, html h2, html h3, html h4, html h5, html h6 {
     margin-top: 0;
     margin-bottom: 5px; }
-  /* line 62, ../sass/basics/_theme-html-base.scss */
+  /* line 63, ../sass/basics/_theme-html-base.scss */
   html p {
     font-size: 1em;
     color: #5b5b5b !important;
     margin: 7px 0 7px 0; }
-    /* line 68, ../sass/basics/_theme-html-base.scss */
+    /* line 69, ../sass/basics/_theme-html-base.scss */
     html p * {
       color: #5b5b5b !important; }
-    /* line 72, ../sass/basics/_theme-html-base.scss */
+    /* line 73, ../sass/basics/_theme-html-base.scss */
     html p a {
       font-size: 1em;
       color: #6ca348 !important;
       text-transform: uppercase;
       text-decoration: none; }
-      /* line 79, ../sass/basics/_theme-html-base.scss */
+      /* line 80, ../sass/basics/_theme-html-base.scss */
       html p a:visited {
         color: #6ca348 !important; }
-      /* line 83, ../sass/basics/_theme-html-base.scss */
+      /* line 84, ../sass/basics/_theme-html-base.scss */
       html p a:hover {
         color: #375b20 !important; }
-  /* line 108, ../sass/basics/_theme-html-base.scss */
+  /* line 109, ../sass/basics/_theme-html-base.scss */
   html ol {
     font-size: 1em;
     color: #5b5b5b; }
-  /* line 117, ../sass/basics/_theme-html-base.scss */
+  /* line 118, ../sass/basics/_theme-html-base.scss */
   html ul {
     font-size: 1em;
     color: #5b5b5b;
     margin-left: 15px; }
-    /* line 122, ../sass/basics/_theme-html-base.scss */
+    /* line 123, ../sass/basics/_theme-html-base.scss */
     html ul li {
       list-style: disc;
       list-style-position: inside; }
-  /* line 144, ../sass/basics/_theme-html-base.scss */
+  /* line 145, ../sass/basics/_theme-html-base.scss */
   html a {
     font-size: 1em;
     color: #6ca348;
@@ -1787,37 +1788,40 @@ html {
     -moz-transition-duration: 0.1s;
     -o-transition-duration: 0.1s;
     transition-duration: 0.1s; }
-    /* line 153, ../sass/basics/_theme-html-base.scss */
+    /* line 154, ../sass/basics/_theme-html-base.scss */
     html a:visited {
       color: #6ca348; }
-    /* line 157, ../sass/basics/_theme-html-base.scss */
+    /* line 158, ../sass/basics/_theme-html-base.scss */
     html a:hover {
       color: #375b20; }
-  /* line 165, ../sass/basics/_theme-html-base.scss */
+    /* line 162, ../sass/basics/_theme-html-base.scss */
+    html a h1, html a h2, html a h3, html a h4, html a h5, html a h6 {
+      text-transform: none; }
+  /* line 170, ../sass/basics/_theme-html-base.scss */
   html p a {
     font-size: 1em;
     color: #6ca348;
     text-transform: uppercase;
     text-decoration: none; }
-    /* line 172, ../sass/basics/_theme-html-base.scss */
+    /* line 177, ../sass/basics/_theme-html-base.scss */
     html p a:visited {
       color: #6ca348; }
-    /* line 176, ../sass/basics/_theme-html-base.scss */
+    /* line 181, ../sass/basics/_theme-html-base.scss */
     html p a:hover {
       color: #375b20; }
-  /* line 208, ../sass/basics/_theme-html-base.scss */
+  /* line 213, ../sass/basics/_theme-html-base.scss */
   html b, html strong {
     font-size: 1em;
     color: #5b5b5b;
     word-spacing: -5px; }
-  /* line 239, ../sass/basics/_theme-html-base.scss */
+  /* line 244, ../sass/basics/_theme-html-base.scss */
   html i {
     color: #5b5b5b;
     font-style: italic; }
-  /* line 309, ../sass/basics/_theme-html-base.scss */
+  /* line 314, ../sass/basics/_theme-html-base.scss */
   html form {
     overflow: auto; }
-    /* line 321, ../sass/basics/_theme-html-base.scss */
+    /* line 326, ../sass/basics/_theme-html-base.scss */
     html form input {
       height: 35px;
       width: 100%;
@@ -1825,10 +1829,10 @@ html {
       background-color: #fcfcfc;
       padding: 5px;
       margin-bottom: 10px; }
-      /* line 335, ../sass/basics/_theme-html-base.scss */
+      /* line 340, ../sass/basics/_theme-html-base.scss */
       html form input:focus {
         outline: 0; }
-    /* line 340, ../sass/basics/_theme-html-base.scss */
+    /* line 345, ../sass/basics/_theme-html-base.scss */
     html form input[type='text'], html form input[type='password'], html form input[type='number'] {
       height: 35px;
       width: 100%;
@@ -1836,20 +1840,20 @@ html {
       -webkit-box-shadow: #e8e8e8 0 1px 3px inset;
       -moz-box-shadow: #e8e8e8 0 1px 3px inset;
       box-shadow: #e8e8e8 0 1px 3px inset; }
-      /* line 345, ../sass/basics/_theme-html-base.scss */
+      /* line 350, ../sass/basics/_theme-html-base.scss */
       html form input[type='text']:focus, html form input[type='password']:focus, html form input[type='number']:focus {
         outline: 0; }
-    /* line 349, ../sass/basics/_theme-html-base.scss */
+    /* line 354, ../sass/basics/_theme-html-base.scss */
     html form input[type='radio'], html form input[type='checkbox'] {
       width: auto !important;
       height: auto;
       display: inline;
       margin-right: 5px; }
-    /* line 359, ../sass/basics/_theme-html-base.scss */
+    /* line 364, ../sass/basics/_theme-html-base.scss */
     html form select {
       margin-left: 1px;
       margin-right: 5px; }
-  /* line 385, ../sass/basics/_theme-html-base.scss */
+  /* line 390, ../sass/basics/_theme-html-base.scss */
   html .meter {
     width: 100%;
     background-color: #cccccc;
@@ -1861,77 +1865,77 @@ html {
     border-radius: 5px;
     overflow: hidden;
     margin: 10px 0 7px 0; }
-    /* line 393, ../sass/basics/_theme-html-base.scss */
+    /* line 398, ../sass/basics/_theme-html-base.scss */
     html .meter .meter-progress {
       background-color: #6ca348;
       height: 100%; }
-  /* line 405, ../sass/basics/_theme-html-base.scss */
+  /* line 410, ../sass/basics/_theme-html-base.scss */
   html hr {
     background: #cccccc;
     border: 0;
     height: 1px; }
-  /* line 411, ../sass/basics/_theme-html-base.scss */
+  /* line 416, ../sass/basics/_theme-html-base.scss */
   html .border-right {
     border-right: 1px solid #cccccc; }
-  /* line 415, ../sass/basics/_theme-html-base.scss */
+  /* line 420, ../sass/basics/_theme-html-base.scss */
   html .border-left {
     border-left: 1px solid #cccccc; }
 
-/* line 423, ../sass/basics/_theme-html-base.scss */
+/* line 428, ../sass/basics/_theme-html-base.scss */
 .no-margin {
   margin: 0 !important; }
 
-/* line 427, ../sass/basics/_theme-html-base.scss */
+/* line 432, ../sass/basics/_theme-html-base.scss */
 .no-padding {
   padding: 0 !important; }
 
-/* line 431, ../sass/basics/_theme-html-base.scss */
+/* line 436, ../sass/basics/_theme-html-base.scss */
 .alignright {
   float: right; }
 
-/* line 435, ../sass/basics/_theme-html-base.scss */
+/* line 440, ../sass/basics/_theme-html-base.scss */
 .alignleft {
   float: left; }
 
 /**
  * Add styling for icons etc. below.
  */
-/* line 443, ../sass/basics/_theme-html-base.scss */
+/* line 448, ../sass/basics/_theme-html-base.scss */
 .logo {
   width: 204px;
   height: 71px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s965a8c3adb.png') 0 0 no-repeat; }
-  /* line 447, ../sass/basics/_theme-html-base.scss */
+  /* line 452, ../sass/basics/_theme-html-base.scss */
   .logo.smaller {
     width: 138px;
     height: 48px;
     background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s965a8c3adb.png') 0 -91px no-repeat; }
 
-/* line 454, ../sass/basics/_theme-html-base.scss */
+/* line 459, ../sass/basics/_theme-html-base.scss */
 .mail {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s965a8c3adb.png') 0 -1196px no-repeat; }
 
-/* line 460, ../sass/basics/_theme-html-base.scss */
+/* line 465, ../sass/basics/_theme-html-base.scss */
 .twitter {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s965a8c3adb.png') 0 -1090px no-repeat; }
 
-/* line 466, ../sass/basics/_theme-html-base.scss */
+/* line 471, ../sass/basics/_theme-html-base.scss */
 .facebook {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s965a8c3adb.png') 0 -1258px no-repeat; }
 
-/* line 472, ../sass/basics/_theme-html-base.scss */
+/* line 477, ../sass/basics/_theme-html-base.scss */
 .google {
   width: 31px;
   height: 31px;
   background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s965a8c3adb.png') 0 -1059px no-repeat; }
 
-/* line 478, ../sass/basics/_theme-html-base.scss */
+/* line 483, ../sass/basics/_theme-html-base.scss */
 .linkedin {
   width: 31px;
   height: 31px;
@@ -1941,18 +1945,18 @@ html {
 * Styling for the buttons
 * Buttons go anchor then span (usually)
 */
-/* line 490, ../sass/basics/_theme-html-base.scss */
+/* line 495, ../sass/basics/_theme-html-base.scss */
 .box-shadow {
   -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
   -moz-box-shadow: #b4b4b4 0 0 3px 1px;
   box-shadow: #b4b4b4 0 0 3px 1px; }
 
-/* line 494, ../sass/basics/_theme-html-base.scss */
+/* line 499, ../sass/basics/_theme-html-base.scss */
 .button, input[type='submit'] {
   display: table;
-  height: 30px;
+  height: 35px;
   text-align: center;
-  margin: 10px 0 10px 0;
+  margin: 0px 0 10px 0;
   padding: 3px 17px 0 17px;
   text-transform: uppercase;
   width: auto;
@@ -1964,52 +1968,52 @@ html {
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s; }
-  /* line 506, ../sass/basics/_theme-html-base.scss */
+  /* line 511, ../sass/basics/_theme-html-base.scss */
   .button.disabled, input[type='submit'].disabled {
     pointer-events: none; }
-  /* line 510, ../sass/basics/_theme-html-base.scss */
+  /* line 515, ../sass/basics/_theme-html-base.scss */
   .button.orange, input[type='submit'].orange {
     background-color: #ec6f17;
     color: white; }
-    /* line 513, ../sass/basics/_theme-html-base.scss */
+    /* line 518, ../sass/basics/_theme-html-base.scss */
     .button.orange *, input[type='submit'].orange * {
       display: table-cell;
       vertical-align: middle; }
-    /* line 519, ../sass/basics/_theme-html-base.scss */
+    /* line 524, ../sass/basics/_theme-html-base.scss */
     .button.orange:hover, .button.orange.disabled, input[type='submit'].orange:hover, input[type='submit'].orange.disabled {
       background-color: #b75716; }
-  /* line 524, ../sass/basics/_theme-html-base.scss */
+  /* line 529, ../sass/basics/_theme-html-base.scss */
   .button.gray, input[type='submit'].gray {
     background-color: #b3b3b3;
     color: white; }
-    /* line 527, ../sass/basics/_theme-html-base.scss */
+    /* line 532, ../sass/basics/_theme-html-base.scss */
     .button.gray *, input[type='submit'].gray * {
       display: table-cell;
       vertical-align: middle; }
-    /* line 532, ../sass/basics/_theme-html-base.scss */
+    /* line 537, ../sass/basics/_theme-html-base.scss */
     .button.gray:hover, .button.gray.disabled, input[type='submit'].gray:hover, input[type='submit'].gray.disabled {
       background-color: #dadada; }
-  /* line 537, ../sass/basics/_theme-html-base.scss */
+  /* line 542, ../sass/basics/_theme-html-base.scss */
   .button.green, .button input[type='submit'], input[type='submit'].green, input[type='submit'] input[type='submit'] {
     background-color: #6ca348;
     color: white; }
-    /* line 540, ../sass/basics/_theme-html-base.scss */
+    /* line 545, ../sass/basics/_theme-html-base.scss */
     .button.green *, .button input[type='submit'] *, input[type='submit'].green *, input[type='submit'] input[type='submit'] * {
       display: table-cell;
       vertical-align: middle; }
-    /* line 545, ../sass/basics/_theme-html-base.scss */
+    /* line 550, ../sass/basics/_theme-html-base.scss */
     .button.green:hover, .button.green.disabled, .button input[type='submit']:hover, .button input[type='submit'].disabled, input[type='submit'].green:hover, input[type='submit'].green.disabled, input[type='submit'] input[type='submit']:hover, input[type='submit'] input[type='submit'].disabled {
       background-color: #375b20; }
-  /* line 550, ../sass/basics/_theme-html-base.scss */
+  /* line 555, ../sass/basics/_theme-html-base.scss */
   .button.button-margin, input[type='submit'].button-margin {
     margin-right: 5px; }
 
-/* line 556, ../sass/basics/_theme-html-base.scss */
+/* line 561, ../sass/basics/_theme-html-base.scss */
 .social ul {
   overflow: auto;
   margin: 0;
   padding: 0; }
-  /* line 560, ../sass/basics/_theme-html-base.scss */
+  /* line 565, ../sass/basics/_theme-html-base.scss */
   .social ul li {
     list-style: none;
     float: left;
@@ -2022,40 +2026,40 @@ html {
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     transition-duration: 0.5s; }
-    /* line 567, ../sass/basics/_theme-html-base.scss */
+    /* line 572, ../sass/basics/_theme-html-base.scss */
     .social ul li a {
       display: block;
       height: 100%;
       width: 100%; }
-    /* line 573, ../sass/basics/_theme-html-base.scss */
+    /* line 578, ../sass/basics/_theme-html-base.scss */
     .social ul li:hover {
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
       opacity: 0.8; }
-    /* line 576, ../sass/basics/_theme-html-base.scss */
+    /* line 581, ../sass/basics/_theme-html-base.scss */
     .social ul li:last-child {
       margin-right: 0; }
 
-/* line 583, ../sass/basics/_theme-html-base.scss */
+/* line 588, ../sass/basics/_theme-html-base.scss */
 .caps {
   text-transform: uppercase;
   font-size: .9em; }
 
-/* line 588, ../sass/basics/_theme-html-base.scss */
+/* line 593, ../sass/basics/_theme-html-base.scss */
 .button {
   cursor: pointer; }
-  /* line 591, ../sass/basics/_theme-html-base.scss */
+  /* line 596, ../sass/basics/_theme-html-base.scss */
   .button.save {
     display: none; }
 
-/* line 604, ../sass/basics/_theme-html-base.scss */
+/* line 609, ../sass/basics/_theme-html-base.scss */
 section {
   margin-bottom: 15px;
   overflow: auto; }
 
-/* line 609, ../sass/basics/_theme-html-base.scss */
+/* line 614, ../sass/basics/_theme-html-base.scss */
 .alert-messages {
   color: red !important; }
-  /* line 611, ../sass/basics/_theme-html-base.scss */
+  /* line 616, ../sass/basics/_theme-html-base.scss */
   .alert-messages .error {
     color: white !important;
     background-color: #b75716;
@@ -2070,7 +2074,7 @@ section {
     line-height: 24px;
     word-spacing: -5px;
     margin-bottom: 20px; }
-    /* line 623, ../sass/basics/_theme-html-base.scss */
+    /* line 628, ../sass/basics/_theme-html-base.scss */
     .alert-messages .error:before {
       content: '';
       height: 24px;

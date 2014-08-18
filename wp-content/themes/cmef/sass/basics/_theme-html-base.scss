@@ -19,11 +19,12 @@ html{
 		font-size:2.882352941em;
 		color: $eastern-blue;
 	}
-	h2{
+	h2, a h2{
 		@extend .fonts.trade.gothic.light;
 		font-size:1.870588235em;
 		color: $eastern-blue;
 		line-height:1.1em;
+		text-transform: none !important;
 	}
 	h3{
 		@extend .fonts.trade.gothic.light;
@@ -156,6 +157,10 @@ html{
 
 		&:hover{
 			color: $thatch-green;
+		}
+
+		h1, h2, h3, h4, h5, h6{
+			text-transform: none;
 		}
 
 		
@@ -493,9 +498,9 @@ html{
 
  .button, input[type='submit']{
  	display:table;
- 	height:30px;
+ 	height:35px;
  	text-align: center;
- 	margin:10px 0 10px 0;
+ 	margin:0px 0 10px 0;
  	@extend .fonts.trade.gothic.bold;
  	padding:3px 17px 0 17px; 
  	text-transform: uppercase;

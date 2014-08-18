@@ -92,6 +92,16 @@ add_action('wp_footer', 'wp_footer_injection');
             'filter' => $post->filter,
         )) . "\n" ?> 
 
+        // Theres a little too much information to grab through ajax for our single program. Let's do it this way.
+        <?php 
+            if(is_singular( 'program' )):;
+                echo "var singleProgram = " . json_encode(array(
+                    'post_thumbnail_id' => get_post_thumbnail_id($post->ID),
+                    'post_thumbnail_src' => wp_get_attachment_url( get_post_thumbnail_id($post->ID) )
+                )) . "\n";
+           endif;
+        ?>
+
         <?php if (!empty($comments)) echo "var comments = " . json_encode($comments) . "\n"; ?>
     </script>
     <?php }
