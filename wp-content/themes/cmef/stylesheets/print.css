@@ -2084,6 +2084,29 @@ section {
       float: left;
       margin-right: 5px; }
 
+/* line 640, ../sass/basics/_theme-html-base.scss */
+.select {
+  height: 35px;
+  width: 100%;
+  border: none;
+  background-color: #fcfcfc;
+  -webkit-box-shadow: #e8e8e8 0 1px 3px inset;
+  -moz-box-shadow: #e8e8e8 0 1px 3px inset;
+  box-shadow: #e8e8e8 0 1px 3px inset;
+  margin-bottom: 10px; }
+  /* line 649, ../sass/basics/_theme-html-base.scss */
+  .select select {
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    margin-right: 0; }
+
+/* line 659, ../sass/basics/_theme-html-base.scss */
+.hidden {
+  display: none !important; }
+
 /* #Font-Face
 ================================================== */
 /* 	This is the proper syntax for an @font-face file 
@@ -3593,6 +3616,9 @@ h1.homepage {
     margin-right: 13px;
     height: 67px; }
     /* line 64, ../sass/layouts/_single-program.scss */
+    #adv-custom-pager #pager-image img {
+      height: 54px; }
+    /* line 68, ../sass/layouts/_single-program.scss */
     #adv-custom-pager #pager-image:nth-child(4n) {
       margin-right: 0; }
 

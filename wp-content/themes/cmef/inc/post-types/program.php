@@ -30,7 +30,8 @@
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'thumbnail' ),
-		'menu_icon'          => 'dashicons-universal-access'
+		'menu_icon'          => 'dashicons-universal-access',
+		'taxonomies' => array('tfa-region')
 	);
 
 	register_post_type( 'program', $args );
@@ -51,86 +52,10 @@
 		<?php }
 		add_meta_box( 'school-name', __('School Name'), 'school_name_admin', 'program', 'side', 'core' );
 
-		function grade_level_admin($post){ ?>
-			<select name="grade-level" id="grade-level">
-				<option value="Kindergarten" <?php selected( 'Kindergarten', get_post_meta( $post->ID, '_grade-level', true ), true) ?>>Kindergarten</option>
-				<option value="Elementary School" <?php selected( 'Elementary School', get_post_meta( $post->ID, '_grade-level', true ), true) ?>>Elementary School</option>
-				<option value="Middle School" <?php selected( 'Middle School', get_post_meta( $post->ID, '_grade-level', true ), true) ?>>Middle School</option>
-				<option value="High School" <?php selected( 'High School', get_post_meta( $post->ID, '_grade-level', true ), true) ?>>High School</option>
-				<option value="All Grades" <?php selected( 'All Grades', get_post_meta( $post->ID, '_grade-level', true ), true) ?>>All Grades</option>
-			</select>
-		<?php }
-		add_meta_box( 'grade-level', __('Grade Level'), 'grade_level_admin', 'program', 'side', 'core' );
-
 		function number_students_admin($post){ ?>
 			<input type="number" name="number-students" value="<?php echo get_post_meta( $post->ID, '_number-students', true );  ?>">
 		<?php }
 		add_meta_box( 'number-students', __('Number of Students'), 'number_students_admin', 'program', 'side', 'core' );
-
-		function TFA_region_admin($post){ ?>
-			<select name="tfa-region" require="required">
-				<option value="All Regions" <?php selected( 'All Regions', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>All Regions</option>
-				<option value="Alabama" <?php selected( 'Alabama', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Alabama</option>
-				<option value="Appalachia" <?php selected( 'Appalachia', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Appalachia</option>
-				<option value="Arkansas" <?php selected( 'Arkansas', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Arkansas</option>
-				<option value="Baltimore" <?php selected( 'Baltimore', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Baltimore</option>
-				<option value="Bay Area" <?php selected( 'Bay Area', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Bay Area</option>
-				<option value="Charlotte" <?php selected( 'Charlotte', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Charlotte</option>
-				<option value="Chicago" <?php selected( 'Chicago', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Chicago</option>
-				<option value="Colorado" <?php selected( 'Colorado', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Colorado</option>
-				<option value="Connecticut" <?php selected( 'Connecticut', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Connecticut</option>
-				<option value="D.C. Region" <?php selected( 'D.C. Region', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>D.C. Region</option>
-				<option value="Dallas-Fort Worth" <?php selected( 'Dallas-Fort Worth', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Dallas-Fort Worth</option>
-				<option value="Delaware" <?php selected( 'Delaware', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Delaware</option>
-				<option value="Detroit" <?php selected( 'Detroit', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Detroit</option>
-				<option value="Eastern North Carolina" <?php selected( 'Eastern North Carolina', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Eastern North Carolina</option>
-				<option value="Greater Nashville" <?php selected( 'Greater Nashville', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Greater Nashville</option>
-				<option value="Greater New Orleans-Louisiana Delta" <?php selected( 'Greater New Orleans-Louisiana Delta', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Greater New Orleans-Louisiana Delta</option>
-				<option value="Greater Philadelphia" <?php selected( 'Greater Philadelphia', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Greater Philadelphia</option>
-				<option value="Hawai'i" <?php selected( 'Hawai\'i', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Hawai'i</option>
-				<option value="Houston" <?php selected( 'Houston', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Houston</option>
-				<option value="Indianapolis" <?php selected( 'Indianapolis', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Indianapolis</option>
-				<option value="Jacksonville" <?php selected( 'Jacksonville', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Jacksonville</option>
-				<option value="Kansas City" <?php selected( 'Kansas City', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Kansas City</option>
-				<option value="Las Vegas Valley" <?php selected( 'Las Vegas Valley', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Las Vegas Valley</option>
-				<option value="Los Angeles" <?php selected( 'Los Angeles', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Los Angeles</option>
-				<option value="Massachusetts" <?php selected( 'Massachusetts', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Massachusetts</option>
-				<option value="Memphis" <?php selected( 'Memphis', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Memphis</option>
-				<option value="Metro Atlanta" <?php selected( 'Metro Atlanta', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Metro Atlanta</option>
-				<option value="Miami-Dade" <?php selected( 'Miami-Dade', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Miami-Dade</option>
-				<option value="Milwaukee" <?php selected( 'Milwaukee', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Milwaukee</option>
-				<option value="Mississippi" <?php selected( 'Mississippi', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Mississippi</option>
-				<option value="New Jersey" <?php selected( 'New Jersey', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>New Jersey</option>
-				<option value="New Mexico" <?php selected( 'New Mexico', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>New Mexico</option>
-				<option value="New York" <?php selected( 'New York', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>New York</option>
-				<option value="Northeast Ohio-Cleveland" <?php selected( 'Northeast Ohio-Cleveland', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Northeast Ohio-Cleveland</option>
-				<option value="Oklahoma" <?php selected( 'Oklahoma', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Oklahoma</option>
-				<option value="Phoenix" <?php selected( 'Phoenix', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Phoenix</option>
-				<option value="Rhode Island" <?php selected( 'Rhode Island', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Rhode Island</option>
-				<option value="Rio Grande Valley" <?php selected( 'Rio Grande Valley', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Rio Grande Valley</option>
-				<option value="Sacramento" <?php selected( 'Sacramento', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Sacramento</option>
-				<option value="San Antonio" <?php selected( 'San Antonio', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>San Antonio</option>
-				<option value="San Diego" <?php selected( 'San Diego', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>San Diego</option>
-				<option value="South Carolina" <?php selected( 'South Carolina', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>South Carolina</option>
-				<option value="South Dakota" <?php selected( 'South Dakota', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>South Dakota</option>
-				<option value="South Louisiana" <?php selected( 'South Louisiana', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>South Louisiana</option>
-				<option value="Southwest Ohio" <?php selected( 'Southwest Ohio', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Southwest Ohio</option>
-				<option value="St. Louis" <?php selected( 'St. Louis', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>St. Louis</option>
-				<option value="Twin Cities" <?php selected( 'Twin Cities', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Twin Cities</option>
-				<option value="Washington" <?php selected( 'Washington', get_post_meta( $post->ID, '_tfa-region', true ), true) ?>>Washington</option>
-			</select>
-		<?php }
-		add_meta_box( 'TFA-region', __('TFA Region'), 'TFA_region_admin', 'program', 'side', 'core' );
-
-		function program_type_admin($post){ ?>
-			<select name="program-type">
-				<option value="Field Trip" <?php selected( 'Field Trip', get_post_meta( $post->ID, '_program-type', true ), true) ?>>Field Trip</option>
-				<option value="Scholarship Fund" <?php selected( 'Scholarship Fund', get_post_meta( $post->ID, '_program-type', true ), true) ?>>Scholarship Fund</option>
-				<option value="Technology" <?php selected( 'Technology', get_post_meta( $post->ID, '_program-type', true ), true) ?>>Technology</option>
-				<option value="Other" <?php selected( 'Other', get_post_meta( $post->ID, '_program-type', true ), true) ?>>Other</option>
-			</select>
-		<?php }
-		add_meta_box( 'program-type', __('Program Type'), 'program_type_admin', 'program', 'side', 'core' );
 
 		function social_networks_admin($post){ ?>
 			<?php $social_meta = get_post_meta( $post->ID, '_social-networks', true ); ?>

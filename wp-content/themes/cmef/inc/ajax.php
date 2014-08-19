@@ -435,4 +435,35 @@
         echo json_encode($return);
         die();
     }
+
+    /**
+     * Update Program
+     */
+    add_action('wp_ajax_update_program', 'update_program');
+    function update_program(){
+        $program_id = $_POST['program_id'];
+        $school_name = $_POST['school_name'];
+        $number_students = $_POST['number_students'];
+        $program_type = $_POST['program_type'];
+        $tfa_region = $_POST['tfa_region'];
+        $grade_level = $_POST['grade_level'];
+        $goal = $_POST['goal'];
+
+         // Update post content
+          $program = array(
+              'ID'           => $program_id,
+              'post_content' => $_POST['description']
+          );
+
+        // Update the post into the database
+        wp_update_post( $program );
+
+        update_post_meta($program_id, '_school-name', $school_name);
+        update_post_meta($program_id, '_number-students', $number_students);
+        update_post_meta($program_id, '_fundraising-goal', $goal);
+        $program_type_response = wp_set_post_terms( $program_id, $program_type, 'program-type', false);
+        $tfa_region_response = wp_set_post_terms( $program_id, $tfa_region, 'tfa-region', false );
+        $grade_level_response = wp_set_post_terms( $program_id, $grade_level, 'grade-level', false );
+        die();
+    }
     

@@ -1,7 +1,8 @@
 <div class="project-card">
 	<?php if(!is_search()){ ?>
 	<?php if(has_post_thumbnail($post->ID)): ?>
-		<?php the_post_thumbnail($size = 'post-thumbnail', $attr = ''); ?>
+		<?php // NOTE: Originally we were going to set a max height on the images but it was causing all kinds of issues with the layout and the images were getting squished. ?>
+		<?php the_post_thumbnail($size = 'Project Card', $attr = ''); ?>
 	<?php else : ?>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/placeholder.png" alt="">
 	<?php endif; ?>

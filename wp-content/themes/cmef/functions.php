@@ -49,6 +49,8 @@
 		include('inc/post-attachments.php');
 		// Load Our Post Types
 		include('inc/post-types.php');
+		//Load the taxonomies
+		include('inc/taxonomies.php');
 		// Load some helper functions
 		include('inc/helpers.php');
 

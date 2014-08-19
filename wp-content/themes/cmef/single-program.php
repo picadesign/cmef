@@ -15,7 +15,8 @@
 		<div class="row">
 			<div class="eight columns alpha">&nbsp;</div>
 			<div class="eight columns omega">
-				<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button orange alignright"><span>Donate to this program</span></a>
+
+				<a href="<?php /* Create the url but pass in an argument for the right program EXTREMELY IMPORTANT */ echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button orange alignright"><span>Donate to this program</span></a>
 				<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()){?><div href="" class="button green alignright button-margin edit-program"><span>Edit</span></div><?php } ?>
 			</div>
 		</div>
@@ -36,9 +37,9 @@
 		</div>
 		<div class="row">
 			<div class="six columns alpha gallery">
-				<div class="six columns alpha omega">
+				<div class="six columns alpha omega slideshow">
 					<?php //THis needs work the images cannot span one columns because on small screens they blow up. ?>
-					<?php the_post_thumbnail($size = 'medium', $attr = '') ?>
+					<?php the_post_thumbnail($size = 'Project Slideshow', $attr = '') ?>
 					<?php 	
 						/**
 						* The WordPress Query class.
@@ -55,11 +56,10 @@
 							'order' => 'ASC'
 						);
 						$the_query = new WP_Query( $args );
-						//print_r($the_query);
 						if ( $the_query->have_posts() ) :
 							while ( $the_query->have_posts() ) :
 								$the_query->the_post();
-								 echo wp_get_attachment_image( $post->ID, $size = 'medium', true, array('data-large' => $post->guid, 'data-lightbox' => 'slideshow' ));
+								 echo wp_get_attachment_image( $post->ID, $size = 'Project Slideshow', true, array('data-large' => $post->guid, 'data-lightbox' => 'slideshow' ));
 							endwhile;
 						endif;
 						wp_reset_postdata();
@@ -69,7 +69,7 @@
 			</div>
 			<div class="ten columns omega">
 				<section>
-				<div class="four columns alpha">Fundraising Progress</div>
+				<div class="four columns alpha"><h3>Fundraising Progress</h3></div>
 				<div class="six columns omega">
 					<div class="meter">
 
@@ -80,27 +80,109 @@
 				</section>
 				<div class="ten columns alpha omega">
 					<section>
-					<form action="" class="meta-data-form">
+					<form>
+						<input type="hidden" name="post_id" value="<?php echo $post->ID ?>">
 						<table width="100%" class="meta-data">
 							<tr>
 								<td class="four columns alpha"><b>Type of Program</b></td>
-								<td class="five columns alignleft program-type"><?php echo get_post_meta($post->ID, '_program-type', true ) ?></td>
+								<?php
+									//list terms in a given taxonomy
+									$taxonomy = 'program-type';
+									$term_args = array(
+									  'hide_empty' => false,
+									  'orderby' => 'name',
+									  'order' => 'ASC'
+									);
+									$tax_terms = get_terms($taxonomy,$term_args);
+									$post_terms = wp_get_post_terms( $post->ID, $taxonomy);
+								?>
+								<td class="five columns alignleft program-type"><?php echo $post_terms[0]->name?></td> 
+								<td class="five columns alignleft program-type-sel hidden">
+									<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
+										<div class="select">
+											<?php //print_r($terms[0]->name) ?>
+											<select id="<?php echo $taxonomy ?>">
+												<?php
+													foreach ($tax_terms as $tax_term) { ?>
+														<option value="<?php echo $tax_term->name ?>" data-term-id="<?php echo $tax_term->term_id ?>" <?php selected( $tax_term->name, $post_terms[0]->name); ?>><?php echo $tax_term->name ?></option>
+													<?php }
+												?>
+											</select>
+										</div>
+									<?php endif; ?>
+								</td>
 							</tr>
 							<tr>
 								<td class="four columns alpha"><b>TFA Region</b></td>
-								<td class="five columns alignleft tfa-region"><?php echo get_post_meta($post->ID, '_tfa-region', true ) ?></td>
+								<?php
+									//list terms in a given taxonomy
+									$taxonomy = 'tfa-region';
+									$term_args = array(
+									  'hide_empty' => false,
+									  'orderby' => 'name',
+									  'order' => 'ASC'
+									);
+									$tax_terms = get_terms($taxonomy,$term_args);
+									$post_terms = wp_get_post_terms( $post->ID, $taxonomy);
+								?>
+								<td class="five columns alignleft tfa-region"><?php echo $post_terms[0]->name ?></td>
+								<td class="five columns alignleft tfa-region-sel hidden">
+									<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
+										<div class="select">
+											<?php //print_r($terms[0]->name) ?>
+											<select id="<?php echo $taxonomy ?>">
+												<?php
+													foreach ($tax_terms as $tax_term) { ?>
+														<option value="<?php echo $tax_term->name ?>" data-term-id="<?php echo $tax_term->term_id ?>" <?php selected( $tax_term->name, $post_terms[0]->name); ?>><?php echo $tax_term->name ?></option>
+													<?php }
+												?>
+											</select>
+										</div>
+									<?php endif; ?>
+								</td>
 							</tr>
 							<tr>
 								<td class="four columns alpha"><b>School</b></td>
 								<td class="five columns alignleft school-name"><?php echo get_post_meta($post->ID, '_school-name', true ) ?></td>
+								<td class="five columns alignleft school-name-sel hidden"><input type="text" value="<?php echo get_post_meta($post->ID, '_school-name', true ) ?>"></td>
 							</tr>
 							<tr>
 								<td class="four columns alpha"><b>Grade Level</b></td>
-								<td class="five columns alignleft grade-level"><?php echo get_post_meta($post->ID, '_grade-level', true ) ?></td>
+								<?php
+									//list terms in a given taxonomy
+									$taxonomy = 'grade-level';
+									$term_args = array(
+									  'hide_empty' => false,
+									  'orderby' => 'name',
+									  'order' => 'ASC'
+									);
+									$tax_terms = get_terms($taxonomy,$term_args);
+									$post_terms = wp_get_post_terms( $post->ID, $taxonomy);
+								?>
+								<td class="five columns alignleft grade-level"><?php echo $post_terms[0]->name ?></td>
+								<td class="five columns alignleft grade-level-sel hidden">
+									<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
+										<div class="select">
+											<?php //print_r($terms[0]->name) ?>
+											<select id="<?php echo $taxonomy ?>">
+												<?php
+													foreach ($tax_terms as $tax_term) { ?>
+														<option value="<?php echo $tax_term->name ?>" data-term-id="<?php echo $tax_term->term_id ?>" <?php selected( $tax_term->name, $post_terms[0]->name); ?>><?php echo $tax_term->name ?></option>
+													<?php }
+												?>
+											</select>
+										</div>
+									<?php endif; ?>
+								</td>
 							</tr>
 							<tr>
 								<td class="four columns alpha"><b>Number of Students</b></td>
 								<td class="five columns alignleft number-students"><?php echo get_post_meta($post->ID, '_number-students', true ) ?></td>
+								<td class="five columns alignleft number-students-sel hidden"><input type="number" value="<?php echo get_post_meta($post->ID, '_number-students', true ) ?>" min="0"></td>
+							</tr>
+							<tr class="goal-sel-row hidden">
+								<td class="four columns alpha"><b>Goal</b></td>
+								<td class="five columns alignleft goal-sel"><input type="number" value="<?php echo get_post_meta(get_the_ID(), '_fundraising-goal', true) ?>"></td>
 							</tr>
 						</table>
 					</form>
@@ -119,9 +201,44 @@
 			</div>
 			<div class="clear"></div>
 			<br>
-			<hr>
+			<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
+			<div class="sixteen columns alpha omega hidden photo-uploader-container">
+				<hr>
+				<br>
+				<h3>Upload Your Photos</h3>
+				<form class="" action="<?php echo get_bloginfo('url') . '/wp-admin/admin-ajax.php?&action=upload_image' ?>" id="photo_upload" id="image_uploader" data-program-id="<?php echo $post->ID ?>" enctype="multipart/form-data">
+					<div class="sixteen columns alpha omega">
+						<div class="eight columns alpha">
+							<!--<img src="" alt="">-->
+							
+							<input type="file" name="image" class="image-uploader">
+							<input type="text" placeholder="Choose File" class="image-uploader-placeholder" disabled="disabled">
+							<div class="button green image-uploader-button alignleft"><span class="button-text">Upload</span></div>
+							<div class="button green image-uploader-choose-file"><span>Choose File</span></div>
+						</div>
+						<div class="eight columns omega uploaded-images">
+							
+						</div>
+						<div class="sixteen columns alpha omega">
+							<br>
+							<b>Hint:</b>
+							<p>Click on one of your uploaded images to make it your program's cover image.</p>
+						</div>
+					</div>
+				</form>
+				<hr>
+			</div>
+			<?php endif; ?>
 		</div>
 		<div class="row">
+			<div class="sixteen columns alpha omega">
+				<hr>
+			</div>
+			<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
+			<div class="sixteen columns alpha omega">
+				<div class="button green alignleft"><span>Download Activity</span></div>
+			</div>
+			<?php endif; ?>
 			<div class="eight columns alpha">
 				<h3>Description</h3>
 				<div class="description">

@@ -636,3 +636,26 @@ section{
 		}
 	}
 }
+
+.select{
+	height:35px;
+	width:100%;
+	//margin:15px;
+	border:none;
+	background-color:#fcfcfc;
+	@include box-shadow($mercury 0 1px 3px inset);
+	margin-bottom:10px;
+
+	select{
+		height:35px;
+		border:none;
+		background-color:transparent;
+		width:100%;
+		outline:none;
+		margin-right:0;
+	}
+}
+
+.hidden{
+	display:none !important;
+}
