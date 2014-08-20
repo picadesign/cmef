@@ -9,7 +9,11 @@ jQuery(function ($) {
 			'change .image-uploader': 'updateImageInputBox',
 			'click .button.image-uploader-button': 'uploadImage',
 			'click .uploaded-image': 'setFeaturedImage',
-			'click .image-container .delete-image': 'deleteImage'
+			'click .image-container .delete-image': 'deleteImage',
+			'click .button.add-expense': 'addExpense',
+			'click .button.choose-expense-image': 'chooseExpenseImage',
+			'change input[name="expense-image"]': 'updateExpenseImageText',
+			'click .button.submit-expense': 'submitExpense'
 		},
 		initialize: function(){
 			this.$el.html(this.$el.html());
@@ -20,6 +24,30 @@ jQuery(function ($) {
 				speed: 500,
 				pager: '#adv-custom-pager',
 			});
+			$( "#tabs" ).tabs();
+			$.tablesorter.addParser({ 
+			    // set a unique id 
+			    id: 'thousands',
+			    is: function(s) { 
+			        // return false so this parser is not auto detected 
+			        return false; 
+			    }, 
+			    format: function(s) {
+			        // format your data for normalization 
+			        return s.replace('$','').replace(/,/g,'');
+			    }, 
+			    // set type, either numeric or text 
+			    type: 'numeric' 
+			}); 
+			$(".tablesorter").tablesorter({
+				headers: {
+		            2: {//zero-based column index
+		                sorter:'thousands'
+		            }
+		        }
+		    }); 
+
+		    $('.memo').redactor();
 		},
 		editProgram: function(){
 			//console.log(this);
@@ -141,6 +169,40 @@ jQuery(function ($) {
 					$(ev.target).parent('.image-container').remove();
 				}
 			})
+		},
+		addExpense: function(){
+			$('.new-expense').removeClass();
+			$('.button.add-expense').hide();
+		},
+		chooseExpenseImage: function(){
+			console.log('choose image');
+			$('input[name="expense-image"]').click();
+		},
+		updateExpenseImageText: function(){
+			var imageVal = $('input[name="expense-image"]').val().replace("C:\\fakepath\\", "");;
+			$('input[name="expense-image-name"]').val(imageVal);	
+		},
+		submitExpense: function(){
+			$('#expense_photo_upload').ajaxSubmit({
+					data: {
+						amount: $('input[name="expense-amount"]').val(),
+						program_id: $('#expense_photo_upload').attr('data-program-id'),
+						memo: $('.memo').redactor('get')
+					},
+					success: function(response){
+						//var image = jQuery.parseJSON(response);
+						//$('.image-uploader-placeholder').val('');
+						//var imageContainer = $('.uploaded-images');
+						//var newImgContainer = $('<div class="image-container"><div class="delete-image">&#x2716;</div></div>')
+						//var newImg = $('<img src="" class="uploaded-image" />');
+						//newImg.attr('src', image[0]).attr('data-image-id', image[4]);
+						//newImgContainer.append(newImg);
+						//imageContainer.append(newImgContainer);
+						//obutton.html(obuttonhtml).siblings('.loading').remove()
+						//obutton.parent('.image-uploader-button').removeClass('disabled');
+						console.log(response);
+					}
+				})
 		}
 	});
 });

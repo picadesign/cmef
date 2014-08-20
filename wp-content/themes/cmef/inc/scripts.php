@@ -17,27 +17,29 @@
 
 
 function enqueue_scripts(){
+    
+    wp_enqueue_script('jquery-masonry');
+    wp_enqueue_script('jquery-ui-core');
+    wp_enqueue_script('jquery-ui-tabs');
+    wp_enqueue_script('jquery-ui-accordion');
+
     wp_enqueue_script('redactor', get_bloginfo('template_url') . '/scripts/redactor.min.js', array('jquery'));
     wp_enqueue_script('mustache', get_bloginfo('template_url') . '/scripts/mustache/mustache.js', array('jquery'));
-    wp_enqueue_script('jquery-masonry');
     wp_enqueue_script('cycle2', get_bloginfo('template_url') . '/scripts/jquery.cycle2.min.js', array('jquery'));
     wp_enqueue_script('lightbox', get_bloginfo('template_url') . '/scripts/lightbox.min.js', array('jquery'));
     wp_enqueue_script('forms', get_bloginfo('template_url') . '/scripts/jquery.form.js', array('jquery'));
+    wp_enqueue_script('tablesorter', get_bloginfo('template_url') . '/scripts/jquery.tablesorter.min.js', array('jquery'));
     wp_enqueue_script('require', get_bloginfo('template_url') . '/scripts/require.js', array('jquery', 'backbone'), false, true);
-    wp_enqueue_script('jquery-ui-accordion');
+    
     wp_enqueue_script('imagesloaded', get_bloginfo('template_url') . '/scripts/imagesLoaded/imagesloaded.pkgd.min.js', array('jquery-masonry'));
-
     wp_enqueue_script('views', get_bloginfo('template_url') . '/scripts/views/views.js', array('jquery', 'backbone', 'models'),  false, true);
-
     wp_enqueue_script('models', get_bloginfo('template_url') . '/scripts/models/models.js', array('jquery', 'backbone', 'collections'),  false, true);
-
     wp_enqueue_script('collections', get_bloginfo('template_url') . '/scripts/collections/collections.js', array('jquery', 'backbone'),  false, true);
 
     //wp_enqueue_script('app', get_bloginfo('template_url') . '/scripts/app.js', array('jquery', 'backbone', ''));
 
     //Only include jQuery
     wp_enqueue_script('main-script', get_bloginfo('template_url') . '/scripts/scripts.js', array('require', 'masonry', 'cycle2', 'lightbox', 'redactor', 'mustache', 'views'),  false, true);
-
     if(is_author()){
       wp_enqueue_script('author-editing', get_bloginfo('template_url') . '/scripts/front-end-editing/author-page.js', $deps = array('jquery', 'redactor'), $ver = false, $in_footer = true);
     }

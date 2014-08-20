@@ -70,3 +70,27 @@
 		}
 	}
 }
+
+#donation-table{
+	border-spacing:0 5px;
+
+	td{
+		padding-bottom:5px;
+	}
+}
+#donation{
+	//margin-bottom:5px;
+	a{
+		@extend .fonts.trade.condensed.regular;
+		color: #444; 
+		text-transform: none;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	.mail{
+		float:left;
+		margin-right:2px;
+	}
+}

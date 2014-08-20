@@ -46,7 +46,7 @@
 						* @link http://codex.wordpress.org/Function_Reference/WP_Query
 						*
 						*/
-						$args = array(
+						$image_args = array(
 							//Post & Page Parameters
 							'post_parent'  => $post->ID,
 							'post_type'   => 'attachment',
@@ -55,11 +55,11 @@
 							'orderby' => 'menu_order',
 							'order' => 'ASC'
 						);
-						$the_query = new WP_Query( $args );
-						if ( $the_query->have_posts() ) :
-							while ( $the_query->have_posts() ) :
-								$the_query->the_post();
-								 echo wp_get_attachment_image( $post->ID, $size = 'Project Slideshow', true, array('data-large' => $post->guid, 'data-lightbox' => 'slideshow' ));
+						$image_query = new WP_Query( $image_args );
+						if ( $image_query->have_posts() ) :
+							while ( $image_query->have_posts() ) :
+								$image_query->the_post();
+								 echo wp_get_attachment_image( $post->ID, $size = 'Project Slideshow', true, array('data-large' => $post->guid, 'data-lightbox' => 'slideshow'));
 							endwhile;
 						endif;
 						wp_reset_postdata();
@@ -214,14 +214,26 @@
 							<input type="file" name="image" class="image-uploader">
 							<input type="text" placeholder="Choose File" class="image-uploader-placeholder" disabled="disabled">
 							<div class="button green image-uploader-button alignleft"><span class="button-text">Upload</span></div>
-							<div class="button green image-uploader-choose-file"><span>Choose File</span></div>
+							<div class="button green image-uploader-choose-file"><span>Choose Image</span></div>
 						</div>
 						<div class="eight columns omega uploaded-images">
-							
+							<div class="image-container"><div class="delete-image">&#x2716;</div><img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail')[0]; ?> " class="uploaded-image" data-image-id="<?php echo get_post_thumbnail_id() ?>"></div>
+							<?php
+								$image_query = new WP_Query( $image_args );
+								if ( $image_query->have_posts() ) :
+									while ( $image_query->have_posts() ) :
+										$image_query->the_post(); ?>
+										 <?php //print_r($post) ?>
+										 <div class="image-container"><div class="delete-image">&#x2716;</div><img src="<?php echo wp_get_attachment_image_src( $post->ID, 'thumbnail')[0]; ?> " class="uploaded-image" data-image-id="<?php echo $post->ID ?>"></div>
+									<?php endwhile;
+								endif;
+								wp_reset_postdata();
+							?>
 						</div>
 						<div class="sixteen columns alpha omega">
 							<br>
 							<b>Hint:</b>
+							<p>Refresh to see your new images.</p>
 							<p>Click on one of your uploaded images to make it your program's cover image.</p>
 						</div>
 					</div>
@@ -230,29 +242,29 @@
 			</div>
 			<?php endif; ?>
 		</div>
-		<div class="row">
+		<div class="row" id="tabs">
 			<div class="sixteen columns alpha omega">
-				<hr>
+				<ul>
+					<li><h3><a href="#description">Description</a></h3></li>
+					<li><h3><a href="#activity">Fundraising Activity</a></h3></li>
+					<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
+						<li><h3><a href="#expenses">Expense Tracker</a></h3></li>
+						<li><h3><a href="#balance">Account Balance</a></h3></li>
+					<?php endif; ?>
+				</ul>
 			</div>
-			<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
-			<div class="sixteen columns alpha omega">
-				<div class="button green alignleft"><span>Download Activity</span></div>
-			</div>
-			<?php endif; ?>
-			<div class="eight columns alpha">
-				<h3>Description</h3>
+			<div class="sixteen columns alpha omega" id="description">
 				<div class="description">
 					<?php the_content(); ?>
 				</div>
 			</div>
-			<div class="eight columns omega">
-				<h3>Fundraising Activity</h3>
-				<table width="100%">
+			<div class="sixteen columns alpha omega" id="activity">
+				<table width="100%" id="donation-table" class="tablesorter">
 					<thead>
 						<tr>
-							<td><b>Name</b></td>
-							<td><b>Email</b></td>
-							<td><b>Amount</b></td>
+							<th><b>Name</b></th>
+							<th><b>Email</b></th>
+							<th><b>Amount</b></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -273,15 +285,17 @@
 						
 							$donation_query = new WP_Query( $args );
 							if($donation_query->have_posts()):
+								$i = 1;
 								while($donation_query->have_posts()): $donation_query->the_post(); ?>
 									<?php if(get_post_meta($post->ID, '_remain-anonymous', true) === 'true') :?>
 									<?php else: ?>
-									<tr>
+									<tr class="<?php echo ($i%2 == 0 ? 'even' : 'odd') ?>">
 										<td><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></td>
-										<td><a id="donation-email">email@email.com</a></td>
+										<td  id="donation"><a href="mailto:<?php echo antispambot('email@email.com') ?>" title="Send a Thank You to "><span class="mail small"></span>email@email.com</a></td>
 										<td><?php echo money_format('%.0n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; ?></td>
 									</tr>
 									<?php endif; ?>
+									<?php $i++; ?>
 								<?php endwhile;
 							endif;
 							wp_reset_postdata();
@@ -289,6 +303,80 @@
 					</tbody>
 				</table>
 			</div>
+			<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
+				<div class="sixteen columns alpha omega" id="expenses">
+					<table id="expense-table" class="tablesorter">
+						<thead>
+							<tr>
+								<th>Expense ID</th>
+								<th>Date</th>
+								<th>Amount</th>
+								<th>Memo</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+								$expense_args = array(
+									'post_type' => 'expense',
+									'meta_key'       => '_program-id',
+									'meta_value'     => $post->ID,
+									'orderby'        => 'date',
+									'posts_per_page' => -1,
+								);
+								$expense_query = new WP_Query( $expense_args );
+								if ( $expense_query->have_posts() ) :
+									$i = 1;
+									while ( $expense_query->have_posts() ) :
+										$expense_query->the_post(); ?>
+										 <tr class="<?php echo ($i%2 == 0 ? 'even' : 'odd') ?>">
+											<td><?php echo $post->ID ?></td>
+											<td><?php echo get_the_date(); ?></td>
+											<td><?php echo money_format('%.0n', (int) -get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; ?></td>
+											<td><?php the_content(); ?></td>
+										</tr>
+										<?php $i++; ?>
+									<?php endwhile;
+								endif;
+								wp_reset_postdata();
+							?>
+							
+
+						</tbody>
+					</table>
+					<br>
+					<div class="button green alignright add-expense"><span>Add Expense</span></div>
+					<div class="sixteen columns alpha omega new-expense hidden">
+						<hr>
+						<h3>New Expense</h3>
+						<br>
+						<div class="eight columns alpha omega alert-messages">
+						
+						</div>
+						<form class="" action="<?php echo get_bloginfo('url') . '/wp-admin/admin-ajax.php?&action=upload_expense_image' ?>" id="expense_photo_upload" data-program-id="<?php echo $post->ID ?>" enctype="multipart/form-data">
+							<div class="nine columns alpha">
+								<h4>Description</h4>
+								<div class="memo-container">
+									<div class="memo"></div>
+								</div>
+								<br>
+								<div class="two columns alpha"><input type="number" placeholder="Amount" name="expense-amount"></div>
+								<div class="clear"></div>
+							</div>
+							<div class="seven columns omega">
+								<h4>Upload Receipt</h4>
+								<input type="file" class="hidden" name="expense-image">
+								<input type="text" name="expense-image-name" disabled="disabled" placeholder="Select Image">
+								<div class="button green choose-expense-image alignleft"><span>Choose Image</span></div>
+							</div>
+						</form>
+						<div class="button green submit-expense alignright"><span>Add Expense</span></div>
+					</div>
+				</div>
+				<div class="sixteen columns alpha omega" id="balance">
+					Balance
+
+				</div>
+			<?php endif; ?>
 		</div>	
 		<?php endwhile; ?>
 		<?php endif; ?>

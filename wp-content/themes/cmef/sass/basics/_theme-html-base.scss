@@ -283,31 +283,28 @@ html{
 	 */
 	
 	table{
-		caption{
-
-		}
-		colgroup{
-
-		}
-		col{
-
-		}
-		tbody{
-
-		}
+		width:100%;
 		thead{
-
-		}
-		tfoot{
-
-		}
-		tr{
-			td{
-
+			background-color:darken($mercury, 15%);
+			th{
+				padding:5px;
+				text-align:left;
+				@extend .fonts.trade.condensed.bold;
 			}
 		}
-		th{
 
+		tbody{
+			td{
+				padding:5px;
+			}
+			
+			tr{
+				border-bottom:1px solid $mercury;
+
+				&.even{
+					//background-color:$mercury;
+				}
+			}
 		}
 	}
 
@@ -460,6 +457,12 @@ html{
  	width: 31px;
 	height: 31px;
 	background: sprite($assets-sprite, mail-icon) no-repeat;
+
+	&.small{
+		width: 20px;
+		height: 20px;
+		background: sprite($assets-sprite, mail-icon-small) no-repeat;
+	}
  }
 
  .twitter{
@@ -658,4 +661,78 @@ section{
 
 .hidden{
 	display:none !important;
+}
+
+.ui-tabs-nav{
+	margin:0;
+	padding-left:0;
+	//border-bottom:1px solid $mercury;
+	li{
+		display:inline-block;
+		padding:5px;
+		padding-left:10px;
+		padding:4px 10px 0 10px;
+		height: 30px;
+		background-color:$mercury;
+		float:left;
+		list-style:none;
+		//border-top-left-radius: 10px;
+		//border-top-right-radius: 10px;
+		a{
+			color:$eastern-blue;
+			text-transform: none ;
+			@extend .fonts.trade.condensed.bold;
+			outline:none;
+			word-spacing: -5px;
+		}
+
+		&.ui-state-active{
+			background-color:$eastern-blue;
+
+			a{
+				color: white;
+				outline:none;
+			}
+		}
+	}
+}
+
+.ui-tabs-panel{
+	//padding-top:15px;
+	margin-top:15px;
+	h3{
+		//background-color:$eastern-blue;
+		//color:white;
+		margin-top:15px;
+		//@extend .fonts.trade.condensed.bold;
+	}
+}
+
+.tablesorter{
+	th{
+		cursor: pointer;
+		position:relative;
+		&:after{
+			content:'\00a0';
+			margin-left:5px;
+			height:12px;
+			width:10px;
+			background: sprite($assets-sprite, double-arrows-top-bottom) no-repeat;
+			//display:inline-block;
+			position:absolute;
+			top:9px;
+		}
+
+		&.headerSortDown{
+			&:after{
+				background: sprite($assets-sprite, double-arrows-top) no-repeat;
+			}
+		}
+
+		&.headerSortUp{
+			&:after{
+				background: sprite($assets-sprite, double-arrows-bottom) no-repeat;
+			}
+		}
+	}
 }
