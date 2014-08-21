@@ -415,23 +415,23 @@
      */
     add_action('wp_ajax_upload_expense_image', 'upload_expense_image');
     function upload_expense_image(){
-
-        //print_r($_FILES['image']);
-        //$attachment_id = media_handle_upload('image', $_POST['program_id']);
-        //$attachment = wp_get_attachment_image_src( $attachment_id );
-        //array_push($attachment, $attachment_id);
-        //echo json_encode($attachment);
-        print_r($_POST);
-        print_r($_FILES);
         $post = array(
             'post_type' => 'expense',
             'post_content' => $_POST['memo'],
             'post_status' => 'publish'
         );
-        $new_expense = wp_insert_post($post);
-        update_post_meta($new_expense, '_program-id', $_POST['program_id']);
-        update_post_meta($new_expense, '_expense-amount', $_POST['expense-amount']);
-        print_r($new_expense);
+        if($_POST['expense-amount'] > 0){
+            $new_expense = wp_insert_post($post);
+            update_post_meta($new_expense, '_program-id', $_POST['program_id']);
+            update_post_meta($new_expense, '_expense-amount', $_POST['expense-amount']);
+            $expense_attachment_id = media_handle_upload('expense-image', $new_expense);
+            set_post_thumbnail($new_expense, $expense_attachment_id);
+        }
+        if($new_expense != 0 && $_POST['expense-amount'] > 0){
+            echo 'success';
+        }else{
+            echo 'Please enter a valid amount';
+        }
         die();
     }
 

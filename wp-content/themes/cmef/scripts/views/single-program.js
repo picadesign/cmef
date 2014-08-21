@@ -13,18 +13,22 @@ jQuery(function ($) {
 			'click .button.add-expense': 'addExpense',
 			'click .button.choose-expense-image': 'chooseExpenseImage',
 			'change input[name="expense-image"]': 'updateExpenseImageText',
-			'click .button.submit-expense': 'submitExpense'
+			'click .button.submit-expense': 'submitExpense',
+			'click .delete-expense': 'deleteExpense'
 		},
 		initialize: function(){
 			this.$el.html(this.$el.html());
 			$('.slideshow').cycle({
 				autoHeight: 1,
-				pagerTemplate: "<a href='#' id='pager-image'><img src='{{src}}' width=20 height=20></a>",
+				pagerTemplate: "<a href='#' id='pager-image'><img src='{{href}}' width=20 height=20></a>",
 				fx: 'scrollHorz',
 				speed: 500,
 				pager: '#adv-custom-pager',
+				slides: '> a'
 			});
-			$( "#tabs" ).tabs();
+			$('.slideshow').removeClass('hidden')
+			$( "#tabs" ).tabs({active: 3});
+			$('#tabs').removeClass('hidden')
 			$.tablesorter.addParser({ 
 			    // set a unique id 
 			    id: 'thousands',
@@ -39,9 +43,19 @@ jQuery(function ($) {
 			    // set type, either numeric or text 
 			    type: 'numeric' 
 			}); 
-			$(".tablesorter").tablesorter({
+			$("#donation-table").tablesorter({
 				headers: {
 		            2: {//zero-based column index
+		                sorter:'thousands'
+		            }
+		        }
+		    });
+		    $("#expense-table").tablesorter({
+				headers: {
+					0: {
+						sorter: false
+					},
+		            3: {//zero-based column index
 		                sorter:'thousands'
 		            }
 		        }
@@ -171,7 +185,7 @@ jQuery(function ($) {
 			})
 		},
 		addExpense: function(){
-			$('.new-expense').removeClass();
+			$('.new-expense').removeClass('hidden');
 			$('.button.add-expense').hide();
 		},
 		chooseExpenseImage: function(){
@@ -184,25 +198,36 @@ jQuery(function ($) {
 		},
 		submitExpense: function(){
 			$('#expense_photo_upload').ajaxSubmit({
-					data: {
-						amount: $('input[name="expense-amount"]').val(),
-						program_id: $('#expense_photo_upload').attr('data-program-id'),
-						memo: $('.memo').redactor('get')
-					},
-					success: function(response){
-						//var image = jQuery.parseJSON(response);
-						//$('.image-uploader-placeholder').val('');
-						//var imageContainer = $('.uploaded-images');
-						//var newImgContainer = $('<div class="image-container"><div class="delete-image">&#x2716;</div></div>')
-						//var newImg = $('<img src="" class="uploaded-image" />');
-						//newImg.attr('src', image[0]).attr('data-image-id', image[4]);
-						//newImgContainer.append(newImg);
-						//imageContainer.append(newImgContainer);
-						//obutton.html(obuttonhtml).siblings('.loading').remove()
-						//obutton.parent('.image-uploader-button').removeClass('disabled');
-						console.log(response);
+				data: {
+					amount: $('input[name="expense-amount"]').val(),
+					program_id: $('#expense_photo_upload').attr('data-program-id'),
+					memo: $('.memo').redactor('get')
+				},
+				success: function(response){
+					//var image = jQuery.parseJSON(response);
+					//$('.image-uploader-placeholder').val('');
+					//var imageContainer = $('.uploaded-images');
+					//var newImgContainer = $('<div class="image-container"><div class="delete-image">&#x2716;</div></div>')
+					//var newImg = $('<img src="" class="uploaded-image" />');
+					//newImg.attr('src', image[0]).attr('data-image-id', image[4]);
+					//newImgContainer.append(newImg);
+					//imageContainer.append(newImgContainer);
+					//obutton.html(obuttonhtml).siblings('.loading').remove()
+					//obutton.parent('.image-uploader-button').removeClass('disabled');
+					if(response != 'success'){
+						var error = '<p class="error">' + response + '</p>';
+						$('.new-expense .alert-messages').html(error);
 					}
-				})
+					else{
+						$('.new-expense').addClass('hidden');
+						$('.button.add-expense').show();
+					}
+				}
+			})
+		},
+		deleteExpense: function(){
+			console.log("delete")
+			var expense_id = $('.delete-expense').attr('data-expense-id');
 		}
 	});
 });

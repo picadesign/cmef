@@ -37,7 +37,7 @@
 		</div>
 		<div class="row">
 			<div class="six columns alpha gallery">
-				<div class="six columns alpha omega slideshow">
+				<div class="six columns alpha omega slideshow hidden">
 					<?php //THis needs work the images cannot span one columns because on small screens they blow up. ?>
 					<?php the_post_thumbnail($size = 'Project Slideshow', $attr = '') ?>
 					<?php 	
@@ -58,9 +58,9 @@
 						$image_query = new WP_Query( $image_args );
 						if ( $image_query->have_posts() ) :
 							while ( $image_query->have_posts() ) :
-								$image_query->the_post();
-								 echo wp_get_attachment_image( $post->ID, $size = 'Project Slideshow', true, array('data-large' => $post->guid, 'data-lightbox' => 'slideshow'));
-							endwhile;
+								$image_query->the_post();?>
+								 <a href="<?php echo wp_get_attachment_image_src($post->ID, 'large')[0] ?>" data-lightbox="slideshow"><?php echo wp_get_attachment_image( $post->ID, $size = 'Project Slideshow', true, array('data-large' => $post->guid, 'data-lightbox' => 'slideshow')); ?></a>
+							<?php endwhile;
 						endif;
 						wp_reset_postdata();
 					 ?>
@@ -242,7 +242,7 @@
 			</div>
 			<?php endif; ?>
 		</div>
-		<div class="row" id="tabs">
+		<div class="row hidden" id="tabs">
 			<div class="sixteen columns alpha omega">
 				<ul>
 					<li><h3><a href="#description">Description</a></h3></li>
@@ -308,6 +308,7 @@
 					<table id="expense-table" class="tablesorter">
 						<thead>
 							<tr>
+								<th class="dont-sort">Actions</th>
 								<th>Expense ID</th>
 								<th>Date</th>
 								<th>Amount</th>
@@ -325,16 +326,15 @@
 								);
 								$expense_query = new WP_Query( $expense_args );
 								if ( $expense_query->have_posts() ) :
-									$i = 1;
 									while ( $expense_query->have_posts() ) :
 										$expense_query->the_post(); ?>
-										 <tr class="<?php echo ($i%2 == 0 ? 'even' : 'odd') ?>">
+										 <tr>
+										 	<td><small><?php if(has_post_thumbnail()): ?><a href="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0] ?>" data-lightbox="receipts" data-title="<?php the_content() ?>">View Receipt</a><?php endif; ?><!--<div class="delete-expense action-item" data-expense-id="<?php echo $post->ID ?>">Delete</div>--></small></td>
 											<td><?php echo $post->ID ?></td>
 											<td><?php echo get_the_date(); ?></td>
-											<td><?php echo money_format('%.0n', (int) -get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; ?></td>
+											<td><?php echo money_format('-%.0n', (int) get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; ?></td>
 											<td><?php the_content(); ?></td>
 										</tr>
-										<?php $i++; ?>
 									<?php endwhile;
 								endif;
 								wp_reset_postdata();
@@ -352,6 +352,7 @@
 						<div class="eight columns alpha omega alert-messages">
 						
 						</div>
+						<div class="clear"></div>
 						<form class="" action="<?php echo get_bloginfo('url') . '/wp-admin/admin-ajax.php?&action=upload_expense_image' ?>" id="expense_photo_upload" data-program-id="<?php echo $post->ID ?>" enctype="multipart/form-data">
 							<div class="nine columns alpha">
 								<h4>Description</h4>
@@ -366,15 +367,92 @@
 								<h4>Upload Receipt</h4>
 								<input type="file" class="hidden" name="expense-image">
 								<input type="text" name="expense-image-name" disabled="disabled" placeholder="Select Image">
-								<div class="button green choose-expense-image alignleft"><span>Choose Image</span></div>
+								<div class="button green choose-expense-image alignleft"><span>Upload Receipt</span></div>
 							</div>
 						</form>
 						<div class="button green submit-expense alignright"><span>Add Expense</span></div>
 					</div>
 				</div>
 				<div class="sixteen columns alpha omega" id="balance">
-					Balance
+					<table>
 
+						<thead>
+							<tr>
+								<th>Transaction ID</th>
+								<th>Date</th>
+								<th>Description</th>
+								<th>Debit (Expense)</th>
+								<th>Check (Donation)</th>
+								<th>Balance</th>
+							</tr>
+						</thead>
+						<?php
+							$loop_args = array(
+								'post_type'   => array('expense', 'donation'),
+								//Custom Field Parameters
+								'meta_key'       => '_program-id',
+								'meta_value'     => $post->ID,
+								'posts_per_page' => -1,
+								'orderby' => 'date',
+								'order' => 'DESC'
+							);
+						?>
+						<tbody>
+							<?php 
+							$balance_query = new WP_Query( $loop_args );
+							$balance = 0;
+								if ( $balance_query->have_posts() ) :
+									//$i = 0;
+									while ( $balance_query->have_posts() ) :
+										$program_id = $post->ID;
+										$balance_query->the_post(); ?>
+										<tr>
+											<td><?php the_ID(); ?></td>
+											<td><?php echo get_the_date(); ?></td>
+											<td><?php the_content(); ?></td>
+											<td><?php if(get_post_meta( $post->ID, '_expense-amount', true) > 0){ ?><?php echo money_format('-%.0n', (int) get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; }?></td>
+											<td><?php if(get_post_meta( $post->ID, '_contribution-amount', true) > 0){ ?><?php echo money_format('%.0n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; }?></td>
+											<?php 
+												if($post->post_type == 'donation'){
+													$balance = $balance + (int)get_post_meta( $post->ID, '_contribution-amount', true);
+												}
+												elseif($post->post_type == 'expense'){
+													$balance = $balance - (int)get_post_meta( $post->ID, '_expense-amount', true);
+												}
+											?>
+											<?php
+												$balance_args = array(
+													'post_type'   => array('expense', 'donation'),
+													//Custom Field Parameters
+													'meta_key'       => '_program-id',
+													'meta_value'     => $program_id,
+													'posts_per_page' => -1,
+													'orderby' => 'date',
+													'order' => 'ASC'
+												);
+												$transaction_id = $post->ID;
+											?>
+											<?php 
+												$the_query = new WP_Query( $balance_args );
+												if ( $the_query->have_posts() ) :
+													$loop_balance = 0;
+
+													do ( $the_query->have_posts()) :
+														$the_query->the_post();	
+														if($transactio)
+
+													endwhile;
+												endif;
+												wp_reset_postdata();
+											?>
+											<td><?php echo money_format('%.0n', $loop_balance) . "\n";?></td>
+										</tr>
+									<?php endwhile;
+								endif;
+								wp_reset_postdata();
+							?>
+						</tbody>
+					</table>
 				</div>
 			<?php endif; ?>
 		</div>	

@@ -31,7 +31,7 @@
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array('editor'),
+		'supports'           => array('editor', 'thumbnail'),
 		'menu_icon'          => 'dashicons-minus'
 	);
 
