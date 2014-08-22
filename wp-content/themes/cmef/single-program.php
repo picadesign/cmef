@@ -394,7 +394,7 @@
 								'meta_value'     => $post->ID,
 								'posts_per_page' => -1,
 								'orderby' => 'date',
-								'order' => 'DESC'
+								'order' => 'ASC'
 							);
 						?>
 						<tbody>
@@ -420,32 +420,7 @@
 													$balance = $balance - (int)get_post_meta( $post->ID, '_expense-amount', true);
 												}
 											?>
-											<?php
-												$balance_args = array(
-													'post_type'   => array('expense', 'donation'),
-													//Custom Field Parameters
-													'meta_key'       => '_program-id',
-													'meta_value'     => $program_id,
-													'posts_per_page' => -1,
-													'orderby' => 'date',
-													'order' => 'ASC'
-												);
-												$transaction_id = $post->ID;
-											?>
-											<?php 
-												$the_query = new WP_Query( $balance_args );
-												if ( $the_query->have_posts() ) :
-													$loop_balance = 0;
-
-													do ( $the_query->have_posts()) :
-														$the_query->the_post();	
-														if($transactio)
-
-													endwhile;
-												endif;
-												wp_reset_postdata();
-											?>
-											<td><?php echo money_format('%.0n', $loop_balance) . "\n";?></td>
+											<td><?php echo money_format('%.0n', $balance) . "\n";?></td>
 										</tr>
 									<?php endwhile;
 								endif;
