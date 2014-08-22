@@ -142,7 +142,7 @@ html{
 	 * Buttons
 	 * Ect.
 	 */
-	a{
+	a, .action-item{
 		@extend .fonts.trade.condensed.regular;
 		font-size:1em;
 		color:$apple;
@@ -150,6 +150,8 @@ html{
 		text-decoration: none;
 		@include transition-property(all);
 		@include transition-duration(.1s);
+		display:inline;
+		cursor:pointer;
 
 		&:visited{
 			color:$apple;
@@ -734,5 +736,54 @@ section{
 				background: sprite($assets-sprite, double-arrows-bottom) no-repeat;
 			}
 		}
+
+		&.dont-sort{
+			cursor:auto;
+			&:after{
+				background:none;
+			}
+		}
+	}
+}
+
+.lightbox-container{
+	position:fixed;
+	height:100%;
+	width:100%;
+	background-color:rgba(0, 0, 0, .75);
+	top:0;
+	z-index:100;
+
+	.lightbox-image-container{
+		position:absolute;
+		top:50%;
+		left:50%;
+		background-color:white;
+		padding:10px;
+		overflow:visible;
+
+		.lightbox-close{
+			position:absolute;
+			top:-15px;
+			height:30px;
+			width:30px;
+			background-color:black;
+			z-index:101;
+		 	@include border-radius(15px);
+		 	right:-15px;
+		 	text-align: center;
+		 	color:white;
+		 	padding-top:4px;
+		 	cursor:pointer;
+		}
+	}
+
+	img{
+		position:absolute;
+		border:1px solid black;
+		//top:50%;
+		//left:50%;
+		//border:10px solid white;
+		//margin-top:10px;
 	}
 }
