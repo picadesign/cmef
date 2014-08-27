@@ -418,7 +418,7 @@
         $post = array(
             'post_type' => 'expense',
             'post_content' => $_POST['memo'],
-            'post_status' => 'publish'
+            'post_status' => 'draft'
         );
         if($_POST['expense-amount'] > 0){
             $new_expense = wp_insert_post($post);
@@ -489,6 +489,36 @@
         $program_type_response = wp_set_post_terms( $program_id, $program_type, 'program-type', false);
         $tfa_region_response = wp_set_post_terms( $program_id, $tfa_region, 'tfa-region', false );
         $grade_level_response = wp_set_post_terms( $program_id, $grade_level, 'grade-level', false );
+        die();
+    }
+
+    /**
+     * Add a rating to the resource
+     */
+    add_action('wp_ajax_add_rating', 'add_rating');
+    function add_rating(){
+        $ratings = get_post_meta($_POST['resource_id'], 'resource_rating', true);
+        if($_POST['rating'] == 1){
+            echo $_POST['rating'];
+            $ratings['one'] = (int) $ratings['one'] + 1;
+        }
+        elseif($_POST['rating'] == 2){
+            echo $_POST['rating'];
+            $ratings['two'] = (int) $ratings['two'] + 1;
+        }
+        elseif($_POST['rating'] == 3){
+            echo $_POST['rating'];
+            $ratings['three'] = (int) $ratings['three'] + 1;
+        }
+        elseif($_POST['rating'] == 4){
+            echo $_POST['rating'];
+            $ratings['four'] = (int) $ratings['four'] + 1;
+        }
+        elseif($_POST['rating'] == 5){
+            echo $_POST['rating'];
+            $ratings['five'] = (int) $ratings['five'] + 1;
+        }
+        update_post_meta($_POST['resource_id'], '_ratings', $ratings);
         die();
     }
     

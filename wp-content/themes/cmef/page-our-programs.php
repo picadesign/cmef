@@ -19,7 +19,23 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 		<div class="form row">
-			
+			<div class="sixteen columns alpha omega">
+				<form action="">
+					<div class="fourteen columns alpha"><input type="text" placeholder="Search" name="search"></div>
+					
+					<div class="two columns omega">
+						<div class="button green alignright"><span>Search</span></div>
+					</div>
+					<div class="clear"></div>
+					<div class="two columns alpha filter-by"><b>Filter by:</b></div>
+					<div class="two columns"><div class="button gray full-width filter"><span>Filter</span></div></div>
+					<div class="two columns"><div class="button gray full-width filter"><span>Status</span></div></div>
+					<div class="two columns"><div class="button gray full-width filter"><span>Regions</span></div></div>
+					<div class="two columns"><div class="button gray full-width filter"><span>Name</span></div></div>
+					<div class="two columns"><div class="button gray full-width filter"><span>Goal</span></div></div>
+					<div class="two columns omega"><div class="button gray full-width filter"><span>Date</span></div></div>
+				</form>
+			</div>
 		</div>
 	</div>
 
@@ -28,10 +44,11 @@
 	$query = parse_url($actual_link, PHP_URL_QUERY);
 	$vars = array();
 	parse_str($query, $vars);
-	print_r($vars);
+	print_r(the_search_query());
 	$args = array(
 		'post_type'   => 'program',
-		'posts_per_page' => -1
+		'posts_per_page' => -1,
+		's' => $vars['search']
 	);
 	$the_query = new WP_Query( $args ); ?>
 

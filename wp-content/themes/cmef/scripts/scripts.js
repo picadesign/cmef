@@ -370,12 +370,13 @@ jQuery(function ($) {
 
 	require(['models/models'], function(models) {
 		require(['collections/collections'], function(collections){
-			require(['views/home', 'views/start-a-program', 'views/our-programs', 'views/single-program'], function(){
+			require(['views/home', 'views/start-a-program', 'views/our-programs', 'views/single-program', 'views/resources-view'], function(){
 				var ApplicationRouter = Backbone.Router.extend({
 					routes: {
 						"start-a-program/": "NewProgram",
 						"our-programs/": "OurPrograms",
-						"program/:program_name/": "SingleProgram"
+						"program/:program_name/": "SingleProgram",
+						'resource/': 'Resources'
 						//"*actions": "home"
 					},
 					initialize: function() {
@@ -393,6 +394,9 @@ jQuery(function ($) {
 					},
 					SingleProgram: function(){
 						this.singleProgramView = new SingleProgramView();
+					},
+					Resources: function(){
+						this.resourcesView = new ResourcesView();
 					}
 				});
 

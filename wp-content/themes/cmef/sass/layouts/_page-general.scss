@@ -117,3 +117,45 @@
 		width:100%;	
 	}
 }
+
+.filter-by{
+	margin-top:6px;
+}
+
+.stars{
+	padding-left:10px;
+	overflow:auto;
+	.star{
+		float:left;
+		color:gold;
+		width:20px;
+		height:19px;
+		background: sprite($assets-sprite, star-no-fill) no-repeat;
+		cursor:pointer;
+		margin-right:2px;
+
+		&:hover, &.hovered{
+			background: sprite($assets-sprite, star-fill) no-repeat;
+		}
+	}
+}
+
+.documents{
+	padding:0;
+	margin-left:0;
+	li{
+		list-style: none;
+	}
+}
+.pdf{
+	&.icon{
+		width:32px;
+		height:32px;
+		margin-right:10px;
+		float:left;
+		background: sprite($assets-sprite, pdficon_large) no-repeat;
+	}
+	a{
+		padding-top:10px;
+	}
+}

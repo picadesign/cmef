@@ -89,6 +89,10 @@
 		@include sticky-footer(205px);
 		
 	}
+
+	@media print {
+		background:none;
+	}
 	
 @import "../fonts";
 @import "../../basics/theme-html-base";

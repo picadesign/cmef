@@ -1,5 +1,5 @@
-<?php
-	// Pretty self explanitory, but we are creating the Resource post type.
+<?php	
+	// Pretty self explanitory, but we are creating the program post type.
 	$labels = array(
 		'name'               => _x( 'Resources', 'post type general name'),
 		'singular_name'      => _x( 'Resource', 'post type singular name'),
@@ -30,7 +30,8 @@
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'thumbnail' ),
-		'menu_icon'          => 'dashicons-portfolio'
+		'menu_icon'          => 'dashicons-format-aside',
+		//'taxonomies' => array('tfa-region')
 	);
 
-	register_post_type( 'Resource', $args );
+	register_post_type( 'resource', $args );

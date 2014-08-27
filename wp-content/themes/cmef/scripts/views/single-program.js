@@ -1,7 +1,6 @@
 jQuery(function ($) {
 	SingleProgramView = Backbone.View.extend({
 		el: $('.white-background'),
-		template: cmef_settings.mustache_template_path + 'single-program-tmpl.html',
 		events: {
 			'click .button.edit-program': 'editProgram',
 			'click .button.save-program': 'saveProgram',
@@ -14,7 +13,9 @@ jQuery(function ($) {
 			'click .button.choose-expense-image': 'chooseExpenseImage',
 			'change input[name="expense-image"]': 'updateExpenseImageText',
 			'click .button.submit-expense': 'submitExpense',
-			'click .delete-expense': 'deleteExpense'
+			'click .delete-expense': 'deleteExpense',
+			'click .print': 'printParentElement',
+			'click .closediv': 'closeDiv'
 		},
 		initialize: function(){
 			this.$el.html(this.$el.html());
@@ -27,7 +28,7 @@ jQuery(function ($) {
 				slides: '> a'
 			});
 			$('.slideshow').removeClass('hidden')
-			$( "#tabs" ).tabs({active: 3});
+			$( "#tabs" ).tabs({active: 1});
 			$('#tabs').removeClass('hidden')
 			$.tablesorter.addParser({ 
 			    // set a unique id 
@@ -218,9 +219,10 @@ jQuery(function ($) {
 						var error = '<p class="error">' + response + '</p>';
 						$('.new-expense .alert-messages').html(error);
 					}
-					else{
+					else if(response == 'success'){
 						$('.new-expense').addClass('hidden');
 						$('.button.add-expense').show();
+						location.reload();
 					}
 				}
 			})
@@ -228,6 +230,13 @@ jQuery(function ($) {
 		deleteExpense: function(){
 			console.log("delete")
 			var expense_id = $('.delete-expense').attr('data-expense-id');
+		},
+		printParentElement: function(){
+			$('.print').parent().printElement();
+		},
+		closeDiv: function(){
+			$('.closediv').parent().addClass('hidden');
+			$('.add-expense').show();
 		}
 	});
 });

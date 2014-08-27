@@ -560,6 +560,51 @@ html{
  	&.button-margin{
  		margin-right:5px;
  	}
+
+ 	&.filter{
+ 		min-width:100%;
+ 		max-width:100%;
+ 		position:relative;
+ 		overflow:hidden;
+ 		padding:4px 0 3px 0;
+ 		span{
+	 		//position:relative;
+	 		//width:auto;
+	 		//width:100%;
+	 		margin:0 auto;
+	 	}
+
+ 		&:after{
+			content:'\00a0';
+			height:12px;
+			width:10px;
+			background: sprite($assets-sprite, double-arrows-top-bottom) no-repeat;
+			display:inline-block;
+			position:absolute;
+			margin-top:6px;
+			right:4px
+			//right:17px;
+		}
+
+		&.headerSortDown{
+			&:after{
+				background: sprite($assets-sprite, double-arrows-top) no-repeat;
+			}
+		}
+
+		&.headerSortUp{
+			&:after{
+				background: sprite($assets-sprite, double-arrows-bottom) no-repeat;
+			}
+		}
+
+		&.dont-sort{
+			cursor:auto;
+			&:after{
+				background:none;
+			}
+		}
+ 	}
  }
 
  .social{

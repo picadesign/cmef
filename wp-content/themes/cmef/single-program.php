@@ -39,7 +39,9 @@
 			<div class="six columns alpha gallery">
 				<div class="six columns alpha omega slideshow hidden">
 					<?php //THis needs work the images cannot span one columns because on small screens they blow up. ?>
-					<?php the_post_thumbnail($size = 'Project Slideshow', $attr = '') ?>
+					<?php if(has_post_thumbnail($post->ID)): ?>
+						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' )[0] ?>" data-lightbox="slideshow"><img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'Project Slideshow' )[0]; ?>"/></a>
+					<?php endif; ?>
 					<?php 	
 						/**
 						* The WordPress Query class.
@@ -53,7 +55,8 @@
 							'post_status' => 'inherit',
 							'post__not_in' => array(get_post_thumbnail_id( $post->ID )),
 							'orderby' => 'menu_order',
-							'order' => 'ASC'
+							'order' => 'ASC',
+							'number_posts' => -1
 						);
 						$image_query = new WP_Query( $image_args );
 						if ( $image_query->have_posts() ) :
@@ -217,7 +220,9 @@
 							<div class="button green image-uploader-choose-file"><span>Choose Image</span></div>
 						</div>
 						<div class="eight columns omega uploaded-images">
-							<div class="image-container"><div class="delete-image">&#x2716;</div><img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail')[0]; ?> " class="uploaded-image" data-image-id="<?php echo get_post_thumbnail_id() ?>"></div>
+							<?php if(has_post_thumbnail($post->ID)): ?>
+								<div class="image-container"><div class="delete-image">&#x2716;</div><img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail')[0]; ?> " class="uploaded-image" data-image-id="<?php echo get_post_thumbnail_id() ?>"></div>
+							<?php endif; ?>
 							<?php
 								$image_query = new WP_Query( $image_args );
 								if ( $image_query->have_posts() ) :
@@ -263,7 +268,7 @@
 					<thead>
 						<tr>
 							<th><b>Name</b></th>
-							<th><b>Email</b></th>
+							<th><b>Date</b></th>
 							<th><b>Amount</b></th>
 						</tr>
 					</thead>
@@ -282,21 +287,25 @@
 								'posts_per_page' => -1
 								
 							);
-						
+							$program_author = $post->post_author;
 							$donation_query = new WP_Query( $args );
 							if($donation_query->have_posts()):
 								$i = 1;
 								while($donation_query->have_posts()): $donation_query->the_post(); ?>
-									<?php if(get_post_meta($post->ID, '_remain-anonymous', true) === 'true') :?>
-									<?php else: ?>
 									<tr class="<?php echo ($i%2 == 0 ? 'even' : 'odd') ?>">
+									<?php if(get_post_meta($post->ID, '_remain-anonymous', true) === 'true') :?>
+										<td>Anonymous</td>
+									<?php elseif(is_user_logged_in() && $current_user->ID == $program_author): ?>
+										<td id="donation"><?php echo get_post_meta($post->ID, '_donor-name', true )['first'] ?> <?php echo get_post_meta($post->ID, '_donor-name', true )['last'] ?><a href="mailto:<?php echo antispambot('email@email.com') ?>" title="Send a Thank You to "><span class="mail small"></span></a></td>
+									<?php else: ?>
+										<td id="donation"><?php echo get_post_meta($post->ID, '_donor-name', true )['first'] ?> <?php echo get_post_meta($post->ID, '_donor-name', true )['last'] ?></td>
+									<?php endif; ?>
 										<td><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></td>
-										<td  id="donation"><a href="mailto:<?php echo antispambot('email@email.com') ?>" title="Send a Thank You to "><span class="mail small"></span>email@email.com</a></td>
 										<td><?php echo money_format('%.0n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; ?></td>
 									</tr>
-									<?php endif; ?>
-									<?php $i++; ?>
 								<?php endwhile;
+							else:
+								echo '<tr><td colspan="3">No Fundraising Activity</td></tr>';
 							endif;
 							wp_reset_postdata();
 						?>
@@ -344,6 +353,7 @@
 						</tbody>
 					</table>
 					<br>
+					<div class="button green print alignleft"><span>Print</span></div>
 					<div class="button green alignright add-expense"><span>Add Expense</span></div>
 					<div class="sixteen columns alpha omega new-expense hidden">
 						<hr>
@@ -371,6 +381,7 @@
 							</div>
 						</form>
 						<div class="button green submit-expense alignright"><span>Add Expense</span></div>
+						<div class="button green closediv alignright button-margin"><span>Close</span></div>
 					</div>
 				</div>
 				<div class="sixteen columns alpha omega" id="balance">
@@ -428,6 +439,8 @@
 							?>
 						</tbody>
 					</table>
+					<br>
+					<div class="button green print"><span>Print</span></div>
 				</div>
 			<?php endif; ?>
 		</div>	
