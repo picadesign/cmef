@@ -214,3 +214,9 @@ function pagination() {
         )) ?>
         </div><?php 
     }
+
+
+function update_balance($amount, $program_id){
+    $new_balance = $amount + get_post_meta($program_id, '_program-balance', true);
+    update_post_meta($program_id, '_program-balance', $new_balance);
+}

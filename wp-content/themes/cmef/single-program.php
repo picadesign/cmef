@@ -96,6 +96,7 @@
 									  'orderby' => 'name',
 									  'order' => 'ASC'
 									);
+
 									$tax_terms = get_terms($taxonomy,$term_args);
 									$post_terms = wp_get_post_terms( $post->ID, $taxonomy);
 								?>
@@ -125,6 +126,7 @@
 									  'orderby' => 'name',
 									  'order' => 'ASC'
 									);
+
 									$tax_terms = get_terms($taxonomy,$term_args);
 									$post_terms = wp_get_post_terms( $post->ID, $taxonomy);
 								?>
@@ -159,6 +161,7 @@
 									  'orderby' => 'name',
 									  'order' => 'ASC'
 									);
+									
 									$tax_terms = get_terms($taxonomy,$term_args);
 									$post_terms = wp_get_post_terms( $post->ID, $taxonomy);
 								?>

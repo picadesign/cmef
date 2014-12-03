@@ -91,6 +91,11 @@ jQuery(function ($) {
 	});
 	$('.new-program-description').redactor({ minHeight: 200 });
 
+
+
+
+
+
 	/**
 	 * Submit Donation Form
 	 */
@@ -202,7 +207,7 @@ jQuery(function ($) {
 
 	if($('input[name=donate_to_cmef]').is(':checked')){
 		cmef_donation = $('input[name=donate_to_cmef]').val();
-		total = parseInt(total + cmef_donation);
+		total = parseInt(total) + parseInt(cmef_donation);
 		$('.donate #total').html(total + '.00');
 		console.log(parseInt(cmef_donation));
 	}
@@ -223,13 +228,28 @@ jQuery(function ($) {
 	$('input[name=donate_to_cmef]').change(function(){
 		if(!$(this).is(':checked')){
 			cmef_donation = $(this).val();
-			total = parseInt(total - cmef_donation);
+			total = parseInt(total) - parseInt(cmef_donation);
 			$('.donate #total').html(total + '.00');
 		}
 		else{
 			cmef_donation = $(this).val();
-			total = parseInt(total + cmef_donation);
+			total = parseInt(total) + parseInt(cmef_donation);
 			$('.donate #total').html(total + '.00');	
+		}
+	});
+	var transaction_fee = 0;
+	$('input[name=pay_for_transaction]').change(function(){
+		var total = parseInt($('.donate #total').html());
+		if(!$(this).is(':checked')){
+			//cmef_donation = $(this).val();
+			total = parseInt(total) - parseFloat(transaction_fee);
+			$('.donate #total').html(parseFloat(total));
+		}
+		else{
+			//cmef_donation = $(this).val();
+			transaction_fee = parseFloat(total * .01);
+			total = parseInt(total) + parseFloat(transaction_fee);
+			$('.donate #total').html(parseFloat(total));	
 		}
 	});
 

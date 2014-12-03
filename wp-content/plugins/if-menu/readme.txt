@@ -2,7 +2,7 @@
 Contributors: andrei.igna
 Tags: menu, if, conditional, statements, hide, show, dispaly
 Requires at least: 3.7
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: trunk
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,11 +55,22 @@ function my_new_menu_conditions( $conditions ) {
 
 WordPress provides [a lot of functions](http://codex.wordpress.org/Conditional_Tags) which can be used to create conditional statements for almost any combination that a theme/plugin developer can think of.
 
+= Who made that really cool icon =
+
+Got the icons from here https://dribbble.com/shots/1045549-Light-Switches-PSD, so giving the credit to Louie Mantia
+
 == Screenshots ==
 
 1. Enable conditional statements for Menu Items
 
 == Changelog ==
+
+= 0.3 =
+
+Small update
+
+* Plugin icon
+* Set as compatible with WordPress 4
 
 = 0.2.1 =
 

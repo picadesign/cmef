@@ -8,7 +8,8 @@ get_header();
 			$args = array(
 				'post_type'   => 'program',
 				'posts_per_page' => 6,
-				'post__not_in' => array(276)
+				'post__not_in' => array(276),
+				
 			);
 			$the_query = new WP_Query( $args ); ?>
 			<?php // The Loop
@@ -20,7 +21,7 @@ get_header();
 				<?php endwhile; ?>
 				</div>
 			<?php else :; ?>
-				// no posts found
+				// no posts found  
 			<?php endif; ?>
 			<?php wp_reset_postdata(); ?>			
 			<hr>

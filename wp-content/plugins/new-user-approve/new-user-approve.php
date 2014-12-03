@@ -2,9 +2,9 @@
 /*
  Plugin Name: New User Approve
  Plugin URI: http://www.picklewagon.com/wordpress/new-user-approve/
- Description: Allow administrators to approve users once they register. Only approved users will be allowed to access the blog. For support, please go to the <a href="http://wordpress.org/support/plugin/new-user-approve">support forums</a> on wordpress.org.
+ Description: Allow administrators to approve users once they register. Only approved users will be allowed to access the site. For support, please go to the <a href="http://wordpress.org/support/plugin/new-user-approve">support forums</a> on wordpress.org.
  Author: Josh Harrison
- Version: 1.6
+ Version: 1.7.1
  Author URI: http://picklewagon.com/
  */
 
@@ -25,6 +25,9 @@ class pw_new_user_approve {
 	public static function instance() {
 		if ( !isset( self::$instance ) ) {
 			self::$instance = new pw_new_user_approve();
+
+			self::$instance->includes();
+			self::$instance->email_tags = new NUA_Email_Template_Tags();
 		}
 		return self::$instance;
 	}
@@ -44,14 +47,16 @@ class pw_new_user_approve {
 		add_action( 'new_user_approve_approve_user', array( $this, 'delete_new_user_approve_transient' ), 11 );
 		add_action( 'new_user_approve_deny_user', array( $this, 'delete_new_user_approve_transient' ), 11 );
 		add_action( 'deleted_user', array( $this, 'delete_new_user_approve_transient' ) );
-		add_action( 'register_post', array( $this, 'request_admin_approval_email' ), 10, 3 );
+		//add_action( 'register_post', array( $this, 'request_admin_approval_email' ), 10, 3 );
 		add_action( 'register_post', array( $this, 'create_new_user' ), 10, 3 );
 		add_action( 'lostpassword_post', array( $this, 'lost_password' ) );
 		add_action( 'user_register', array( $this, 'add_user_status' ) );
+		add_action( 'user_register', array( $this, 'request_admin_approval_email_2' ) );
 		add_action( 'new_user_approve_approve_user', array( $this, 'approve_user' ) );
 		add_action( 'new_user_approve_deny_user', array( $this, 'deny_user' ) );
 		add_action( 'new_user_approve_deny_user', array( $this, 'update_deny_status' ) );
 		add_action( 'admin_init', array( $this, 'verify_settings' ) );
+		add_action( 'wp_login', array( $this, 'login_user' ), 10, 2 );
 
 		// Filters
 		add_filter( 'wp_authenticate_user', array( $this, 'authenticate_user' ) );
@@ -67,6 +72,18 @@ class pw_new_user_approve {
 
 	public function get_plugin_dir() {
 		return plugin_dir_path( __FILE__ );
+	}
+
+	/**
+	 * Include required files
+	 *
+	 * @access private
+	 * @since 1.4
+	 * @return void
+	 */
+	private function includes() {
+		require_once( $this->get_plugin_dir() . 'includes/email-tags.php' );
+		require_once( $this->get_plugin_dir() . 'includes/messages.php' );
 	}
 
 	/**
@@ -117,8 +134,13 @@ class pw_new_user_approve {
 			add_user_meta( $user_id, 'pw_new_user_approve_settings_notice', '1', true );
 		}
 
+		// Don't show the error if the s2member plugin is active
+		if ( class_exists( 'c_ws_plugin__s2member_constants' ) ) {
+			return;
+		}
+
 		// Check that the user hasn't already clicked to ignore the message
-		if ( !get_user_meta( $user_id, 'pw_new_user_approve_settings_notice' ) ) {
+		if ( ! get_user_meta( $user_id, 'pw_new_user_approve_settings_notice' ) ) {
 			echo '<div class="error"><p>';
 			printf( __( 'The Membership setting must be turned on in order for the New User Approve to work correctly. <a href="%1$s">Update in settings</a>. | <a href="%2$s">Hide Notice</a>', 'new-user-approve' ), admin_url( 'options-general.php' ), add_query_arg( array( 'new-user-approve-settings-notice' => 1 ) ) );
 			echo "</p></div>";
@@ -347,17 +369,34 @@ class pw_new_user_approve {
 	}
 
 	/**
-	 * The default notification message that is sent to site admin when requesting approval.
+	 * Send email to admin requesting approval.
 	 *
-	 * @return string
+	 * @param $user_login username
+	 * @param $user_email email address of the user
 	 */
-	public function default_notification_message() {
-		$message = __( 'USERNAME (USEREMAIL) has requested a username at SITENAME', 'new-user-approve' ) . "\n\n";
-		$message .= "SITEURL\n\n";
-		$message .= __( 'To approve or deny this user access to SITENAME go to', 'new-user-approve' ) . "\n\n";
-		$message .= "ADMINURL\n\n";
+	public function admin_approval_email( $user_login, $user_email ) {
+		$default_admin_url = admin_url( 'users.php?s&pw-status-query-submit=Filter&new_user_approve_filter=pending&paged=1' );
+		$admin_url = apply_filters( 'new_user_approve_admin_link', $default_admin_url );
 
-		return $message;
+		/* send email to admin for approval */
+		$message = apply_filters( 'new_user_approve_request_approval_message_default', nua_default_notification_message() );
+
+		$message = nua_do_email_tags( $message, array(
+			'context' => 'request_admin_approval_email',
+			'user_login' => $user_login,
+			'user_email' => $user_email,
+			'admin_url' => $admin_url,
+		) );
+		$message = apply_filters( 'new_user_approve_request_approval_message', $message, $user_login, $user_email );
+
+		$subject = sprintf( __( '[%s] User Approval', 'new-user-approve' ), wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES ) );
+		$subject = apply_filters( 'new_user_approve_request_approval_subject', $subject );
+
+		$to = apply_filters( 'new_user_approve_email_admins', array( get_option( 'admin_email' ) ) );
+		$to = array_unique( $to );
+
+		// send the mail
+		wp_mail( $to, $subject, $message, $this->email_message_headers() );
 	}
 
 	/**
@@ -374,32 +413,22 @@ class pw_new_user_approve {
 			return;
 		}
 
-		// The blogname option is escaped with esc_html on the way into the database in sanitize_option
-		// we want to reverse this for the plain text arena of emails.
-		$blogname = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
+		$this->admin_approval_email( $user_login, $user_email );
+	}
 
-		$default_admin_url = admin_url( 'users.php?s&pw-status-query-submit=Filter&new_user_approve_filter=pending&paged=1' );
-		$admin_url = apply_filters( 'new_user_approve_admin_link', $default_admin_url );
+	/**
+	 * Send an email to the admin to request approval.
+	 *
+	 * @uses user_register
+	 * @param int $user_id
+	 */
+	public function request_admin_approval_email_2( $user_id ) {
+		$user = new WP_User( $user_id );
 
-		/* send email to admin for approval */
-		$message = apply_filters( 'new_user_approve_request_approval_message_default', $this->default_notification_message() );
+		$user_login = stripslashes( $user->data->user_login );
+		$user_email = stripslashes( $user->data->user_email );
 
-		$message = str_replace( 'USERNAME', $user_login, $message );
-		$message = str_replace( 'USEREMAIL', $user_email, $message );
-		$message = str_replace( 'SITENAME', $blogname, $message );
-		$message = str_replace( 'SITEURL', home_url(), $message );
-		$message = str_replace( 'ADMINURL', $admin_url, $message );
-
-		$message = apply_filters( 'new_user_approve_request_approval_message', $message, $user_login, $user_email );
-
-		$subject = sprintf( __( '[%s] User Approval', 'new-user-approve' ), $blogname );
-		$subject = apply_filters( 'new_user_approve_request_approval_subject', $subject );
-
-		$to = apply_filters( 'new_user_approve_email_admins', array( get_option( 'admin_email' ) ) );
-		$to = array_unique( $to );
-
-		// send the mail
-		$send = wp_mail( $to, $subject, $message, $this->email_message_headers() );
+		$this->admin_approval_email( $user_login, $user_email );
 	}
 
 	/**
@@ -427,20 +456,17 @@ class pw_new_user_approve {
 	}
 
 	/**
-	 * Admin approval of user
+	 * Determine whether a password needs to be reset.
 	 *
-	 * @uses new_user_approve_approve_user
+	 * password should only be reset for users that:
+	 * * have never logged in
+	 * * are just approved for the first time
+	 *
+	 * @return boolean
 	 */
-	public function approve_user( $user_id ) {
-		$user = new WP_User( $user_id );
-
-		// password should only be reset for users that:
-		// * have never logged in
-		// * are just approved for the first time
-
-		// If the password has already been reset for this user,
-		// $password_reset will be a unix timestamp
-		$password_reset = get_user_meta( $user_id, 'pw_user_approve_password_reset' );
+	public function do_password_reset( $user_id ) {
+		// Default behavior is to reset password
+		$do_password_reset = true;
 
 		// Get the current user status. By default each user is given a pending
 		// status when the user is created (with this plugin activated). If the
@@ -448,37 +474,30 @@ class pw_new_user_approve {
 		// have a status set.
 		$user_status = get_user_meta( $user_id, 'pw_user_status' );
 
-		// Default behavior is to reset password
-		$bypass_password_reset = false;
-
 		// if no status is set, don't reset password
 		if ( empty( $user_status ) ) {
-			$bypass_password_reset = true;
+			$do_password_reset = false;
 		}
 
-		// if the password has already been reset, absolutely bypass
-		if ( !empty( $password_reset ) ) {
-			$bypass_password_reset = true;
+		// if user has signed in, don't reset password
+		$user_has_signed_in = get_user_meta( $user_id, 'pw_new_user_approve_has_signed_in' );
+		if ( $user_has_signed_in ) {
+			$do_password_reset = false;
 		}
 
-		$bypass_password_reset = apply_filters( 'new_user_approve_bypass_password_reset', $bypass_password_reset );
+		// for backward compatability
+		$bypass_password_reset = apply_filters( 'new_user_approve_bypass_password_reset', !$do_password_reset );
 
-		if ( !$bypass_password_reset ) {
-			global $wpdb;
+		return apply_filters( 'new_user_approve_do_password_reset', !$bypass_password_reset );
+	}
 
-			// reset password to know what to send the user
-			$new_pass = wp_generate_password( 12, false );
-			$data = array( 'user_pass' => md5( $new_pass ), 'user_activation_key' => '', );
-			$where = array( 'ID' => $user->ID, );
-			$wpdb->update( $wpdb->users, $data, $where, array( '%s', '%s' ), array( '%d' ) );
-
-			// Set up the Password change nag.
-			update_user_option( $user->ID, 'default_password_nag', true, true );
-
-			// Set this meta field to track that the password has been reset by
-			// the plugin. Don't reset it again.
-			update_user_meta( $user->ID, 'pw_user_approve_password_reset', time() );
-		}
+	/**
+	 * Admin approval of user
+	 *
+	 * @uses new_user_approve_approve_user
+	 */
+	public function approve_user( $user_id ) {
+		$user = new WP_User( $user_id );
 
 		wp_cache_delete( $user->ID, 'users' );
 		wp_cache_delete( $user->data->user_login, 'userlogins' );
@@ -488,19 +507,14 @@ class pw_new_user_approve {
 		$user_email = stripslashes( $user->data->user_email );
 
 		// format the message
-		$message = apply_filters( 'new_user_approve_approve_user_message_default', $this->default_approve_user_message() );
+		$message = nua_default_approve_user_message();
 
-		$message = str_replace( 'USERNAME', sprintf( __( 'Username: %s', 'new-user-approve' ), $user_login ), $message );
-		if ( !$bypass_password_reset ) {
-			$message = str_replace( 'PASSWORD', sprintf( __( 'Password: %s', 'new-user-approve' ), $new_pass ), $message );
-		} else {
-			$message = str_replace( 'PASSWORD', '', $message );
-		}
-		$message = str_replace( 'USEREMAIL', $user_email, $message );
-		$message = str_replace( 'SITENAME', get_option( 'blogname' ), $message );
-		$message = str_replace( 'SITEURL', home_url(), $message );
-		$message = str_replace( 'LOGINURL', wp_login_url(), $message );
-
+		$message = nua_do_email_tags( $message, array(
+			'context' => 'approve_user',
+			'user' => $user,
+			'user_login' => $user_login,
+			'user_email' => $user_email,
+		) );
 		$message = apply_filters( 'new_user_approve_approve_user_message', $message, $user );
 
 		$subject = sprintf( __( '[%s] Registration Approved', 'new-user-approve' ), get_option( 'blogname' ) );
@@ -515,21 +529,6 @@ class pw_new_user_approve {
 		do_action( 'new_user_approve_user_approved', $user );
 	}
 
-	public function default_approve_user_message() {
-		$message = __( 'You have been approved to access SITENAME', 'new-user-approve' ) . "\r\n\r\n";
-		$message .= "USERNAME\r\n";
-		$message .= "PASSWORD\r\n\r\n";
-		$message .= "LOGINURL";
-
-		return $message;
-	}
-
-	public function default_deny_user_message() {
-		$message = sprintf( __( 'You have been denied access to %s.', 'new-user-approve' ), get_option( 'blogname' ) );
-
-		return $message;
-	}
-
 	/**
 	 * Send email to notify user of denial.
 	 *
@@ -542,14 +541,17 @@ class pw_new_user_approve {
 		$user_email = stripslashes( $user->user_email );
 
 		// format the message
-		$message = $this->default_deny_user_message();
+		$message = nua_default_deny_user_message();
+		$message = nua_do_email_tags( $message, array(
+			'context' => 'deny_user',
+		) );
 		$message = apply_filters( 'new_user_approve_deny_user_message', $message, $user );
 
 		$subject = sprintf( __( '[%s] Registration Denied', 'new-user-approve' ), get_option( 'blogname' ) );
 		$subject = apply_filters( 'new_user_approve_deny_user_subject', $subject );
 
 		// send the mail
-		@wp_mail( $user_email, $subject, $message, $this->email_message_headers() );
+		wp_mail( $user_email, $subject, $message, $this->email_message_headers() );
 	}
 
 	/**
@@ -584,14 +586,6 @@ class pw_new_user_approve {
 		return $headers;
 	}
 
-	public function default_registration_complete_message() {
-		$message = sprintf( __( 'An email has been sent to the site administrator. The administrator will review the information that has been submitted and either approve or deny your request.', 'new-user-approve' ) );
-		$message .= ' ';
-		$message .= sprintf( __( 'You will receive an email with instructions on what you will need to do next. Thanks for your patience.', 'new-user-approve' ) );
-
-		return $message;
-	}
-
 	/**
 	 * Display a message to the user after they have registered
 	 *
@@ -609,7 +603,10 @@ class pw_new_user_approve {
 			return $errors;
 		}
 
-		$message = $this->default_registration_complete_message();
+		$message = nua_default_registration_complete_message();
+		$message = nua_do_email_tags( $message, array(
+			'context' => 'pending_message',
+		) );
 		$message = apply_filters( 'new_user_approve_pending_message', $message );
 
 		$errors->add( 'registration_required', $message, 'message' );
@@ -645,18 +642,6 @@ class pw_new_user_approve {
 		}
 	}
 
-	public function default_welcome_message() {
-		$welcome = sprintf( __( 'Welcome to SITENAME. This site is accessible to approved users only. To be approved, you must first register.', 'new-user-approve' ), get_option( 'blogname' ) );
-		$welcome = apply_filters( 'new_user_approve_welcome_message_default', $welcome );
-
-		return $welcome;
-	}
-
-	public function default_registration_message() {
-		$message = __( 'After you register, your request will be sent to the site administrator for approval. You will then receive an email with further instructions.', 'new-user-approve' );
-
-		return $message;
-	}
 	/**
 	 * Add message to login page saying registration is required.
 	 *
@@ -666,10 +651,11 @@ class pw_new_user_approve {
 	 */
 	public function welcome_user( $message ) {
 		if ( !isset( $_GET['action'] ) ) {
-			$welcome = $this->default_welcome_message();
+			$welcome = nua_default_welcome_message();
+			$welcome = nua_do_email_tags( $welcome, array(
+				'context' => 'welcome_message',
+			) );
 			$welcome = apply_filters( 'new_user_approve_welcome_message', $welcome );
-
-			$welcome = str_replace( 'SITENAME', get_option( 'blogname' ), $welcome );
 
 			if ( !empty( $welcome ) ) {
 				$message .= '<p class="message register">' . $welcome . '</p>';
@@ -677,7 +663,10 @@ class pw_new_user_approve {
 		}
 
 		if ( isset( $_GET['action'] ) && $_GET['action'] == 'register' && !$_POST ) {
-			$instructions = $this->default_registration_message();
+			$instructions = nua_default_registration_message();
+			$instructions = nua_do_email_tags( $instructions, array(
+				'context' => 'registration_message',
+			) );
 			$instructions = apply_filters( 'new_user_approve_register_instructions', $instructions );
 
 			if ( !empty( $instructions ) ) {
@@ -716,6 +705,20 @@ class pw_new_user_approve {
 		$error_codes[] = 'denied_access';
 
 		return $error_codes;
+	}
+
+	/**
+	 * After a user successfully logs in, record in user meta. This will only be recorded
+	 * one time. The password will not be reset after a successful login.
+	 *
+	 * @uses wp_login
+	 * @param $user_login
+	 * @param $user
+	 */
+	public function login_user( $user_login, $user ) {
+		if ( ! get_user_meta( $user->ID, 'pw_new_user_approve_has_signed_in' ) ) {
+			add_user_meta( $user->ID, 'pw_new_user_approve_has_signed_in', time() );
+		}
 	}
 } // End Class
 

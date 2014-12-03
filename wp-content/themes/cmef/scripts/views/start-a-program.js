@@ -2,7 +2,7 @@ jQuery(function ($) {
 	StartProgramView = Backbone.View.extend({
 		el: $('.white-background.page.box-shadow'),
 		cachedEl: $('.white-background'),
-		template: cmef_settings.mustache_template_path + 'start-a-program-tmpl.html',
+		//template: cmef_settings.mustache_template_path + 'start-a-program-tmpl.html',
 		program_name_el: '#new_program input[name="program_name"]',
 		fundraising_goal_el: '#new_program input[name="fundraising_goal"]',
 		number_students_el: '#new_program input[name="number_students"]',
@@ -34,7 +34,11 @@ jQuery(function ($) {
 			'click .image-container .delete-image': 'deleteImage'
 		},
 		initialize: function(){
-			this.render();
+			$("#accordion").accordion({ 
+				animated: 'bounceslide',
+				collapsible: false, 
+				heightStyle: "content"
+			});
 		},
 		render: function(){
 			othis = this;
@@ -72,11 +76,7 @@ jQuery(function ($) {
 				othis.$el.append(rendered);
 				//othis.test = $('.new-program-description');
 				$(othis.program_description_el).redactor({minHeight: 200});
-				$("#accordion").accordion({ 
-					animated: 'bounceslide',
-					collapsible: false, 
-					heightStyle: "content"
-				});
+				
 				
 			});
 		},

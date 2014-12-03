@@ -3,8 +3,8 @@ Contributors: picklewagon
 Donate link: http://picklewagon.com/wordpress/new-user-approve/donate
 Tags: users, registration, sign up, user management, login
 Requires at least: 3.5.1
-Tested up to: 3.9.1
-Stable tag: 1.6
+Tested up to: 4.0
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,20 +34,25 @@ Each user that exists before New User Approve has been activated will be treated
 an approved user.
 
 Default WordPress registration process:
-1. User registers for access to site.
-2. Login credentials is sent to new user in an email.
-3. Admin is notified of new user signup via email.
+
+1. User registers.
+2. User is shown message to check email.
+3. Login credentials are sent to new user in an email.
 4. User logs in to site using login credentials.
+5. Admin is notified of new user sign up via email.
 
 WordPress registration process with New User Approve plugin activated:
+
 1. User registers for access to site.
 2. User is shown message to wait for approval.
-3. Admin is notified of new user signup via email.
-4. Admin goes to admin to approve or deny new user.
+3. Admin is notified of new user sign up via email.
+4. Admin goes to wp-admin to approve or deny new user.
 5. Email is sent to user. If approved, email will include login credentials.
 6. User logs in to site using login credentials.
 
 [Fork New User Approve on Github](https://github.com/picklewagon/new-user-approve)
+
+[newuserapprove.com](http://newuserapprove.com/)
 
 == Installation ==
 
@@ -99,6 +104,19 @@ as they have their username and passwords.
 5. Custom messages on the login screen.
 
 == Changelog ==
+
+= 1.7.1 =
+* fix code causing PHP notices
+* don't show admin notice for registration setting if S2Member plugin is active
+* fix issue causing empty password in approval email
+* update translation files
+
+= 1.7 =
+* email/message tags
+* refactor messages
+* send admin approval email after the user has been created
+* tested for WordPress 4.0
+* finish updates in preparation of option addon plugin
 
 = 1.6 =
 * improve actions and filters

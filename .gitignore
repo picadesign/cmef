@@ -8,3 +8,5 @@ Thumbs.db
 temp_csv_files/*
 wp-config.php
 .idea
+config.rb
+wp-content/themes/stylesheets/*

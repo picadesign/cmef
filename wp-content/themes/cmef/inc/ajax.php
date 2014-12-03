@@ -29,7 +29,7 @@
 		    	$program->percentage_raised = (47523/(int) $goal)*100;
                 //Also append the same data to an array for JS
     			$programsDataObject[] = $program;
-    			$program->amount_raised = money_format('%.0n', 15000) . "\n";
+    			$program->amount_raised = money_format('%.0n', get_post_meta($post->ID, '_program-balance', true)) . "\n";
     			$program->fundraiser_goal = money_format('%.0n', $goal) . "\n";
     			$program->twitter_url = get_post_meta($post->ID, '_social-networks', true)['twitter'];
     			$program->linkedin_url = get_post_meta($post->ID, '_social-networks', true)['linkedin'];
@@ -154,13 +154,14 @@
                 'last' => $last_name,
             );
             //Update the various needed post data.
+            
             update_post_meta($new_post_id, '_program-id', $program_id);
             update_post_meta($new_post_id, '_contribution-amount', $amount);
             update_post_meta($new_post_id, '_donation-address', $address);
             update_post_meta($new_post_id, '_donor-name', $name);
             update_post_meta( $new_post_id, '_payment-method', 'Credit Card' );
             update_post_meta( $new_post_id, '_remain-anonymous', $remain_anonymous);
-
+            update_balance($amount, $program_id);
             if($donate_to_cmef === 'true'){
                 //Create a donation for cmef.
                 $post = array(
@@ -375,18 +376,30 @@
                 'post_author' => $author,
                 'post_status' => $post_status
             );
+            //Create the new post
             $new_program_ID = wp_insert_post( $new_program );
+
+            //Update the new post meta
             update_post_meta($new_program_ID, '_fundraising-goal', $fundraising_goal);
             //update_post_meta($new_program_ID, '_school-name', $);
-            update_post_meta($new_program_ID, '_grade-level', $grade_level);
             update_post_meta($new_program_ID, '_number-students', $number_students);
-            update_post_meta($new_program_ID, '_tfa-region', $tfa_region);
+            update_post_meta($new_program_ID, '_program-balance', 0);
             //update_post_meta($new_program_ID, '_program-type', $program);
-            //
+            
+            //Update the new post taxonomies
+            wp_set_post_terms( $new_program_ID, $grade_level, 'grade-level', true);
+            wp_set_post_terms( $new_program_ID, $tfa_region, 'tfa-region', true);
+            //wp_set_post_terms( $new_program_ID, $grade_level, 'grade-level', true)
+
             $alerts = array(
                 'alert' => 'success',
                 'new_program' => get_the_permalink($new_program_ID),
-                'new_program_id' => $new_program_ID
+                'new_program_id' => $new_program_ID,
+                'updated-post-information' => $new_program,
+                'goal' => $fundraising_goal,
+                'grade_level' => $grade_level,
+                'number_students' => $number_students,
+                'tfa_region' => $tfa_region
             );
         }
 
@@ -404,6 +417,7 @@
 
         //print_r($_FILES['image']);
         $attachment_id = media_handle_upload('image', $_POST['program_id']);
+        set_post_thumbnail($_POST['program_id'], $attachment_id);
         $attachment = wp_get_attachment_image_src( $attachment_id );
         array_push($attachment, $attachment_id);
         echo json_encode($attachment);
