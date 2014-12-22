@@ -147,9 +147,9 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="four columns alpha"><b>School</b></td>
-								<td class="five columns alignleft school-name"><?php echo get_post_meta($post->ID, '_school-name', true ) ?></td>
-								<td class="five columns alignleft school-name-sel hidden"><input type="text" value="<?php echo get_post_meta($post->ID, '_school-name', true ) ?>"></td>
+								<td class="four columns alpha"><b>Organization Name</b></td>
+								<td class="five columns alignleft organization-name"><?php echo get_post_meta($post->ID, '_organization-name', true ) ?></td>
+								<td class="five columns alignleft organization-name-sel hidden"><input type="text" value="<?php echo get_post_meta($post->ID, '_organization-name', true ) ?>"></td>
 							</tr>
 							<tr>
 								<td class="four columns alpha"><b>Grade Level</b></td>

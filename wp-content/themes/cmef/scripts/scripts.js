@@ -156,8 +156,8 @@ jQuery(function ($) {
 		console.log(redirect);
 
 
-
-		$.post(ajaxurl, {
+		var secure_ajaxurl = ajaxurl.replace("http", "https");
+		$.post(secure_ajaxurl, {
 			action: 'process_donation',
 			amount: amount,
 			card_type: card_type,
@@ -390,13 +390,14 @@ jQuery(function ($) {
 
 	require(['models/models'], function(models) {
 		require(['collections/collections'], function(collections){
-			require(['views/home', 'views/start-a-program', 'views/our-programs', 'views/single-program', 'views/resources-view'], function(){
+			require(['views/home', 'views/start-a-program', 'views/our-programs', 'views/single-program', 'views/resources-view', 'views/profile'], function(){
 				var ApplicationRouter = Backbone.Router.extend({
 					routes: {
 						"start-a-program/": "NewProgram",
 						"our-programs/": "OurPrograms",
 						"program/:program_name/": "SingleProgram",
-						'resource/': 'Resources'
+						'resource/': 'Resources',
+						'author/:username/': 'ProfilePage'
 						//"*actions": "home"
 					},
 					initialize: function() {
@@ -417,6 +418,9 @@ jQuery(function ($) {
 					},
 					Resources: function(){
 						this.resourcesView = new ResourcesView();
+					},
+					ProfilePage: function(){
+						this.profileView = new ProfileView();
 					}
 				});
 

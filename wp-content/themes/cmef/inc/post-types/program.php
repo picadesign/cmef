@@ -47,10 +47,10 @@
 		<?php }
 		add_meta_box('fundraising-goal', __('Fundraising Goal'), 'fundraising_goal_admin', 'program', 'side', 'core');
 
-		function school_name_admin($post){ ?>
-			<input type="text" value="<?php echo get_post_meta( $post->ID, '_school-name', true );  ?>" name="school-name" placeholder="Your School Name">
+		function organization_name_admin($post){ ?>
+			<input type="text" value="<?php echo get_post_meta( $post->ID, '_organization-name', true );  ?>" name="organization-name" placeholder="Your Organization Name">
 		<?php }
-		add_meta_box( 'school-name', __('School Name'), 'school_name_admin', 'program', 'side', 'core' );
+		add_meta_box( 'organization-name', __('Organization Name'), 'organization_name_admin', 'program', 'side', 'core' );
 
 		function number_students_admin($post){ ?>
 			<input type="number" name="number-students" value="<?php echo get_post_meta( $post->ID, '_number-students', true );  ?>">
@@ -142,6 +142,7 @@
 		update_post_meta($post_id, '_number-students', $_POST['number-students'] );
 		update_post_meta($post_id, '_tfa-region', $_POST['tfa-region'] );
 		update_post_meta($post_id, '_program-type', $_POST['program-type'] );
+		update_post_meta($post_id, '_organization-name', $_POST['organization-name'] );
 
 		$social = array(
 			'google' => $_POST['google-plus'],

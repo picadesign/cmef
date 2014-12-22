@@ -31,7 +31,8 @@ jQuery(function ($) {
 			'change .image-uploader': 'updateImageInputBox',
 			'click .button.image-uploader-button': 'uploadImage',
 			'click .uploaded-image': 'setFeaturedImage',
-			'click .image-container .delete-image': 'deleteImage'
+			'click .image-container .delete-image': 'deleteImage',
+			'click .program-complete': 'programRedirect'
 		},
 		initialize: function(){
 			$("#accordion").accordion({ 
@@ -111,7 +112,7 @@ jQuery(function ($) {
 			var last_name = $(this.last_name_el).val();
 			var corps_year = $(this.corps_year_el).val();
 			var phone = $(this.phone_el).val();
-			var street_1 = $(this.street_1_el).val();
+			var street_1 = $(this.street_1_el).val(); 
 			var street_2 = $(this.street_2_el).val();
 			var city = $(this.city_el).val();
 			var state = $(this.state_el).val();
@@ -120,7 +121,7 @@ jQuery(function ($) {
 
 			var obutton = $("#submit-registration .button-text");
 			obuttonhtml = obutton.html()
-			obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('#submit-registration').addClass('disabled')
+			obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('#submit-registration').addClass('disabled')
 
 			$.post(ajaxurl, {
 				action: 'new_registration',
@@ -157,11 +158,12 @@ jQuery(function ($) {
 			var tfa_region = $(this.tfa_region_el).val();
 			var author = $('#new_program').attr('data-user-id');
 			var description = $(this.program_description_el).redactor('get');
+			var organization_name = $('input[name=school_name]').val();
 
 			//Change the state of the button
 			var obutton = $("#submit-new-program .button-text");
 			obuttonhtml = obutton.html()
-			obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('#submit-new-program').addClass('disabled')
+			obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('#submit-new-program').addClass('disabled')
 
 			$.post(ajaxurl, {
 				action: 'new_program',
@@ -171,7 +173,8 @@ jQuery(function ($) {
 				grade_level: grade_level,
 				tfa_region: tfa_region,
 				author: author,
-				description: description
+				description: description,
+				organization_name: organization_name
 			}, function(response){
 				var alerts = jQuery.parseJSON(response);
 				othis.alertAction(response);
@@ -181,6 +184,7 @@ jQuery(function ($) {
 				// If everything processes correctly we should see a success message and if that is there we will some information to the DOM for the photo uploader to get.
 				if(alerts.alert === 'success'){
 					$('#photo_upload').attr('data-new-program-id', alerts.new_program_id)
+					$('.program-complete').attr('href', alerts.new_program)
 				}
 			});
 		},
@@ -244,6 +248,9 @@ jQuery(function ($) {
 					$(ev.target).parent('.image-container').remove();
 				}
 			})
+		},
+		programRedirect: function(ev){
+
 		}
 	});
 });

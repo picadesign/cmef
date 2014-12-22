@@ -43,7 +43,7 @@
 						<input type="text" name="program_name" placeholder="Program Name *">
 						<input type="number" name="fundraising_goal" placeholder="Fundraising Goal">
 						<input type="number" name="number_students" placeholder="Number of Students *">
-						<input type="number" name="school_name" placeholder="School or Organization Name *">
+						<input type="text" name="school_name" placeholder="School or Organization Name *">
 					</div>
 					<div class="eight columns omega">
 					<b>Grade Level: </b>

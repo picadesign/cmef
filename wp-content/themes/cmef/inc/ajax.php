@@ -43,7 +43,7 @@
     	die(); 
     }//ajax_fetch_programs
 
-    //Save Author
+    //Save Author (for some reason this was already here. It's been a few months and I don't remember what exactly this was for because I didnt find a view that used this... Delete this when we are positive that we are not using it.)
     add_action('wp_ajax_save_author', 'ajax_save_author');
     function ajax_save_author(){
         global $post;
@@ -68,6 +68,22 @@
         die();
     }//end ajax_save_author
 
+    add_action('wp_ajax_save_profile', 'save_profile');
+    function save_profile(){
+        global $post;
+
+        $user_id = wp_update_user(array(
+            'ID' => $author_ID,
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'description' => $description,
+            'display_name' => $first_name . ' ' . $last_name,
+            'user_email' => $email_address
+        ));
+        // TODO: Finish the save_profile function.
+
+        die();
+    }
     /**
      * Process Donation with Authorize.NET
      */
@@ -295,7 +311,8 @@
             $userdata = array(
                 'user_pass' => wp_generate_password(),
                 'user_login' => $username,
-                'user_nicename' => $first_name . ' ' . $last_name,
+                'user_nicename' => $username,
+                'display_name' => $first_name . ' ' . $last_name,
                 'user_email' => $email,
                 'first_name' => $first_name,
                 'last_name' => $last_name,
@@ -335,21 +352,22 @@
         $tfa_region = $_POST['tfa_region'];
         $author = $_POST['author'];
         $description = $_POST['description'];
+        $organization_name = $_POST['organization_name'];
 
         if(strlen($program_name) === 0){
             $alerts = array(
-                'alert' => "You must enter a program name."
+                'alert' => "Please enter a program name."
             );
             //echo strlen($program_name);
         }
         elseif(strlen($fundraising_goal) === 0){
             $alerts = array(
-                'alert' => "You must enter a fundraising goal."
+                'alert' => "Please enter a fundraising goal."
                 );
         }
         elseif(strlen($number_students) === 0){
             $alerts = array(
-                'alert' => "You must enter the number of students this program is for."
+                'alert' => "Please enter the number of students this program is for."
                 );
         }
         elseif(strlen($grade_level) === 0){
@@ -367,6 +385,11 @@
                 'alert' => "Please enter a description about your program."
                 );
         }
+        elseif(strlen($organization_name) === 0 ){
+            $alerts = array(
+                'alert' => "Please enter an organization name."
+            );
+        }
         else{
             $post_status = (is_user_logged_in() == true ? 'publish' : 'draft');
             $new_program = array(
@@ -381,7 +404,7 @@
 
             //Update the new post meta
             update_post_meta($new_program_ID, '_fundraising-goal', $fundraising_goal);
-            //update_post_meta($new_program_ID, '_school-name', $);
+            update_post_meta($new_program_ID, '_organization-name', $organization_name);
             update_post_meta($new_program_ID, '_number-students', $number_students);
             update_post_meta($new_program_ID, '_program-balance', 0);
             //update_post_meta($new_program_ID, '_program-type', $program);
@@ -399,7 +422,8 @@
                 'goal' => $fundraising_goal,
                 'grade_level' => $grade_level,
                 'number_students' => $number_students,
-                'tfa_region' => $tfa_region
+                'tfa_region' => $tfa_region,
+                'organization_name' => $organization_name
             );
         }
 
@@ -481,7 +505,7 @@
     add_action('wp_ajax_update_program', 'update_program');
     function update_program(){
         $program_id = $_POST['program_id'];
-        $school_name = $_POST['school_name'];
+        $organization_name = $_POST['organization_name'];
         $number_students = $_POST['number_students'];
         $program_type = $_POST['program_type'];
         $tfa_region = $_POST['tfa_region'];
@@ -497,7 +521,7 @@
         // Update the post into the database
         wp_update_post( $program );
 
-        update_post_meta($program_id, '_school-name', $school_name);
+        update_post_meta($program_id, '_organization-name', $organization_name);
         update_post_meta($program_id, '_number-students', $number_students);
         update_post_meta($program_id, '_fundraising-goal', $goal);
         $program_type_response = wp_set_post_terms( $program_id, $program_type, 'program-type', false);

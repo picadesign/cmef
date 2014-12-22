@@ -31,7 +31,7 @@
                     <div id="top-header">
                         <div id="logo" class=""><a href="<?php bloginfo('url') ?>"></a></div>
                         <?php if(is_user_logged_in()) : ?>
-                            <div class="logged-in alignright">Hello <span class="author-name"><a href="<?php echo get_author_posts_url( $current_user->ID, $current_user->user_nicename ); ?>"><?php echo $current_user->user_nicename; ?></a></span> | <span id="logout"><a href="<?php echo wp_logout_url("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"); ?>" title="Logout">LOG OUT</a></span></div>
+                            <div class="logged-in alignright">Hello <span class="author-name"><a href="<?php echo get_author_posts_url( get_current_user_id() ); ?>"><?php echo $current_user->display_name; ?></a></span> | <span id="logout"><a href="<?php echo wp_logout_url("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"); ?>" title="Logout">LOG OUT</a></span></div>
                         <?php endif; ?>
                     </div>
                 </header>

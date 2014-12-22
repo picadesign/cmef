@@ -74,8 +74,8 @@ jQuery(function ($) {
 			$('.program-type-sel').removeClass('hidden');
 			$('.grade-level').hide();
 			$('.grade-level-sel').removeClass('hidden');
-			$('.school-name').hide();
-			$('.school-name-sel').removeClass('hidden');
+			$('.organization-name').hide();
+			$('.organization-name-sel').removeClass('hidden');
 			$('.number-students').hide();
 			$('.number-students-sel').removeClass('hidden');
 			$('.goal-sel-row').removeClass('hidden');
@@ -88,7 +88,7 @@ jQuery(function ($) {
 			//Get the values from the form items
 			var program_type = $('.select #program-type option:selected').attr('data-term-id')
 			var tfa_region = $('.select #tfa-region option:selected').attr('data-term-id')
-			var school_name = $('.school-name-sel input').val()
+			var organization_name = $('.organization-name-sel input').val()
 			var grade_level = $('.select #grade-level option:selected').attr('data-term-id')
 			var number_students = $('.number-students-sel input').val()
 			var description = $('.description').redactor('get');
@@ -100,7 +100,7 @@ jQuery(function ($) {
 				action: 'update_program',
 				program_type: program_type,
 				tfa_region: tfa_region,
-				school_name: school_name,
+				organization_name: organization_name,
 				grade_level: grade_level,
 				number_students: number_students,
 				description: description,
@@ -114,8 +114,8 @@ jQuery(function ($) {
 				$('.program-type-sel').addClass('hidden');
 				$('.grade-level').html($('.select #grade-level option:selected').val()).show();
 				$('.grade-level-sel').addClass('hidden');
-				$('.school-name').html($('.school-name-sel input').val()).show();
-				$('.school-name-sel').addClass('hidden');
+				$('.organization-name').html($('.organization-name-sel input').val()).show();
+				$('.organization-name-sel').addClass('hidden');
 				$('.number-students').html($('.number-students-sel input').val()).show();
 				$('.number-students-sel').addClass('hidden');
 				$('.goal-sel-row').addClass('hidden');
