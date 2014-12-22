@@ -58,6 +58,13 @@
 				<div class="edit-author-meta-information">
 					<hr>
 					<h2>Edit Profile</h2>
+					<br>
+					<div class="sixteen columns alpha omega">
+						<div class="alert-messages">
+							
+						</div>
+					</div>
+					<div class="clear"></div>
 					<form action="" autocomplete="off">
 						<input type="hidden" name="author_id" value="<?php echo $curauth->ID ?>">
 						<div class="eight columns alpha">

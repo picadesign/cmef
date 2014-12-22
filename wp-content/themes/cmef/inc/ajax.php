@@ -70,20 +70,53 @@
 
     add_action('wp_ajax_save_profile', 'save_profile');
     function save_profile(){
-        global $post;
+        global $post , $current_user;
 
         $user_id = wp_update_user(array(
-            'ID' => $author_ID,
-            'first_name' => $first_name,
-            'last_name' => $last_name,
-            'description' => $description,
-            'display_name' => $first_name . ' ' . $last_name,
-            'user_email' => $email_address
+            'ID' => $_POST['author_ID'],
+            'first_name' => $_POST['first_name'],
+            'last_name' => $_POST['last_name'],
+            'description' => $_POST['description'],
+            'display_name' => $_POST['first_name'] . ' ' . $_POST['last_name'],
+            'user_email' => $_POST['email_address'],
         ));
         // TODO: Finish the save_profile function.
+        update_user_meta( $user_id, 'phone', $_POST['phone']);
+        update_user_meta( $user_id, 'street-1', $_POST['street1']);
+        update_user_meta( $user_id, 'street-2', $_POST['street2']);
+        update_user_meta( $user_id, 'city', $_POST['city']);
+        update_user_meta( $user_id, 'state', $_POST['state']);
+        update_user_meta( $user_id, 'zip', $_POST['zip']);
+        $response = array();
+        if(wp_check_password($_POST['old_password'], $current_user->user_pass, $user_id)){
+            if($_POST['new_password'] != $_POST['conf_new_password']){
+                $response['status'] = 'error';
+                $response['message'] = 'Please check and confirm that your new passwords match.';
+            }
+            elseif(strlen($_POST['new_password']) < 8 || strlen($_POST['conf_new_password']) < 8 ){
+                $response['status'] = 'error';
+                $response['message'] = 'Your new password must be longer than eight characters.';
+            }
+            elseif($_POST['new_password'] == $_POST['conf_new_password'] && strlen($_POST['new_password']) > 8 || strlen($_POST['conf_new_password']) > 8 ){
+                //change password
+                $response['status'] = 'success';
+                wp_set_password( $_POST['new_password'], $user_id );
+            }
+        }
+        elseif (strlen($_POST['old_password']) > 0 & !wp_check_password($_POST['old_password'], $current_user->user_pass, $user_id)) {
+            $response['status'] = 'error';
+            $response['message'] = "Your existing password doesn't seem to match what we have on file.";
+        }
+        else{
+            $response['status'] = 'success';
+        }
+
+        echo json_encode($response);
 
         die();
     }
+
+
     /**
      * Process Donation with Authorize.NET
      */

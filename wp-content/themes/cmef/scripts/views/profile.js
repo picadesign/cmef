@@ -17,17 +17,11 @@ jQuery(function ($) {
 			$('#redactor').redactor();
 		},
 		saveProfile: function(){
-			$('.edit.button').toggle();
-			$('.save.button').toggle();
-			$('.edit-author-meta-information').toggle();
-
 			var $inputs = $('.edit-author-meta-information form :input');
-
 			var values = {};
 			$inputs.each(function(){
 				values[this.name] = $(this).val();
 			})
-			console.log(values);
 
 			$.post(ajaxurl, {
 				action: 'save_profile',
@@ -42,12 +36,21 @@ jQuery(function ($) {
 				state: values['state'],
 				old_password: values['old_password'],
 				new_password: values['new_password'],
-				conf_new_password: values['conf_new_password']
+				conf_new_password: values['conf_new_password'],
+				phone: values['phone_number'],
+				email_address: values['email_address']
 			}, function(response){
 				response = JSON.parse(response);
-				if(response){
+				if(response.status == 'error'){
 					console.log(response);	
+					var error = '<p class="error">' + response.message + '</p>';
+						$('.edit-author-meta-information .alert-messages').html(error);
 				}else{
+					$('.edit.button').toggle();
+					$('.save.button').toggle();
+					$('.edit-author-meta-information').toggle();
+					$('#redactor').redactor('destroy');
+					//TODO: website is throwing all sort of require.js errors try reversing what I did on this and the previous ajax file. 
 					//window.location.href = redirect;
 				}
 			});
