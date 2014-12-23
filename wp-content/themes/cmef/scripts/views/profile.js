@@ -54,6 +54,6 @@ jQuery(function ($) {
 					//window.location.href = redirect;
 				}
 			});
-			}
+		}
 	});
 });

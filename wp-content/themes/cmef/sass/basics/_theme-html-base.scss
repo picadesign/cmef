@@ -555,6 +555,10 @@ html{
 		&:hover, &.disabled{
 			background-color:$thatch-green;
 		}
+
+		&.save{
+			padding-top: 9px;
+		}
  	}
 
  	&.button-margin{

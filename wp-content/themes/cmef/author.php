@@ -17,7 +17,7 @@
 				</div>
 				<?php if($current_user->ID === $curauth->ID): ?>
 					<div class="one-third alignleft new-avatar">
-						<?php echo do_shortcode('[avatar_upload]' ); ?>
+						<?php //echo do_shortcode('[avatar_upload]' ); ?>
 					</div> 
 				<?php endif; ?>
 			</div>
@@ -122,7 +122,7 @@
 		<?php endwhile; ?>
 		</div>
 	<?php else :; ?>
-		// no posts found
+		
 	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
 	<div class="clear"></div>

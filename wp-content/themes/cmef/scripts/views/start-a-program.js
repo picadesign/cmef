@@ -201,7 +201,7 @@ jQuery(function ($) {
 			$('.alert-messages').html('');
 			if($('.image-uploader-placeholder').val() != ''){
 				obuttonhtml = obutton.html()
-				obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('.image-uploader-button').addClass('disabled')
+				obutton.text('Please Wait').after('<span class="loading" style="padding-top:8px;"><img src="../wp-content/themes/cmef/images/waiting.gif" alt="" /></span>').parent('.image-uploader-button').addClass('disabled')
 				$('#photo_upload').ajaxSubmit({
 					data: {
 						program_id: $('#photo_upload').attr('data-new-program-id')
