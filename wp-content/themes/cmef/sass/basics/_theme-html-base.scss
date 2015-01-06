@@ -571,6 +571,7 @@ html{
  		position:relative;
  		overflow:hidden;
  		padding:4px 0 3px 0;
+ 		
  		span{
 	 		//position:relative;
 	 		//width:auto;
@@ -590,13 +591,13 @@ html{
 			//right:17px;
 		}
 
-		&.headerSortDown{
+		&.headerSortUp{
 			&:after{
 				background: sprite($assets-sprite, double-arrows-top) no-repeat;
 			}
 		}
 
-		&.headerSortUp{
+		&.headerSortDown{
 			&:after{
 				background: sprite($assets-sprite, double-arrows-bottom) no-repeat;
 			}

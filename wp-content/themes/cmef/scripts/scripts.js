@@ -111,6 +111,7 @@ jQuery(function ($) {
 		var amount;
 		if($('input[name=amount]:checked').val() === 'other'){
 			amount = $('input[name=otheramount]').val();
+			amount = parseInt(amount);
 		}
 		else{
 			amount = $('input[name=amount]:checked').val()
@@ -119,14 +120,13 @@ jQuery(function ($) {
 		var donate_to_cmef = true;
 		if($('input[name=donate_to_cmef]').is(":checked")){
 			donate_to_cmef = true;
-			amount = amount + 5;
 		}
 		else{
 			donate_to_cmef = false;
 		}
 
 		var pay_for_transaction = true;
-		if($('input[name=pay_for_transaction').val() == 'on'){
+		if($('input[name=pay_for_transaction').is(':checked')){
 			pay_for_transaction = true;
 		}
 		else{
@@ -153,11 +153,12 @@ jQuery(function ($) {
 		var state = $('select[name=state]').val();
 		var redirect = $('input[name=thank_you_url]').val();
 		var program_id = $('input[name=program_id]').val();
+		var email = $('input[name=email]').val()
 		console.log(redirect);
 
 
 		var secure_ajaxurl = ajaxurl.replace("http", "https");
-		$.post(secure_ajaxurl, {
+		$.post(ajaxurl, {
 			action: 'process_donation',
 			amount: amount,
 			card_type: card_type,
@@ -174,7 +175,8 @@ jQuery(function ($) {
 			donate_to_cmef: donate_to_cmef,
 			pay_for_transaction: pay_for_transaction,
 			program_id: program_id,
-			remain_anonymous: remain_anonymous
+			remain_anonymous: remain_anonymous,
+			email: email
 		}, function(response){
 			//console.log(response);
 			var authorization = JSON.parse(response);
@@ -188,70 +190,67 @@ jQuery(function ($) {
 			}
 		});
 	});
-	var total = parseInt(0);
-	var donation_amount = parseInt(0);
-	var cmef_donation = parseInt(0);
+
+	//Below is used to updated the total donation text. DOES NOT CONTROL THE ACTUAL AUTHORIZED AMOUNT. THAT IS CONTROLLED ABOVE
 	$('input[name=amount]').change(function(){
-		if($(this).val() === 'other'){
-			$('input[name=otheramount][type=number]').removeAttr('disabled');
+		if($(this).val() == 'other'){
+    		$('input[name=otheramount]').prop('disabled', false);
+			amount = 0;
 		}
 		else{
-			$('input[name=otheramount][type=number]').attr('disabled', 'disabled');
-			donation_amount = parseInt($(this).val());
-			console.log(donation_amount);
+			$('input[name=otheramount]').prop('disabled', true);
+			amount = parseInt($(this).val())
 		}
-		cmef_donation = parseInt(cmef_donation);
-		total = Math.floor(cmef_donation + donation_amount);
-		$('.donate #total').html(total + '.00');
-	});
-
-	if($('input[name=donate_to_cmef]').is(':checked')){
-		cmef_donation = $('input[name=donate_to_cmef]').val();
-		total = parseInt(total) + parseInt(cmef_donation);
-		$('.donate #total').html(total + '.00');
-		console.log(parseInt(cmef_donation));
-	}
-
-	$('input[name=otheramount]').change(function(){
-			donation_amount = parseInt($(this).val());
-			console.log(donation_amount);
-			total = Math.floor(cmef_donation + donation_amount);
-			$('.donate #total').html(total + '.00');
+		if($('input[name=pay_for_transaction]').is(':checked')){
+			amount += .10;
+		}
+		if($('input[name=donate_to_cmef]').is(':checked')){
+			amount += 5;
+		}
+		$('#donation-form #total').html(amount.toFixed(2))
+		console.log(amount)
 	})
 
-	$("input[name=otheramount]").bind('click keyup mouseup', function () {
-		donation_amount = parseInt($(this).val());
-			total = Math.floor(cmef_donation + donation_amount);
-			$('.donate #total').html(total + '.00');
-	});
+	$('input[name=otheramount]').bind('change keydown keyup',function(){
+		amount = parseFloat($(this).val())
+		if($('input[name=pay_for_transaction]').is(':checked')){
+			amount += .10;
+		}
+		if($('input[name=donate_to_cmef]').is(':checked')){
+			amount += 5;
+		}
+		$('#donation-form #total').html(amount.toFixed(2))
+		console.log(amount)
+	})
+
+	$('input[name=pay_for_transaction]').change(function(){
+		amount = $('#donation-form #total').html();
+		amount = parseFloat(amount);
+
+		if($('input[name=pay_for_transaction]').is(':checked')){
+			amount += .10;
+		}
+		else{
+			amount -= .10;
+		}
+		$('#donation-form #total').html(amount.toFixed(2))
+		console.log(amount)
+	})
 
 	$('input[name=donate_to_cmef]').change(function(){
-		if(!$(this).is(':checked')){
-			cmef_donation = $(this).val();
-			total = parseInt(total) - parseInt(cmef_donation);
-			$('.donate #total').html(total + '.00');
+		amount = $('#donation-form #total').html();
+		amount = parseFloat(amount);
+
+		if($('input[name=donate_to_cmef]').is(':checked')){
+			amount += 5;
 		}
 		else{
-			cmef_donation = $(this).val();
-			total = parseInt(total) + parseInt(cmef_donation);
-			$('.donate #total').html(total + '.00');	
+			amount -= 5;
 		}
-	});
-	var transaction_fee = 0;
-	$('input[name=pay_for_transaction]').change(function(){
-		var total = parseInt($('.donate #total').html());
-		if(!$(this).is(':checked')){
-			//cmef_donation = $(this).val();
-			total = parseInt(total) - parseFloat(transaction_fee);
-			$('.donate #total').html(parseFloat(total));
-		}
-		else{
-			//cmef_donation = $(this).val();
-			transaction_fee = parseFloat(total * .01);
-			total = parseInt(total) + parseFloat(transaction_fee);
-			$('.donate #total').html(parseFloat(total));	
-		}
-	});
+		$('#donation-form #total').html(amount.toFixed(2))
+		console.log(amount)
+	})
+
 
 
 

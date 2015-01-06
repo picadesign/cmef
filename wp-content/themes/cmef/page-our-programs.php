@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); global $query_string, $wp_query;?>
 	<div class="white-background page box-shadow">
 		<div class="row">
 			<div class="sixteen columns alpha omega">
@@ -10,58 +10,98 @@
 				</div>
 			</div>
 		</div>
+		<?php
+			$actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$query = parse_url($actual_link, PHP_URL_QUERY);
+			$vars = array();
+			parse_str($query, $vars);
+		?>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<div class="row">
 					<div class="sixteen columns alpha omega"><h2><?php the_title(); ?></h2></div>
 					<div class="clear"></div>
 					<hr>
 				</div>
+			
+				<div class="form row">
+					<div class="sixteen columns alpha omega">
+						<form action="<?php the_permalink() ?>">
+							<div class="fourteen columns alpha"><input type="text" placeholder="Search" name="s" value=<?php echo $vars['s'] ?>></div>
+							<?php 
+								if(strpos($actual_link, 'order=ASC') !== false){
+									$order = 'DESC';
+								}
+								elseif(strpos($actual_link, 'order=ASC') == false){
+									$order = 'ASC';
+								}
+								else{
+									$order = 'ASC';
+								}
+							?>
+							<div class="two columns omega">
+								<div class="button green alignright"><span>Search</span></div>
+							</div>
+							<div class="clear"></div>
+							<div class="two columns alpha filter-by"><h3>Filter by:</h3></div>
+							<div class="two columns">
+								<a href="<?php echo add_query_arg( array('orderby'=>'meta_value', 'meta_key'=>'_tfa-region', 'order'=> $order), $post->permalink ); ?>">
+									<div class="button gray full-width filter regions">
+											<span>Regions</span>	
+									</div>
+								</a>
+							</div>
+							<div class="two columns">
+								<a href="<?php echo add_query_arg( array('orderby'=>'title', 'order'=> $order), $post->permalink ); ?>">
+									<div class="button gray full-width filter name">
+											<span>Name</span>	
+									</div>
+								</a>
+							</div>
+							<div class="two columns">
+								<a href="<?php echo add_query_arg( array('orderby'=>'meta_value', 'meta_key'=>'_fundraising-goal', 'order'=> $order), $post->permalink ); ?>">
+									<div class="button gray full-width filter goal">
+											<span>Goal</span>	
+									</div>
+								</a>
+							</div>
+							<div class="two columns omega">
+								<a href="<?php echo add_query_arg( array('orderby'=>'date', 'order'=> $order), $post->permalink ); ?>">
+									<div class="button gray full-width filter date">
+											<span>Date</span>	
+									</div>
+								</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 			<?php endwhile; ?>
 		<?php endif; ?>
-		<div class="form row">
-			<div class="sixteen columns alpha omega">
-				<form action="">
-					<div class="fourteen columns alpha"><input type="text" placeholder="Search" name="search"></div>
-					
-					<div class="two columns omega">
-						<div class="button green alignright"><span>Search</span></div>
-					</div>
-					<div class="clear"></div>
-					<div class="two columns alpha filter-by"><b>Filter by:</b></div>
-					<div class="two columns"><div class="button gray full-width filter"><span>Filter</span></div></div>
-					<div class="two columns"><div class="button gray full-width filter"><span>Status</span></div></div>
-					<div class="two columns"><div class="button gray full-width filter"><span>Regions</span></div></div>
-					<div class="two columns"><div class="button gray full-width filter"><span>Name</span></div></div>
-					<div class="two columns"><div class="button gray full-width filter"><span>Goal</span></div></div>
-					<div class="two columns omega"><div class="button gray full-width filter"><span>Date</span></div></div>
-				</form>
-			</div>
-		</div>
-	</div>
 
 	<?php
-	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$query = parse_url($actual_link, PHP_URL_QUERY);
-	$vars = array();
-	parse_str($query, $vars);
-	print_r(the_search_query());
+	
+
 	$args = array(
 		'post_type'   => 'program',
+		'post_status' => 'publish',
 		'posts_per_page' => -1,
-		's' => $vars['search']
+		'post__not_in' => array(664),
 	);
-	$the_query = new WP_Query( $args ); ?>
+	$search_query = array_merge($args, $vars);
+	$the_query = new WP_Query( $search_query ); ?>
 
 	<?php // The Loop
 	if ( $the_query->have_posts() ) : ?>
 		<div class="container-twelve masonry projects">
 		 <?php while ( $the_query->have_posts() ) : ?>
 			<?php $the_query->the_post(); ?>
-			<?php include('inc/partials/project-card.php'); ?>
+			<?php if($post->post_type == 'program'): ?>
+				<?php include('inc/partials/project-card.php'); ?>
+			<?php endif; ?>
 		<?php endwhile; ?>
 		</div>
 	<?php else :; ?>
-		// no posts found
+		<h2 align="center">No Programs Found</h2>
 	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
 

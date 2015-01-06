@@ -73,6 +73,7 @@
 		function contribution_amount_admin($post){
 			/* Store the existing meta data in a variable so we can access it later and pre-fill the fields. */
 			$contribution_amount = get_post_meta( $post->ID, '_contribution-amount', true);
+			//print_r($contribution_amount);
 			wp_nonce_field( 'meta_box', 'meta_box_nonce' );
 
 
@@ -209,10 +210,12 @@
 			update_post_meta( $post_id, '_payment-method', $_POST['payment-method'] );
 			update_post_meta( $post_id, '_program-id', $_POST['program-id'] );
 			if(!isset($_POST['payment-amount'])){
-				update_post_meta( $post_id, '_contribution-amount', $_POST['other-payment-amount'] );
+				$amount = (int) $_POST['other-payment-amount'];
+				update_post_meta( $post_id, '_contribution-amount', $amount );
 			}
 			else{
-				update_post_meta( $post_id, '_contribution-amount', $_POST['payment-amount'] );
+				$amount = (int) $_POST['payment-amount'];
+				update_post_meta( $post_id, '_contribution-amount', $amount );
 			}
 		}
 	}
@@ -251,7 +254,7 @@
 	    	echo '<a href="' . get_edit_post_link($post_id) . '">' . $post_id . '</a>';
 	    	break;
 		case 'contribution-amount' :
-			echo '$' . get_post_meta( $post_id , '_contribution-amount' , true );
+			echo '$' . number_format(floatval(get_post_meta( $post_id , '_contribution-amount' , true )), 2);
 			break;
 		case 'program' :
 		    echo '<a href="' . get_edit_post_link(get_post_meta( $post_id, '_program-id', true)) . '">' . get_the_title(get_post_meta( $post_id, '_program-id', true)) .'</a>';

@@ -1,4 +1,5 @@
 <?php
+global $post;
 
 	add_action('wp_ajax_nopriv_delete_exported_csv', 'delete_exported_csv');
     add_action('wp_ajax_delete_exported_csv', 'delete_exported_csv');
@@ -123,7 +124,7 @@
     add_action('wp_ajax_nopriv_process_donation', 'process_donation');
     add_action('wp_ajax_process_donation', 'process_donation');
     function process_donation(){
-    	//Set the authorize.net variables
+        //Set the authorize.net variables
     	include ('sdk-php-master/autoload.php');
         if(get_option('sandbox_mode') == 'true'){
             $sandbox = true;
@@ -137,7 +138,9 @@
 		
     	//Store the variables (again...).. There must be a better way of doing this........
 		//print_r($_POST); 
-		$amount = $_POST['amount'];
+	    
+        $amount = (int) $_POST['amount'];
+
 		$pay_for_transaction = $_POST['pay_for_transaction'];
 		$donate_to_cmef = $_POST['donate_to_cmef'];
 		$card_type = $_POST['card_type'];
@@ -153,7 +156,12 @@
 		$state = $_POST['state'];
         $program_id = $_POST['program_id'];
         $remain_anonymous = $_POST['remain_anonymous'];
-
+        if($donate_to_cmef == 'true'){
+            $amount = (float) $amount + 5;
+        }
+        if($pay_for_transaction == 'true'){
+            $amount = (float) $amount + 0.10;
+        }
 		/**
 		 * We need to do a few things here.
 		 * 1. Process the Authorize.net Payment
@@ -174,6 +182,7 @@
         $sale->state              = $state;
         $sale->zip                = $zip;
         $sale->country            = $country = "US";
+        $sale->email              = $_POST['email'];
 
         $response = $sale->authorizeAndCapture();
         if ($response->approved) {
@@ -205,15 +214,16 @@
             //Update the various needed post data.
             
             update_post_meta($new_post_id, '_program-id', $program_id);
-            update_post_meta($new_post_id, '_contribution-amount', $amount);
+            update_post_meta($new_post_id, '_contribution-amount', ($amount - 5 - .10));
             update_post_meta($new_post_id, '_donation-address', $address);
             update_post_meta($new_post_id, '_donor-name', $name);
             update_post_meta( $new_post_id, '_payment-method', 'Credit Card' );
+            update_post_meta( $new_post_id, '_email-address', $_POST['email']);
             update_post_meta( $new_post_id, '_remain-anonymous', $remain_anonymous);
-            update_balance($amount, $program_id);
+            //update_balance($amount, $program_id);
             if($donate_to_cmef === 'true'){
                 //Create a donation for cmef.
-                $post = array(
+                $new_post = array(
                   'post_name'      => 'Donation To CMEF ' . $transaction_id, 
                   'post_title'     => 'Donation to CMEF' . $transaction_id, 
                   'post_status'    => 'publish', 
@@ -221,7 +231,7 @@
                   'post_author'    => 1, 
                 );  
                 //Create a new donation post.
-                $cmef_new_post_id = wp_insert_post($post);
+                $cmef_new_post_id = wp_insert_post($new_post);
 
                 $address = array(
                     'street_1' => $street,
@@ -237,15 +247,14 @@
                     'last' => $last_name,
                 );
                 //Update the various needed post data.
-                update_post_meta($cmef_new_post_id, '_program-id', 276);
+                update_post_meta($cmef_new_post_id, '_program-id', 664);
                 update_post_meta($cmef_new_post_id, '_contribution-amount', 5);
                 update_post_meta($cmef_new_post_id, '_donation-address', $address);
                 update_post_meta($cmef_new_post_id, '_donor-name', $name);
                 update_post_meta( $cmef_new_post_id, '_payment-method', 'Credit Card' );
+                update_post_meta( $cmef_new_post_id, '_email-address', $_POST['email']);
                 update_post_meta( $cmef_new_post_id, '_remain-anonymous', $remain_anonymous);
             }
-
-
 		}
         // Send back the response.
 		echo json_encode($response);

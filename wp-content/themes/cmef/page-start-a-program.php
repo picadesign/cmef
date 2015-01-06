@@ -101,7 +101,8 @@
 				</div>
 				<div class="sixteen columns alpha omega">				
 					<div class="new-program-description"></div>
-					</div>
+					<br>
+				</div>
 				<div class="sixteen columns alpha omega">
 					<div class="button green alignright" id="submit-new-program"><span class="button-text">Create Program</span></div>
 				</div>

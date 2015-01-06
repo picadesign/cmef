@@ -22,7 +22,7 @@ class WP_User_Avatar_Admin {
     // Initialize default settings
     register_activation_hook(WPUA_DIR.'wp-user-avatar.php', array($this, 'wpua_options'));
     // Settings saved to wp_options
-    add_action('admin_init', array($this, 'wpua_options'));
+    //add_action('admin_init', array($this, 'wpua_options'));
 	// On the scheduled action hook, run the function.
 	add_action( 'wpua_has_gravatar_cron_hook', array($this,'set_wpua_has_gravatar'));
     // Remove subscribers edit_posts capability

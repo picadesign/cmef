@@ -8,7 +8,8 @@ get_header();
 			$args = array(
 				'post_type'   => 'program',
 				'posts_per_page' => 6,
-				'post__not_in' => array(276),
+				'post__not_in' => array(664),
+				'meta_key' => '_thumbnail_id'
 				
 			);
 			$the_query = new WP_Query( $args ); ?>

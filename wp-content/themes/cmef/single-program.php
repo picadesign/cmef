@@ -27,9 +27,9 @@
 				<div class="social alignright">
 					<ul>
 						<li class="mail"><a href=""></a></li>
-						<li class="google"><a href=""></a></li>
-						<li class="twitter"><a href=""></a></li>
-						<li class="facebook"><a href=""></a></li>
+						<li class="google"><a href="https://plus.google.com/share?url=http%3A%2F%2F<?php echo urlencode(the_permalink());  ?>" target="_blank"></a></li>
+						<li class="twitter"><a href="http://twitter.com/share?url=<?php echo urlencode(the_permalink());  ?>" target="_blank"></a></li>
+						<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(the_permalink());  ?>" target="_blank"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -366,6 +366,7 @@
 						
 						</div>
 						<div class="clear"></div>
+						<p>Please ensure accuracy to the best of your ability.</p>
 						<form class="" action="<?php echo get_bloginfo('url') . '/wp-admin/admin-ajax.php?&action=upload_expense_image' ?>" id="expense_photo_upload" data-program-id="<?php echo $post->ID ?>" enctype="multipart/form-data">
 							<div class="nine columns alpha">
 								<h4>Description</h4>
@@ -388,6 +389,35 @@
 					</div>
 				</div>
 				<div class="sixteen columns alpha omega" id="balance">
+					<?php
+							$loop_args = array(
+								'post_type'   => array('expense', 'donation'),
+								//Custom Field Parameters
+								'meta_key'       => '_program-id',
+								'meta_value'     => $post->ID,
+								'posts_per_page' => -1,
+								'orderby' => 'date',
+								'order' => 'DESC'
+							);
+
+							$transactions = new WP_Query( $loop_args );
+							if($transactions->have_posts()):
+								$balance = 0;
+								//print_r($transactions);
+								foreach($transactions->posts as $transaction):
+									//print_r($transaction);
+									if($transaction->post_type == 'donation'):
+										$balance += (int) get_post_meta( $transaction->ID, '_contribution-amount', true);
+										//print_r($balance);
+									elseif ($transaction->post_type == 'expense') :
+										$balance -= (int) get_post_meta( $transaction->ID, '_expense-amount', true);
+										//print_r($balance);
+									endif;
+								endforeach;
+							endif;
+							//wp_reset_postdata();
+							
+						?>
 					<table>
 
 						<thead>
@@ -400,21 +430,10 @@
 								<th>Balance</th>
 							</tr>
 						</thead>
-						<?php
-							$loop_args = array(
-								'post_type'   => array('expense', 'donation'),
-								//Custom Field Parameters
-								'meta_key'       => '_program-id',
-								'meta_value'     => $post->ID,
-								'posts_per_page' => -1,
-								'orderby' => 'date',
-								'order' => 'ASC'
-							);
-						?>
+						
 						<tbody>
 							<?php 
 							$balance_query = new WP_Query( $loop_args );
-							$balance = 0;
 								if ( $balance_query->have_posts() ) :
 									//$i = 0;
 									while ( $balance_query->have_posts() ) :
@@ -426,15 +445,17 @@
 											<td><?php the_content(); ?></td>
 											<td><?php if(get_post_meta( $post->ID, '_expense-amount', true) > 0){ ?><?php echo money_format('-%.0n', (int) get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; }?></td>
 											<td><?php if(get_post_meta( $post->ID, '_contribution-amount', true) > 0){ ?><?php echo money_format('%.0n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; }?></td>
+											
+											<td><?php echo money_format('%.0n', $balance) . "\n";?></td>
 											<?php 
+												//reverse
 												if($post->post_type == 'donation'){
-													$balance = $balance + (int)get_post_meta( $post->ID, '_contribution-amount', true);
+													$balance -= (int) get_post_meta( $post->ID, '_contribution-amount', true);
 												}
 												elseif($post->post_type == 'expense'){
-													$balance = $balance - (int)get_post_meta( $post->ID, '_expense-amount', true);
+													$balance += (int) get_post_meta( $post->ID, '_expense-amount', true);
 												}
 											?>
-											<td><?php echo money_format('%.0n', $balance) . "\n";?></td>
 										</tr>
 									<?php endwhile;
 								endif;

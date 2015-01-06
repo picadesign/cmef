@@ -380,6 +380,9 @@ This would output:
 
 == Changelog ==
 
+= 1.9.17 =
+* Bug Fix: Removed the looping through all users on admin_init action.
+
 = 1.9.16 =
 * Bug Fix: lots of entries in wp_options table resolved.
 
