@@ -24,10 +24,10 @@
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'resource' ),
+		'rewrite'            => array( 'slug' => 'resource', 'with_front' => false ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
-		'hierarchical'       => false,
+		'hierarchical'       => true,
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'thumbnail' ),
 		'menu_icon'          => 'dashicons-format-aside',
@@ -35,3 +35,15 @@
 	);
 
 	register_post_type( 'resource', $args );
+
+	register_taxonomy(
+		'resource_type',
+		'resource',
+		array(
+			'label' => __( 'Resource Type' ),
+			'rewrite' => array( 'slug' => 'resource_type', 'with_front' => false ),
+			'query_var' => 'resource-type',
+			'hierarchical' => true,
+
+		)
+	);

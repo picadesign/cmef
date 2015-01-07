@@ -3762,16 +3762,49 @@ h1.homepage {
   .documents li {
     list-style: none; }
 
-/* line 151, ../sass/layouts/_page-general.scss */
-.pdf.icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
+/* line 150, ../sass/layouts/_page-general.scss */
+.pdf {
+  overflow: auto;
+  margin-bottom: 8px; }
+  /* line 153, ../sass/layouts/_page-general.scss */
+  .pdf.icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    float: left;
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd24a0cb38.png') 0 -1239px no-repeat; }
+  /* line 160, ../sass/layouts/_page-general.scss */
+  .pdf a {
+    padding-top: 10px; }
+
+/* line 165, ../sass/layouts/_page-general.scss */
+.resource-heading {
+  margin-right: 20px; }
+
+/* line 169, ../sass/layouts/_page-general.scss */
+.resource {
+  margin-bottom: 15px; }
+
+/* line 173, ../sass/layouts/_page-general.scss */
+.pdfs h4 {
   float: left;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-sfd24a0cb38.png') 0 -1239px no-repeat; }
-/* line 158, ../sass/layouts/_page-general.scss */
-.pdf a {
-  padding-top: 10px; }
+  margin-right: 5px; }
+/* line 178, ../sass/layouts/_page-general.scss */
+.pdfs a {
+  border-bottom: solid 1px #6ca348;
+  display: inline;
+  padding-bottom: 0px; }
+  /* line 183, ../sass/layouts/_page-general.scss */
+  .pdfs a:hover {
+    border-bottom: solid 1px #375b20; }
+
+/* line 189, ../sass/layouts/_page-general.scss */
+.terms {
+  margin-left: 0;
+  padding-left: 0; }
+  /* line 193, ../sass/layouts/_page-general.scss */
+  .terms li {
+    list-style: none; }
 
 /* line 2, ../sass/layouts/_single-program.scss */
 .single-program h2.title {

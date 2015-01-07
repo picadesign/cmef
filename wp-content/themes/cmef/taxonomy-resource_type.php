@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php get_header(); global $query_string;?>
 	<div class="white-background page box-shadow">
 		<div class="row">
 			<div class="sixteen columns alpha omega">
@@ -12,7 +12,7 @@
 		</div>
 		<div class="row">
 			<div class="sixteen columns alpha omega">
-				<h2 class="title">Resources</h2>
+				<h2 class="title"><?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); echo $term->name; ?></h2>
 				<hr>
 			</div>
 		</div>
@@ -52,30 +52,6 @@
 				$taxonomies = array( 
 				    'resource_type'
 				);
-
-				$args = array(
-				    'orderby'           => 'name', 
-				    'order'             => 'ASC',
-				    'hide_empty'        => true, 
-				    'exclude'           => array(), 
-				    'exclude_tree'      => array(), 
-				    'include'           => array(),
-				    'number'            => '', 
-				    'fields'            => 'all', 
-				    'slug'              => '',
-				    'name'              => '',
-				    'parent'            => '',
-				    'hierarchical'      => true, 
-				    'child_of'          => 0, 
-				    'get'               => '', 
-				    'name__like'        => '',
-				    'description__like' => '',
-				    'pad_counts'        => false, 
-				    'offset'            => '', 
-				    'search'            => '', 
-				    'cache_domain'      => 'core'
-				); 
-
 				$terms = get_terms($taxonomies, $args);
 				
 				?>

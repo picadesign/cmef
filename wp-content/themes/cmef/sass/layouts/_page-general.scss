@@ -148,6 +148,8 @@
 	}
 }
 .pdf{
+	overflow:auto;
+	margin-bottom:8px;
 	&.icon{
 		width:32px;
 		height:32px;
@@ -157,5 +159,43 @@
 	}
 	a{
 		padding-top:10px;
+	}
+}
+
+.resource-heading{
+	margin-right:20px;
+}
+
+.resource{
+	margin-bottom:15px;
+}
+.pdfs{
+	h4{
+		float:left;
+		margin-right:5px;
+	}
+
+	a{
+		border-bottom: solid 1px $apple;
+	    display: inline;
+	    padding-bottom: 0px;
+
+	    &:hover{
+	    	border-bottom: solid 1px $thatch-green;
+	    }
+	}
+}
+
+.terms{
+	margin-left:0;
+	padding-left:0;
+
+	li{
+		list-style: none;
+		a{
+			h4{
+				
+			}
+		}
 	}
 }
