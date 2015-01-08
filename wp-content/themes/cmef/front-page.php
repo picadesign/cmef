@@ -7,6 +7,7 @@ get_header();
 		<?php
 			$args = array(
 				'post_type'   => 'program',
+				'post_status' => 'publish',
 				'posts_per_page' => 6,
 				'post__not_in' => array(664),
 				'meta_key' => '_thumbnail_id'
