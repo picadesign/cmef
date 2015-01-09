@@ -265,13 +265,10 @@ jQuery(function ($) {
 
 	//Load More Programs and add to the masonry
 	$('.bottom-buttons .show-more').on('click', function(){
-    	var offset = $('.projects').children().length;
-    	console.log(offset);
-
     	$.post(ajaxurl, {
 			//the function in ajax.php, pass the data through.
 			action: 'fetch_programs',
-			offset: offset,
+			offset: $('.projects').children().length,
 		}, function(response){
 			//remove the editor.
 			//location.reload();

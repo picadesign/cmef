@@ -14,11 +14,35 @@ global $post;
     function ajax_fetch_programs () {;
     	setlocale(LC_MONETARY, 'en_US');
     	global $post;
+        $offset = (int) $_POST['offset'];
+
     	$args = array(
 			'post_type'   => 'program',
-			'offset' => $_POST['offset'] + 1,
-			'posts_per_page' => 3
+            'post_status' => 'publish',
+			'offset' => $offset,
+			'posts_per_page' => 3,
+            'post__not_in' => array(664),
+            'meta_key' => '_thumbnail_id'
 		);
+        // Query For Program donations
+        $donation_args = array(
+            'post_type' => 'donation',
+            'post_status' =>'publish',
+            'posts_per_page' => -1,
+            'meta_key'       => '_program-id',
+            'meta_value'     => $post->ID,
+        );
+        $donations = new WP_Query($donation_args);
+    
+        // The Loop
+        if($donations->have_posts()):
+            $raised = 0;
+            foreach ($donations->posts as $donation) {
+                $raised += (int) get_post_meta($donation->ID, '_contribution-amount', true);
+            }
+        else:
+            $raised = 0;
+        endif;
 		$the_query = new WP_Query( $args );
 			if ($the_query->have_posts()) :;
     		while ($the_query->have_posts()) : $the_query->the_post() ;
@@ -27,7 +51,7 @@ global $post;
 		    	$program->author = get_the_author();
 		    	$program->post_thumbnail = get_the_post_thumbnail($post->ID, $size = 'post-thumbnail', $attr = '');
 		    	$program->placement_holder_image = '<img src="'. get_template_directory_uri() .'/images/placeholder.png" alt="">';
-		    	$program->percentage_raised = (47523/(int) $goal)*100;
+		    	$program->percentage_raised = ($raised/(int) $goal)*100;
                 //Also append the same data to an array for JS
     			$programsDataObject[] = $program;
     			$program->amount_raised = money_format('%.0n', get_post_meta($post->ID, '_program-balance', true)) . "\n";

@@ -175,6 +175,13 @@
   							@extend .fonts.trade.gothic.bold;
   							color:white;
   							font-size: .941176471em;
+  							a{
+  								color:inherit;
+  								text-transform: inherit;
+  								font-family:inherit;
+  								font-size:inherit;
+  								text-decoration: underline;
+  							}
 						}
 					}
 				}

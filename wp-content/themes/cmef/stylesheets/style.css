@@ -3620,17 +3620,24 @@ body:after {
               vertical-align: middle;
               color: white;
               font-size: .941176471em; }
-      /* line 183, ../sass/layouts/_header.scss */
+              /* line 178, ../sass/layouts/_header.scss */
+              .full-width.header.bottom #bottom-header .bottom-header-left .login-box .register span a {
+                color: inherit;
+                text-transform: inherit;
+                font-family: inherit;
+                font-size: inherit;
+                text-decoration: underline; }
+      /* line 190, ../sass/layouts/_header.scss */
       .full-width.header.bottom #bottom-header .menu-main-navigation-header-container {
         height: 100%;
         width: 40%;
         display: none; }
-        /* line 187, ../sass/layouts/_header.scss */
+        /* line 194, ../sass/layouts/_header.scss */
         .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul {
           margin: 0;
           height: 100%;
           padding: 0; }
-          /* line 191, ../sass/layouts/_header.scss */
+          /* line 198, ../sass/layouts/_header.scss */
           .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li {
             list-style: none;
             float: left;
@@ -3645,7 +3652,7 @@ body:after {
             -moz-transition-duration: 0.1s;
             -o-transition-duration: 0.1s;
             transition-duration: 0.1s; }
-            /* line 200, ../sass/layouts/_header.scss */
+            /* line 207, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a {
               height: 100%;
               margin: 0;
@@ -3654,14 +3661,14 @@ body:after {
               font-size: 16px;
               color: #5b5b5b;
               text-transform: none; }
-              /* line 211, ../sass/layouts/_header.scss */
+              /* line 218, ../sass/layouts/_header.scss */
               .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a .menu-first-word {
                 font-style: normal;
                 text-transform: uppercase; }
-            /* line 217, ../sass/layouts/_header.scss */
+            /* line 224, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li:first-child {
               border-left: 1px solid #afaeae; }
-            /* line 221, ../sass/layouts/_header.scss */
+            /* line 228, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li:hover, .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li.current-menu-item {
               background-color: #e8e8e8; }
 
