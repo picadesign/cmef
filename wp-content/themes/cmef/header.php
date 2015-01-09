@@ -55,7 +55,7 @@
 										<input name="rememberme" type="checkbox" class="alignleft" id="rememberme" value="forever"><span class="remember-forgot">Remember Me &nbsp;|&nbsp;  <a href="">Forgot Password</a></span>
                                     </form>  
                                     <div class="register">
-                                    	<span>Don't have an account? Click here to SIGN UP</span>
+                                    	<span>Don't have an account? <a href="<?php echo get_the_permalink(201) ?>">Click here to SIGN UP</a></span>
                                     </div>                              
                                 </div>
                             <?php endif; ?>
