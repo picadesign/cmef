@@ -52,7 +52,7 @@
 										<input type="submit" name="wp-submit" id="wp-submit" class="button-primary alignright" value="Log In">
 										<input type="hidden" name="redirect_to" value="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" ?>">
 										<div class="clear"></div>
-										<input name="rememberme" type="checkbox" class="alignleft" id="rememberme" value="forever"><span class="remember-forgot">Remember Me &nbsp;|&nbsp;  <a href="">Forgot Password</a></span>
+										<input name="rememberme" type="checkbox" class="alignleft" id="rememberme" value="forever"><span class="remember-forgot">Remember Me &nbsp;|&nbsp;  <a href="<?php echo wp_lostpassword_url(); ?>">Forgot Password</a></span>
                                     </form>  
                                     <div class="register">
                                     	<span>Don't have an account? <a href="<?php echo get_the_permalink(201) ?>">Click here to SIGN UP</a></span>

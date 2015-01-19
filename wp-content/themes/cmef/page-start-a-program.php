@@ -40,8 +40,8 @@
 				<div class="sixteen columns alpha omega">
 					<p><b>* Hint:</b> Try to limit the program name to 70 characters or less.</p>
 					<div class="eight columns alpha">
-						<input type="text" name="program_name" placeholder="Program Name *">
-						<input type="number" name="fundraising_goal" placeholder="Fundraising Goal">
+						<input type="text" name="program_name" placeholder="Program Name * (Max of 20 Characters)" maxlength="20">
+						<input type="text" name="fundraising_goal" placeholder="Fundraising Goal">
 						<input type="number" name="number_students" placeholder="Number of Students *">
 						<input type="text" name="school_name" placeholder="School or Organization Name *">
 					</div>
@@ -115,8 +115,8 @@
 						
 						<input type="file" name="image" class="image-uploader">
 						<input type="text" placeholder="Choose File" class="image-uploader-placeholder" disabled="disabled">
-						<div class="button green image-uploader-button alignleft"><span class="button-text">Upload</span></div>
-						<div class="button green image-uploader-choose-file"><span>Choose File</span></div>
+						<div class="button green image-uploader-choose-file alignleft"><span>Choose File</span></div>
+						<div class="button green image-uploader-button"><span class="button-text">Upload</span></div>
 					</div>
 					<div class="eight columns omega uploaded-images">
 						

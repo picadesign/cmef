@@ -25,28 +25,29 @@ global $post;
             'meta_key' => '_thumbnail_id'
 		);
         // Query For Program donations
-        $donation_args = array(
-            'post_type' => 'donation',
-            'post_status' =>'publish',
-            'posts_per_page' => -1,
-            'meta_key'       => '_program-id',
-            'meta_value'     => $post->ID,
-        );
-        $donations = new WP_Query($donation_args);
-    
-        // The Loop
-        if($donations->have_posts()):
-            $raised = 0;
-            foreach ($donations->posts as $donation) {
-                $raised += (int) get_post_meta($donation->ID, '_contribution-amount', true);
-            }
-        else:
-            $raised = 0;
-        endif;
+        
 		$the_query = new WP_Query( $args );
 			if ($the_query->have_posts()) :;
     		while ($the_query->have_posts()) : $the_query->the_post() ;
     			$goal = get_post_meta(get_the_ID(), '_fundraising-goal', true);
+                $donation_args = array(
+                    'post_type' => 'donation',
+                    'post_status' =>'publish',
+                    'posts_per_page' => -1,
+                    'meta_key'       => '_program-id',
+                    'meta_value'     => $post->ID,
+                );
+                $donations = new WP_Query($donation_args);
+            
+                // The Loop
+                if($donations->have_posts()):
+                    $raised = 0;
+                    foreach ($donations->posts as $donation) {
+                        $raised += (int) get_post_meta($donation->ID, '_contribution-amount', true);
+                    }
+                else:
+                    $raised = 0;
+                endif;
 		    	$program = $post;
 		    	$program->author = get_the_author();
 		    	$program->post_thumbnail = get_the_post_thumbnail($post->ID, $size = 'post-thumbnail', $attr = '');
@@ -54,7 +55,7 @@ global $post;
 		    	$program->percentage_raised = ($raised/(int) $goal)*100;
                 //Also append the same data to an array for JS
     			$programsDataObject[] = $program;
-    			$program->amount_raised = money_format('%.0n', get_post_meta($post->ID, '_program-balance', true)) . "\n";
+    			$program->amount_raised = money_format('%.0n', $raised) . "\n";
     			$program->fundraiser_goal = money_format('%.0n', $goal) . "\n";
     			$program->twitter_url = get_post_meta($post->ID, '_social-networks', true)['twitter'];
     			$program->linkedin_url = get_post_meta($post->ID, '_social-networks', true)['linkedin'];
@@ -99,10 +100,10 @@ global $post;
 
         $user_id = wp_update_user(array(
             'ID' => $_POST['author_ID'],
-            'first_name' => $_POST['first_name'],
-            'last_name' => $_POST['last_name'],
+            //'first_name' => $_POST['first_name'],
+            //'last_name' => $_POST['last_name'],
             'description' => $_POST['description'],
-            'display_name' => $_POST['first_name'] . ' ' . $_POST['last_name'],
+            //'display_name' => $_POST['first_name'] . ' ' . $_POST['last_name'],
             'user_email' => $_POST['email_address'],
         ));
         // TODO: Finish the save_profile function.
@@ -524,17 +525,17 @@ global $post;
             'post_content' => $_POST['memo'],
             'post_status' => 'draft'
         );
-        if($_POST['expense-amount'] > 0){
+        if((int) $_POST['amount'] > 0){
             $new_expense = wp_insert_post($post);
             update_post_meta($new_expense, '_program-id', $_POST['program_id']);
-            update_post_meta($new_expense, '_expense-amount', $_POST['expense-amount']);
+            update_post_meta($new_expense, '_expense-amount', (int) $_POST['amount']);
             $expense_attachment_id = media_handle_upload('expense-image', $new_expense);
             set_post_thumbnail($new_expense, $expense_attachment_id);
         }
-        if($new_expense != 0 && $_POST['expense-amount'] > 0){
+        if($new_expense != 0 && (int) $_POST['amount'] > 0){
             echo 'success';
         }else{
-            echo 'Please enter a valid amount';
+            echo 'Please enter a valid amount' . $_POST['amount'];
         }
         die();
     }

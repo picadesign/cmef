@@ -40,6 +40,11 @@ jQuery(function ($) {
 				collapsible: false, 
 				heightStyle: "content"
 			});
+
+			$('input[name=fundraising_goal').maskMoney({
+				prefix:'$',
+				precision:0
+			});
 		},
 		render: function(){
 			othis = this;
@@ -153,6 +158,9 @@ jQuery(function ($) {
 			othis = this
 			var program_name = $(this.program_name_el).val();
 			var fundraising_goal = $(this.fundraising_goal_el).val();
+			var regex = new RegExp(',', 'g');					//regex to replace all instance variables (found at 'http://stackoverflow.com/questions/6064956/replace-all-occurrences-in-a-string')
+				fundraising_goal = fundraising_goal.replace(regex, '');
+				fundraising_goal = fundraising_goal.replace('$', '');
 			var number_students = $(this.number_students_el).val();
 			var grade_level = $(this.grade_level_el).val();
 			var tfa_region = $(this.tfa_region_el).val();

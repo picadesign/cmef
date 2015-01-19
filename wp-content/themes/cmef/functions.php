@@ -53,6 +53,8 @@
 		include('inc/taxonomies.php');
 		// Load some helper functions
 		include('inc/helpers.php');
+		//Load the filters
+		include('inc/filters.php');
 
 		// Load the Menus
 		include ('inc/menus.php');

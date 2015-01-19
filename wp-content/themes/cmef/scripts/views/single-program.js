@@ -63,6 +63,16 @@ jQuery(function ($) {
 		    }); 
 
 		    $('.memo').redactor();
+
+		    $('.goal-sel input').maskMoney({
+		    	prefix:'$',
+				precision:0
+		    })
+
+		    $('input[name=expense-amount').maskMoney({
+		    	prefix:'$',
+		    	precision:0
+		    })
 		},
 		editProgram: function(){
 			//console.log(this);
@@ -86,14 +96,18 @@ jQuery(function ($) {
 		saveProgram: function(){
 			//alert('Save');
 			//Get the values from the form items
-			var program_type = $('.select #program-type option:selected').attr('data-term-id')
-			var tfa_region = $('.select #tfa-region option:selected').attr('data-term-id')
-			var organization_name = $('.organization-name-sel input').val()
-			var grade_level = $('.select #grade-level option:selected').attr('data-term-id')
-			var number_students = $('.number-students-sel input').val()
+			var program_type = $('.select #program-type option:selected').attr('data-term-id');		//The input for the program type box
+			var tfa_region = $('.select #tfa-region option:selected').attr('data-term-id')			//The input for the tfa region box
+			var organization_name = $('.organization-name-sel input').val()							//The value for the org name
+			var grade_level = $('.select #grade-level option:selected').attr('data-term-id')		//The input for grade level box
+			var number_students = $('.number-students-sel input').val()								//The vale
 			var description = $('.description').redactor('get');
 			var program_id = $('input[name="post_id"]').val();
 			var goal = $('.goal-sel input').val();
+
+			var regex = new RegExp(',', 'g');					//regex to replace all instance variables (found at 'http://stackoverflow.com/questions/6064956/replace-all-occurrences-in-a-string')
+				goal = goal.replace(regex, '');
+				goal = goal.replace('$', '');
 
 			//Send the information to ajax
 			$.post(ajaxurl, {
@@ -198,9 +212,16 @@ jQuery(function ($) {
 			$('input[name="expense-image-name"]').val(imageVal);	
 		},
 		submitExpense: function(){
+			var regex = new RegExp(',', 'g');					//regex to replace all instance variables (found at 'http://stackoverflow.com/questions/6064956/replace-all-occurrences-in-a-string')
+			
+			var amount = $('input[name="expense-amount"]').val(); 	//the value of the input on the page
+				amount = amount.replace(regex, ''); //remove the commas (need regex to remove all and not just the first one)
+				amount = amount.replace('$', ''); //remove the leading $
+				console.log(amount);
+
 			$('#expense_photo_upload').ajaxSubmit({
 				data: {
-					amount: $('input[name="expense-amount"]').val(),
+					amount: amount,
 					program_id: $('#expense_photo_upload').attr('data-program-id'),
 					memo: $('.memo').redactor('get')
 				},

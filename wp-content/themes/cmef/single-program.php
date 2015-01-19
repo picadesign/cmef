@@ -188,7 +188,7 @@
 							</tr>
 							<tr class="goal-sel-row hidden">
 								<td class="four columns alpha"><b>Goal</b></td>
-								<td class="five columns alignleft goal-sel"><input type="number" value="<?php echo get_post_meta(get_the_ID(), '_fundraising-goal', true) ?>"></td>
+								<td class="five columns alignleft goal-sel"><input type="text" value="<?php echo get_post_meta(get_the_ID(), '_fundraising-goal', true) ?>"></td>
 							</tr>
 						</table>
 					</form>
@@ -219,8 +219,8 @@
 							
 							<input type="file" name="image" class="image-uploader">
 							<input type="text" placeholder="Choose File" class="image-uploader-placeholder" disabled="disabled">
-							<div class="button green image-uploader-button alignleft"><span class="button-text">Upload</span></div>
-							<div class="button green image-uploader-choose-file"><span>Choose Image</span></div>
+							<div class="button green image-uploader-choose-file alignleft"><span>Choose Image</span></div>
+							<div class="button green image-uploader-button"><span class="button-text">Upload</span></div>
 						</div>
 						<div class="eight columns omega uploaded-images">
 							<?php if(has_post_thumbnail($post->ID)): ?>
@@ -374,7 +374,7 @@
 									<div class="memo"></div>
 								</div>
 								<br>
-								<div class="two columns alpha"><input type="number" placeholder="Amount" name="expense-amount"></div>
+								<div class="two columns alpha"><input type="text" placeholder="Amount" name="expense-amount"></div>
 								<div class="clear"></div>
 							</div>
 							<div class="seven columns omega">

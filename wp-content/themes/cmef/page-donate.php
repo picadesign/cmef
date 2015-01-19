@@ -40,7 +40,7 @@
 							<li><input name="amount" type="radio" required="required" value="500.00">$500.00</li>
 							<li><input name="amount" type="radio" required="required" value="1000.00">$1,000.00</li>
 							<li><input name="amount" type="radio" required="required" value="other">Other Amount</li>
-							<input type="number" name="otheramount" placeholder="Other Amount" disabled="disabled" value="">
+							<input type="text" name="otheramount" placeholder="Other Amount" disabled="disabled" value="">
 						</ul>
 					</div>
 					<div class="eight coumns omega email">

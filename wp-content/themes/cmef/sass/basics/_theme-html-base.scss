@@ -345,6 +345,7 @@ html{
 			height:35px;
 			width:100%;
 			border:none;
+			font-weight: 1px;
 			@include box-shadow($mercury 0 1px 3px inset);
 			&:focus{
 				outline:0;
