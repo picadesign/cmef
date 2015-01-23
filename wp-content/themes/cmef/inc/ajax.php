@@ -318,6 +318,11 @@ global $post;
                 'alert' => "Sorry, this username already exists."
                 );
         }
+        elseif(email_exists($email) != false){
+            $alerts = array(
+                'alert' => "Sorry, this email is already registered to another user."
+            );
+        }
         elseif(strlen($email) ===0 && strlen($confirm) === 0){
             $alerts = array(
                 'alert' => 'Please enter an email address.'
@@ -480,10 +485,11 @@ global $post;
             wp_set_post_terms( $new_program_ID, $grade_level, 'grade-level', true);
             wp_set_post_terms( $new_program_ID, $tfa_region, 'tfa-region', true);
             //wp_set_post_terms( $new_program_ID, $grade_level, 'grade-level', true)
+            $href = (is_user_logged_in() == true ? get_the_permalink($new_program_ID) : get_home_url());
 
             $alerts = array(
                 'alert' => 'success',
-                'new_program' => get_the_permalink($new_program_ID),
+                'new_program' => $href,
                 'new_program_id' => $new_program_ID,
                 'updated-post-information' => $new_program,
                 'goal' => $fundraising_goal,

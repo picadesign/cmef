@@ -60,16 +60,16 @@
 						<div class="eight columns alpha">
 							<section>
 							<h3>Name</h3>
-							<input type="text" name="first_name" value="<?php the_author_meta('first_name') ?>" placeholder="First Name" required="required" autocomplete="off">
-							<input type="text" name="last_name" value="<?php the_author_meta('last_name') ?>" placeholder="Last Name" required="required" autocomplete="off">
+							<input type="text" name="first_name" value="<?php echo get_the_author_meta('first_name', $curauth->ID) ?>" placeholder="First Name" required="required" autocomplete="off">
+							<input type="text" name="last_name" value="<?php echo the_author_meta('last_name', $curauth->ID) ?>" placeholder="Last Name" required="required" autocomplete="off">
 							</section>
 							<section>
 							<h3>Email</h3>
-							<input type="text" name="email_address" value="<?php the_author_meta('user_email') ?>" placeholder="Email Address" required="required" autocomplete="off">
+							<input type="text" name="email_address" value="<?php echo get_the_author_meta('user_email', $curauth->ID) ?>" placeholder="Email Address" required="required" autocomplete="off">
 							</section>
 							<section>
 							<h3>Phone Number</h3>
-							<input type="phone" name="phone_number" value="<?php the_author_meta('phone') ?>" placeholder="Phone Number" required="required" autocomplete="off">
+							<input type="phone" name="phone_number" value="<?php echo get_the_author_meta('phone', $curauth->ID) ?>" placeholder="Phone Number" required="required" autocomplete="off">
 							</section>
 						</div>
 						<div class="eight columns omega">
@@ -85,15 +85,15 @@
 						<div class="eight columns alpha">
 							<section>
 								<h3>Address</h3>
-								<input type="text" name="street1" placeholder="Street 1" value="<?php the_author_meta('street-1') ?>" autocomplete="off">
-								<input type="text" name="street2" placeholder="Street 2" value="<?php the_author_meta('street-2') ?>" autocomplete="off">
-								<input type="text" name="city" placeholder="City" value="<?php the_author_meta('city') ?>" autocomplete="off">
+								<input type="text" name="street1" placeholder="Street 1" value="<?php echo get_the_author_meta('street-1', $curauth->ID) ?>" autocomplete="off">
+								<input type="text" name="street2" placeholder="Street 2" value="<?php echo get_the_author_meta('street-2', $curauth->ID) ?>" autocomplete="off">
+								<input type="text" name="city" placeholder="City" value="<?php echo get_the_author_meta('city', $curauth->ID) ?>" autocomplete="off">
 							</section>
 						</div>
 						<div class="eight columns omega">
 							<section>
-								<input type="text" name="state" placeholder="State" value="<?php the_author_meta('state') ?>" autocomplete="off">
-								<input type="text" name="zip" placeholder="Zip" value="<?php the_author_meta('zip') ?>" autocomplete="off">
+								<input type="text" name="state" placeholder="State" value="<?php echo get_the_author_meta('state', $curauth->ID) ?>" autocomplete="off">
+								<input type="text" name="zip" placeholder="Zip" value="<?php echo get_the_author_meta('zip', $curauth->ID) ?>" autocomplete="off">
 							</section>
 						</div>
 					</form>

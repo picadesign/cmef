@@ -199,7 +199,7 @@
 						<tr>
 							<td><?php the_author_posts_link(); ?></td>
 							<td><a href="mailto:<?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?>"><?php echo antispambot(the_author_meta('user_email'), $mailto = 0) ?></a></td>
-							<td>207-123-4567</td>
+							<td><?php the_author_meta('phone') ?></td>
 						</tr>
 					</table>
 					</section>
