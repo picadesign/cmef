@@ -271,6 +271,51 @@ jQuery(function ($) {
 		console.log(amount)
 	})
 
+	//REUSABLE CODE
+	function checkCardType(number){
+		var cardTypes = {
+			discover: [
+				[6011],
+				[622126, 622925],
+				[644, 649],
+				[65]
+			],
+			visa: [
+				[4]
+			],
+			amex: [
+				[34],
+				[37]
+			],
+			mastercard: [
+				[50, 55]
+			]
+		}
+		for(var i in cardTypes){
+			//console.log(cardTypes[i]);
+			for(var index in cardTypes[i]){   //get the ranges in the algorithm
+				//console.log(cardTypes[i][index]);
+				if(cardTypes[i][index].length == 1 && number.indexOf(cardTypes[i][index][0]) == 0){ //if the length is only 1 then there is only 1 possible prefix for the card
+					return i;
+				}
+				else if(cardTypes[i].length == 2){ //if the lenght is 2 then their is a range that the cards can be in.
+					return i;
+				}
+			}
+		}
+		//console.log(cardTypes.length);
+	}
+
+	$('input[name=card_number]').bind("keyup change", function(){
+
+		var input = $(this).val();		// value of the card_number input
+		var cardType = checkCardType(input);
+
+		// remove the dark calss and update the card to the right one, change the card to dark
+		$('.card').removeClass('dark');
+		$('.' + cardType).addClass('dark');
+		console.log(cardType);
+	})
 
 
 

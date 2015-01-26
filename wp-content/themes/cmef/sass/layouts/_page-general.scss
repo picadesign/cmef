@@ -199,3 +199,43 @@
 		}
 	}
 }
+
+
+.card-logos{
+	margin-top:20px;
+	.card{
+		width: 61px;
+		height: 38px;
+		float:left;
+		margin-right:5px;
+
+		&.visa{
+			background: sprite($assets-sprite, visa-light) no-repeat;
+
+			&.dark{
+				background: sprite($assets-sprite, visa-dark) no-repeat;
+			}
+		}
+		&.mastercard{
+			background: sprite($assets-sprite, mastercard-light) no-repeat;
+
+			&.dark{
+				background: sprite($assets-sprite, mastercard-dark) no-repeat;
+			}
+		}
+		&.amex{
+			background: sprite($assets-sprite, amex-light) no-repeat;
+
+			&.dark{
+				background: sprite($assets-sprite, amex-dark) no-repeat;
+			}
+		}
+		&.discover{
+			background: sprite($assets-sprite, discover-light) no-repeat;
+
+			&.dark{
+				background: sprite($assets-sprite, discover-dark) no-repeat;
+			}
+		}
+	}
+}

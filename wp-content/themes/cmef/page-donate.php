@@ -68,11 +68,10 @@
 				<div class="eight columns alpha">
 					<section>
 						<h3>Credit Card Information</h3>
-						<h4>Card Type</h4>
-						<ul class="no-margin no-padding">
+						<!--<ul class="no-margin no-padding">
 							<li><input type="radio" name="card_type" rrequired="required" value="Visa">Visa</li>
 							<li><input type="radio" name="card_type" rrequired="required" value="mastercard">Mastercard</li>
-						</ul>
+						</ul>-->
 						<input type="text" name="card_number" placeholder="Card Number" rrequired="required">
 						<input type="text" name="three_digit" placeholder="Security Code" rrequired="required">
 						<div class="three columns alpha">
@@ -102,6 +101,13 @@
 							   }
 							  ?>
 							</select>
+						</div>
+						<div class="clear"></div>
+						<div class="eight columns alpha omega card-logos">
+							<div class="visa card"></div>
+							<div class="mastercard card"></div>
+							<div class="amex card"></div>
+							<div class="discover card"></div>
 						</div>
 					</section>
 
