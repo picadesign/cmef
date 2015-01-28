@@ -164,6 +164,14 @@
 							<tr><td> <label for="first-name">First Name: </label></td><td><input type="text" name="first-name" placeholder="First Name" value="<?php if(!empty($donor_name)){ echo $donor_name['first']; }?>"></td></tr>
 							<tr><td> <label for="middle-name">Middle Name: </label></td><td><input type="text" name="middle-name" placeholder="Middle Name" value="<?php if(!empty($donor_name)){ echo $donor_name['middle']; }?>"></td></tr>
 							<tr><td> <label for="last-name">Last Name: </label></td><td><input type="text" name="last-name" placeholder="Last Name" value="<?php if(!empty($donor_name)){ echo $donor_name['last']; }?>"></td></tr>
+							<tr>
+								<td>
+									<label for="remain-anonymous">Anonymous: </label>
+								</td>
+								<td>
+									<input type="checkbox" name="remain-anonymous" <?php echo (get_post_meta($post_id, '_remain-anonymous', true) === "true" ? 'checked="checked"' : '')  ?> disabled="disabled">
+								</td>
+							</tr>
 						</table>
 					</div>
 					<div class="half right">

@@ -168,7 +168,6 @@ global $post;
 
 		$pay_for_transaction = $_POST['pay_for_transaction'];
 		$donate_to_cmef = $_POST['donate_to_cmef'];
-		$card_type = $_POST['card_type'];
 		$card_number = $_POST['card_number'];
 		$three_digit = $_POST['three_digit'];
 		$month = $_POST['month'];
