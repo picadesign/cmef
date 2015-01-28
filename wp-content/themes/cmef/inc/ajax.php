@@ -484,7 +484,7 @@ global $post;
             wp_set_post_terms( $new_program_ID, $grade_level, 'grade-level', true);
             wp_set_post_terms( $new_program_ID, $tfa_region, 'tfa-region', true);
             //wp_set_post_terms( $new_program_ID, $grade_level, 'grade-level', true)
-            $href = (is_user_logged_in() == true ? get_the_permalink($new_program_ID) : get_home_url());
+            $href = (is_user_logged_in() == true ? get_the_permalink($new_program_ID) : get_the_permalink(342));
 
             $alerts = array(
                 'alert' => 'success',
