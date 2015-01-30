@@ -85,7 +85,14 @@
 					word-spacing:-5px;
 					#report-a-bug{
 						//@extend .fonts.trade.gothic.bold;
+						font-size: inherit; 
+						font-family:inherit;
+						color:inherit;
 						text-transform: uppercase;
+
+						&:hover{
+							text-decoration: underline;
+						}
 						
 					}
 				}

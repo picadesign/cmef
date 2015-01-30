@@ -3750,8 +3750,14 @@ body:after {
         word-spacing: -5px; }
         /* line 86, ../sass/layouts/_footer.scss */
         .full-width.footer footer .address .copyright #report-a-bug {
+          font-size: inherit;
+          font-family: inherit;
+          color: inherit;
           text-transform: uppercase; }
-      /* line 92, ../sass/layouts/_footer.scss */
+          /* line 93, ../sass/layouts/_footer.scss */
+          .full-width.footer footer .address .copyright #report-a-bug:hover {
+            text-decoration: underline; }
+      /* line 99, ../sass/layouts/_footer.scss */
       .full-width.footer footer .address .pica-mark {
         float: right;
         margin-right: 20px;
