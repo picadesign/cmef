@@ -41,6 +41,12 @@
 	*/ 
 	add_action( 'add_meta_boxes', 'add_program_meta_boxes' );  
 	function add_program_meta_boxes(){
+		function program_status_admin($post){ //adds program status ended/open to admin area. ?>
+			<input type="radio" name="program-status" value="open" <?php checked('open', get_post_meta($post->ID, '_program-status', true), true) ?>> Open
+			<br>
+			<input type="radio" name="program-status" value="ended" <?php checked('ended', get_post_meta($post->ID, '_program-status', true), true) ?>> Ended
+		<?php }
+		add_meta_box("program_status", __("Program Status"), 'program_status_admin', "program", "side", "high");
 		function fundraising_goal_admin($post){ ?>
 			<input type="number" value="<?php echo get_post_meta( $post->ID, '_fundraising-goal', true );  ?>" name="fundraising-goal" placeholder="5000 for $5,000">
 
@@ -143,6 +149,7 @@
 		update_post_meta($post_id, '_tfa-region', $_POST['tfa-region'] );
 		update_post_meta($post_id, '_program-type', $_POST['program-type'] );
 		update_post_meta($post_id, '_organization-name', $_POST['organization-name'] );
+		update_post_meta($post_id, '_program-status', $_POST['program-status']);
 
 		$social = array(
 			'google' => $_POST['google-plus'],
