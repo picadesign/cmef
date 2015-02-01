@@ -478,6 +478,7 @@ global $post;
             update_post_meta($new_program_ID, '_organization-name', $organization_name);
             update_post_meta($new_program_ID, '_number-students', $number_students);
             update_post_meta($new_program_ID, '_program-balance', 0);
+            update_post_meta($new_program_ID, '_program-status', 'open');
             //update_post_meta($new_program_ID, '_program-type', $program);
             
             //Update the new post taxonomies
@@ -597,6 +598,7 @@ global $post;
         update_post_meta($program_id, '_organization-name', $organization_name);
         update_post_meta($program_id, '_number-students', $number_students);
         update_post_meta($program_id, '_fundraising-goal', $goal);
+        update_post_meta($program_id, '_program-status', $_POST['program_status']);
         $program_type_response = wp_set_post_terms( $program_id, $program_type, 'program-type', false);
         $tfa_region_response = wp_set_post_terms( $program_id, $tfa_region, 'tfa-region', false );
         $grade_level_response = wp_set_post_terms( $program_id, $grade_level, 'grade-level', false );

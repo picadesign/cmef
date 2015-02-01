@@ -4121,55 +4121,66 @@ h1.homepage {
   width: 100%; }
 
 /* line 46, ../sass/layouts/_single-program.scss */
+.ended.button {
+  background-color: #b75716;
+  cursor: auto;
+  vertical-align: middle; }
+  /* line 50, ../sass/layouts/_single-program.scss */
+  .ended.button span {
+    color: white;
+    display: table-cell;
+    vertical-align: middle; }
+
+/* line 57, ../sass/layouts/_single-program.scss */
 .gallery img {
   width: 100%;
   height: auto; }
 
-/* line 51, ../sass/layouts/_single-program.scss */
+/* line 62, ../sass/layouts/_single-program.scss */
 .cycle-slideshow img {
   display: none; }
 
-/* line 55, ../sass/layouts/_single-program.scss */
+/* line 66, ../sass/layouts/_single-program.scss */
 #adv-custom-pager {
   margin-top: 10px; }
-  /* line 58, ../sass/layouts/_single-program.scss */
+  /* line 69, ../sass/layouts/_single-program.scss */
   #adv-custom-pager #pager-image {
     width: 22%;
     display: block;
     float: left;
     margin-right: 13px;
     height: 67px; }
-    /* line 65, ../sass/layouts/_single-program.scss */
+    /* line 76, ../sass/layouts/_single-program.scss */
     #adv-custom-pager #pager-image img {
       height: 54px; }
-    /* line 69, ../sass/layouts/_single-program.scss */
+    /* line 80, ../sass/layouts/_single-program.scss */
     #adv-custom-pager #pager-image:nth-child(4n) {
       margin-right: 0; }
 
-/* line 75, ../sass/layouts/_single-program.scss */
+/* line 86, ../sass/layouts/_single-program.scss */
 #donation-table {
   border-spacing: 0 5px; }
-  /* line 78, ../sass/layouts/_single-program.scss */
+  /* line 89, ../sass/layouts/_single-program.scss */
   #donation-table td {
     padding-bottom: 5px; }
 
-/* line 84, ../sass/layouts/_single-program.scss */
+/* line 95, ../sass/layouts/_single-program.scss */
 #donation a {
   color: #444;
   text-transform: none; }
-  /* line 89, ../sass/layouts/_single-program.scss */
+  /* line 100, ../sass/layouts/_single-program.scss */
   #donation a:hover {
     text-decoration: underline; }
-/* line 93, ../sass/layouts/_single-program.scss */
+/* line 104, ../sass/layouts/_single-program.scss */
 #donation .mail {
   float: left;
   margin-right: 2px; }
 
-/* line 99, ../sass/layouts/_single-program.scss */
+/* line 110, ../sass/layouts/_single-program.scss */
 .view-receipt {
   cursor: pointer; }
 
-/* line 103, ../sass/layouts/_single-program.scss */
+/* line 114, ../sass/layouts/_single-program.scss */
 #photo_upload {
   overflow: visible; }
 

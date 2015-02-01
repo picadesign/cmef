@@ -15,8 +15,11 @@
 		<div class="row">
 			<div class="eight columns alpha">&nbsp;</div>
 			<div class="eight columns omega">
-
-				<a href="<?php /* Create the url but pass in an argument for the right program EXTREMELY IMPORTANT */ echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button orange alignright"><span>Donate to this program</span></a>
+				<?php if(get_post_meta($post->ID, '_program-status', true) == 'ended'): ?>
+					<span class="button red alignright ended"><span>Program Ended</span></span>
+				<?php else: ?>
+					<a href="<?php /* Create the url but pass in an argument for the right program EXTREMELY IMPORTANT */ echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button orange alignright"><span>Donate to this program</span></a>
+				<?php endif; ?>
 				<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()){?><div href="" class="button green alignright button-margin edit-program"><span>Edit</span></div><?php } ?>
 			</div>
 		</div>
@@ -189,6 +192,17 @@
 							<tr class="goal-sel-row hidden">
 								<td class="four columns alpha"><b>Goal</b></td>
 								<td class="five columns alignleft goal-sel"><input type="text" value="<?php echo get_post_meta(get_the_ID(), '_fundraising-goal', true) ?>"></td>
+							</tr>
+							<tr class="program-status-sel-row hidden">
+								<td class="four columns alpha"><b>Program Status</b></td>
+								<td class="five columns alightright program-status-sel">
+									<div class="select">
+										<select name="program-status" id="program-status">
+											<option value="open" <?php selected('open', get_post_meta($post->ID, '_program-status', true), true) ?>>Open</option>
+											<option value="ended" <?php selected('ended', get_post_meta($post->ID, '_program-status', true), true) ?>>Ended</option>
+										</select>
+									</div>
+								</td>
 							</tr>
 						</table>
 					</form>
