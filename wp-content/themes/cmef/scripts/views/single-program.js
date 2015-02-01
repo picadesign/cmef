@@ -91,6 +91,7 @@ jQuery(function ($) {
 			$('.goal-sel-row').removeClass('hidden');
 			$('.photo-uploader-container').removeClass('hidden')
 			$('.description').redactor();
+			$('.title').redactor();
 			$('.button.edit-program').html('<span>Save</span>').addClass("save-program").removeClass('edit-program');
 		},
 		saveProgram: function(){
