@@ -10,8 +10,26 @@ get_header();
 				'post_status' => 'publish',
 				'posts_per_page' => 6,
 				'post__not_in' => array(664),
-				'meta_key' => '_thumbnail_id'
-				
+				'meta_query' => array(
+					'relation' => 'AND',
+					array(
+						'key' => '_thumbnail_id',
+						'compare' => 'EXISTS'
+					),
+					array(
+						'relation' => 'OR',
+						array(
+							'key' => '_program-status',
+							'value' => 'open',
+							'compare' => '='
+						),
+						//This part should be phased out when programs get populated.
+						array(
+							'key' => '_program-status',
+							'compare' => 'NOT EXISTS'
+						)
+					)
+				)
 			);
 			$the_query = new WP_Query( $args ); ?>
 			<?php // The Loop
