@@ -309,7 +309,42 @@ html{
 			}
 		}
 	}
+	input{
+		height:35px;
+		width:100%;
+		//margin:15px;
+		border:none;
+		background-color:#fcfcfc;
+		
+		padding:5px;
+		margin-bottom:10px;
 
+		&:active{
+			//background-color:
+		}
+
+		&:focus{
+			outline:0;
+		}
+	}
+
+	input[type='text'], input[type='password'], input[type='number']{
+		height:35px;
+		width:100%;
+		border:none;
+		font-weight: 1px;
+		@include box-shadow($mercury 0 1px 3px inset);
+		&:focus{
+			outline:0;
+		}
+	}
+	input[type='radio'], input[type='checkbox']{
+		width:auto !important;
+		height:auto;
+		display:inline;
+		margin-right:5px;
+	}
+		
 	form{
 		//height:auto !important;
 		overflow: auto;

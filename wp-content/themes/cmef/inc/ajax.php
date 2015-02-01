@@ -587,7 +587,8 @@ global $post;
          // Update post content
           $program = array(
               'ID'           => $program_id,
-              'post_content' => $_POST['description']
+              'post_content' => $_POST['description'],
+              'post_title'   => $_POST['title']
           );
 
         // Update the post into the database

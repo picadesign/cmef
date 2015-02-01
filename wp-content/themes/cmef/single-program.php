@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="eleven columns alpha"><h2><?php the_title(); ?></h2></div>
+			<div class="eleven columns alpha title"><h2><?php the_title(); ?></h2><input type="text" class="hidden" value="<?php the_title() ?>"></div>
 			<div class="five columns omega">
 				<span class="alignleft">Share this Program:</span>
 				<div class="social alignright">

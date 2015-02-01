@@ -89,9 +89,10 @@ jQuery(function ($) {
 			$('.number-students').hide();
 			$('.number-students-sel').removeClass('hidden');
 			$('.goal-sel-row').removeClass('hidden');
-			$('.photo-uploader-container').removeClass('hidden')
+			$('.photo-uploader-container').removeClass('hidden');
+			$('.title h2').hide();
+			$('.title input').removeClass("hidden");
 			$('.description').redactor();
-			$('.title').redactor();
 			$('.button.edit-program').html('<span>Save</span>').addClass("save-program").removeClass('edit-program');
 		},
 		saveProgram: function(){
@@ -105,6 +106,7 @@ jQuery(function ($) {
 			var description = $('.description').redactor('get');
 			var program_id = $('input[name="post_id"]').val();
 			var goal = $('.goal-sel input').val();
+			var title = $('.title input').val();
 
 			var regex = new RegExp(',', 'g');					//regex to replace all instance variables (found at 'http://stackoverflow.com/questions/6064956/replace-all-occurrences-in-a-string')
 				goal = goal.replace(regex, '');
@@ -120,7 +122,8 @@ jQuery(function ($) {
 				number_students: number_students,
 				description: description,
 				program_id: program_id,
-				goal: goal
+				goal: goal,
+				title: title
 			}, function(response){
 				console.log(response);
 				$('.tfa-region').html($('.select #tfa-region option:selected').val()).show();
@@ -134,7 +137,9 @@ jQuery(function ($) {
 				$('.number-students').html($('.number-students-sel input').val()).show();
 				$('.number-students-sel').addClass('hidden');
 				$('.goal-sel-row').addClass('hidden');
-				$('.photo-uploader-container').addClass('hidden')
+				$('.photo-uploader-container').addClass('hidden');
+				$('.title input').addClass("hidden");
+				$('.title h2').show().html(title);
 				$('.description').redactor('destroy');
 				$('.button.save-program').html('<span>Edit</span>').addClass("edit-program").removeClass('save-program');
 			})
