@@ -44,13 +44,18 @@
 }
 
 .ended.button{
-	background-color:#b75716;
+	background-color:#a6000d;
 	cursor:auto;
 	vertical-align: middle;
+
+	&.full-width{
+		width:100%;
+	}
+	
 	span{
 		color:white;
 		display: table-cell;
-vertical-align: middle;
+		vertical-align: middle;
 	}
 }
 

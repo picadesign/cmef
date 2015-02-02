@@ -36,6 +36,12 @@
 			<div class="meter-progress" style="width:<?php echo ($raised/(int) get_post_meta(get_the_ID(), '_fundraising-goal', true))*100; ?>%;"></div>
 		</div>
 		<span class="alignRight raised-amount">Raised <b><?php echo money_format('%.0n', $raised) . "\n"; ?></b></span><span class="alignLeft goal-amount">Goal <b><?php echo money_format('%.0n', get_post_meta($post->ID, '_fundraising-goal', true)) . "\n"; ?></b></span>
-		<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button donate orange"><span>Donate Now</span></a>
+		<?php if(get_post_meta($post->ID, '_program-status', true) == 'ended'): ?>
+			<span class="button red alignright ended full-width"><span>Program Ended</span></span>
+		<?php else: ?>
+			<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button donate orange"><span>Donate Now</span></a>
+		<?php endif; ?>
+		
+	
 	</div>
 </div>
