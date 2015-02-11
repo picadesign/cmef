@@ -220,3 +220,23 @@ function update_balance($amount, $program_id){
     $new_balance = $amount + get_post_meta($program_id, '_program-balance', true);
     update_post_meta($program_id, '_program-balance', $new_balance);
 }
+
+
+add_action( 'login_form_register', 'catch_register' );
+/**
+ * Redirects visitors to `wp-login.php?action=register` to 
+ * `site.com/register`
+ */
+function catch_register()
+{
+    wp_redirect( home_url( '/start-a-program' ) );
+    exit(); // always call `exit()` after `wp_redirect`
+}
+
+//lets redirect the users to a custom forgot password page. NEEDS TO BE DONE
+//because if the not approved user goes to the normal
+//wordpress page then they will be able to get their password.
+add_filter( 'lostpassword_url', 'my_lost_password_page', 10, 2 );
+function my_lost_password_page( $lostpassword_url, $redirect ) {
+    return get_the_permalink(571);
+}

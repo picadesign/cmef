@@ -451,14 +451,15 @@ jQuery(function ($) {
 
 	require(['models/models'], function(models) {
 		require(['collections/collections'], function(collections){
-			require(['views/home', 'views/start-a-program', 'views/our-programs', 'views/single-program', 'views/resources-view', 'views/profile'], function(){
+			require(['views/home', 'views/start-a-program', 'views/our-programs', 'views/single-program', 'views/resources-view', 'views/profile', 'views/lost-password'], function(){
 				var ApplicationRouter = Backbone.Router.extend({
 					routes: {
 						"start-a-program/": "NewProgram",
 						"our-programs/": "OurPrograms",
 						"program/:program_name/": "SingleProgram",
 						'resource/': 'Resources',
-						'author/:username/': 'ProfilePage'
+						'author/:username/': 'ProfilePage',
+						'lost-password/': 'LostPasswordPage',
 						//"*actions": "home"
 					},
 					initialize: function() {
@@ -482,7 +483,10 @@ jQuery(function ($) {
 					},
 					ProfilePage: function(){
 						this.profileView = new ProfileView();
-					}
+					},
+					LostPasswordPage: function(){							// create a view for the lost password page
+						this.lostpasswordView = new LostPasswordView();
+					}	
 				});
 
 				app = new ApplicationRouter();

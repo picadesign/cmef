@@ -16,7 +16,7 @@
 
         <!--Put Open Graph Meta Tags Below-->
         <!-- End Meta Tags -->
-        <title><?php wp_title() ?></title>
+        <title>CMEF <?php wp_title() ?></title>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/stylesheets/style.css" media="screen, print" />
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' )?>" />

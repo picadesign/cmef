@@ -18,22 +18,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="ten columns content border-right alpha ">
+			<div class="sixteen columns content border-right alpha omega">
 				<?php the_content(); ?>
-			</div>
-			<div class="five columns omega sidebar">
-				<ul>
-					<li>Page</li>
-					<li>Page</li>
-					<li>Page</li>
-					<li>Page</li>
-					<li>Page</li>
-					<li>Page</li>
-					<li>Page</li>
-					<li>Page</li>
-					<li>Page</li>
-					<li>Page</li>
-				</ul>
 			</div>
 		</div>
 		<?php endwhile; ?>

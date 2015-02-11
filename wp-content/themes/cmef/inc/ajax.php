@@ -634,4 +634,31 @@ global $post;
         update_post_meta($_POST['resource_id'], '_ratings', $ratings);
         die();
     }
-    
+
+    /**
+     * Purpose: Submit the forgot password form and send a reset password link from wordpress.
+     * Step one. Check to see if user exists.
+     * Step two. if user does exist then check to see if they are approved
+     * Step 3. If user is approved send reset link to the email they provided.
+     * Step 4. If user is not approved then send notification back to the from end to inform them that they may need to contact the admin. (info@cmef.org)
+     * Step 5. if the user doesnt exist then send notification back to them informing them that they do not exist.
+     * Step 6. End.
+     */
+    add_action('wp_ajax_nopriv_forgot_password', 'forgot_password');
+    add_action('wp_ajax_forgot_password', 'forgot_password');
+    function forgot_password(){         //PRE: no parameters
+        if(email_exists($_POST['email'])):                                      //check if user exists by email
+            $user  = get_user_by('email', $_POST['email']);                     // if they do get their information
+            if(get_user_meta($user->ID, 'pw_user_status', true) == 'approved'): //check the status of a user (see if they have been approved);
+                //send reset link
+            else:
+                //not approved contact admin
+            endif;
+        else:
+            'user does not exist';
+        endif;
+
+
+        echo json_encode($_POST['email']);   //POST: return notifications etc.
+        die();                          //equiv to exit
+    }
