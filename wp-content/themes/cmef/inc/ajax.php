@@ -644,21 +644,41 @@ global $post;
      * Step 5. if the user doesnt exist then send notification back to them informing them that they do not exist.
      * Step 6. End.
      */
+    
     add_action('wp_ajax_nopriv_forgot_password', 'forgot_password');
     add_action('wp_ajax_forgot_password', 'forgot_password');
-    function forgot_password(){         //PRE: no parameters
+    function forgot_password(){                                                 //PRE: no parameters
         if(email_exists($_POST['email'])):                                      //check if user exists by email
             $user  = get_user_by('email', $_POST['email']);                     // if they do get their information
             if(get_user_meta($user->ID, 'pw_user_status', true) == 'approved'): //check the status of a user (see if they have been approved);
-                //send reset link
+                $new_password = wp_generate_password(8, true);
+                $user = get_user_by('email', $_POST['email']);
+                wp_set_password($new_password, $user->ID);
+
+                $new_wp_mail = array(
+                    'to' => $_POST['email'],
+                    'subject' => 'Your new CMEF password.',
+                    'message' => 'Here is your new CMEF password. Please log in and change it as soon as possible.' . $new_password,
+                );
+
+                $alerts = array(                                                //Success alert
+                    'type' => 'success',
+                    'message' => "You should receive a new password shortly at your email entered below.",
+                );
             else:
-                //not approved contact admin
+                $alerts = array(
+                    'type' => 'error',                                          //Error about user not being approved
+                    'message' => 'This email does not belong to an approved user of the site, please contact us at <a href="mailto:' . antispambot("info@cmef.org") . '">' . antispambot("info@cmef.org") . '</a> for assistance.',
+                );
             endif;
         else:
-            'user does not exist';
+            $alerts = array(                                                    //Error about email not belonging to regsitered user.
+                'type' => 'error',
+                'message' => 'This email does not belong to a registered user.'
+            );
         endif;
 
 
-        echo json_encode($_POST['email']);   //POST: return notifications etc.
-        die();                          //equiv to exit
+        echo json_encode($alerts);                                              //POST: return notifications etc.
+        die();                                                                  //equiv to exit
     }

@@ -18,6 +18,10 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="sixteen columns alpha omega alert-messages">
+				
+			</div>
+			<div class="clear"></div>
 			<div class="sixteen columns alpha omega">
 				<div class="eight columns alpha">
 					<?php the_content(); ?>
@@ -26,9 +30,14 @@
 					<form action="">
 						<div class="eight columns alpha">
 							<input type="text" name="email" placeholder="Email Address">
+						</div>
+						<div class="eight columns alpha">
+							<div class="six columns alpha"><?php echo do_shortcode('[bws_google_captcha]');  ?></div>
 							<div class="button submit green alignright"><span>Submit</span></div>
 						</div>
 					</form>
+					
+
 				</div>
 			</div>
 		</div>

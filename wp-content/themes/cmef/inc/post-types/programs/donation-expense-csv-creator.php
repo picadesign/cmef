@@ -12,7 +12,7 @@ function create_custom_program_menu() {
         /* Generate the HTML. */ ?>
         <div class="container full margin-right">
             <form action="" method="post">
-                <h1>Export to PDF or CSV</h1>
+                <h1>Export to CSV</h1>
                 <br />
 				<table>
 					<tr>

@@ -14,6 +14,7 @@
 	                $args = array(
 	                    'post_type' => 'program',
 	                    'posts_per_page' => -1,
+	                    'post_status' => 'publish'
 	                );
 	               	//print_r($args);
 	                /* Run the query. */
