@@ -60,8 +60,13 @@
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <? wp_nav_menu( array( 'theme_location' => 'Main Navigation') ); ?>
-                        
+                        <?php   
+                            if(is_user_logged_in()): 
+                                wp_nav_menu( array( 'theme_location' => 'Main Navigation Logged In') );
+                            else:
+                                wp_nav_menu( array( 'theme_location' => 'Main Navigation') );
+                            endif;
+                        ?>
                     </div>
                 </div>
             </div>

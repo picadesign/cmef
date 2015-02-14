@@ -6,7 +6,7 @@
 	</div>
 	<div class="sixteen columns alpha omega" id="accordion">
 			<?php if(!is_user_logged_in()): ?>
-				<h3>Register</h3>
+				<h3>Step 1: Register</h3>
 				<form action="" id="register">
 					<div class="eight columns alpha">
 						<input type="text" name="username" placeholder="Username *">
@@ -35,7 +35,7 @@
 					</div>
 				</form>
 			<?php endif; ?>
-			<h3>Start a Program</h3>
+			<h3>Step <?php echo (is_user_logged_in() ? '1' : '2') ?>: Start a Program</h3>
 			<form action="" id="new_program" data-user-id="<?php echo (is_user_logged_in() ? get_current_user_id() : '') ?>">
 				<div class="sixteen columns alpha omega">
 					<p><b>* Hint:</b> Try to limit the program name to 70 characters or less.</p>
@@ -107,7 +107,7 @@
 					<div class="button green alignright" id="submit-new-program"><span class="button-text">Create Program</span></div>
 				</div>
 			</form>
-			<h3>Upload Your Photos</h3>
+			<h3>Step <?php echo (is_user_logged_in() ? '2' : '3') ?>: Upload Your Photos</h3>
 			<form class="" action="<?php echo get_bloginfo('url') . '/wp-admin/admin-ajax.php' ?>?&action=upload_image"id="photo_upload" id="image_uploader" data-new-program-id="" enctype="multipart/form-data">
 				<div class="sixteen columns alpha omega">
 					<div class="eight columns alpha">

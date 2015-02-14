@@ -28,7 +28,7 @@ jQuery(function ($) {
 				slides: '> a'
 			});
 			$('.slideshow').removeClass('hidden')
-			$( "#tabs" ).tabs({active: 1});
+			$( "#tabs" ).tabs({active: 0});
 			$('#tabs').removeClass('hidden')
 			$.tablesorter.addParser({ 
 			    // set a unique id 

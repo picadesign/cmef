@@ -11,16 +11,17 @@
 			</div>
 		</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php $program = get_post(htmlspecialchars($_GET["program_id"])); //get the program for this donation page ?> 
 		<div class="row">
 			<div class="sixteen columns alpha omega">
-				<h2 class="title"><?php the_title(); ?></h2>
+				<h2 class="title"><?php the_title(); ?>: <?php echo $program->post_title ?></h2>
 				<hr>
 			</div>
 		</div>
-		<?php $program = get_post(htmlspecialchars($_GET["program_id"])); //print_r($program) ?>
+		
 		<div class="row">
 			<div class="sixteen columns alpha dontation-description">
-				<p>Your donation will help support the cause '<?php echo $program->post_title?>'. Thank You!</p>
+				<p>Your donation will help supporting the cause. Thank You!</p>
 			</div>
 			<div class="eight columns alpha omega alert-messages">
 				

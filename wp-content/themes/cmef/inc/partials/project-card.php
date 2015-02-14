@@ -2,9 +2,9 @@
 	<?php if(!is_search()){ ?>
 		<?php if(has_post_thumbnail($post->ID)): ?>
 			<?php // NOTE: Originally we were going to set a max height on the images but it was causing all kinds of issues with the layout and the images were getting squished. ?>
-			<?php the_post_thumbnail($size = 'Project Card', $attr = ''); ?>
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail($size = 'Project Card', $attr = ''); ?></a>
 		<?php else : ?>
-			<img src="<?php echo get_template_directory_uri(); ?>/images/placeholder.png" alt="">
+			<a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/placeholder.png" alt=""></a>
 		<?php endif; ?>
 	<?php } ?>
 	<?php

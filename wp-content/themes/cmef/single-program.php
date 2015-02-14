@@ -29,7 +29,10 @@
 				<span class="alignleft">Share this Program:</span>
 				<div class="social alignright">
 					<ul>
-						<li class="mail"><a href=""></a></li>
+						<li class="mail">
+							<a href="mailto:?subject=Check out this CMEF Program&amp;body=Check out the program, '<?php the_title() ?>' at <?php the_permalink(); ?>." title="Share by Email">
+							</a>
+						</li>
 						<li class="google"><a href="https://plus.google.com/share?url=http%3A%2F%2F<?php echo urlencode(the_permalink());  ?>" target="_blank"></a></li>
 						<li class="twitter"><a href="http://twitter.com/share?url=<?php echo urlencode(the_permalink());  ?>" target="_blank"></a></li>
 						<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(the_permalink());  ?>" target="_blank"></a></li>

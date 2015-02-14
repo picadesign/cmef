@@ -345,9 +345,15 @@ html{
 		margin-right:5px;
 	}
 		
+	/* remove the spinner (arrows in the number input) */
+	input[type='number']::-webkit-outer-spin-button, input[type='number']::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
 	form{
 		//height:auto !important;
 		overflow: auto;
+		overflow-x:hidden;
 		fieldset{
 
 		}
