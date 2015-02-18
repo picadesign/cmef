@@ -1707,7 +1707,7 @@ html {
    */ }
   /* line 7, ../sass/basics/_theme-html-base.scss */
   html body {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1407350076');
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1424100394');
     font-size: 17px;
     line-height: normal; }
   /* line 17, ../sass/basics/_theme-html-base.scss */
@@ -2303,6 +2303,10 @@ section {
   .lightbox-container img {
     position: absolute;
     border: 1px solid black; }
+
+/* line 883, ../sass/basics/_theme-html-base.scss */
+.margin-top-5 {
+  margin-top: 5px; }
 
 /* #Font-Face
 ================================================== */

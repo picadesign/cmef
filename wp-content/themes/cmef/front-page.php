@@ -43,7 +43,8 @@ get_header();
 			<?php else :; ?>
 				// no posts found  
 			<?php endif; ?>
-			<?php wp_reset_postdata(); ?>			
+			<?php wp_reset_postdata(); ?>
+			<div></div>			
 			<hr>
 			<div class="bottom-buttons">
 				<div href="" class="button gray show-more"><span>Show More</span></div>

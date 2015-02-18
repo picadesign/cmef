@@ -243,6 +243,7 @@ jQuery(function ($) {
 				$('.alert-messages').html(error);
 				$('#donation-form input[type=submit]').attr('value', 'Donate!').removeAttr('disabled');
 			}else{
+				redirect = redirect + "&amount=" + amount;
 				window.location.href = redirect;
 			}
 		});
@@ -386,8 +387,13 @@ jQuery(function ($) {
 				for (var key in new_projects) {
 				   var program = new_projects[key];
 				   console.log(program);
+				   //grab title and add ... if longer than 30 chars
+				   var card_title = program['post_title'];
+						if(card_title.length > 30) {
+							card_title = program['post_title'].substring(0,30) + '...';
+						}
 					var rendered = Mustache.render(template, {
-						title: program['post_title'],
+						title: card_title, //card title from above
 						author: program['author'],
 						post_content: program['post_content'].substring(0,175),
 						the_thumbnail: program['post_thumbnail'],
@@ -404,7 +410,7 @@ jQuery(function ($) {
 					});
 					$('.projects').append(rendered);
 				}
-				$('.gallery-masonry').imagesLoaded( function(){
+				$('.masonry').imagesLoaded( function(){
 					$('.masonry').masonry('reloadItems');
 		    		$('.projects').masonry();
 		    	})

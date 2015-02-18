@@ -216,7 +216,7 @@ html{
 		@extend .fonts.trade.condensed.bold;
 		font-size: 1em ;
 		color: $scorpion;
-		word-spacing: -5px;
+		word-spacing: -5px
 	}
 
 	/**
@@ -878,4 +878,8 @@ section{
 		//border:10px solid white;
 		//margin-top:10px;
 	}
+}
+
+.margin-top-5{
+	margin-top:5px;
 }

@@ -29,7 +29,17 @@
 		endif;
 	?>
 	<div class="description">
-		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h2>
+			<a href="<?php the_permalink(); ?>">
+				<?php //if length of post title > 30
+				if(strlen($post->post_title) > 30) {
+					//shorten to 30 chars, add ... 
+					echo substr(the_title($before = '', $after = '', FALSE), 0,30) . '...'; 
+				} else { 
+					the_title(); 
+				} ?>
+			</a>
+		</h2>
 		<span class="author-name">Started By: <?php the_author(); ?></span>
 		<p><?php echo substr(get_the_excerpt(), 0,175); ?>... <a href="<?php the_permalink(); ?>">MORE</a></p>
 		<div class="meter">
@@ -41,7 +51,15 @@
 		<?php else: ?>
 			<a href="<?php echo add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) ); ?>" class="button donate orange"><span>Donate Now</span></a>
 		<?php endif; ?>
-		
+		<div class="social">
+			<span class="share">Share</span>
+			<ul>
+				<li class="twitter"><a href="http://www.twitter.com/share/?url=<?php echo the_permalink(); ?>" target="_blank"></a></li>
+				<li class="linkedin"><a href="https://www.linkedin.com/cws/share?url=<?php echo the_permalink(); ?>" target="_blank"></a></li>
+				<li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<?php echo the_permalink(); ?>" target="_blank"></a></li>
+				<li class="google"><a href="http://plus.google.com/share?url=<?php echo the_permalink(); ?>" target="_blank"></a></li>
+			</ul>
+		</div>
 	
 	</div>
 </div>

@@ -57,10 +57,10 @@ global $post;
     			$programsDataObject[] = $program;
     			$program->amount_raised = money_format('%.0n', $raised) . "\n";
     			$program->fundraiser_goal = money_format('%.0n', $goal) . "\n";
-    			$program->twitter_url = get_post_meta($post->ID, '_social-networks', true)['twitter'];
-    			$program->linkedin_url = get_post_meta($post->ID, '_social-networks', true)['linkedin'];
-    			$program->facebook_url = get_post_meta($post->ID, '_social-networks', true)['facebook'];
-    			$program->google_url = get_post_meta($post->ID, '_social-networks', true)['google'];
+    			$program->twitter_url = "http://www.twitter.com/share/?url=" . get_permalink($post->ID);
+    			$program->linkedin_url = "https://www.linkedin.com/cws/share?url=" . get_permalink($post->ID);
+    			$program->facebook_url = "http://www.facebook.com/sharer.php?u=" . get_permalink($post->ID);
+    			$program->google_url = "http://plus.google.com/share?url=" . get_permalink($post->ID);
                 $program->donation_url = add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) );
     	endwhile;
 

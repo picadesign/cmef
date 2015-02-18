@@ -9,26 +9,39 @@
 				<h3>Step 1: Register</h3>
 				<form action="" id="register">
 					<div class="eight columns alpha">
-						<input type="text" name="username" placeholder="Username *">
-						<input required="required" type="text" name="email" placeholder="Email Address *">
-						<input required="required" type="text" name="confirm_email" placeholder="Confirm Email Address *">
+						<label><b>Username</b>
+						<input class="margin-top-5" type="text" name="username" placeholder="Username *"></label>
+						<label><b>Email Address</b>
+						<input class="margin-top-5" required="required" type="text" name="email" placeholder="Email Address *"></label>
+						<label><b>Confirm Email Address</b>
+						<input class="margin-top-5" required="required" type="text" name="confirm_email" placeholder="Confirm Email Address *"></label>
 					</div>
 					<div class="sixteen columns alpha omega">
 						<h3>Corps Member Profile</h3>
 					</div>
 					<div class="eight columns alpha">
-						<input type="text" name="first_name" placeholder="First Name *">
-						<input type="text" name="last_name" placeholder="Last Name *">
-						<input type="text" name="corp_region" placeholder="Corps Region *">
-						<input type="text" name="corp_year" placeholder="Corps Year *">
-						<input type="text" name="phone" placeholder="Phone Number *">
+						<label><b>First Name</b>
+						<input class="margin-top-5" type="text" name="first_name" placeholder="First Name *"></label>
+						<label><b>Last Name</b>
+						<input class="margin-top-5" type="text" name="last_name" placeholder="Last Name *"></label>
+						<label><b>Corps Region</b>
+						<input class="margin-top-5" type="text" name="corp_region" placeholder="Corps Region *"></label>
+						<label><b>Corps Year</b>
+						<input class="margin-top-5" type="text" name="corp_year" placeholder="Corps Year *"></label>
+						<label><b>Phone Number</b>
+						<input class="margin-top-5" type="text" name="phone" placeholder="Phone Number *"></label>
 					</div>
 					<div class="eight columns omega">
-						<input type="text" name="street_1" placeholder="Street Address 1 *">
-						<input type="text" name="street_2" placeholder="Street Address 2">
-						<input type="text" name="city" placeholder="City *">
-						<input type="text" name="state" placeholder="State *">
-						<input type="text" name="zip" placeholder="Zip *">
+						<label><b>Street Address 1</b>
+						<input class="margin-top-5" type="text" name="street_1" placeholder="Street Address 1 *"></label>
+						<label><b>Street Address 2</b>
+						<input class="margin-top-5" type="text" name="street_2" placeholder="Street Address 2"></label>
+						<label><b>City</b>
+						<input class="margin-top-5" type="text" name="city" placeholder="City *"></label>
+						<label><b>State</b>
+						<input class="margin-top-5" type="text" name="state" placeholder="State *"></label>
+						<label><b>Zip</b>
+						<input class="margin-top-5" type="text" name="zip" placeholder="Zip *"></label>
 					</div>
 					<div class="sixteen columns alpha omega">
 						<div class="button alignright green" id="submit-registration"><span class="button-text">Register</span></div>
@@ -40,14 +53,18 @@
 				<div class="sixteen columns alpha omega">
 					<p><b>* Hint:</b> Try to limit the program name to 20 characters or less.</p>
 					<div class="eight columns alpha">
-						<input type="text" name="program_name" placeholder="Program Name * (Max of 20 Characters)" maxlength="20">
-						<input type="text" name="fundraising_goal" placeholder="Fundraising Goal">
-						<input type="number" name="number_students" placeholder="Number of Students *">
-						<input type="text" name="school_name" placeholder="School or Organization Name *">
+						<b>Program Name</b>
+						<input class="margin-top-5" type="text" name="program_name" placeholder="Program Name *">
+						<b>Fundraising Goal</b>
+						<input class="margin-top-5" type="text" name="fundraising_goal" placeholder="Fundraising Goal *">
+						<b>Number of Students</b>
+						<input class="margin-top-5" type="number" name="number_students" placeholder="Number of Students *">
+						<b>School or Organization Name</b>
+						<input class="margin-top-5" type="text" name="school_name" placeholder="School or Organization Name *">
 					</div>
 					<div class="eight columns omega">
 					<b>Grade Level: </b>
-					<div class="select">
+					<div class="select margin-top-5">
 						<?php 	$args = array(
 									'order' => 'ASC',
 									'hide_empty' => false
@@ -63,7 +80,7 @@
 					</div>
 					<br>
 					<b>TFA Region: </b>
-					<div class="select">
+					<div class="select margin-top-5">
 						<?php 	$args = array(
 									'order' => 'ASC',
 									'hide_empty' => false
@@ -79,7 +96,7 @@
 					</div>
 					<br>
 					<b>Type of Program: </b>
-					<div class="select">
+					<div class="select margin-top-5">
 						<?php 	$args = array(
 									'order' => 'ASC',
 									'hide_empty' => false

@@ -12,6 +12,7 @@
 		</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php $program = get_post(htmlspecialchars($_GET["program_id"])); //get the program for this donation page ?> 
+		<?php 	if($program): 	// if the program exists then display donate page ?>
 		<div class="row">
 			<div class="sixteen columns alpha omega">
 				<h2 class="title"><?php the_title(); ?>: <?php echo $program->post_title ?></h2>
@@ -143,6 +144,11 @@
 				</div>
 			</form>
 		</div>
+		<?php
+			else:		//if the program does not exist then do not show donate form.
+				echo 'Sorry This Program Does Not Exist.';
+			endif;
+		?>
 		<?php endwhile; ?>
 		<?php endif; ?>
 	</div>
