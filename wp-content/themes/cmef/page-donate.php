@@ -28,7 +28,7 @@
 			</div>
 			<div class="clear"></div>
 			<form action="" id="donation-form">
-				<input type="hidden" name="thank_you_url" value="<?php echo get_the_permalink(261) ?>">
+				<input type="hidden" name="thank_you_url" value="<?php echo add_query_arg('program_id', $program->ID, get_the_permalink(261)) ?>">
 				<input type="hidden" name="program_id" value="<?php echo $program->ID ?>">
 				<section>
 					<div class="eight columns alpha">

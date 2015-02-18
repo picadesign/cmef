@@ -38,7 +38,7 @@
 			<h3>Step <?php echo (is_user_logged_in() ? '1' : '2') ?>: Start a Program</h3>
 			<form action="" id="new_program" data-user-id="<?php echo (is_user_logged_in() ? get_current_user_id() : '') ?>">
 				<div class="sixteen columns alpha omega">
-					<p><b>* Hint:</b> Try to limit the program name to 70 characters or less.</p>
+					<p><b>* Hint:</b> Try to limit the program name to 20 characters or less.</p>
 					<div class="eight columns alpha">
 						<input type="text" name="program_name" placeholder="Program Name * (Max of 20 Characters)" maxlength="20">
 						<input type="text" name="fundraising_goal" placeholder="Fundraising Goal">

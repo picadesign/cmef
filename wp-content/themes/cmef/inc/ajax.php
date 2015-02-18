@@ -238,7 +238,7 @@ global $post;
             //Update the various needed post data.
             
             update_post_meta($new_post_id, '_program-id', $program_id);
-            update_post_meta($new_post_id, '_contribution-amount', ($amount - 5 - .10));
+            update_post_meta($new_post_id, '_contribution-amount', ($amount - 5 - .10));    //only if they have selected "cover transaction amount" & "donate to CMEF"
             update_post_meta($new_post_id, '_donation-address', $address);
             update_post_meta($new_post_id, '_donor-name', $name);
             update_post_meta( $new_post_id, '_payment-method', 'Credit Card' );
