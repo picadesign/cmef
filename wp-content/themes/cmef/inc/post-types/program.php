@@ -103,24 +103,24 @@
 							$the_query->the_post();
 
 							if($post->post_type == 'donation'){
-								$amount = (int)get_post_meta( $post->ID, '_contribution-amount', true);
+								$amount = (double)get_post_meta( $post->ID, '_contribution-amount', true);
 								$total = $total + $amount;
 							}
 							elseif($post->post_type == 'expense'){
 								// Change this below.
-								$amount = (int)get_post_meta( $post->ID, '_expense-amount', true);
+								$amount = (double)get_post_meta( $post->ID, '_expense-amount', true);
 								$total = $total - $amount;
 							}
 							?>
 							<tbody id="the-list">
-								<tr><td><?php echo $post->ID ?></td><td><?php echo $post->post_type ?></td><td><?php echo '$' . $amount . '.00' ?></td><td><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></td></tr>
+								<tr><td><?php echo $post->ID ?></td><td><?php echo $post->post_type ?></td><td><?php echo '$' . $amount ?></td><td><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></td></tr>
 							</tbody>
 						<?php } ?>
 						<tfoot>
 						  <tr>
 						  	<td></td>
 						    <td><h4>Sum</h4></td>
-						    <td><h4>$<?php echo $total; ?>.00</h4></td>
+						    <td><h4>$<?php echo $total; ?></h4></td>
 						    <td></td>
 						  </tr>
 						</tfoot>

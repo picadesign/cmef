@@ -59,7 +59,7 @@
 							<div class="eight columns alpha omega">
 								<h3>Organization Name</h3>
 								<input type="text" name="organization_name" placeholder="Organization Name" disabled="disabled">
-								<input type="checkbox" name="pay_for_transaction" checked="checked"><label for="pay_for_transaction">Pay For Credit Card Transaction (10&cent;)</label>
+								<!--<input type="checkbox" name="pay_for_transaction"><label for="pay_for_transaction">Pay For Credit Card Transaction</label>-->
 								<br>
 								<input type="checkbox" name="donate_to_cmef" checked="checked" value="5"><label for="donate_to_cmef">Donate $5.00 to CMEF</label>
 							</div>
@@ -135,7 +135,7 @@
 					<div class="alignleft">
 						<input type="checkbox" value="true" name="remain_anonymous"><label for="remain_anonymous">Remain Anonymous</label>
 					</div>
-					<div class="alignright"><h3>Total Donation: $<span id="total">5.10</span></h3></div>
+					<div class="alignright"><h3>Total Donation: $<span id="total">5.00</span></h3></div>
 				</div>
 				<div class="clear"></div>
 				<div class="sixteen columns alpha omega">

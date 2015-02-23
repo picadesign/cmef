@@ -25,11 +25,12 @@
 	                /**
 	                * WRITE THE TABLE TO A CSV FILE
 	                */
-	               	$writer = new \EasyCSV\Writer(ABSPATH . 'temp_csv_files/program_balances.csv');
+	               	$date = date("m-d-Y");
+	               	$writer = new \EasyCSV\Writer(ABSPATH . 'temp_csv_files/program_balances'. $date .'.csv');
                     $writer->writeRow('program_id, carry_over, revenues, expenses, balance, program_name, active (y/n), date_established, CM_name, CM_email_address');
-                    $reader = new \EasyCSV\Reader(ABSPATH . 'temp_csv_files/program_balances.csv');
+                    $reader = new \EasyCSV\Reader(ABSPATH . 'temp_csv_files/program_balances'. $date .'.csv');
 	                ?>
-	                <div class="button" id="download-program-balances-csv">Download CSV</div>
+	                <div class="button" id="download-program-balances-csv" data-date="<?php echo $date ?>">Download CSV</div>
 	                <br /><br />
 	                <table class="wp-list-table widefat fixed posts">
 									<thead>
@@ -88,12 +89,12 @@
 				                		$transactions->the_post();
 				                		//echo $post->ID;
 				                		if($post->post_type === 'donation'){
-				                			$donations += (int) get_post_meta($post->ID, '_contribution-amount', true);
-				                			$balance += (int) get_post_meta($post->ID, '_contribution-amount', true);;
+				                			$donations += (double) get_post_meta($post->ID, '_contribution-amount', true);
+				                			$balance += (double) get_post_meta($post->ID, '_contribution-amount', true);;
 				                		}
 				                		elseif($post->post_type === 'expense'){
-				                			$expenses += (int) get_post_meta($post->ID, '_expense-amount', true);
-				                			$balance -= (int) get_post_meta($post->ID, '_expense-amount', true);
+				                			$expenses += (double) get_post_meta($post->ID, '_expense-amount', true);
+				                			$balance -= (double) get_post_meta($post->ID, '_expense-amount', true);
 				                		}
 
 
@@ -108,7 +109,7 @@
 								<td><?php echo money_format('$(%i)', $expenses) ?></td>
 								<td><?php echo money_format('$%i', $balance) ?></td>
 								<td><?php echo $post->post_title ?></td>
-								<td>?</td>
+								<td><?php echo (get_post_meta($post->ID, '_program-status', true) == 'ended' ? 'n' : 'y') ?></td>
 								<td><?php echo $post->post_date ?></td>
 								<td><?php echo get_the_author() ?></td>
 								<td><?php echo antispambot(get_the_author_meta('user_email', $post->post_author)); ?></td>
@@ -120,11 +121,14 @@
 								$row .= $expenses . ',';
 								$row .= $balance . ',';
 								$row .= $post->post_title . ',';
-								$row .= 'Active?' . ',';
+								$row .= (get_post_meta($post->ID, '_program-status', true) == 'ended' ? 'n' : 'y') . ',';
 								$row .= $post->post_date . ',';
 								$row .= get_the_author() . ',';
 								$row .= get_the_author_meta('user_email', $post->post_author) . ',';
                         		$writer->writeRow($row);
+                        		$donations = 0;
+				                $expenses = 0;
+				                $balance = 0;
 							?>
 	                    <?php endwhile;
 	                    echo '</tbody></table>';    

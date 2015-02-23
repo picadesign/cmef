@@ -9,7 +9,7 @@ get_header();
 				'post_type'   => 'program',
 				'post_status' => 'publish',
 				'posts_per_page' => 6,
-				'post__not_in' => array(664),
+				'post__not_in' => array(947),
 				'meta_query' => array(
 					'relation' => 'AND',
 					array(

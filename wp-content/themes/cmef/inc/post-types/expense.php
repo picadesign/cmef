@@ -71,7 +71,7 @@
 			?>
 			<div class="container">
 
-					<input type="number" name="expense-amount" placeholder="50 for $50.00" value="<?php echo $expense_amount ?>">
+					<input type="number" name="expense-amount" step="any" placeholder="50 for $50.00" value="<?php echo $expense_amount ?>">
 			</div>
 
 		<?php }
@@ -91,6 +91,8 @@
 
 			$args = array(
 				'post_type'   => 'program',
+				'post_status'	=> 'publish',
+				'posts_per_page' => -1
 			);
 			
 			$the_query = new WP_Query( $args );
@@ -157,7 +159,7 @@
 	    	echo '<a href="' . get_edit_post_link($post_id) . '">' . $post_id . '</a>';
 	    	break;
 		case 'expense-amount' :
-			echo '$' . get_post_meta( $post_id , '_expense-amount' , true ) . '.00';
+			echo '$' . get_post_meta( $post_id , '_expense-amount' , true );
 			break;
 		case 'program' :
 		    echo '<a href="' . get_edit_post_link(get_post_meta( $post_id, '_program-id', true)) . '">' . get_the_title(get_post_meta( $post_id, '_program-id', true)) .'</a>';

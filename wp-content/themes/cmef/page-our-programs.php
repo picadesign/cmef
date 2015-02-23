@@ -85,7 +85,7 @@
 		'post_type'   => 'program',
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
-		'post__not_in' => array(664),
+		'post__not_in' => array(947),
 	);
 	$search_query = array_merge($args, $vars);
 	$the_query = new WP_Query( $search_query ); ?>

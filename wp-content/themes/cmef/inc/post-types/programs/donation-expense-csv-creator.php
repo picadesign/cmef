@@ -20,13 +20,13 @@ function create_custom_program_menu() {
 	                	<label for="start-date">Starting Date:</label>
 	                </td>
 	                <td>
-	                	<input type="text" class="datepicker" name="start-date" value="<?php echo $_POST['start-date'] ?>" required="required">
+	                	<input type="text" class="datepicker" name="start-date" value="<?php echo $_POST['start-date'] ?>">
 	                </td>
 	                <td>
 	                	<label for="end-date">Ending Date:</label>
 	                </td>
 	                <td>
-	                	<input type="text" class="datepicker" name="end-date" value="<?php echo $_POST['end-date'] ?>" required="required">
+	                	<input type="text" class="datepicker" name="end-date" value="<?php echo $_POST['end-date'] ?>">
 	                </td>
 	            	</tr>
 	                <tr>

@@ -321,7 +321,7 @@
 										<td id="donation"><?php echo get_post_meta($post->ID, '_donor-name', true )['first'] ?> <?php echo get_post_meta($post->ID, '_donor-name', true )['last'] ?></td>
 									<?php endif; ?>
 										<td><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></td>
-										<td><?php echo money_format('%.0n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; ?></td>
+										<td><?php echo money_format('%.2n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; ?></td>
 									</tr>
 								<?php endwhile;
 							else:
@@ -361,7 +361,7 @@
 										 	<td><small><?php if(has_post_thumbnail()): ?><a href="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0] ?>" data-lightbox="receipts" data-title="<?php the_content() ?>">View Receipt</a><?php endif; ?><!--<div class="delete-expense action-item" data-expense-id="<?php echo $post->ID ?>">Delete</div>--></small></td>
 											<td><?php echo $post->ID ?></td>
 											<td><?php echo get_the_date(); ?></td>
-											<td><?php echo money_format('-%.0n', (int) get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; ?></td>
+											<td><?php echo money_format('%.2n', (double) get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; ?></td>
 											<td><?php the_content(); ?></td>
 										</tr>
 									<?php endwhile;
@@ -424,10 +424,10 @@
 								foreach($transactions->posts as $transaction):
 									//print_r($transaction);
 									if($transaction->post_type == 'donation'):
-										$balance += (int) get_post_meta( $transaction->ID, '_contribution-amount', true);
+										$balance += (double) get_post_meta( $transaction->ID, '_contribution-amount', true);
 										//print_r($balance);
 									elseif ($transaction->post_type == 'expense') :
-										$balance -= (int) get_post_meta( $transaction->ID, '_expense-amount', true);
+										$balance -= (double) get_post_meta( $transaction->ID, '_expense-amount', true);
 										//print_r($balance);
 									endif;
 								endforeach;
@@ -460,17 +460,17 @@
 											<td><?php the_ID(); ?></td>
 											<td><?php echo get_the_date(); ?></td>
 											<td><?php the_content(); ?></td>
-											<td><?php if(get_post_meta( $post->ID, '_expense-amount', true) > 0){ ?><?php echo money_format('-%.0n', (int) get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; }?></td>
-											<td><?php if(get_post_meta( $post->ID, '_contribution-amount', true) > 0){ ?><?php echo money_format('%.0n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; }?></td>
+											<td><?php if(get_post_meta( $post->ID, '_expense-amount', true) > 0){ ?><?php echo money_format('-%.2n', (double) get_post_meta( $post->ID, '_expense-amount', true)) . "\n"; }?></td>
+											<td><?php if(get_post_meta( $post->ID, '_contribution-amount', true) > 0){ ?><?php echo money_format('%.2n', get_post_meta($post->ID, '_contribution-amount', true )) . "\n"; }?></td>
 											
-											<td><?php echo money_format('%.0n', $balance) . "\n";?></td>
+											<td><?php echo money_format('%.2n', $balance) . "\n";?></td>
 											<?php 
 												//reverse
 												if($post->post_type == 'donation'){
-													$balance -= (int) get_post_meta( $post->ID, '_contribution-amount', true);
+													$balance -= (double) get_post_meta( $post->ID, '_contribution-amount', true);
 												}
 												elseif($post->post_type == 'expense'){
-													$balance += (int) get_post_meta( $post->ID, '_expense-amount', true);
+													$balance += (double) get_post_meta( $post->ID, '_expense-amount', true);
 												}
 											?>
 										</tr>

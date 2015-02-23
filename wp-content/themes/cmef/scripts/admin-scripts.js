@@ -16,7 +16,8 @@ jQuery(function ($) {
 	});
 
     $('#download-program-balances-csv').click( function(){
-        window.open('../temp_csv_files/program_balances.csv');
+        var date = $('#download-program-balances-csv').attr('data-date');
+        window.open('../temp_csv_files/program_balances'+date+'.csv');
 
         $.post( $_POST['bloginfoURL'] + '/wp-admin/admin-ajax.php', {
                     //the function in ajax.php, pass the data through.

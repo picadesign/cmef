@@ -21,7 +21,7 @@ global $post;
             'post_status' => 'publish',
 			'offset' => $offset,
 			'posts_per_page' => 3,
-            'post__not_in' => array(664),
+            'post__not_in' => array(947),
             'meta_key' => '_thumbnail_id'
 		);
         // Query For Program donations
@@ -184,7 +184,7 @@ global $post;
             $amount = (float) $amount + 5;
         }
         if($pay_for_transaction == 'true'){
-            $amount = (float) $amount + 0.10;
+            $amount = (float) $amount + 0.29;
         }
 		/**
 		 * We need to do a few things here.
@@ -238,7 +238,7 @@ global $post;
             //Update the various needed post data.
             
             update_post_meta($new_post_id, '_program-id', $program_id);
-            update_post_meta($new_post_id, '_contribution-amount', ($amount - 5 - .10));    //only if they have selected "cover transaction amount" & "donate to CMEF"
+            update_post_meta($new_post_id, '_contribution-amount', ($amount - 5));    //this is because we do not store the transaction amount.
             update_post_meta($new_post_id, '_donation-address', $address);
             update_post_meta($new_post_id, '_donor-name', $name);
             update_post_meta( $new_post_id, '_payment-method', 'Credit Card' );
@@ -271,7 +271,7 @@ global $post;
                     'last' => $last_name,
                 );
                 //Update the various needed post data.
-                update_post_meta($cmef_new_post_id, '_program-id', 664);
+                update_post_meta($cmef_new_post_id, '_program-id', 947);
                 update_post_meta($cmef_new_post_id, '_contribution-amount', 5);
                 update_post_meta($cmef_new_post_id, '_donation-address', $address);
                 update_post_meta($cmef_new_post_id, '_donor-name', $name);

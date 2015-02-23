@@ -22,6 +22,10 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+if (!defined('ABSPATH')) {
+    exit();
+}
+
 require_once(plugin_dir_path(__FILE__) . "entities/class-wpfront-user-role-editor-entity-options.php");
 
 if (!class_exists('WPFront_User_Role_Editor_Options')) {
@@ -66,6 +70,8 @@ if (!class_exists('WPFront_User_Role_Editor_Options')) {
             $this->update_option_boolean('display_deprecated');
             $this->update_option_boolean('remove_nonstandard_capabilities_restore');
             $this->update_option_boolean('override_edit_permissions');
+            $this->update_option_boolean('disable_navigation_menu_permissions');
+            
             if ($this->multisite && wp_is_large_network()) {
                 $this->update_option_boolean('enable_large_network_functionalities');
             }
@@ -178,6 +184,13 @@ if (!class_exists('WPFront_User_Role_Editor_Options')) {
 
             return $this->get_boolean_option('override_edit_permissions');
         }
+        
+        public function disable_navigation_menu_permissions() {
+            if ($this->multisite)
+                return $this->ms_disable_navigation_menu_permissions();
+
+            return $this->get_boolean_option('disable_navigation_menu_permissions');
+        }
 
         public function remove_data_on_uninstall() {
             if ($this->multisite)
@@ -225,6 +238,10 @@ if (!class_exists('WPFront_User_Role_Editor_Options')) {
         public function ms_override_edit_permissions() {
             return $this->get_boolean_option('override_edit_permissions', TRUE);
         }
+        
+        public function ms_disable_navigation_menu_permissions() {
+            return $this->get_boolean_option('disable_navigation_menu_permissions', TRUE);
+        }
 
         public function ms_remove_data_on_uninstall() {
             return $this->get_boolean_option('remove_data_on_uninstall', TRUE);
@@ -267,6 +284,11 @@ if (!class_exists('WPFront_User_Role_Editor_Options')) {
                         . $this->__('If enabled, ignores the check to the function get_editable_roles.')
                         . '</p>'
                         . '<p><strong>'
+                        . $this->__('Disable Navigation Menu Permissions')
+                        . '</strong>: '
+                        . $this->__('If enabled, disables navigation menu permissions functionality.')
+                        . '</p>'
+                        . '<p><strong>'
                         . $this->__('Remove Data on Uninstall')
                         . '</strong>: '
                         . $this->__('If enabled, removes all data related to this plugin from database (except roles data) including license information if any. This will not deactivate the license automatically.')
@@ -292,6 +314,11 @@ if (!class_exists('WPFront_User_Role_Editor_Options')) {
                         . $this->__('Override Edit Permissions')
                         . '</strong>: '
                         . $this->__('If enabled, ignores the check to the function get_editable_roles.')
+                        . '</p>'
+                        . '<p><strong>'
+                        . $this->__('Disable Navigation Menu Permissions')
+                        . '</strong>: '
+                        . $this->__('If enabled, disables navigation menu permissions functionality.')
                         . '</p>'
                         . '<p><strong>'
                         . $this->__('Remove Data on Uninstall')

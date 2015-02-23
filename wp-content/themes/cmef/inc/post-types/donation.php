@@ -86,7 +86,7 @@
 					<input type="radio" value="250" name="payment-amount" <?php checked( '250', $contribution_amount); ?>><label for="payment-amount">$250</label><br />
 					<input type="radio" value="500" name="payment-amount" <?php checked( '500', $contribution_amount); ?>><label for="payment-amount">$500</label><br />
 					<input type="radio" value="1000" name="payment-amount" <?php checked( '1000', $contribution_amount); ?>><label for="payment-amount">$1,000</label><br />
-					<input type="number" name="other-payment-amount" placeholder="Other Amount" value="<?php echo $contribution_amount ?>">
+					<input type="number" name="other-payment-amount" step="any" placeholder="Other Amount" value="<?php echo $contribution_amount ?>">
 			</div>
 
 		<?php }
@@ -106,6 +106,8 @@
 
 			$args = array(
 				'post_type'   => 'program',
+				'post_status'	=> 'publish',
+				'posts_per_page' => -1
 			);
 
 			$the_query = new WP_Query( $args );
@@ -218,11 +220,11 @@
 			update_post_meta( $post_id, '_payment-method', $_POST['payment-method'] );
 			update_post_meta( $post_id, '_program-id', $_POST['program-id'] );
 			if(!isset($_POST['payment-amount'])){
-				$amount = (int) $_POST['other-payment-amount'];
+				$amount = (double) $_POST['other-payment-amount'];
 				update_post_meta( $post_id, '_contribution-amount', $amount );
 			}
 			else{
-				$amount = (int) $_POST['payment-amount'];
+				$amount = (double) $_POST['payment-amount'];
 				update_post_meta( $post_id, '_contribution-amount', $amount );
 			}
 		}
