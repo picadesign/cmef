@@ -732,6 +732,29 @@ section{
 			margin-right:5px;
 		}
 	}
+
+	.success{
+		color:white !important;
+		background-color: #375b20;
+		height:50px;
+		display:block;
+		@include border-radius(3px);
+		padding:13px;
+		line-height: 24px;
+		@extend .fonts.trade.condensed.bold;
+		word-spacing: -5px;
+		margin-bottom:20px;
+
+		&:before{
+			content: '';
+			height:24px;
+			width:24px;
+			background: sprite($assets-sprite, info-icon) no-repeat;
+			display:block;
+			float:left;
+			margin-right:5px;
+		}
+	}
 }
 
 .select{

@@ -7,7 +7,7 @@ jQuery(function ($) {									//View for lost password page
 			'click .button.green': 'submitForm'				//click on submit forgot password form fire method below.
 		},
 		initialize: function(){
-			this.$el.html(this.$el.html());
+			//this.$el.html(this.$el.html());
 		},
 		submitForm: function(){ 							//method for the submit form button (action) submits an ajax request
 			$('.alert-messages').html('');
@@ -23,7 +23,11 @@ jQuery(function ($) {									//View for lost password page
 					captcha: captcha,
 					email: email
 				}, function(response){
-					console.log(response);
+					response = JSON.parse(response);
+					console.log(response.type);
+					if(response.type == 'success'){
+						$('.alert-messages').html('<div class="success">' + response.message + '</div>');
+					}
 				});
 			}	
 		}

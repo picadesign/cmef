@@ -655,16 +655,22 @@ global $post;
                 $user = get_user_by('email', $_POST['email']);
                 wp_set_password($new_password, $user->ID);
 
-                $new_wp_mail = array(
+
+                $new_wp_mail = array(                                           //set up the mailer.
                     'to' => $_POST['email'],
                     'subject' => 'Your new CMEF password.',
-                    'message' => 'Here is your new CMEF password. Please log in and change it as soon as possible.' . $new_password,
+                    'message' => 'Here is your requested new CMEF password. Please log in and change it as soon as possible. New Password: ' . $new_password,
                 );
+                $headers = 'From: CMEF <info@cmef.org>' . "\r\n";
+                $mail_attempt = wp_mail( $new_wp_mail['to'], $new_wp_mail['subject'], $new_wp_mail['message'], $headers);     //Send mail
 
-                $alerts = array(                                                //Success alert
-                    'type' => 'success',
-                    'message' => "You should receive a new password shortly at your email entered below.",
-                );
+
+                if($mail_attempt){                                               //If the mail was succefully sent...
+                    $alerts = array(                                             //Success alert
+                        'type' => 'success',
+                        'message' => "You should receive a new password shortly at your email entered below.",
+                    );
+                };
             else:
                 $alerts = array(
                     'type' => 'error',                                          //Error about user not being approved

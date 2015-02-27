@@ -6,22 +6,22 @@
 /*
 	IMAGE SPRITES
  */
-/* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
 html, body {
   height: 100%; }
 
-/* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
 #root {
   clear: both;
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin-bottom: -205px; }
-  /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root #root_footer {
     height: 205px; }
 
-/* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
 #footer {
   clear: both;
   position: relative;
@@ -69,7 +69,7 @@ body {
  * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-/* line 56, ../sass/assets/skeleton/_base.scss */
+/* line 45, ../sass/assets/skeleton/_base.scss */
 article,
 aside,
 details,
@@ -88,7 +88,7 @@ summary {
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-/* line 68, ../sass/assets/skeleton/_base.scss */
+/* line 65, ../sass/assets/skeleton/_base.scss */
 audio,
 canvas,
 progress,
@@ -111,7 +111,7 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-/* line 89, ../sass/assets/skeleton/_base.scss */
+/* line 88, ../sass/assets/skeleton/_base.scss */
 [hidden],
 template {
   display: none; }
@@ -128,7 +128,7 @@ a {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-/* line 109, ../sass/assets/skeleton/_base.scss */
+/* line 108, ../sass/assets/skeleton/_base.scss */
 a:active,
 a:hover {
   outline: 0; }
@@ -145,7 +145,7 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-/* line 129, ../sass/assets/skeleton/_base.scss */
+/* line 128, ../sass/assets/skeleton/_base.scss */
 b,
 strong {
   font-weight: bold; }
@@ -184,7 +184,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 173, ../sass/assets/skeleton/_base.scss */
+/* line 172, ../sass/assets/skeleton/_base.scss */
 sub,
 sup {
   font-size: 75%;
@@ -244,7 +244,7 @@ pre {
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-/* line 243, ../sass/assets/skeleton/_base.scss */
+/* line 240, ../sass/assets/skeleton/_base.scss */
 code,
 kbd,
 pre,
@@ -264,7 +264,7 @@ samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-/* line 267, ../sass/assets/skeleton/_base.scss */
+/* line 263, ../sass/assets/skeleton/_base.scss */
 button,
 input,
 optgroup,
@@ -290,7 +290,7 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-/* line 289, ../sass/assets/skeleton/_base.scss */
+/* line 288, ../sass/assets/skeleton/_base.scss */
 button,
 select {
   text-transform: none; }
@@ -302,7 +302,7 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 304, ../sass/assets/skeleton/_base.scss */
+/* line 301, ../sass/assets/skeleton/_base.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -315,7 +315,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 314, ../sass/assets/skeleton/_base.scss */
+/* line 313, ../sass/assets/skeleton/_base.scss */
 button[disabled],
 html input[disabled] {
   cursor: default; }
@@ -323,7 +323,7 @@ html input[disabled] {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 323, ../sass/assets/skeleton/_base.scss */
+/* line 322, ../sass/assets/skeleton/_base.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -344,7 +344,7 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 346, ../sass/assets/skeleton/_base.scss */
+/* line 345, ../sass/assets/skeleton/_base.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -357,7 +357,7 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 358, ../sass/assets/skeleton/_base.scss */
+/* line 357, ../sass/assets/skeleton/_base.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
@@ -381,7 +381,7 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 382, ../sass/assets/skeleton/_base.scss */
+/* line 381, ../sass/assets/skeleton/_base.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -431,15 +431,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 436, ../sass/assets/skeleton/_base.scss */
+/* line 435, ../sass/assets/skeleton/_base.scss */
 td,
 th {
   padding: 0; }
 
 /* line 439, ../sass/assets/skeleton/_base.scss */
 * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 /*
@@ -466,7 +466,7 @@ th {
   margin: 0 auto;
   padding: 0; }
 
-/* line 26, ../sass/assets/skeleton/_skeleton.scss */
+/* line 25, ../sass/assets/skeleton/_skeleton.scss */
 .container .column,
 .container .columns {
   float: left;
@@ -488,7 +488,7 @@ th {
   margin-right: 0; }
 
 /* Base Grid */
-/* line 35, ../sass/assets/skeleton/_skeleton.scss */
+/* line 34, ../sass/assets/skeleton/_skeleton.scss */
 .container .one.column,
 .container .one.columns {
   width: 40px; }
@@ -632,7 +632,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
   margin: 0 auto;
   padding: 0; }
 
-/* line 78, ../sass/assets/skeleton/_skeleton.scss */
+/* line 77, ../sass/assets/skeleton/_skeleton.scss */
 .container .white-background .column,
 .container .white-background .columns {
   float: left;
@@ -656,7 +656,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
   margin-right: 0; }
 
 /* Base Grid */
-/* line 87, ../sass/assets/skeleton/_skeleton.scss */
+/* line 86, ../sass/assets/skeleton/_skeleton.scss */
 .container .white-background .one.column,
 .container .white-background .one.columns {
   width: 38px; }
@@ -798,7 +798,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
   .container {
     width: 768px; }
 
-  /* line 132, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 131, ../sass/assets/skeleton/_skeleton.scss */
   .container .column,
   .container .columns {
     margin-left: 10px;
@@ -819,7 +819,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
     margin-left: 0;
     margin-right: 0; }
 
-  /* line 138, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 137, ../sass/assets/skeleton/_skeleton.scss */
   .container .one.column,
   .container .one.columns {
     width: 28px; }
@@ -958,7 +958,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
   .container .white-background {
     width: 768px; }
 
-  /* line 178, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 177, ../sass/assets/skeleton/_skeleton.scss */
   .container .white-background .column,
   .container .white-background .columns {
     margin-left: 5px;
@@ -979,7 +979,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
     margin-left: 0 !important;
     margin-right: 0 !important; }
 
-  /* line 184, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 183, ../sass/assets/skeleton/_skeleton.scss */
   .container .white-background .one.column,
   .container .white-background .one.columns {
     width: 35.5px; }
@@ -1120,12 +1120,12 @@ because the interior pages only have a width of 910 which doesnt really work. */
   .container {
     width: 300px; }
 
-  /* line 231, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 230, ../sass/assets/skeleton/_skeleton.scss */
   .container .columns,
   .container .column {
     margin: 0; }
 
-  /* line 251, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 233, ../sass/assets/skeleton/_skeleton.scss */
   .container .one.column,
   .container .one.columns,
   .container .two.columns,
@@ -1148,7 +1148,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
     width: 300px; }
 
   /* Offsets */
-  /* line 268, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 254, ../sass/assets/skeleton/_skeleton.scss */
   .container .offset-by-one,
   .container .offset-by-two,
   .container .offset-by-three,
@@ -1170,12 +1170,12 @@ because the interior pages only have a width of 910 which doesnt really work. */
   .container .white-background {
     width: 300px; }
 
-  /* line 272, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 271, ../sass/assets/skeleton/_skeleton.scss */
   .container .white-background .columns,
   .container .white-background .column {
     margin: 0; }
 
-  /* line 292, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 274, ../sass/assets/skeleton/_skeleton.scss */
   .container .white-background .one.column,
   .container .white-background .one.columns,
   .container .white-background .two.columns,
@@ -1198,7 +1198,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
     width: 250px; }
 
   /* Offsets */
-  /* line 309, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 295, ../sass/assets/skeleton/_skeleton.scss */
   .container .white-background .offset-by-one,
   .container .white-background .offset-by-two,
   .container .white-background .offset-by-three,
@@ -1223,12 +1223,12 @@ because the interior pages only have a width of 910 which doesnt really work. */
   .container {
     width: 420px; }
 
-  /* line 322, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 321, ../sass/assets/skeleton/_skeleton.scss */
   .container .columns,
   .container .column {
     margin: 0; }
 
-  /* line 342, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 324, ../sass/assets/skeleton/_skeleton.scss */
   .container .one.column,
   .container .one.columns,
   .container .two.columns,
@@ -1254,12 +1254,12 @@ because the interior pages only have a width of 910 which doesnt really work. */
   .container .white-background {
     width: 420px; }
 
-  /* line 346, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 345, ../sass/assets/skeleton/_skeleton.scss */
   .container .white-background .columns,
   .container .white-background .column {
     margin: 0; }
 
-  /* line 366, ../sass/assets/skeleton/_skeleton.scss */
+  /* line 348, ../sass/assets/skeleton/_skeleton.scss */
   .container .white-background .one.column,
   .container .white-background .one.columns,
   .container .white-background .two.columns,
@@ -1293,7 +1293,7 @@ because the interior pages only have a width of 910 which doesnt really work. */
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 381, ../sass/assets/skeleton/_skeleton.scss */
+/* line 378, ../sass/assets/skeleton/_skeleton.scss */
 .clearfix:before, .project-card .description a.donate:before,
 .clearfix:after,
 .project-card .description a.donate:after,
@@ -1306,13 +1306,13 @@ or wrap each row of columns in a <div class="row"> */
   width: 0;
   height: 0; }
 
-/* line 389, ../sass/assets/skeleton/_skeleton.scss */
+/* line 388, ../sass/assets/skeleton/_skeleton.scss */
 .row:after,
 .clearfix:after,
 .project-card .description a.donate:after {
   clear: both; }
 
-/* line 392, ../sass/assets/skeleton/_skeleton.scss */
+/* line 391, ../sass/assets/skeleton/_skeleton.scss */
 .row,
 .clearfix,
 .project-card .description a.donate {
@@ -1354,22 +1354,22 @@ or wrap each row of columns in a <div class="row"> */
 ================================================== */
 /* iPad Portrait/Browser */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -205px; }
-    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 205px; }
 
-  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
@@ -1380,66 +1380,66 @@ or wrap each row of columns in a <div class="row"> */
     margin-bottom: 30px !important;
     width: 300px !important; } }
 @media only screen and (min-width: 991px) {
-  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -205px; }
-    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 205px; }
 
-  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 205px; } }
 /* Mobile/Browser */
 @media only screen and (max-width: 767px) {
-  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -435px; }
-    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 435px; }
 
-  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 435px; } }
 /* Mobile Landscape/Browser */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -435px; }
-    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 435px; }
 
-  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
@@ -1453,22 +1453,22 @@ or wrap each row of columns in a <div class="row"> */
   .full-width.header.bottom {
     display: none; }
 
-  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -470px; }
-    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 470px; }
 
-  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
@@ -1485,138 +1485,120 @@ or wrap each row of columns in a <div class="row"> */
     margin-top: 5px; } }
 /* iPad Portrait Only */
 @media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {
-  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -435px; }
-    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 435px; }
 
-  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 435px; } }
 /* Mobile Only */
 @media only screen and (max-width: 767px) and (max-device-width: 1000px) {
-  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -205px; }
-    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 205px; }
 
-  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 205px; } }
 /* Mobile Landscape Only */
 @media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {
-  /* line 10, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 10, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   html, body {
     height: 100%; }
 
-  /* line 12, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #root {
     clear: both;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin-bottom: -205px; }
-    /* line 18, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+    /* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
     #root #root_footer {
       height: 205px; }
 
-  /* line 20, ../../../../../../../../Users/jasonwalker/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
   #footer {
     clear: both;
     position: relative;
     height: 205px; } }
 @media print {
   background: none; }
-@font-face {
-  font-family: "Helvetica Neue LT Pro Condensed";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/helveticaneueltpro-cn.otf') format('opentype'); }
-
 /* Generated by Font Squirrel (http://www.fontsquirrel.com) on July 28, 2014 */
 @font-face {
   font-family: "Trade Condensed Bold";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensedbold.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensedbold.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensedbold.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensedbold.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensedbold.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensedbold.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensedbold.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensedbold.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "Trade Condensed Regular";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensed.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensed.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensed.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensed.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensed.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensed.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensed.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradecondensed.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "Trade Gothic Regular";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "Trade Gothic Bold";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothicbold_6";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold6.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold6.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold6.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold6.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold6.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold6.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold6.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold6.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothicbold_5";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold5.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold5.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold5.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold5.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold5.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold5.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold5.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold5.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothicbold_4";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold4.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold4.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold4.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold4.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold4.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold4.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold4.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold4.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothicbold_3";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold3.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold3.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold3.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold3.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold3.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold3.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold3.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold3.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothicbold_2";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold2.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold2.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold2.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold2.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold2.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold2.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold2.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-bold2.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothicregular_4";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular4.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular4.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular4.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular4.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular4.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular4.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular4.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular4.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothicregular_3";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular3.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular3.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular3.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular3.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular3.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular3.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular3.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular3.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "Trade Gothic Light";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothiclight_2";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light2.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light2.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light2.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light2.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light2.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light2.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light2.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-light2.svg?1425049401') format('svg'); }
 @font-face {
   font-family: "tradegothicregular_2";
-  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular2.eot') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular2.woff') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular2.ttf') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular2.svg') format('svg'); }
-
+  src: url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular2.eot?1425049401') format('embedded-opentype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular2.woff?1425049401') format('woff'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular2.ttf?1425049401') format('truetype'), url('//dev.pica.is/cmef/wp-content/themes/cmef/fonts/tradegothic-regular2.svg?1425049401') format('svg'); }
 /* line 22, ../sass/assets/_fonts.scss */
 .fonts {
   font-weight: normal !important; }
   /* line 26, ../sass/assets/_fonts.scss */
-  .fonts.trade.condensed.bold, html h4, html h5, html h6, html b, html strong, html table thead th, .alert-messages .error, .ui-tabs-nav li a, .full-width.footer footer .address .copyright, .white-background.page .sidebar ul li, .ui-accordion-header {
+  .fonts.trade.condensed.bold, html h4, html h5, html h6, html b, html strong, html table thead th, .alert-messages .error, .alert-messages .success, .ui-tabs-nav li a, .full-width.footer footer .address .copyright, .white-background.page .sidebar ul li, .ui-accordion-header {
     font-family: 'Trade Condensed Bold';
     font-weight: normal !important;
     word-spacing: -5px; }
@@ -1707,7 +1689,7 @@ html {
    */ }
   /* line 7, ../sass/basics/_theme-html-base.scss */
   html body {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1424100394');
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/background.png?1425049401');
     font-size: 17px;
     line-height: normal; }
   /* line 17, ../sass/basics/_theme-html-base.scss */
@@ -1784,13 +1766,13 @@ html {
     color: #6ca348;
     text-transform: uppercase;
     text-decoration: none;
-    -webkit-transition-property: all;
     -moz-transition-property: all;
     -o-transition-property: all;
+    -webkit-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.1s;
     -moz-transition-duration: 0.1s;
     -o-transition-duration: 0.1s;
+    -webkit-transition-duration: 0.1s;
     transition-duration: 0.1s;
     display: inline;
     cursor: pointer; }
@@ -1857,8 +1839,8 @@ html {
     width: 100%;
     border: none;
     font-weight: 1px;
-    -webkit-box-shadow: #e8e8e8 0 1px 3px inset;
     -moz-box-shadow: #e8e8e8 0 1px 3px inset;
+    -webkit-box-shadow: #e8e8e8 0 1px 3px inset;
     box-shadow: #e8e8e8 0 1px 3px inset; }
     /* line 337, ../sass/basics/_theme-html-base.scss */
     html input[type='text']:focus, html input[type='password']:focus, html input[type='number']:focus {
@@ -1894,8 +1876,8 @@ html {
       width: 100%;
       border: none;
       font-weight: 1px;
-      -webkit-box-shadow: #e8e8e8 0 1px 3px inset;
       -moz-box-shadow: #e8e8e8 0 1px 3px inset;
+      -webkit-box-shadow: #e8e8e8 0 1px 3px inset;
       box-shadow: #e8e8e8 0 1px 3px inset; }
       /* line 391, ../sass/basics/_theme-html-base.scss */
       html form input[type='text']:focus, html form input[type='password']:focus, html form input[type='number']:focus {
@@ -1915,10 +1897,8 @@ html {
     width: 100%;
     background-color: #cccccc;
     height: 10px;
-    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
     border-radius: 5px;
     overflow: hidden;
     margin: 10px 0 7px 0; }
@@ -1961,47 +1941,47 @@ html {
 .logo {
   width: 204px;
   height: 71px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 0 no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -124px no-repeat; }
   /* line 493, ../sass/basics/_theme-html-base.scss */
   .logo.smaller {
     width: 138px;
     height: 48px;
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -91px no-repeat; }
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -76px no-repeat; }
 
 /* line 500, ../sass/basics/_theme-html-base.scss */
 .mail {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1626px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1384px no-repeat; }
   /* line 505, ../sass/basics/_theme-html-base.scss */
   .mail.small {
     width: 20px;
     height: 20px;
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1013px no-repeat; }
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1364px no-repeat; }
 
 /* line 512, ../sass/basics/_theme-html-base.scss */
 .twitter {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1488px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1612px no-repeat; }
 
 /* line 518, ../sass/basics/_theme-html-base.scss */
 .facebook {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1688px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1247px no-repeat; }
 
 /* line 524, ../sass/basics/_theme-html-base.scss */
 .google {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1457px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1278px no-repeat; }
 
 /* line 530, ../sass/basics/_theme-html-base.scss */
 .linkedin {
   width: 31px;
   height: 31px;
-  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1657px no-repeat; }
+  background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1333px no-repeat; }
 
 /**
 * Styling for the buttons
@@ -2009,8 +1989,8 @@ html {
 */
 /* line 542, ../sass/basics/_theme-html-base.scss */
 .box-shadow {
-  -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
   -moz-box-shadow: #b4b4b4 0 0 3px 1px;
+  -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
   box-shadow: #b4b4b4 0 0 3px 1px; }
 
 /* line 546, ../sass/basics/_theme-html-base.scss */
@@ -2022,13 +2002,13 @@ html {
   padding: 3px 17px 0 17px;
   text-transform: uppercase;
   width: auto;
-  -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
+  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s; }
   /* line 558, ../sass/basics/_theme-html-base.scss */
   .button.disabled, input[type='submit'].disabled {
@@ -2087,17 +2067,17 @@ html {
       content: '\00a0';
       height: 12px;
       width: 10px;
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -243px no-repeat;
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1223px no-repeat;
       display: inline-block;
       position: absolute;
       margin-top: 6px;
       right: 4px; }
     /* line 637, ../sass/basics/_theme-html-base.scss */
     .button.filter.headerSortUp:after, input[type='submit'].filter.headerSortUp:after {
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -171px no-repeat; }
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1235px no-repeat; }
     /* line 643, ../sass/basics/_theme-html-base.scss */
     .button.filter.headerSortDown:after, input[type='submit'].filter.headerSortDown:after {
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -159px no-repeat; }
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1211px no-repeat; }
     /* line 648, ../sass/basics/_theme-html-base.scss */
     .button.filter.dont-sort, input[type='submit'].filter.dont-sort {
       cursor: auto; }
@@ -2115,13 +2095,13 @@ html {
     list-style: none;
     float: left;
     margin-right: 5px;
-    -webkit-transition-property: all;
     -moz-transition-property: all;
     -o-transition-property: all;
+    -webkit-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.5s;
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s; }
     /* line 669, ../sass/basics/_theme-html-base.scss */
     .social ul li a {
@@ -2162,10 +2142,8 @@ section {
     background-color: #b75716;
     height: 50px;
     display: block;
-    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     padding: 13px;
     line-height: 24px;
@@ -2176,22 +2154,44 @@ section {
       content: '';
       height: 24px;
       width: 24px;
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1519px no-repeat;
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1309px no-repeat;
+      display: block;
+      float: left;
+      margin-right: 5px; }
+  /* line 736, ../sass/basics/_theme-html-base.scss */
+  .alert-messages .success {
+    color: white !important;
+    background-color: #375b20;
+    height: 50px;
+    display: block;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 13px;
+    line-height: 24px;
+    word-spacing: -5px;
+    margin-bottom: 20px; }
+    /* line 748, ../sass/basics/_theme-html-base.scss */
+    .alert-messages .success:before {
+      content: '';
+      height: 24px;
+      width: 24px;
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1309px no-repeat;
       display: block;
       float: left;
       margin-right: 5px; }
 
-/* line 737, ../sass/basics/_theme-html-base.scss */
+/* line 760, ../sass/basics/_theme-html-base.scss */
 .select {
   height: 35px;
   width: 100%;
   border: none;
   background-color: #fcfcfc;
-  -webkit-box-shadow: #e8e8e8 0 1px 3px inset;
   -moz-box-shadow: #e8e8e8 0 1px 3px inset;
+  -webkit-box-shadow: #e8e8e8 0 1px 3px inset;
   box-shadow: #e8e8e8 0 1px 3px inset;
   margin-bottom: 10px; }
-  /* line 746, ../sass/basics/_theme-html-base.scss */
+  /* line 769, ../sass/basics/_theme-html-base.scss */
   .select select {
     height: 35px;
     border: none;
@@ -2200,15 +2200,15 @@ section {
     outline: none;
     margin-right: 0; }
 
-/* line 756, ../sass/basics/_theme-html-base.scss */
+/* line 779, ../sass/basics/_theme-html-base.scss */
 .hidden {
   display: none !important; }
 
-/* line 760, ../sass/basics/_theme-html-base.scss */
+/* line 783, ../sass/basics/_theme-html-base.scss */
 .ui-tabs-nav {
   margin: 0;
   padding-left: 0; }
-  /* line 764, ../sass/basics/_theme-html-base.scss */
+  /* line 787, ../sass/basics/_theme-html-base.scss */
   .ui-tabs-nav li {
     display: inline-block;
     padding: 5px;
@@ -2218,54 +2218,54 @@ section {
     background-color: #e8e8e8;
     float: left;
     list-style: none; }
-    /* line 775, ../sass/basics/_theme-html-base.scss */
+    /* line 798, ../sass/basics/_theme-html-base.scss */
     .ui-tabs-nav li a {
       color: #1d89bb;
       text-transform: none;
       outline: none;
       word-spacing: -5px; }
-    /* line 783, ../sass/basics/_theme-html-base.scss */
+    /* line 806, ../sass/basics/_theme-html-base.scss */
     .ui-tabs-nav li.ui-state-active {
       background-color: #1d89bb; }
-      /* line 786, ../sass/basics/_theme-html-base.scss */
+      /* line 809, ../sass/basics/_theme-html-base.scss */
       .ui-tabs-nav li.ui-state-active a {
         color: white;
         outline: none; }
 
-/* line 794, ../sass/basics/_theme-html-base.scss */
+/* line 817, ../sass/basics/_theme-html-base.scss */
 .ui-tabs-panel {
   margin-top: 15px; }
-  /* line 797, ../sass/basics/_theme-html-base.scss */
+  /* line 820, ../sass/basics/_theme-html-base.scss */
   .ui-tabs-panel h3 {
     margin-top: 15px; }
 
-/* line 806, ../sass/basics/_theme-html-base.scss */
+/* line 829, ../sass/basics/_theme-html-base.scss */
 .tablesorter th {
   cursor: pointer;
   position: relative; }
-  /* line 809, ../sass/basics/_theme-html-base.scss */
+  /* line 832, ../sass/basics/_theme-html-base.scss */
   .tablesorter th:after {
     content: '\00a0';
     margin-left: 5px;
     height: 12px;
     width: 10px;
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -243px no-repeat;
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1223px no-repeat;
     position: absolute;
     top: 9px; }
-  /* line 821, ../sass/basics/_theme-html-base.scss */
+  /* line 844, ../sass/basics/_theme-html-base.scss */
   .tablesorter th.headerSortDown:after {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -171px no-repeat; }
-  /* line 827, ../sass/basics/_theme-html-base.scss */
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1235px no-repeat; }
+  /* line 850, ../sass/basics/_theme-html-base.scss */
   .tablesorter th.headerSortUp:after {
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -159px no-repeat; }
-  /* line 832, ../sass/basics/_theme-html-base.scss */
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1211px no-repeat; }
+  /* line 855, ../sass/basics/_theme-html-base.scss */
   .tablesorter th.dont-sort {
     cursor: auto; }
-    /* line 834, ../sass/basics/_theme-html-base.scss */
+    /* line 857, ../sass/basics/_theme-html-base.scss */
     .tablesorter th.dont-sort:after {
       background: none; }
 
-/* line 841, ../sass/basics/_theme-html-base.scss */
+/* line 864, ../sass/basics/_theme-html-base.scss */
 .lightbox-container {
   position: fixed;
   height: 100%;
@@ -2273,7 +2273,7 @@ section {
   background-color: rgba(0, 0, 0, 0.75);
   top: 0;
   z-index: 100; }
-  /* line 849, ../sass/basics/_theme-html-base.scss */
+  /* line 872, ../sass/basics/_theme-html-base.scss */
   .lightbox-container .lightbox-image-container {
     position: absolute;
     top: 50%;
@@ -2281,7 +2281,7 @@ section {
     background-color: white;
     padding: 10px;
     overflow: visible; }
-    /* line 857, ../sass/basics/_theme-html-base.scss */
+    /* line 880, ../sass/basics/_theme-html-base.scss */
     .lightbox-container .lightbox-image-container .lightbox-close {
       position: absolute;
       top: -15px;
@@ -2289,22 +2289,20 @@ section {
       width: 30px;
       background-color: black;
       z-index: 101;
-      -webkit-border-radius: 15px;
       -moz-border-radius: 15px;
-      -ms-border-radius: 15px;
-      -o-border-radius: 15px;
+      -webkit-border-radius: 15px;
       border-radius: 15px;
       right: -15px;
       text-align: center;
       color: white;
       padding-top: 4px;
       cursor: pointer; }
-  /* line 873, ../sass/basics/_theme-html-base.scss */
+  /* line 896, ../sass/basics/_theme-html-base.scss */
   .lightbox-container img {
     position: absolute;
     border: 1px solid black; }
 
-/* line 883, ../sass/basics/_theme-html-base.scss */
+/* line 906, ../sass/basics/_theme-html-base.scss */
 .margin-top-5 {
   margin-top: 5px; }
 
@@ -2371,7 +2369,7 @@ body .redactor_box_fullscreen {
   font-family: Menlo, Monaco, monospace, sans-serif;
   resize: none; }
 
-/* line 65, ../sass/assets/_redactor.scss */
+/* line 50, ../sass/assets/_redactor.scss */
 .redactor_editor,
 .redactor_editor:focus,
 .redactor_editor div,
@@ -2390,12 +2388,12 @@ body .redactor_box_fullscreen {
 .redactor_editor h6 {
   font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif !important; }
 
-/* line 70, ../sass/assets/_redactor.scss */
+/* line 69, ../sass/assets/_redactor.scss */
 .redactor_editor code,
 .redactor_editor pre {
   font-family: Menlo, Monaco, monospace, sans-serif !important; }
 
-/* line 83, ../sass/assets/_redactor.scss */
+/* line 74, ../sass/assets/_redactor.scss */
 .redactor_editor,
 .redactor_editor:focus,
 .redactor_editor div,
@@ -2409,7 +2407,7 @@ body .redactor_box_fullscreen {
   font-size: 15px;
   line-height: 1.5rem; }
 
-/* line 89, ../sass/assets/_redactor.scss */
+/* line 88, ../sass/assets/_redactor.scss */
 .redactor_editor,
 .redactor_editor:focus {
   position: relative;
@@ -2434,7 +2432,7 @@ body .redactor_box_fullscreen {
   display: block !important;
   margin-bottom: 10px !important; }
 
-/* line 115, ../sass/assets/_redactor.scss */
+/* line 112, ../sass/assets/_redactor.scss */
 .redactor_editor object,
 .redactor_editor embed,
 .redactor_editor video,
@@ -2442,12 +2440,12 @@ body .redactor_box_fullscreen {
   max-width: 100%;
   width: auto; }
 
-/* line 120, ../sass/assets/_redactor.scss */
+/* line 119, ../sass/assets/_redactor.scss */
 .redactor_editor video,
 .redactor_editor img {
   height: auto; }
 
-/* line 131, ../sass/assets/_redactor.scss */
+/* line 124, ../sass/assets/_redactor.scss */
 .redactor_editor div,
 .redactor_editor p,
 .redactor_editor ul,
@@ -2462,7 +2460,7 @@ body .redactor_box_fullscreen {
   background: none !important;
   box-shadow: none !important; }
 
-/* line 140, ../sass/assets/_redactor.scss */
+/* line 138, ../sass/assets/_redactor.scss */
 .redactor_editor iframe,
 .redactor_editor object,
 .redactor_editor hr {
@@ -2474,12 +2472,12 @@ body .redactor_box_fullscreen {
   color: #777;
   font-style: italic !important; }
 
-/* line 149, ../sass/assets/_redactor.scss */
+/* line 148, ../sass/assets/_redactor.scss */
 .redactor_editor ul,
 .redactor_editor ol {
   padding-left: 2em !important; }
 
-/* line 155, ../sass/assets/_redactor.scss */
+/* line 152, ../sass/assets/_redactor.scss */
 .redactor_editor ul ul,
 .redactor_editor ol ol,
 .redactor_editor ul ol,
@@ -2534,7 +2532,7 @@ body .redactor_box_fullscreen {
   border: 0;
   border-top: 1px solid #ccc; }
 
-/* line 201, ../sass/assets/_redactor.scss */
+/* line 196, ../sass/assets/_redactor.scss */
 .redactor_editor h1,
 .redactor_editor h2,
 .redactor_editor h3,
@@ -2583,7 +2581,7 @@ body .redactor_box_fullscreen {
   padding: 10px 7px 0 7px !important;
   background: #f6f6f6 !important; }
 
-/* line 253, ../sass/assets/_redactor.scss */
+/* line 240, ../sass/assets/_redactor.scss */
 .redactor_editor_wym div,
 .redactor_editor_wym p,
 .redactor_editor_wym ul,
@@ -2616,12 +2614,12 @@ body .redactor_box_fullscreen {
   border: 2px dashed #e4e4e4 !important;
   background-color: #f8f8f8 !important; }
 
-/* line 270, ../sass/assets/_redactor.scss */
+/* line 269, ../sass/assets/_redactor.scss */
 .redactor_editor_wym ul,
 .redactor_editor_wym ol {
   padding-left: 2em !important; }
 
-/* line 276, ../sass/assets/_redactor.scss */
+/* line 273, ../sass/assets/_redactor.scss */
 .redactor_editor_wym ul li ul,
 .redactor_editor_wym ul li ol,
 .redactor_editor_wym ol li ol,
@@ -2642,13 +2640,13 @@ body .redactor_box_fullscreen {
   border: 1px solid #ddd;
   border-bottom-color: #b8b8b8;
   background: #fafafa;
-  background: -moz-linear-gradient(top, #fafafa 0%, #e5e5e5 94%, lightgrey 94%, lightgrey 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fafafa), color-stop(94%, #e5e5e5), color-stop(94%, lightgrey), color-stop(100%, lightgrey));
-  background: -webkit-linear-gradient(top, #fafafa 0%, #e5e5e5 94%, lightgrey 94%, lightgrey 100%);
-  background: -o-linear-gradient(top, #fafafa 0%, #e5e5e5 94%, lightgrey 94%, lightgrey 100%);
-  background: -ms-linear-gradient(top, #fafafa 0%, #e5e5e5 94%, lightgrey 94%, lightgrey 100%);
+  background: -moz-linear-gradient(top, #fafafa 0%, #e5e5e5 94%, #d3d3d3 94%, #d3d3d3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fafafa), color-stop(94%, #e5e5e5), color-stop(94%, #d3d3d3), color-stop(100%, #d3d3d3));
+  background: -webkit-linear-gradient(top, #fafafa 0%, #e5e5e5 94%, #d3d3d3 94%, #d3d3d3 100%);
+  background: -o-linear-gradient(top, #fafafa 0%, #e5e5e5 94%, #d3d3d3 94%, #d3d3d3 100%);
+  background: -ms-linear-gradient(top, #fafafa 0%, #e5e5e5 94%, #d3d3d3 94%, #d3d3d3 100%);
   background: linear-gradient(to bottom, #fafafa 0%, #e5e5e5 94%, #d3d3d3 94%, #d3d3d3 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#d3d3d3',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#d3d3d3',GradientType=0 );
   list-style: none !important;
   font-size: 0;
   font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
@@ -2733,7 +2731,7 @@ body .redactor_air .redactor_toolbar {
   background-color: #d4dce9;
   background-color: rgba(176, 199, 223, 0.5); }
 
-/* line 386, ../sass/assets/_redactor.scss */
+/* line 385, ../sass/assets/_redactor.scss */
 .redactor_toolbar li a:active,
 .redactor_toolbar li a.redactor_act {
   outline: none;
@@ -2912,7 +2910,7 @@ body .redactor_toolbar li a.redactor_btn_pre {
 .redactor_format_pre {
   font-family: monospace, sans-serif; }
 
-/* line 462, ../sass/assets/_redactor.scss */
+/* line 458, ../sass/assets/_redactor.scss */
 .redactor_format_h1,
 .redactor_format_h2,
 .redactor_format_h3,
@@ -3115,13 +3113,13 @@ body .redactor_toolbar li a.redactor_btn_pre {
   border-radius: 0 0 3px 3px;
   text-align: right; }
 
-/* line 643, ../sass/assets/_redactor.scss */
+/* line 642, ../sass/assets/_redactor.scss */
 #redactor_modal input[type="radio"],
 #redactor_modal input[type="checkbox"] {
   position: relative;
   top: -1px; }
 
-/* line 650, ../sass/assets/_redactor.scss */
+/* line 647, ../sass/assets/_redactor.scss */
 #redactor_modal input[type="text"],
 #redactor_modal input[type="password"],
 #redactor_modal input[type="email"],
@@ -3149,7 +3147,7 @@ body .redactor_toolbar li a.redactor_btn_pre {
 #redactor_modal textarea {
   line-height: 1.4em; }
 
-/* line 674, ../sass/assets/_redactor.scss */
+/* line 673, ../sass/assets/_redactor.scss */
 #redactor_modal input:focus,
 #redactor_modal textarea:focus {
   outline: none;
@@ -3167,12 +3165,12 @@ body .redactor_toolbar li a.redactor_btn_pre {
   border-bottom-color: #aaa;
   border-radius: 4px;
   background-color: #f3f3f3;
-  background-image: -moz-linear-gradient(top, white, #e1e1e1);
-  background-image: -ms-linear-gradient(top, white, #e1e1e1);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e1e1e1));
-  background-image: -webkit-linear-gradient(top, white, #e1e1e1);
-  background-image: -o-linear-gradient(top, white, #e1e1e1);
-  background-image: linear-gradient(top, #ffffff, #e1e1e1);
+  background-image: -moz-linear-gradient(top, #ffffff, #e1e1e1);
+  background-image: -ms-linear-gradient(top, #ffffff, #e1e1e1);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e1e1e1));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e1e1e1);
+  background-image: -o-linear-gradient(top, #ffffff, #e1e1e1);
+  background-image: linear-gradient(to bottom, #ffffff, #e1e1e1);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   color: #000;
   text-align: center;
@@ -3521,7 +3519,7 @@ body:after {
       .full-width.header.top header #top-header #logo {
         width: 204px;
         height: 71px;
-        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 0 no-repeat;
+        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -124px no-repeat;
         margin: 0;
         float: left;
         display: inline-block; }
@@ -3547,10 +3545,11 @@ body:after {
   /* line 54, ../sass/layouts/_header.scss */
   .full-width.header.bottom {
     height: 64px;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RjZGNkYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NjY2NjYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
     background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dcdcdc), color-stop(100%, #cccccc));
-    background-image: -webkit-linear-gradient(#dcdcdc, #cccccc);
     background-image: -moz-linear-gradient(#dcdcdc, #cccccc);
-    background-image: -o-linear-gradient(#dcdcdc, #cccccc);
+    background-image: -webkit-linear-gradient(#dcdcdc, #cccccc);
     background-image: linear-gradient(#dcdcdc, #cccccc); }
     /* line 59, ../sass/layouts/_header.scss */
     .full-width.header.bottom .container {
@@ -3571,15 +3570,16 @@ body:after {
             color: #5b5b5b;
             font-size: .875em;
             height: 25px;
-            background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1600px no-repeat;
+            background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1548px no-repeat;
             background-color: #fcfcfd;
             padding: 0;
             padding-left: 30px;
             margin-top: 15px; }
         /* line 91, ../sass/layouts/_header.scss */
         .full-width.header.bottom #bottom-header .bottom-header-left .sign-up {
+          -moz-user-select: -moz-none;
+          -ms-user-select: none;
           -webkit-user-select: none;
-          -moz-user-select: none;
           user-select: none;
           color: #5b5b5b;
           text-transform: uppercase;
@@ -3590,13 +3590,13 @@ body:after {
           padding-top: 23px;
           display: inline-block;
           vertical-align: middle;
-          -webkit-transition-property: all;
           -moz-transition-property: all;
           -o-transition-property: all;
+          -webkit-transition-property: all;
           transition-property: all;
-          -webkit-transition-duration: 0.1s;
           -moz-transition-duration: 0.1s;
           -o-transition-duration: 0.1s;
+          -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s; }
           /* line 106, ../sass/layouts/_header.scss */
           .full-width.header.bottom #bottom-header .bottom-header-left .sign-up:hover {
@@ -3684,13 +3684,13 @@ body:after {
             height: 100%;
             border-right: 1px solid #afaeae;
             margin-bottom: 0;
-            -webkit-transition-property: all;
             -moz-transition-property: all;
             -o-transition-property: all;
+            -webkit-transition-property: all;
             transition-property: all;
-            -webkit-transition-duration: 0.1s;
             -moz-transition-duration: 0.1s;
             -o-transition-duration: 0.1s;
+            -webkit-transition-duration: 0.1s;
             transition-duration: 0.1s; }
             /* line 207, ../sass/layouts/_header.scss */
             .full-width.header.bottom #bottom-header .menu-main-navigation-header-container ul li a, .full-width.header.bottom #bottom-header .menu-menu-logged-in-container ul li a {
@@ -3752,13 +3752,13 @@ body:after {
     .full-width.footer footer .social ul li {
       float: left;
       margin-right: 5px;
-      -webkit-transition-property: all;
       -moz-transition-property: all;
       -o-transition-property: all;
+      -webkit-transition-property: all;
       transition-property: all;
-      -webkit-transition-duration: 0.5s;
       -moz-transition-duration: 0.5s;
       -o-transition-duration: 0.5s;
+      -webkit-transition-duration: 0.5s;
       transition-duration: 0.5s; }
       /* line 47, ../sass/layouts/_footer.scss */
       .full-width.footer footer .social ul li a {
@@ -3814,8 +3814,8 @@ body:after {
   margin-bottom: 30px;
   background-color: white;
   width: 300px;
-  -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
   -moz-box-shadow: #b4b4b4 0 0 3px 1px;
+  -webkit-box-shadow: #b4b4b4 0 0 3px 1px;
   box-shadow: #b4b4b4 0 0 3px 1px; }
   /* line 11, ../sass/layouts/partials/_project-card.scss */
   .project-card img {
@@ -3970,10 +3970,8 @@ h1.homepage {
     border: 2px solid white;
     height: 25px;
     width: 25px;
-    -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+    -webkit-border-radius: 15px;
     border-radius: 15px;
     position: absolute;
     bottom: -10px;
@@ -4013,12 +4011,12 @@ h1.homepage {
     color: gold;
     width: 20px;
     height: 19px;
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -334px no-repeat;
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1593px no-repeat;
     cursor: pointer;
     margin-right: 2px; }
     /* line 137, ../sass/layouts/_page-general.scss */
     .stars .star:hover, .stars .star.hovered {
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -255px no-repeat; }
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1574px no-repeat; }
 
 /* line 143, ../sass/layouts/_page-general.scss */
 .documents {
@@ -4038,7 +4036,7 @@ h1.homepage {
     height: 32px;
     margin-right: 10px;
     float: left;
-    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1543px no-repeat; }
+    background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1491px no-repeat; }
   /* line 160, ../sass/layouts/_page-general.scss */
   .pdf a {
     padding-top: 10px; }
@@ -4083,28 +4081,28 @@ h1.homepage {
     margin-right: 5px; }
     /* line 212, ../sass/layouts/_page-general.scss */
     .card-logos .card.visa {
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1419px no-repeat; }
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1681px no-repeat; }
       /* line 215, ../sass/layouts/_page-general.scss */
       .card-logos .card.visa.dark {
-        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1381px no-repeat; }
+        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1643px no-repeat; }
     /* line 219, ../sass/layouts/_page-general.scss */
     .card-logos .card.mastercard {
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1267px no-repeat; }
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1453px no-repeat; }
       /* line 222, ../sass/layouts/_page-general.scss */
       .card-logos .card.mastercard.dark {
-        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1229px no-repeat; }
+        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1415px no-repeat; }
     /* line 226, ../sass/layouts/_page-general.scss */
     .card-logos .card.amex {
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1191px no-repeat; }
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -38px no-repeat; }
       /* line 229, ../sass/layouts/_page-general.scss */
       .card-logos .card.amex.dark {
-        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1153px no-repeat; }
+        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 0 no-repeat; }
     /* line 233, ../sass/layouts/_page-general.scss */
     .card-logos .card.discover {
-      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1343px no-repeat; }
+      background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1173px no-repeat; }
       /* line 236, ../sass/layouts/_page-general.scss */
       .card-logos .card.discover.dark {
-        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s5e5356ffd7.png') 0 -1305px no-repeat; }
+        background: url('//dev.pica.is/cmef/wp-content/themes/cmef/images/assets-s8a9e2ca023.png') 0 -1135px no-repeat; }
 
 /* line 2, ../sass/layouts/_single-program.scss */
 .single-program .title input {
