@@ -29,7 +29,7 @@
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'thumbnail' ),
+		'supports'           => array( 'title', 'editor', 'thumbnail'),
 		'menu_icon'          => 'dashicons-universal-access',
 		'taxonomies' => array('tfa-region')
 	);
