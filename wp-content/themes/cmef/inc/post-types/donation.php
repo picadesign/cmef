@@ -107,12 +107,14 @@
 			$args = array(
 				'post_type'   => 'program',
 				'post_status'	=> 'publish',
-				'posts_per_page' => -1
+				'posts_per_page' => -1,
+				'order'			=> 'ASC',
+				'orderby'		=> 'title'
 			);
 
 			$the_query = new WP_Query( $args );
 
-			/* Create the dropdown usgint he data we gathered above. We will store the program id so we can use if for later. */
+			/* Create the dropdown using he data we gathered above. We will store the program id so we can use if for later. */
 			if ( $the_query->have_posts() ) {
 				echo '<select name="program-id" id="">';
 					echo '<option value="none">None</option>';
@@ -171,7 +173,7 @@
 									<label for="remain-anonymous">Anonymous: </label>
 								</td>
 								<td>
-									<input type="checkbox" name="remain-anonymous" <?php echo (get_post_meta($post_id, '_remain-anonymous', true) === "true" ? 'checked="checked"' : '')  ?> disabled="disabled">
+									<input type="checkbox" name="remain-anonymous" <?php echo (get_post_meta($post_id, '_remain-anonymous', true) === "true" ? 'checked="checked"' : '')  ?> >
 								</td>
 							</tr>
 						</table>
@@ -215,6 +217,14 @@
 			);
 
 			/* Update each of the metadata from above. If we have to create another meta box DO NOT FORGET to add it here to be saved. */
+
+			if($_POST['remain-anonymous'] == 'on'){		//if the remain-anonymous check boxis check then store as true
+				update_post_meta($post_id, '_remain-anonymous', 'true');
+			}
+			else{										//if it is not check then store it as false
+				update_post_meta($post_id, '_remain-anonymous', 'false');
+			}
+
 			update_post_meta( $post_id, '_donation-address', $address );
 			update_post_meta( $post_id, '_donor-name', $name );
 			update_post_meta( $post_id, '_payment-method', $_POST['payment-method'] );
