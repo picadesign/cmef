@@ -26,7 +26,7 @@ jQuery(function ($) {
 			$.post(ajaxurl, {
 				action: 'save_profile',
 				description: $('#redactor').redactor('get'),
-				author_ID:['author_id'],
+				author_ID: $('input[name=author_id').val(),
 				first_name: values['first_name'],
 				last_name: values['last_name'],
 				street1: values['street1'],

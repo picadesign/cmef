@@ -35,7 +35,7 @@
 					<h3>Profile Description</h3>
 				</div>
 				<div class="sixteen columns alpha omega description-content">
-					<div id="redactor"><?php echo get_the_author_meta('description', $current_user->ID) ?></div>
+					<div id="redactor"><?php echo get_the_author_meta('description', $curauth->ID) ?></div>
 				</div>
 			</section>
 			<?php 

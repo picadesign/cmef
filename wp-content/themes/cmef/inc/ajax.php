@@ -99,11 +99,11 @@ global $post;
         global $post , $current_user;
 
         $user_id = wp_update_user(array(
-            'ID' => $_POST['author_ID'],
-            //'first_name' => $_POST['first_name'],
-            //'last_name' => $_POST['last_name'],
+            'ID' => (int) $_POST['author_ID'],
+            'first_name' => $_POST['first_name'],
+            'last_name' => $_POST['last_name'],
             'description' => $_POST['description'],
-            //'display_name' => $_POST['first_name'] . ' ' . $_POST['last_name'],
+            'display_name' => $_POST['first_name'] . ' ' . $_POST['last_name'],
             'user_email' => $_POST['email_address'],
         ));
         // TODO: Finish the save_profile function.
