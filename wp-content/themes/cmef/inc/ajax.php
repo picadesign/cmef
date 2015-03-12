@@ -9,66 +9,6 @@ global $post;
     	die();
     }
 
-    add_action('wp_ajax_nopriv_fetch_programs', 'ajax_fetch_programs');
-    add_action('wp_ajax_fetch_programs', 'ajax_fetch_programs');
-    function ajax_fetch_programs () {;
-    	setlocale(LC_MONETARY, 'en_US');
-    	global $post;
-        $offset = (int) $_POST['offset'];
-
-    	$args = array(
-			'post_type'   => 'program',
-            'post_status' => 'publish',
-			'offset' => $offset,
-			'posts_per_page' => 3,
-            'post__not_in' => array(947),
-            'meta_key' => '_thumbnail_id'
-		);
-        // Query For Program donations
-        
-		$the_query = new WP_Query( $args );
-			if ($the_query->have_posts()) :;
-    		while ($the_query->have_posts()) : $the_query->the_post() ;
-    			$goal = get_post_meta(get_the_ID(), '_fundraising-goal', true);
-                $donation_args = array(
-                    'post_type' => 'donation',
-                    'post_status' =>'publish',
-                    'posts_per_page' => -1,
-                    'meta_key'       => '_program-id',
-                    'meta_value'     => $post->ID,
-                );
-                $donations = new WP_Query($donation_args);
-            
-                // The Loop
-                if($donations->have_posts()):
-                    $raised = 0;
-                    foreach ($donations->posts as $donation) {
-                        $raised += (int) get_post_meta($donation->ID, '_contribution-amount', true);
-                    }
-                else:
-                    $raised = 0;
-                endif;
-		    	$program = $post;
-		    	$program->author = get_the_author();
-		    	$program->post_thumbnail = get_the_post_thumbnail($post->ID, $size = 'post-thumbnail', $attr = '');
-		    	$program->placement_holder_image = '<img src="'. get_template_directory_uri() .'/images/placeholder.png" alt="">';
-		    	$program->percentage_raised = ($raised/(int) $goal)*100;
-                //Also append the same data to an array for JS
-    			$programsDataObject[] = $program;
-    			$program->amount_raised = money_format('%.0n', $raised) . "\n";
-    			$program->fundraiser_goal = money_format('%.0n', $goal) . "\n";
-    			$program->twitter_url = "http://www.twitter.com/share/?url=" . get_permalink($post->ID);
-    			$program->linkedin_url = "https://www.linkedin.com/cws/share?url=" . get_permalink($post->ID);
-    			$program->facebook_url = "http://www.facebook.com/sharer.php?u=" . get_permalink($post->ID);
-    			$program->google_url = "http://plus.google.com/share?url=" . get_permalink($post->ID);
-                $program->donation_url = add_query_arg( 'program_id', get_the_ID(), get_the_permalink( 252 ) );
-    	endwhile;
-
-    	echo json_encode($programsDataObject);
-    	endif;
-    	die(); 
-    }//ajax_fetch_programs
-
     //Save Author (for some reason this was already here. It's been a few months and I don't remember what exactly this was for because I didnt find a view that used this... Delete this when we are positive that we are not using it.)
     add_action('wp_ajax_save_author', 'ajax_save_author');
     function ajax_save_author(){
@@ -119,7 +59,7 @@ global $post;
                 $response['status'] = 'error';
                 $response['message'] = 'Please check and confirm that your new passwords match.';
             }
-            elseif(strlen($_POST['new_password']) < 8 || strlen($_POST['conf_new_password']) < 8 ){
+            elseif(strlen($_POST['new_password']) <= 8 || strlen($_POST['conf_new_password']) <= 8 ){
                 $response['status'] = 'error';
                 $response['message'] = 'Your new password must be longer than eight characters.';
             }
@@ -236,9 +176,12 @@ global $post;
                 'last' => $last_name,
             );
             //Update the various needed post data.
+            if($donate_to_cmef === "true"){
+                $amount -= 5;
+            }
             
             update_post_meta($new_post_id, '_program-id', $program_id);
-            update_post_meta($new_post_id, '_contribution-amount', ($amount - 5));    //this is because we do not store the transaction amount.
+            update_post_meta($new_post_id, '_contribution-amount', ($amount));    //this is because we do not store the transaction amount.
             update_post_meta($new_post_id, '_donation-address', $address);
             update_post_meta($new_post_id, '_donor-name', $name);
             update_post_meta( $new_post_id, '_payment-method', 'Credit Card' );
@@ -278,6 +221,25 @@ global $post;
                 update_post_meta( $cmef_new_post_id, '_payment-method', 'Credit Card' );
                 update_post_meta( $cmef_new_post_id, '_email-address', $_POST['email']);
                 update_post_meta( $cmef_new_post_id, '_remain-anonymous', $remain_anonymous);
+
+
+                //Client wanted to have the members informed when they get a donation.
+
+                //email content
+                $email_content = "Your program '" . get_the_title($program_id) . "' has a new donation in the amount of " . money_format("$%i", ((float) ($donate_to_cmef == true ? $amount : $amount - 5))) . "! To view your program click <a href=\"". get_the_permalink($program_id) . "\">here</a>.";
+                // check if the donor was anonymous enter some extra text if so.
+                if($remain_anonymous != "true"){
+                    $email_content .= " To send a thank you click <a href=\"mailto:". $_POST['email'] ."\">here</a>.";
+                };
+                //email subject
+                $email_subject = "New Donation to " . get_the_title($program_id);
+                //email author id
+                $post_author_id = get_post_field('post_author', $program_id);
+                //email address to send.
+                $email_address = get_the_author_meta('user_email', $post_author_id);
+
+                //send using wp_mail because it uses the built-in template from a plugin.
+                wp_mail($email_address, $email_subject, $email_content);
             }
 		}
         // Send back the response.

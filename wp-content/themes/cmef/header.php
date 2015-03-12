@@ -12,7 +12,7 @@
         <meta charset="<?php bloginfo( 'charset' ) ?>">
         <!-- Start Meta Tags -->
         <meta name="description" content="<?php bloginfo('description') ?>">
-        <link rel="publisher" href="https://plus.google.com/[YOUR BUSINESS G+ PROFILE HERE]"/>
+        <!--<link rel="publisher" href="https://plus.google.com/[YOUR BUSINESS G+ PROFILE HERE]"/>-->
 
         <!--Put Open Graph Meta Tags Below-->
         <!-- End Meta Tags -->

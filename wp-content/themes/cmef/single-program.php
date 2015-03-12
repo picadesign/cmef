@@ -287,9 +287,9 @@
 				<table width="100%" id="donation-table" class="tablesorter">
 					<thead>
 						<tr>
-							<th><b>Name</b></th>
-							<th><b>Date</b></th>
-							<th><b>Amount</b></th>
+							<th>Name</th>
+							<th>Date</th>
+							<th>Amount</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -316,7 +316,7 @@
 									<?php if(get_post_meta($post->ID, '_remain-anonymous', true) === 'true') :?>
 										<td>Anonymous</td>
 									<?php elseif(is_user_logged_in() && $current_user->ID == $program_author): ?>
-										<td id="donation"><?php echo get_post_meta($post->ID, '_donor-name', true )['first'] ?> <?php echo get_post_meta($post->ID, '_donor-name', true )['last'] ?><a href="mailto:<?php echo antispambot('email@email.com') ?>" title="Send a Thank You to "><span class="mail small"></span></a></td>
+										<td id="donation"><?php echo get_post_meta($post->ID, '_donor-name', true )['first'] ?> <?php echo get_post_meta($post->ID, '_donor-name', true )['last'] ?><a href="mailto:<?php echo antispambot(get_post_meta($post->ID, '_email-address', true)) ?>" title="Send a Thank You to "><span class="mail small"></span></a></td>
 									<?php else: ?>
 										<td id="donation"><?php echo get_post_meta($post->ID, '_donor-name', true )['first'] ?> <?php echo get_post_meta($post->ID, '_donor-name', true )['last'] ?></td>
 									<?php endif; ?>
@@ -331,6 +331,10 @@
 						?>
 					</tbody>
 				</table>
+				<br>
+				<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
+					<div class="button green print alignleft"><span>Download CSV</span></div>
+				<?php endif; ?>
 			</div>
 			<?php if($current_user->ID === get_the_author_meta('ID') && is_user_logged_in()): ?>
 				<div class="sixteen columns alpha omega" id="expenses">
@@ -373,7 +377,7 @@
 						</tbody>
 					</table>
 					<br>
-					<div class="button green print alignleft"><span>Print</span></div>
+					<div class="button green print alignleft"><span>Download CSV</span></div>
 					<div class="button green alignright add-expense"><span>Add Expense</span></div>
 					<div class="sixteen columns alpha omega new-expense hidden">
 						<hr>
@@ -481,7 +485,7 @@
 						</tbody>
 					</table>
 					<br>
-					<div class="button green print"><span>Print</span></div>
+					<div class="button green print"><span>Download CSV</span></div>
 				</div>
 			<?php endif; ?>
 		</div>	

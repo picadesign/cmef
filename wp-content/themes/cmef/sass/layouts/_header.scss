@@ -33,7 +33,7 @@
 				color:white;
 				//height:20px;
 				font-size:1.058823529em;
-				margin-top:51px;
+				//margin-top:51px;
 
 				.author-name, #logout{
 					text-transform: uppercase;
@@ -45,6 +45,15 @@
 							color:$mercury;
 						}
 					}
+				}
+			}
+
+			.donate-to-cmef{
+				color:white;
+				font-size:1.058823529em;
+				padding-top:14px;
+				a{
+					color:white;
 				}
 			}
 

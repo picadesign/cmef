@@ -8,7 +8,8 @@ get_header();
 			$args = array(
 				'post_type'   => 'program',
 				'post_status' => 'publish',
-				'posts_per_page' => 6,
+				'posts_per_page' => -1,
+				'orderby'	=> 'rand',
 				'post__not_in' => array(947),
 				'meta_query' => array(
 					'relation' => 'AND',
@@ -20,14 +21,9 @@ get_header();
 						'relation' => 'OR',
 						array(
 							'key' => '_program-status',
-							'value' => 'open',
-							'compare' => '='
+							'value' => 'ended',
+							'compare' => '!='
 						),
-						//This part should be phased out when programs get populated.
-						array(
-							'key' => '_program-status',
-							'compare' => 'NOT EXISTS'
-						)
 					)
 				)
 			);

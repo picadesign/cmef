@@ -47,6 +47,31 @@
 			<input type="radio" name="program-status" value="ended" <?php checked('ended', get_post_meta($post->ID, '_program-status', true), true) ?>> Ended
 		<?php }
 		add_meta_box("program_status", __("Program Status"), 'program_status_admin', "program", "side", "high");
+		//add a meta box for changing the author of the post.
+		//create a dropdown
+		//cycle through all users and display their name
+		//use the selected function to keep it on the current author.
+		//use their ID as the value for the dropdown.
+		//On save store the selected author as the new author.
+		//cool now code
+
+		function program_author_admin($post){ //POST: create a meta box that allow changing of the author. ?>
+			<select name="program_author" id="program_author">
+				<?php
+					$args = array(
+						'blog_id' => $GLOBALS['blog_id'],
+						'orderby' => 'nicename',
+						'order'   => 'ASC',
+					);
+					$all_users = get_users($args);
+					foreach($all_users as $user): ?>
+						<option value="<?php echo $user->ID ?>" <?php selected($user->ID, $post->post_author, true) ?>><?php echo $user->display_name ?></option>
+					<?php endforeach; ?>
+				
+			</select>
+		<?php }
+		add_meta_box('program_author', __('Program Author'), 'program_author_admin', 'program', 'side', 'high');
+
 		function fundraising_goal_admin($post){ ?>
 			<input type="number" value="<?php echo get_post_meta( $post->ID, '_fundraising-goal', true );  ?>" name="fundraising-goal" placeholder="5000 for $5,000">
 
@@ -126,7 +151,7 @@
 						</tfoot>
 					</table>
 					<br />
-					<div class="button">Download CSV</div>
+					<!--<div class="button">Download CSV</div>-->
 				<?php }
 				/* Restore original Post Data */
 				wp_reset_postdata();
@@ -158,8 +183,13 @@
 		);
 		update_post_meta($post_id, '_social-networks', $social );
 
+		//update the post author with the new selected author.
+		remove_action('save_post', 'save_program_meta_boxes_data', 10);	//unplug the action so we do not get and infinite loop
+		wp_update_post(array('ID'=> $post_id, 'post_author' => $_POST['program_author']));
+		add_action('save_post', 'save_program_meta_boxes_data', 10); // plug the action back in we can continue doing what we were doing.
+
 	}
-	add_action( 'save_post', 'save_program_meta_boxes_data' );
+	add_action( 'save_post', 'save_program_meta_boxes_data',10 );
 
 /* Add a menu item under donations to create a pdf and csv of the donations */
 

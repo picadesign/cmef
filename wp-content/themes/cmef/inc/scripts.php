@@ -30,6 +30,7 @@ function enqueue_scripts(){
     wp_enqueue_script('forms', get_bloginfo('template_url') . '/scripts/jquery.form.js', array('jquery'));
     wp_enqueue_script('tablesorter', get_bloginfo('template_url') . '/scripts/jquery.tablesorter.min.js', array('jquery'));
     wp_enqueue_script('printElement', get_bloginfo('template_url') . '/scripts/jquery.printElement.min.js', array('jquery'), false, true);
+    wp_enqueue_script('table2csv', get_bloginfo('template_url') . '/scripts/table2csv.js', array('jquery'), false, true);
     
     wp_enqueue_script('require', get_bloginfo('template_url') . '/scripts/require.js', array('jquery', 'backbone'), false, true);
     

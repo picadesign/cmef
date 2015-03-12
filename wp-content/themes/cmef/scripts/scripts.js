@@ -368,56 +368,21 @@ jQuery(function ($) {
 
 
 
-
+	//hide everything but the first six post on the hompage.
+	var program_cards = $('.home .projects');
+	$.each(program_cards, function(key, value){
+		$(this).find('.project-card').slice(6).hide();
+	})
 
 	//Load More Programs and add to the masonry
 	$('.bottom-buttons .show-more').on('click', function(){
-    	$.post(ajaxurl, {
-			//the function in ajax.php, pass the data through.
-			action: 'fetch_programs',
-			offset: $('.projects').children().length,
-		}, function(response){
-			//remove the editor.
-			//location.reload();
-			var new_projects = JSON.parse(response);
-			console.log(new_projects);
-		
-
-			$.get(mustache_template_path + 'project-card.html', function(template) {
-				for (var key in new_projects) {
-				   var program = new_projects[key];
-				   console.log(program);
-				   //grab title and add ... if longer than 30 chars
-				   var card_title = program['post_title'];
-						if(card_title.length > 30) {
-							card_title = program['post_title'].substring(0,30) + '...';
-						}
-					var rendered = Mustache.render(template, {
-						title: card_title, //card title from above
-						author: program['author'],
-						post_content: program['post_content'].substring(0,175),
-						the_thumbnail: program['post_thumbnail'],
-						the_permalink: program['guid'],
-						percentage_raised: program['percentage_raised'],
-						amount_raised: program['amount_raised'],
-						fundraiser_goal: program['fundraiser_goal'],
-						twitter_url: program['twitter_url'],
-						linkedin_url: program['linkedin_url'],
-						facebook_url: program['facebook_url'],
-						google_url: program['google_url'],
-						donation_url: program['donation_url']
-
-					});
-					$('.projects').append(rendered);
-				}
-				$('.masonry').imagesLoaded( function(){
-					$('.masonry').masonry('reloadItems');
-		    		$('.projects').masonry();
-		    	})
-	    		
-			});
-			//alert(response);
-		})
+		var current_length = $('.projects').children(".project-card:visible").length;
+		console.log(current_length);
+		var program_cards = $('.projects');
+		$('.project-card:visible:last').next(".project-card").show();
+		$('.project-card:visible:last').next(".project-card").show();
+		$('.project-card:visible:last').next(".project-card").show();
+		$('.masonry').masonry();
     })
 
 

@@ -264,7 +264,7 @@ jQuery(function ($) {
 			var expense_id = $('.delete-expense').attr('data-expense-id');
 		},
 		printParentElement: function(){
-			$('.print').parent().printElement();
+			$('.print').parent().find('table').tableExport({type:"csv", escape:"false"});
 		},
 		closeDiv: function(){
 			$('.closediv').parent().addClass('hidden');

@@ -92,7 +92,9 @@
 			$args = array(
 				'post_type'   => 'program',
 				'post_status'	=> 'publish',
-				'posts_per_page' => -1
+				'posts_per_page' => -1,
+				'order'			=> 'ASC',
+				'orderby'		=> 'title'
 			);
 			
 			$the_query = new WP_Query( $args );

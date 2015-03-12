@@ -64,6 +64,9 @@
 		//Settings Page
 		include ('inc/settings-page.php');
 
+		//add new columns to the various admin pages
+		include('inc/admin-columns.php');
+
 
 
 
