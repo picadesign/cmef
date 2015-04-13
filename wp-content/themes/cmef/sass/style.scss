@@ -15,7 +15,7 @@ $assets-layout: vertical ;
 $assets-sprite: sprite-map("assets/*.png") ;
 //Core Compass
 @import "compass";
-@import "compass/css3";
+@import "compass/css3";  
 
 //Import the core files for layouts.
 @import "compass/layout";

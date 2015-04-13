@@ -183,7 +183,7 @@ jQuery(function ($) {
 		}
 
 		var pay_for_transaction = true;
-		if($('input[name=pay_for_transaction').is(':checked')){
+		if($('input[name=pay_for_transaction]').is(':checked')){
 			pay_for_transaction = true;
 		}
 		else{
